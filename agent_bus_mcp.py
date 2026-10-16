@@ -84,7 +84,9 @@ def db():
       CREATE TABLE IF NOT EXISTS proposals(id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, author TEXT, title TEXT,
         body TEXT, status TEXT, branch TEXT, updated REAL);
       CREATE TABLE IF NOT EXISTS proposal_notes(id INTEGER PRIMARY KEY AUTOINCREMENT, proposal_id INTEGER, ts REAL,
-        author TEXT, body TEXT);""")
+        author TEXT, body TEXT);
+      CREATE TABLE IF NOT EXISTS secrets(name TEXT PRIMARY KEY COLLATE NOCASE, value TEXT, service TEXT, project TEXT,
+        found_at TEXT, added_by TEXT, ts REAL, updated REAL);""")
     return c
 
 
@@ -357,6 +359,58 @@ def t_usage_digest(a):
         return f.read()
 
 
+# ---------------------------------------------------------------- keyring
+# One shared store of keys, passwords and tokens. Any agent that comes across one adds it, so the owner and other
+# agents can find it again from any project. The owner manages the same entries in the app's Keyring panel.
+
+def secret_text(r):
+    name, value, service, project, found_at, by, ts = r
+    meta = ", ".join(x for x in (service and f"service {service}", project and f"project {project}",
+                                 found_at and f"found at {found_at}", f"added by {by}, {ago(ts)}") if x)
+    return f"{name} = {value}\n  {meta}"
+
+
+def t_secret_add(a):
+    by = need_name(a)
+    name, value = a["name"].strip(), a["value"].strip()
+    if not name or not value:
+        raise ValueError("A keyring entry needs a name and a value.")
+    f = {k: (a.get(k) or "").strip() for k in ("service", "project", "found_at")}
+    now = time.time()
+    with db() as c:
+        old = c.execute("SELECT name,value FROM secrets WHERE name=?", (name,)).fetchone()
+        if old and old[1] != value and not a.get("replace"):
+            raise ValueError(f"The keyring already has '{old[0]}' with a different value. Add this one under another "
+                             f"name (e.g. '{name}-{f['project'] or 'new'}'), or pass replace=true to overwrite it.")
+        c.execute("INSERT INTO secrets(name,value,service,project,found_at,added_by,ts,updated) VALUES(?,?,?,?,?,?,?,?) "
+                  "ON CONFLICT(name) DO UPDATE SET value=excluded.value, updated=excluded.updated, "
+                  "service=COALESCE(NULLIF(excluded.service,''),service), project=COALESCE(NULLIF(excluded.project,''),project), "
+                  "found_at=COALESCE(NULLIF(excluded.found_at,''),found_at)",
+                  (name, value, f["service"], f["project"], f["found_at"], by, now, now))
+    return f"{'Updated' if old else 'Added'} '{name}' in the keyring."
+
+
+def t_secret_find(a):
+    q = (a.get("query") or "").strip()
+    like = f"%{q}%"
+    with db() as c:
+        rows = c.execute("SELECT name,value,service,project,found_at,added_by,ts FROM secrets WHERE ? = '' OR name LIKE ? "
+                         "OR service LIKE ? OR project LIKE ? OR found_at LIKE ? ORDER BY service, name",
+                         (q, like, like, like, like)).fetchall()
+    if not rows:
+        return f"Nothing in the keyring matches '{q}'." if q else "The keyring is empty."
+    return "\n".join(secret_text(r) for r in rows)
+
+
+def t_secret_get(a):
+    name = a["name"].strip()
+    with db() as c:
+        r = c.execute("SELECT name,value,service,project,found_at,added_by,ts FROM secrets WHERE name=?", (name,)).fetchone()
+    if not r:
+        return f"No keyring entry named '{name}'.\n" + t_secret_find({"query": name})
+    return r[1] if a.get("value_only") else secret_text(r)
+
+
 S = lambda props, req=(): {"type": "object", "properties": props, "required": list(req)}
 STR = {"type": "string"}
 AS = {"as": {"type": "string", "description": "Your registered name, if this session hasn't called bus_register."}}
@@ -394,6 +448,20 @@ TOOLS = {
     "bus_proposal_status": (t_proposal_status, "Move a proposal along: refining, building, review (builder finished; owner "
                             "reviews). Only the owner can approve, close or reject.",
                             S({"proposal_id": {"type": "integer"}, "status": STR, "note": STR, **AS}, ["proposal_id", "status"])),
+    "bus_secret_add": (t_secret_add, "Add a key, password or token to the owner's shared keyring. Whenever you come across "
+                       "one in any project (config files, .env, docs, the owner telling you), add it here so the owner "
+                       "and other agents can find it later.",
+                       S({"name": {"type": "string", "description": "Short unique name, e.g. openai-api-key"},
+                          "value": STR, "service": {"type": "string", "description": "What it is for, e.g. OpenAI, GitHub"},
+                          "project": {"type": "string", "description": "Project it came from"},
+                          "found_at": {"type": "string", "description": "Where you found it, e.g. a file path"},
+                          "replace": {"type": "boolean", "description": "Overwrite an entry of the same name"}, **AS},
+                         ["name", "value"])),
+    "bus_secret_find": (t_secret_find, "Search the owner's shared keyring by name, service, project or where it was found "
+                        "(empty query lists everything). Check here before asking the owner for a key.",
+                        S({"query": STR})),
+    "bus_secret_get": (t_secret_get, "Get one keyring entry by name (value_only=true returns just the value).",
+                       S({"name": STR, "value_only": {"type": "boolean"}}, ["name"])),
 }
 LOCAL_ONLY = {"bus_send_file", "bus_get_file"}  # these touch local paths, so they run here and stream over HTTP
 
@@ -557,6 +625,13 @@ GRAPH = {
     "usage": {
         "digest": ("bus_usage_digest", [], {}, "Print the usage-trend digest the steward works from."),
     },
+    "secret": {
+        "add": ("bus_secret_add", ["name", "value"], {"service": "service", "project": "project", "found-at": "found_at",
+                                                      "replace": "replace"},
+                "Add NAME VALUE to the keyring [service S] [project P] [found-at PATH] [replace yes]."),
+        "find": ("bus_secret_find", ["query*"], {}, "Search the keyring [TEXT...]; no text lists everything."),
+        "get": ("bus_secret_get", ["name"], {"value-only": "value_only"}, "Show entry NAME [value-only yes] prints just the value."),
+    },
     "file": {
         "send": ("bus_send_file", ["to", "path"], {"note": "note*"}, "Send the file at PATH to an agent or 'all' [note TEXT...]."),
         "get": ("bus_get_file", ["file_id"], {"to": "dest"}, "Download file ID [to DIR] (default ./bus-files); sha256 is checked."),
@@ -564,7 +639,8 @@ GRAPH = {
     },
 }
 NOUN_HELP = {"agent": "Who is on the bus; join it.", "msg": "Send and read messages.", "file": "Exchange files, across VMs too.",
-             "proposal": "Improvement proposals for Agent Bus (the steward loop).", "usage": "Usage trends across all agents."}
+             "proposal": "Improvement proposals for Agent Bus (the steward loop).", "usage": "Usage trends across all agents.",
+             "secret": "The owner's shared keyring of keys, passwords and tokens."}
 
 
 class CliError(Exception):
@@ -597,7 +673,8 @@ def describe(noun=None, verb=None):
                          [f"  {v:<9} {spec[3]}" for v, spec in GRAPH[noun].items()])
     _, pos, kw, text = GRAPH[noun][verb]
     label = lambda v: {"from_file": "PATH", "dest": "DIR", "wait_seconds": "SECONDS", "with": "NAME", "limit": "N",
-                       "file_id": "ID", "body": "TEXT"}.get(v.rstrip("*"), v.rstrip("*").upper()) + ("..." if v.endswith("*") else "")
+                       "file_id": "ID", "body": "TEXT", "query": "TEXT", "found_at": "PATH", "replace": "yes",
+                       "value_only": "yes"}.get(v.rstrip("*"), v.rstrip("*").upper()) + ("..." if v.endswith("*") else "")
     usage = " ".join([label(p) for p in pos] + [f"[{k} {label(v)}]" for k, v in kw.items()])
     return f"agent-bus {noun} {verb} {usage}\n  {text}"
 
@@ -682,7 +759,7 @@ def cli(argv):
             i += 1
             continue
         raise CliError(f"Unexpected word '{w}'.", f"agent-bus {noun} {verb} ?")
-    missing = [p.rstrip("*") for p in pos if not args.get(p.rstrip("*"))]
+    missing = [p.rstrip("*") for p in pos if not args.get(p.rstrip("*")) and p != "query*"]   # find with no text lists all
     if args.get("from_file"):
         with open(os.path.expanduser(args.pop("from_file")), encoding="utf-8") as f:
             args["body"] = f.read()
@@ -691,6 +768,9 @@ def cli(argv):
         args["body"] = sys.stdin.read()
     if missing:
         raise CliError(f"Missing {', '.join(m.upper() for m in missing)}.", f"agent-bus {noun} {verb} ?")
+    for k in ("replace", "value_only"):
+        if k in args:
+            args[k] = str(args[k]).lower() in ("yes", "y", "true", "1")
     for k in ("wait_seconds", "limit", "file_id", "proposal_id"):
         if k in args:
             try:
@@ -702,7 +782,8 @@ def cli(argv):
         if not name:
             raise CliError("Not registered yet from this session or folder.", "agent-bus agent register YOUR-NAME note what you do")
         return name
-    if tool not in ("bus_register", "bus_list", "bus_proposals", "bus_proposal", "bus_usage_digest"):
+    if tool not in ("bus_register", "bus_list", "bus_proposals", "bus_proposal", "bus_usage_digest", "bus_secret_find",
+                    "bus_secret_get"):
         args["as"] = identity(who)
         if not args["as"]:
             raise CliError("Not registered yet from this session or folder.", "agent-bus agent register YOUR-NAME note what you do")

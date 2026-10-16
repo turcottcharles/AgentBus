@@ -15,18 +15,19 @@ const { Stats } = require('./stats');
 const { Setup } = require('./setup');
 const { Proposals } = require('./proposals');
 const { Steward } = require('./steward');
+const { Keyring } = require('./keyring');
 
 const ROOT = path.join(__dirname, '..');
 const DB_PATH = process.env.AGENT_BUS_DB || path.join(ROOT, 'bus.sqlite');
 const OWNER = 'owner';
-let db, win, hub, stats, setup, proposals, steward, lastSeenId = 0, net = { adapters: [], vmAdapters: [], listenOn: [], guests: [] };
+let db, win, hub, stats, setup, proposals, steward, keyring, lastSeenId = 0, net = { adapters: [], vmAdapters: [], listenOn: [], guests: [] };
 
 const now = () => Date.now() / 1000;
 const isWin = process.platform === 'win32';
 
 // Every IPC handler goes through here so the steward can see which app features the owner uses (and which
 // fail). Polling channels are left out; only the channel name, timing and any error are kept.
-const QUIET = new Set(['bus:snapshot', 'bus:stats', 'net:info', 'setup:status', 'steward:state', 'proposal:list', 'proposal:get', 'profile:preview']);
+const QUIET = new Set(['bus:snapshot', 'bus:stats', 'net:info', 'setup:status', 'steward:state', 'proposal:list', 'proposal:get', 'profile:preview', 'keyring:list']);
 function handle(channel, fn) {
   ipcMain.handle(channel, async (...args) => {
     const t0 = Date.now();
@@ -226,7 +227,9 @@ handle('menu:project', (e) => popup(e, [
 
 function defaultPrompt(name) {
   return `You were launched from the Agent Bus app as "${name}" and are registered on the agent bus under that name. `
-    + 'Call bus_inbox to read any waiting messages and reply with bus_send.';
+    + 'Call bus_inbox to read any waiting messages and reply with bus_send. '
+    + 'The owner keeps a shared keyring on the bus: look for keys, passwords and tokens with bus_secret_find before '
+    + 'asking, and add any you come across with bus_secret_add.';
 }
 // Argument list for the CLI; the session name reaches the bus server through AGENT_BUS_NAME.
 function cliArgs(p) {
@@ -367,6 +370,12 @@ handle('proposal:merge', (_e, id) => {
   return true;
 });
 
+// ---------------------------------------------------------------- keyring
+
+handle('keyring:list', () => keyring.all());
+handle('keyring:save', (_e, { original, entry }) => { keyring.save(original, entry); return true; });
+handle('keyring:delete', (_e, name) => { keyring.remove(name); return true; });
+
 function launchBuilder({ name, cli, cwd, prompt, extra }) {
   db.prepare('INSERT OR IGNORE INTO projects(name) VALUES(?)').run('Agent Bus builds');
   db.prepare(`INSERT INTO profiles(name,project,cli,cwd,mode,session,extra,prompt) VALUES(?,?,?,?,'new',NULL,?,?)
@@ -412,6 +421,7 @@ else {
     stats = new Stats(db);
     setup = new Setup(ROOT, hub);
     proposals = new Proposals(db, (t) => hub.ago(t));
+    keyring = new Keyring(db, (t) => hub.ago(t));
     steward = new Steward({ db, root: ROOT, dataDir: path.dirname(DB_PATH), proposals, launchBuilder });
     createWindow();
     await refreshNetwork(true).catch(() => {});

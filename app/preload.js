@@ -41,4 +41,7 @@ contextBridge.exposeInMainWorld('bus', {
   proposalDiff: call('proposal:diff'),
   proposalMerge: call('proposal:merge'),
   proposalDiscard: call('proposal:discard'),
+  keyring: call('keyring:list'),
+  keyringSave: (original, entry) => ipcRenderer.invoke('keyring:save', { original, entry }),
+  keyringDelete: call('keyring:delete'),
 });

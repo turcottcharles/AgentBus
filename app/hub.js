@@ -7,6 +7,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const { Proposals } = require('./proposals');
+const { Keyring } = require('./keyring');
 
 const MAX_FILE = 200 * 1024 * 1024;
 const PORT_DEFAULT = 47800;
@@ -15,6 +16,7 @@ class Hub {
   constructor({ db, root, configPath, onChange }) {
     this.db = db; this.root = root; this.configPath = configPath; this.onChange = onChange || (() => {});
     this.proposals = new Proposals(db, (t) => this.ago(t));
+    this.keyring = new Keyring(db, (t) => this.ago(t));
     this.digestPath = path.join(path.dirname(configPath), 'steward', 'digest.md');
     this.filesDir = path.join(root, 'files');
     this.servers = []; this.errors = [];
@@ -246,6 +248,12 @@ class Hub {
       case 'bus_proposal_status':
         this.proposals.setStatus(this.need(a), a.proposal_id, a.status, a.note);
         return `Proposal #${a.proposal_id} is now '${String(a.status).trim().toLowerCase()}'.`;
+      case 'bus_secret_add': {
+        const updated = this.keyring.add(this.need(a), a, { replace: !!a.replace });
+        return `${updated ? 'Updated' : 'Added'} '${String(a.name).trim()}' in the keyring.`;
+      }
+      case 'bus_secret_find': return this.keyring.findText(a.query);
+      case 'bus_secret_get': return this.keyring.getText(a.name, !!a.value_only);
       default: throw new Error(`Unknown tool ${tool}`);
     }
   }

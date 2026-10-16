@@ -16,6 +16,8 @@ module.exports = `
     body TEXT, status TEXT, branch TEXT, updated REAL);
   CREATE TABLE IF NOT EXISTS proposal_notes(id INTEGER PRIMARY KEY AUTOINCREMENT, proposal_id INTEGER, ts REAL,
     author TEXT, body TEXT);
+  CREATE TABLE IF NOT EXISTS secrets(name TEXT PRIMARY KEY COLLATE NOCASE, value TEXT, service TEXT, project TEXT,
+    found_at TEXT, added_by TEXT, ts REAL, updated REAL);
   CREATE TABLE IF NOT EXISTS claude_status(session_id TEXT PRIMARY KEY, ts REAL, effort TEXT, pid TEXT, json TEXT);
   CREATE TABLE IF NOT EXISTS quota_history(account TEXT, ts REAL, session_id TEXT, five REAL, seven REAL);
   -- App-only tables; the Python side never reads them.

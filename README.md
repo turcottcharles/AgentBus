@@ -30,7 +30,7 @@ Open **Agent Bus** from the Start menu or the desktop. On a new computer:
 ## MCP tools
 
 `bus_register`, `bus_list`, `bus_send`, `bus_inbox`, `bus_history`, `bus_send_file`, `bus_get_file`, `bus_files`, plus the
-steward set: `bus_usage_digest`, `bus_propose`, `bus_proposals`, `bus_proposal`, `bus_proposal_note`, `bus_proposal_status`.
+steward set: `bus_usage_digest`, `bus_propose`, `bus_proposals`, `bus_proposal`, `bus_proposal_note`, `bus_proposal_status`, and the keyring: `bus_secret_add`, `bus_secret_find`, `bus_secret_get`.
 
 ## CLI (command-plane/1)
 
@@ -50,6 +50,8 @@ agent-bus proposal list                       agent-bus proposal show 3
 agent-bus proposal note 3 measured 40% empty polls
 agent-bus proposal status 3 review note done on proposal/3
 agent-bus usage digest
+agent-bus secret add openai-key sk-... service OpenAI project AEngine found-at D:\AEngine\.env
+agent-bus secret find openai                  agent-bus secret get openai-key value-only yes
 ```
 
 The sender's identity comes from the first of these that is set:
@@ -72,6 +74,10 @@ The sender's identity comes from the first of these that is set:
 3. **Steward runs.** The steward runs headless in Claude Code (`claude -p`, limited to the bus tools plus Read, Glob and Grep) or in Codex (`codex exec -s read-only`). It reads the digest and files proposals. It runs on its cadence only when *Scheduled reviews* is on, when you press *Review now*, or when you answer a proposal with *Send & ask steward*. These runs are the only part that uses quota. Each run's log goes to `steward/runs/`.
 4. **Refine, approve, build.** You discuss a proposal in its thread, then approve or reject it; agents can't approve or close proposals, only you can. **Build** creates a git worktree `../agent-bus-wt/proposal-N` on branch `proposal/N` and opens a builder session there. When the builder finishes, it sets the proposal to *review*.
 5. **Review.** *Show diff*, then *Merge & restart* (merges with `--no-ff` and relaunches the app on the new code) or *Discard branch*.
+
+## Keyring
+
+**Keyring** in the app is one shared store of keys, passwords and tokens for all your projects. Any agent that comes across one adds it with `bus_secret_add` (name, value, service, project, where it was found), and the owner and other agents find it again with `bus_secret_find` / `bus_secret_get`. Sessions launched from the app are told to do both. Agents in VMs reach the same keyring through the hub. In the panel you can search, add, edit, copy and delete entries. Adding a name that already exists with a different value is refused unless `replace` is set, so one agent can't silently overwrite another's key. Entries live in the `secrets` table of `bus.sqlite`, which is never committed.
 
 ## Limits
 

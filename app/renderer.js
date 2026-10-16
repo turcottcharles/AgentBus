@@ -642,7 +642,65 @@ $('ideaOk').addEventListener('click', async () => {
   } catch (e) { $('ideaErr').textContent = errText(e); }
 });
 
+// ---------------------------------------------------------------- keyring
+const kr = { list: [], editing: null, timer: null };
+
+async function keyringBadge() {
+  try { kr.list = await window.bus.keyring(); $('keyringBadge').textContent = kr.list.length ? String(kr.list.length) : ''; } catch {}
+}
+async function renderKeyring() {
+  kr.list = await window.bus.keyring();
+  $('keyringBadge').textContent = kr.list.length ? String(kr.list.length) : '';
+  const q = $('krSearch').value.trim().toLowerCase();
+  const rows = kr.list.filter((r) => !q || [r.name, r.service, r.project, r.found_at].some((x) => (x || '').toLowerCase().includes(q)));
+  $('krRows').innerHTML = rows.map((r) => `<tr data-name="${esc(r.name)}">
+      <td><b>${esc(r.name)}</b></td><td class="v">${esc(r.value)}</td><td>${esc(r.service || '')}</td><td>${esc(r.project || '')}</td>
+      <td class="f">${esc(r.found_at || '')}</td><td class="muted">${esc(r.added_by || '')}, ${ago(r.ts, Date.now() / 1000)}</td>
+      <td class="act"><button data-act="copy">Copy</button> <button data-act="edit">Edit</button> <button data-act="delete" class="danger">Delete</button></td>
+    </tr>`).join('') || `<tr><td colspan="7" class="empty small">${kr.list.length ? 'Nothing matches.' : 'The keyring is empty. Agents add keys here as they find them, or use + Add.'}</td></tr>`;
+}
+function editSecret(r) {
+  kr.editing = r ? r.name : null;
+  $('secretTitle').textContent = r ? `Edit ${r.name}` : 'Add to keyring';
+  $('sName').value = r?.name || ''; $('sValue').value = r?.value || ''; $('sService').value = r?.service || '';
+  $('sProject').value = r?.project || ''; $('sFound').value = r?.found_at || ''; $('secretErr').textContent = '';
+  $('dlgSecret').showModal(); $(r ? 'sValue' : 'sName').focus();
+}
+$('btnKeyring').addEventListener('click', () => {
+  $('dlgKeyring').showModal();
+  renderKeyring().catch((e) => toast(errText(e), true));
+  clearInterval(kr.timer);
+  kr.timer = setInterval(() => renderKeyring().catch(() => {}), 5000);   // agents may add entries while it is open
+});
+$('dlgKeyring').addEventListener('close', () => clearInterval(kr.timer));
+$('krClose').addEventListener('click', () => $('dlgKeyring').close());
+$('krSearch').addEventListener('input', () => renderKeyring().catch(() => {}));
+$('krAdd').addEventListener('click', () => editSecret(null));
+$('krRows').addEventListener('click', async (e) => {
+  const b = e.target.closest('button'), tr = e.target.closest('tr');
+  if (!b || !tr) return;
+  const r = kr.list.find((x) => x.name === tr.dataset.name);
+  if (!r) return;
+  if (b.dataset.act === 'copy') { await window.bus.copy(r.value); return toast(`Copied ${r.name}`); }
+  if (b.dataset.act === 'edit') return editSecret(r);
+  if (b.dataset.act === 'delete' && confirm(`Delete ${r.name} from the keyring?`)) {
+    try { await window.bus.keyringDelete(r.name); toast(`Deleted ${r.name}`); } catch (err) { toast(errText(err), true); }
+    renderKeyring().catch(() => {});
+  }
+});
+$('secretCancel').addEventListener('click', () => $('dlgSecret').close());
+$('secretOk').addEventListener('click', async () => {
+  try {
+    await window.bus.keyringSave(kr.editing, { name: $('sName').value, value: $('sValue').value, service: $('sService').value,
+      project: $('sProject').value, found_at: $('sFound').value });
+    $('dlgSecret').close();
+    renderKeyring().catch(() => {});
+  } catch (e) { $('secretErr').textContent = errText(e); }
+});
+
 refresh(true);
+keyringBadge();
+setInterval(keyringBadge, 15000);
 refreshStats();
 stewardBadge();
 setInterval(stewardBadge, 15000);

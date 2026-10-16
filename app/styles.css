@@ -192,6 +192,17 @@ details summary { cursor: pointer; color: var(--muted); margin-top: 10px; }
 
 #dlgSteward { width: 1180px; max-width: 96vw; height: 86vh; max-height: 86vh; padding: 14px 18px; }
 #dlgSteward[open] { display: flex; flex-direction: column; }
+#dlgKeyring { width: 1180px; max-width: 96vw; height: 80vh; max-height: 86vh; padding: 14px 18px; }
+#dlgKeyring[open] { display: flex; flex-direction: column; }
+#krSearch { flex: 0 1 380px; }
+.krWrap { flex: 1; min-height: 0; overflow: auto; }
+.krTable { width: 100%; border-collapse: collapse; font-size: 13px; }
+.krTable th { text-align: left; color: var(--muted); font-weight: 600; position: sticky; top: 0; background: var(--panel); padding: 6px 8px; border-bottom: 1px solid var(--border); }
+.krTable td { padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.krTable td.v { font-family: Consolas, ui-monospace, monospace; word-break: break-all; max-width: 360px; }
+.krTable td.f { word-break: break-all; max-width: 260px; color: var(--muted); }
+.krTable td.act { white-space: nowrap; text-align: right; }
+.krTable tr:hover td { background: var(--panel2); }
 .stHead, .stSettings, .stListHead, .pActions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .stHead h2 { margin: 0 8px 0 0; }
 .spacer { flex: 1; }

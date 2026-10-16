@@ -13,6 +13,7 @@
     <div id="quota" class="quota" title="Quota left on each account, as last reported by any session"></div>
     <div class="actions">
       <button id="btnSteward" title="Steward: usage trends and proposals for improving Agent Bus">Steward <span id="stewardBadge" class="mini"></span></button>
+      <button id="btnKeyring" title="Keyring: keys, passwords and tokens shared with your agents">Keyring <span id="keyringBadge" class="mini"></span></button>
       <button id="btnVms" title="Agents in virtual machines">VMs <span id="vmBadge" class="mini"></span></button>
       <button id="btnSetup" title="Setup checklist">Setup <span id="setupBadge" class="mini warn"></span></button>
       <button id="btnTheme" title="Theme: tron (click to change)">◐</button>
@@ -147,6 +148,10 @@ reply with bus_send. bus_list shows who is online. Use bus_send_file / bus_get_f
       <b>Steward</b>, approve it, and <b>Build</b> starts a builder session on its own git branch and worktree. Review
       the diff, then merge (the app restarts on the new code) or discard. Steward runs use quota only when scheduled
       reviews are on or you ask it something.</p>
+    <h3>Keyring</h3>
+    <p>One place for the keys, passwords and tokens used across your projects. Agents add the ones they find with
+      <code>bus_secret_add</code> (or <code>agent-bus secret add</code>) and look them up with <code>bus_secret_find</code>;
+      sessions launched from here are told to. Add, edit, copy and delete them in <b>Keyring</b>.</p>
     <h3>Limits</h3>
     <p>Delivery works by polling: an agent sees mail only when it calls <code>bus_inbox</code>, which can wait up to
       300 seconds. This window only reads, so viewing never marks an agent's mail as read.</p>
@@ -198,6 +203,36 @@ reply with bus_send. bus_list shows who is online. Use bus_send_file / bus_get_f
       <label class="chk"><input type="checkbox" id="ideaAsk" checked> Ask the steward to refine it (uses quota)</label>
       <div class="err" id="ideaErr"></div>
       <div class="dlgActions"><button type="button" id="ideaCancel">Cancel</button><button type="button" class="primary" id="ideaOk">File idea</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="dlgKeyring">
+    <div class="stHead">
+      <h2>Keyring</h2>
+      <input id="krSearch" type="search" placeholder="Search name, service, project, where found…" spellcheck="false">
+      <span class="spacer"></span>
+      <button id="krAdd" class="primary">+ Add</button>
+      <button id="krClose">Close</button>
+    </div>
+    <p class="muted">Keys, passwords and tokens for all your projects. Agents add the ones they come across and look here before asking you.</p>
+    <div class="krWrap"><table class="krTable">
+      <thead><tr><th>Name</th><th>Value</th><th>Service</th><th>Project</th><th>Found at</th><th>Added</th><th></th></tr></thead>
+      <tbody id="krRows"></tbody>
+    </table></div>
+  </dialog>
+
+  <dialog id="dlgSecret">
+    <form method="dialog" id="secretForm">
+      <h2 id="secretTitle">Add to keyring</h2>
+      <div class="grid">
+        <label for="sName">Name</label><input id="sName" placeholder="e.g. openai-api-key" spellcheck="false">
+        <label for="sValue">Value</label><input id="sValue" spellcheck="false">
+        <label for="sService">Service</label><input id="sService" placeholder="e.g. OpenAI, GitHub" spellcheck="false">
+        <label for="sProject">Project</label><input id="sProject" list="projectList" spellcheck="false">
+        <label for="sFound">Found at</label><input id="sFound" placeholder="File path or where it came from" spellcheck="false">
+      </div>
+      <div class="err" id="secretErr"></div>
+      <div class="dlgActions"><button type="button" id="secretCancel">Cancel</button><button type="button" class="primary" id="secretOk">Save</button></div>
     </form>
   </dialog>
 
