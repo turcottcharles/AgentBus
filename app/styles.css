@@ -190,6 +190,41 @@ details summary { cursor: pointer; color: var(--muted); margin-top: 10px; }
 .fileCard .fname { font-weight: 600; }
 .fileCard button { font-size: 11px; padding: 1px 8px; }
 
+#dlgSteward { width: 1180px; max-width: 96vw; height: 86vh; max-height: 86vh; padding: 14px 18px; }
+#dlgSteward[open] { display: flex; flex-direction: column; }
+.stHead, .stSettings, .stListHead, .pActions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.stHead h2 { margin: 0 8px 0 0; }
+.spacer { flex: 1; }
+.stSettings { padding: 8px 0 10px; border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--muted); gap: 6px 14px; }
+.stSettings input:not([type=checkbox]) { width: 120px; } .stSettings input.num { width: 52px; }
+.stBody { flex: 1; min-height: 0; display: grid; grid-template-columns: 340px 1fr; gap: 14px; margin-top: 10px; }
+.stList { display: flex; flex-direction: column; min-height: 0; }
+#stProposals { overflow: auto; flex: 1; margin-top: 6px; }
+.prop { padding: 7px 9px; border: 1px solid var(--border); border-radius: 5px; margin-bottom: 6px; cursor: pointer; }
+.prop:hover { border-color: var(--accent); }
+.prop.sel { border-color: var(--accent); background: var(--mine); box-shadow: inset 3px 0 0 var(--accent); }
+.prop .pt { font-weight: 600; margin: 3px 0 2px; }
+.prop .pm { color: var(--muted); font-size: 11px; }
+.chip { font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; border-radius: 3px; padding: 1px 6px;
+  border: 1px solid currentColor; color: var(--muted); }
+.chip.proposed { color: var(--accent); } .chip.refining { color: var(--idle); } .chip.approved { color: var(--on); }
+.chip.building { color: var(--owner); } .chip.review { color: var(--owner); box-shadow: 0 0 6px var(--owner); }
+.chip.done { color: var(--on); opacity: .7; } .chip.rejected { color: var(--err); opacity: .7; }
+.stDetail { display: flex; flex-direction: column; min-height: 0; border-left: 1px solid var(--border); padding-left: 14px; }
+.stDetail h3 { margin: 4px 0; font-size: 16px; }
+.pThread { flex: 1; overflow: auto; margin: 8px 0; }
+.pNote { border-left: 2px solid var(--accent); padding: 4px 10px; margin: 8px 0; background: var(--panel2); border-radius: 0 4px 4px 0; }
+.pNote.owner { border-left-color: var(--owner); }
+.pNote .who { font-size: 11.5px; color: var(--muted); }
+.pNote .who b { color: var(--accent); } .pNote.owner .who b { color: var(--owner); }
+.pNote .body { margin-top: 3px; }
+.pCompose { display: flex; gap: 8px; align-items: stretch; }
+.pCompose .col { display: flex; flex-direction: column; gap: 6px; }
+.pActions { margin-top: 8px; }
+.pActions button.danger:hover { color: var(--err); border-color: var(--err); box-shadow: none; }
+#dlgText { width: 1000px; max-width: 94vw; }
+.bigPre { max-height: 70vh; overflow: auto; font-size: 12px; font-family: "Cascadia Mono", Consolas, monospace; }
+
 /* ---- Tron finish: grid floor, light-lines and glow ---- */
 body {
   background-color: var(--bg);

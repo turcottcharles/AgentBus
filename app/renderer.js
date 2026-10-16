@@ -482,8 +482,170 @@ $('btnHelp').addEventListener('click', () => $('help').showModal());
 $('btnCloseHelp').addEventListener('click', () => $('help').close());
 $('btnFolder').addEventListener('click', () => window.bus.openFolder());
 
+// ---------------------------------------------------------------- steward and proposals
+const st = { sel: null, list: [], detailKey: '', timer: null };
+const ACTIVE = new Set(['proposed', 'refining', 'review']);
+const chip = (status) => `<span class="chip ${esc(status)}">${esc(status)}</span>`;
+
+async function stewardBadge() {
+  try {
+    st.list = await window.bus.proposals();
+    const n = st.list.filter((p) => ACTIVE.has(p.status)).length;
+    $('stewardBadge').textContent = n ? String(n) : '';
+  } catch {}
+}
+
+async function renderSteward() {
+  const [s, list] = await Promise.all([window.bus.steward(), window.bus.proposals()]);
+  st.list = list;
+  const c = s.config;
+  if (document.activeElement?.closest?.('.stSettings') == null) {
+    $('stEnabled').checked = c.enabled; $('stVendor').value = c.vendor; $('stCadence').value = c.cadenceHours;
+    $('stFlags').value = c.flags || ''; $('stBuilder').value = c.builder; $('stBuilderFlags').value = c.builderFlags || '';
+    $('stText').checked = c.includeText;
+  }
+  const bits = [];
+  if (s.running) bits.push(`<b class="working">Working: ${esc(s.running.reason)}${s.running.proposalId ? ` on #${s.running.proposalId}` : ''}, started ${ago(s.running.started, Date.now() / 1000)}</b>`);
+  else bits.push(c.lastRun ? `Last review ${ago(c.lastRun, Date.now() / 1000)}` : 'No review yet');
+  if (c.enabled && !s.running) bits.push(`next in ~${Math.max(0, Math.round((c.lastRun + c.cadenceHours * 3600 - Date.now() / 1000) / 3600))} h`);
+  bits.push(s.digestAt ? `digest ${ago(s.digestAt, Date.now() / 1000)}` : 'no digest yet');
+  if (!s.git) bits.push('<span class="err">Git not found: Build needs it</span>');
+  if (s.lastError) bits.push(`<span class="err">${esc(s.lastError)}</span>`);
+  $('stState').innerHTML = bits.join(' · ');
+  $('stRun').disabled = !!s.running;
+  $('stewardBadge').textContent = list.filter((p) => ACTIVE.has(p.status)).length || '';
+  $('stProposals').innerHTML = list.map((p) => `<div class="prop ${p.id === st.sel ? 'sel' : ''}" data-id="${p.id}">
+      <div>${chip(p.status)} <span class="pm">#${p.id}</span></div>
+      <div class="pt">${esc(p.title)}</div>
+      <div class="pm">by ${esc(p.author)} · ${ago(p.ts, Date.now() / 1000)}${p.notes ? ` · ${p.notes} note${p.notes > 1 ? 's' : ''}` : ''}</div>
+    </div>`).join('') || '<div class="empty">No proposals yet. Turn on scheduled reviews, press Review now, or add your own idea.</div>';
+  if (st.sel) await renderProposal(st.sel, s.running);
+}
+
+async function renderProposal(id, running) {
+  let p;
+  try { p = await window.bus.proposal(id); } catch (e) { st.sel = null; $('stDetail').innerHTML = `<div class="err">${esc(errText(e))}</div>`; return; }
+  const key = `${p.id}|${p.status}|${p.updated}|${p.notes.length}|${!!running}`;
+  if (key === st.detailKey) return;
+  const draft = $('pBody')?.value || '';
+  st.detailKey = key;
+  const act = (a, label, cls = '') => `<button data-act="${a}" class="${cls}">${label}</button>`;
+  const vendorSel = `<select id="pVendor"><option value="claude">Claude Code</option><option value="codex">Codex</option></select>`;
+  const actions = {
+    proposed: [act('approved', 'Approve', 'primary'), act('rejected', 'Reject', 'danger')],
+    refining: [act('approved', 'Approve', 'primary'), act('rejected', 'Reject', 'danger')],
+    approved: [`Build with ${vendorSel}`, act('build', 'Build', 'primary'), act('rejected', 'Reject', 'danger')],
+    building: [act('diff', 'Show diff'), act('relaunch', 'Reopen builder'), act('discard', 'Discard branch', 'danger')],
+    review: [act('diff', 'Show diff'), act('merge', 'Merge &amp; restart', 'primary'), act('building', 'Send back to builder'), act('discard', 'Discard branch', 'danger')],
+    done: [act('proposed', 'Reopen')],
+    rejected: [act('proposed', 'Reopen')],
+  }[p.status] || [];
+  const note = (n) => `<div class="pNote ${n.author === 'owner' ? 'owner' : ''}"><div class="who"><b>${esc(n.author)}</b> · ${fmtDay(n.ts)} ${fmtTime(n.ts)}</div><div class="body">${esc(n.body)}</div></div>`;
+  $('stDetail').innerHTML = `
+    <div>${chip(p.status)} <span class="muted">#${p.id} by ${esc(p.author)}, ${ago(p.ts, Date.now() / 1000)}${p.branch ? ` · branch <code>${esc(p.branch)}</code>` : ''}</span></div>
+    <h3>${esc(p.title)}</h3>
+    <div class="pThread" id="pThread">
+      ${note({ author: p.author, ts: p.ts, body: p.body || '(no description)' })}
+      ${p.notes.map(note).join('')}
+      ${running && running.proposalId === p.id ? '<div class="muted working">The steward is writing a reply…</div>' : ''}
+    </div>
+    <div class="pCompose">
+      <textarea id="pBody" rows="3" placeholder="Refine it: ask questions, change scope, add requirements"></textarea>
+      <div class="col">
+        <button id="pAsk" class="primary" title="Add your note and have the steward answer (uses quota)">Send &amp; ask steward</button>
+        <button id="pNoteOnly" title="Add your note without running the steward">Note only</button>
+      </div>
+    </div>
+    <div class="pActions">${actions.join(' ')}</div>`;
+  $('pBody').value = draft;
+  if ($('pVendor')) $('pVendor').value = $('stBuilder').value;
+  $('pThread').scrollTop = $('pThread').scrollHeight;
+}
+
+async function stewardDo(fn, okText) {
+  try { const r = await fn(); if (okText) toast(typeof okText === 'function' ? okText(r) : okText); } catch (e) { toast(errText(e), true); }
+  st.detailKey = '';
+  renderSteward().catch(() => {});
+}
+
+$('stProposals').addEventListener('click', (e) => {
+  const el = e.target.closest('.prop');
+  if (!el) return;
+  st.sel = Number(el.dataset.id); st.detailKey = '';
+  renderSteward();
+});
+$('stDetail').addEventListener('click', async (e) => {
+  const id = st.sel, b = e.target.closest('button');
+  if (!b || !id) return;
+  if (b.id === 'pAsk' || b.id === 'pNoteOnly') {
+    const body = $('pBody').value.trim();
+    if (!body) return toast('Write a note first', true);
+    await stewardDo(() => window.bus.proposalNote(id, body, b.id === 'pAsk'), b.id === 'pAsk' ? 'Sent; the steward is replying' : 'Note added');
+    $('pBody').value = '';
+    return;
+  }
+  const a = b.dataset.act;
+  if (!a) return;
+  if (a === 'build') return stewardDo(() => window.bus.proposalBuild(id, $('pVendor').value), (r) => `Builder ${r.name} started in ${r.wt}`);
+  if (a === 'relaunch') return launch(`builder-${id}`);
+  if (a === 'diff') {
+    try {
+      const d = await window.bus.proposalDiff(id);
+      $('textTitle').textContent = `${d.branch} vs ${d.base}`;
+      $('textBody').textContent = `${d.log || '(no commits yet)'}\n\n${d.stat}\n${d.dirty ? `\nUncommitted in the worktree:\n${d.dirty}\n` : ''}\n${d.full}`;
+      $('dlgText').showModal();
+    } catch (err) { toast(errText(err), true); }
+    return;
+  }
+  if (a === 'merge' && !confirm(`Merge proposal #${id} into the live Agent Bus and restart the app?`)) return;
+  if (a === 'discard' && !confirm(`Delete the branch and worktree for proposal #${id}? Its changes are lost.`)) return;
+  if (a === 'merge') return stewardDo(() => window.bus.proposalMerge(id), 'Merged. Restarting…');
+  if (a === 'discard') return stewardDo(() => window.bus.proposalDiscard(id), 'Branch discarded');
+  stewardDo(() => window.bus.proposalStatus(id, a, null), `Proposal #${id} is now ${a}`);
+});
+
+const saveStewardConfig = () => stewardDo(() => window.bus.stewardConfig({
+  enabled: $('stEnabled').checked, vendor: $('stVendor').value, cadenceHours: Number($('stCadence').value) || 24,
+  flags: $('stFlags').value.trim(), builder: $('stBuilder').value, builderFlags: $('stBuilderFlags').value.trim(),
+  includeText: $('stText').checked,
+}));
+for (const id of ['stEnabled', 'stVendor', 'stCadence', 'stFlags', 'stBuilder', 'stBuilderFlags', 'stText']) $(id).addEventListener('change', saveStewardConfig);
+$('stDigest').addEventListener('click', () => stewardDo(() => window.bus.stewardDigest(), 'Digest refreshed'));
+$('stViewDigest').addEventListener('click', async () => {
+  try { $('textTitle').textContent = 'Usage digest'; $('textBody').textContent = await window.bus.stewardDigest(); $('dlgText').showModal(); } catch (e) { toast(errText(e), true); }
+});
+$('stRun').addEventListener('click', () => stewardDo(() => window.bus.stewardRun(), 'The steward is reviewing usage'));
+$('stRuns').addEventListener('click', () => window.bus.stewardRuns());
+$('textClose').addEventListener('click', () => $('dlgText').close());
+$('btnSteward').addEventListener('click', () => {
+  st.detailKey = '';
+  $('dlgSteward').showModal();
+  renderSteward().catch((e) => toast(errText(e), true));
+  clearInterval(st.timer);
+  st.timer = setInterval(() => renderSteward().catch(() => {}), 3000);
+});
+$('stClose').addEventListener('click', () => $('dlgSteward').close());
+$('dlgSteward').addEventListener('close', () => { clearInterval(st.timer); stewardBadge(); });
+
+$('stNew').addEventListener('click', () => {
+  $('ideaTitle').value = ''; $('ideaBody').value = ''; $('ideaErr').textContent = '';
+  $('dlgIdea').showModal(); $('ideaTitle').focus();
+});
+$('ideaCancel').addEventListener('click', () => $('dlgIdea').close());
+$('ideaOk').addEventListener('click', async () => {
+  try {
+    const id = await window.bus.proposalNew($('ideaTitle').value, $('ideaBody').value);
+    if ($('ideaAsk').checked) await window.bus.proposalNote(id, 'Please refine this idea: check it against the usage digest and the code, then write it up as a full proposal.', true);
+    $('dlgIdea').close();
+    st.sel = id; st.detailKey = '';
+    renderSteward();
+  } catch (e) { $('ideaErr').textContent = errText(e); }
+});
+
 refresh(true);
 refreshStats();
+stewardBadge();
+setInterval(stewardBadge, 15000);
 window.bus.setupStatus().then((items) => { const n = items.filter((i) => !i.ok && !i.na).length; $('setupBadge').textContent = n ? String(n) : ''; }).catch(() => {});
 setInterval(refresh, 2000);
 setInterval(refreshStats, 5000);

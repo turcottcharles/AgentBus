@@ -79,7 +79,12 @@ def db():
       CREATE TABLE IF NOT EXISTS agent_meta(name TEXT PRIMARY KEY, cli TEXT, session_id TEXT, effort TEXT,
         pid TEXT, host TEXT, platform TEXT, remote INTEGER, updated REAL, stats TEXT, addr TEXT);
       CREATE TABLE IF NOT EXISTS files(id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, sender TEXT, recipient TEXT,
-        name TEXT, size INTEGER, sha256 TEXT, path TEXT);""")
+        name TEXT, size INTEGER, sha256 TEXT, path TEXT);
+      CREATE TABLE IF NOT EXISTS events(ts REAL, agent TEXT, kind TEXT, name TEXT, ok INTEGER, ms REAL, detail TEXT);
+      CREATE TABLE IF NOT EXISTS proposals(id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, author TEXT, title TEXT,
+        body TEXT, status TEXT, branch TEXT, updated REAL);
+      CREATE TABLE IF NOT EXISTS proposal_notes(id INTEGER PRIMARY KEY AUTOINCREMENT, proposal_id INTEGER, ts REAL,
+        author TEXT, body TEXT);""")
     return c
 
 
@@ -265,6 +270,93 @@ def t_files(a):
     return "\n".join(f"#{i} {n} ({sz:,} bytes) {s} -> {r}, {ago(ts)}" for i, ts, s, r, n, sz in rows) or "No files."
 
 
+# ---------------------------------------------------------------- improvement proposals (the steward loop)
+# The steward agent studies usage trends and files proposals for improving Agent Bus itself. The owner refines
+# them in the app, approves one, and a builder agent implements it on a git branch for review.
+
+STATUSES = ("proposed", "refining", "approved", "building", "review", "done", "rejected")
+OWNER_ONLY = {"approved", "done", "rejected"}   # agents can't approve or close their own proposals
+DIGEST = os.path.join(os.path.dirname(DB), "steward", "digest.md")
+
+
+def proposal_row(c, pid):
+    row = c.execute("SELECT id,ts,author,title,body,status,branch FROM proposals WHERE id=?", (pid,)).fetchone()
+    if not row:
+        raise ValueError(f"No proposal #{pid}. Use bus_proposals to list them.")
+    return row
+
+
+def tell_owner(c, author, text):
+    if author != "owner":   # the owner reads in the app and need not be registered, so skip deliver()'s check
+        c.execute("INSERT INTO messages(ts,sender,recipient,body) VALUES(?,?,?,?)", (time.time(), author, "owner", text))
+
+
+def t_propose(a):
+    author = need_name(a)
+    title, body = a["title"].strip(), a.get("body", "").strip()
+    if not title:
+        raise ValueError("A proposal needs a title.")
+    now = time.time()
+    with db() as c:
+        pid = c.execute("INSERT INTO proposals(ts,author,title,body,status,branch,updated) VALUES(?,?,?,?,'proposed','',?)",
+                        (now, author, title, body, now)).lastrowid
+        tell_owner(c, author, f"[proposal #{pid}] {title}\n{body[:600]}\nOpen Steward in the Agent Bus app to discuss it.")
+    return f"Filed proposal #{pid}: {title}"
+
+
+def t_proposals(a):
+    q, p = "SELECT id,ts,author,title,status FROM proposals", ()
+    if a.get("status"):
+        q, p = q + " WHERE status=?", (a["status"],)
+    with db() as c:
+        rows = c.execute(q + " ORDER BY id DESC LIMIT ?", p + (int(a.get("limit", 30)),)).fetchall()
+    return "\n".join(f"#{i} [{st}] {t} (by {au}, {ago(ts)})" for i, ts, au, t, st in rows) or "No proposals yet."
+
+
+def t_proposal(a):
+    pid = int(a["proposal_id"])
+    with db() as c:
+        i, ts, au, t, body, st, br = proposal_row(c, pid)
+        notes = c.execute("SELECT ts,author,body FROM proposal_notes WHERE proposal_id=? ORDER BY id", (pid,)).fetchall()
+    out = [f"#{i} [{st}] {t}", f"by {au}, {ago(ts)}" + (f", branch {br}" if br else ""), "", body or "(no description)"]
+    for nts, nau, nb in notes:
+        out += ["", f"--- {nau}, {ago(nts)}:", nb]
+    return "\n".join(out)
+
+
+def t_proposal_note(a):
+    author, pid, body = need_name(a), int(a["proposal_id"]), a["body"].strip()
+    with db() as c:
+        title = proposal_row(c, pid)[3]
+        c.execute("INSERT INTO proposal_notes(proposal_id,ts,author,body) VALUES(?,?,?,?)", (pid, time.time(), author, body))
+        c.execute("UPDATE proposals SET updated=? WHERE id=?", (time.time(), pid))
+        tell_owner(c, author, f"[proposal #{pid}] {author} replied on '{title}':\n{body[:600]}")
+    return f"Added a note to proposal #{pid}."
+
+
+def t_proposal_status(a):
+    author, pid, status = need_name(a), int(a["proposal_id"]), a["status"].strip().lower()
+    if status not in STATUSES:
+        raise ValueError(f"Status must be one of: {', '.join(STATUSES)}.")
+    if status in OWNER_ONLY:   # the app writes these itself; no agent identity, 'owner' included, may set them here
+        raise ValueError(f"Only the owner can set '{status}', from Steward in the Agent Bus app.")
+    with db() as c:
+        proposal_row(c, pid)
+        c.execute("UPDATE proposals SET status=?, updated=? WHERE id=?", (status, time.time(), pid))
+        if a.get("note"):
+            c.execute("INSERT INTO proposal_notes(proposal_id,ts,author,body) VALUES(?,?,?,?)",
+                      (pid, time.time(), author, f"[status -> {status}] {a['note']}"))
+        tell_owner(c, author, f"[proposal #{pid}] is now '{status}'." + (f"\n{a['note']}" if a.get("note") else ""))
+    return f"Proposal #{pid} is now '{status}'."
+
+
+def t_usage_digest(a):
+    if not os.path.exists(DIGEST):
+        return "No usage digest yet. The Agent Bus app writes one while it runs (Steward -> Refresh digest)."
+    with open(DIGEST, encoding="utf-8") as f:
+        return f.read()
+
+
 S = lambda props, req=(): {"type": "object", "properties": props, "required": list(req)}
 STR = {"type": "string"}
 AS = {"as": {"type": "string", "description": "Your registered name, if this session hasn't called bus_register."}}
@@ -287,17 +379,59 @@ TOOLS = {
     "bus_get_file": (t_get_file, "Download a file sent over the bus by its id into dest (default ./bus-files). "
                      "Verifies sha256.", S({"file_id": {"type": "integer"}, "dest": STR, **AS}, ["file_id"])),
     "bus_files": (t_files, "List recent files sent to or by you.", S({"limit": {"type": "integer"}, **AS})),
+    "bus_usage_digest": (t_usage_digest, "Usage trends across all agents on this bus (tool use, errors, delivery delays, "
+                         "token/quota use, app feature use). Input for proposing Agent Bus improvements.", S({})),
+    "bus_propose": (t_propose, "File a proposal to improve Agent Bus itself (title + body: problem, evidence from the usage "
+                    "digest, proposed change, expected benefit). The owner reviews it in the app.",
+                    S({"title": STR, "body": STR, **AS}, ["title", "body"])),
+    "bus_proposals": (t_proposals, "List improvement proposals, optionally by status "
+                      "(proposed, refining, approved, building, review, done, rejected).",
+                      S({"status": STR, "limit": {"type": "integer"}})),
+    "bus_proposal": (t_proposal, "Show one proposal with its whole discussion.",
+                     S({"proposal_id": {"type": "integer"}}, ["proposal_id"])),
+    "bus_proposal_note": (t_proposal_note, "Add to a proposal's discussion (answer the owner, refine the design, report progress).",
+                          S({"proposal_id": {"type": "integer"}, "body": STR, **AS}, ["proposal_id", "body"])),
+    "bus_proposal_status": (t_proposal_status, "Move a proposal along: refining, building, review (builder finished; owner "
+                            "reviews). Only the owner can approve, close or reject.",
+                            S({"proposal_id": {"type": "integer"}, "status": STR, "note": STR, **AS}, ["proposal_id", "status"])),
 }
 LOCAL_ONLY = {"bus_send_file", "bus_get_file"}  # these touch local paths, so they run here and stream over HTTP
 
 
+CLI_MODE = False
+
+
+def log_event(name, args, ok, ms, detail=""):
+    """Usage telemetry for the steward: which tools agents use, how long they take, what fails. Never message text."""
+    try:
+        with db() as c:
+            c.execute("INSERT INTO events(ts,agent,kind,name,ok,ms,detail) VALUES(?,?,?,?,?,?,?)",
+                      (time.time(), args.get("as") or me["name"] or "", "cli" if CLI_MODE else "mcp", name, int(ok), ms,
+                       detail[:300]))
+    except sqlite3.Error:
+        pass
+
+
 def call_tool(name, args):
     if REMOTE_URL and name not in LOCAL_ONLY:
-        text = rpc(name, args)
+        text = rpc(name, args)   # the hub logs remote calls
         if name == "bus_register":
             me["name"] = args["name"].strip()
         return text
-    return TOOLS[name][0](args)
+    t0 = time.time()
+    try:
+        text = TOOLS[name][0](args)
+    except Exception as e:
+        if not REMOTE_URL:
+            log_event(name, args, False, (time.time() - t0) * 1000, str(e))
+        raise
+    if not REMOTE_URL:
+        detail = ""
+        if name == "bus_inbox":
+            n = 0 if text == "No new messages." else text.count("\n\n#") + 1
+            detail = f"delivered={n} waited={int(args.get('wait_seconds', 0) or 0)}"
+        log_event(name, args, True, (time.time() - t0) * 1000, detail)
+    return text
 
 
 # ---------------------------------------------------------------- heartbeat and session stats
@@ -411,13 +545,26 @@ GRAPH = {
         "inbox": ("bus_inbox", [], {"wait": "wait_seconds"}, "Read unread messages [wait SECONDS, up to 300]."),
         "history": ("bus_history", [], {"with": "with", "limit": "limit"}, "Show recent messages [with NAME] [limit N]."),
     },
+    "proposal": {
+        "add": ("bus_propose", ["title*"], {"body": "body*", "from-file": "from_file"},
+                "File an Agent Bus improvement: TITLE... body TEXT... (or from-file PATH for the body)."),
+        "list": ("bus_proposals", [], {"status": "status", "limit": "limit"}, "List proposals [status STATUS] [limit N]."),
+        "show": ("bus_proposal", ["proposal_id"], {}, "Show proposal ID with its discussion."),
+        "note": ("bus_proposal_note", ["proposal_id", "body*"], {"from-file": "from_file"}, "Add TEXT... to proposal ID's discussion."),
+        "status": ("bus_proposal_status", ["proposal_id", "status"], {"note": "note*"},
+                   "Set proposal ID to refining, building or review [note TEXT...]."),
+    },
+    "usage": {
+        "digest": ("bus_usage_digest", [], {}, "Print the usage-trend digest the steward works from."),
+    },
     "file": {
         "send": ("bus_send_file", ["to", "path"], {"note": "note*"}, "Send the file at PATH to an agent or 'all' [note TEXT...]."),
         "get": ("bus_get_file", ["file_id"], {"to": "dest"}, "Download file ID [to DIR] (default ./bus-files); sha256 is checked."),
         "list": ("bus_files", [], {"limit": "limit"}, "List recent files sent to or by you [limit N]."),
     },
 }
-NOUN_HELP = {"agent": "Who is on the bus; join it.", "msg": "Send and read messages.", "file": "Exchange files, across VMs too."}
+NOUN_HELP = {"agent": "Who is on the bus; join it.", "msg": "Send and read messages.", "file": "Exchange files, across VMs too.",
+             "proposal": "Improvement proposals for Agent Bus (the steward loop).", "usage": "Usage trends across all agents."}
 
 
 class CliError(Exception):
@@ -536,15 +683,15 @@ def cli(argv):
             continue
         raise CliError(f"Unexpected word '{w}'.", f"agent-bus {noun} {verb} ?")
     missing = [p.rstrip("*") for p in pos if not args.get(p.rstrip("*"))]
-    if tool == "bus_send" and args.get("from_file"):
+    if args.get("from_file"):
         with open(os.path.expanduser(args.pop("from_file")), encoding="utf-8") as f:
             args["body"] = f.read()
         missing = [m for m in missing if m != "body"]
-    if tool == "bus_send" and args.get("body") == "-":
+    if args.get("body") == "-":
         args["body"] = sys.stdin.read()
     if missing:
         raise CliError(f"Missing {', '.join(m.upper() for m in missing)}.", f"agent-bus {noun} {verb} ?")
-    for k in ("wait_seconds", "limit", "file_id"):
+    for k in ("wait_seconds", "limit", "file_id", "proposal_id"):
         if k in args:
             try:
                 args[k] = int(args[k])
@@ -555,7 +702,7 @@ def cli(argv):
         if not name:
             raise CliError("Not registered yet from this session or folder.", "agent-bus agent register YOUR-NAME note what you do")
         return name
-    if tool != "bus_register" and tool != "bus_list":
+    if tool not in ("bus_register", "bus_list", "bus_proposals", "bus_proposal", "bus_usage_digest"):
         args["as"] = identity(who)
         if not args["as"]:
             raise CliError("Not registered yet from this session or folder.", "agent-bus agent register YOUR-NAME note what you do")
@@ -570,6 +717,8 @@ def cli(argv):
 
 
 def cli_main(argv):
+    global CLI_MODE
+    CLI_MODE = True
     for s in (sys.stdout, sys.stderr):
         s.reconfigure(encoding="utf-8", errors="replace")
     try:

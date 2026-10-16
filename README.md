@@ -29,7 +29,8 @@ Open **Agent Bus** from the Start menu or the desktop. On a new computer:
 
 ## MCP tools
 
-`bus_register`, `bus_list`, `bus_send`, `bus_inbox`, `bus_history`, `bus_send_file`, `bus_get_file`, `bus_files`.
+`bus_register`, `bus_list`, `bus_send`, `bus_inbox`, `bus_history`, `bus_send_file`, `bus_get_file`, `bus_files`, plus the
+steward set: `bus_usage_digest`, `bus_propose`, `bus_proposals`, `bus_proposal`, `bus_proposal_note`, `bus_proposal_status`.
 
 ## CLI (command-plane/1)
 
@@ -44,6 +45,11 @@ agent-bus msg send all from-file notes.md     agent-bus msg inbox wait 120
 agent-bus msg history with sonnet-18 limit 10
 agent-bus file send mac-codex build.zip note universal binary to test
 agent-bus file get 12 to ./incoming           agent-bus file list
+agent-bus proposal add Push wakeups body Agents poll empty inboxes...
+agent-bus proposal list                       agent-bus proposal show 3
+agent-bus proposal note 3 measured 40% empty polls
+agent-bus proposal status 3 review note done on proposal/3
+agent-bus usage digest
 ```
 
 The sender's identity comes from the first of these that is set:
@@ -56,6 +62,16 @@ The sender's identity comes from the first of these that is set:
 - **Online status:** each running MCP server sends a heartbeat every 30 s. A session goes grey about 2 minutes after it exits. CLI-only agents count as online for 2 minutes after each command.
 - **Launching:** ▶ opens the session's CLI in a Windows Terminal tab (or Terminal on macOS) with its bus name already set. A session with no known id opens the CLI's own resume picker instead of guessing. A Codex Desktop thread can be resumed in the CLI once the desktop app has let go of it, since only one client can write to a thread.
 - **Stats:** come from each CLI's own transcripts (`~/.claude/projects`, `~/.codex/sessions`) and the status line. "Quota used while active" adds up the quota rises a session saw. If other sessions on the same account ran at the same time, their use is included too.
+
+## Steward (self-improvement loop)
+
+**Steward** in the app runs an optional agent whose only job is improving Agent Bus from how it's used.
+
+1. **Telemetry.** Every MCP, CLI and hub tool call is logged to `events` with its name, timing and any error; message text is never logged. The app also logs which of its own features the owner uses, and an hourly snapshot of token and quota totals.
+2. **Digest.** Each hour the app writes `steward/digest.md` from that data. It covers message volume, unread backlogs, empty inbox polls, tool errors, feature use, quota trend and existing proposals. Building it is plain SQL and uses no quota. Message text is included only when you tick *Include message text*.
+3. **Steward runs.** The steward runs headless in Claude Code (`claude -p`, limited to the bus tools plus Read, Glob and Grep) or in Codex (`codex exec -s read-only`). It reads the digest and files proposals. It runs on its cadence only when *Scheduled reviews* is on, when you press *Review now*, or when you answer a proposal with *Send & ask steward*. These runs are the only part that uses quota. Each run's log goes to `steward/runs/`.
+4. **Refine, approve, build.** You discuss a proposal in its thread, then approve or reject it; agents can't approve or close proposals, only you can. **Build** creates a git worktree `../agent-bus-wt/proposal-N` on branch `proposal/N` and opens a builder session there. When the builder finishes, it sets the proposal to *review*.
+5. **Review.** *Show diff*, then *Merge & restart* (merges with `--no-ff` and relaunches the app on the new code) or *Discard branch*.
 
 ## Limits
 

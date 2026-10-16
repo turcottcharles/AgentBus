@@ -11,6 +11,11 @@ module.exports = `
     pid TEXT, host TEXT, platform TEXT, remote INTEGER, updated REAL, stats TEXT, addr TEXT);
   CREATE TABLE IF NOT EXISTS files(id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, sender TEXT, recipient TEXT,
     name TEXT, size INTEGER, sha256 TEXT, path TEXT);
+  CREATE TABLE IF NOT EXISTS events(ts REAL, agent TEXT, kind TEXT, name TEXT, ok INTEGER, ms REAL, detail TEXT);
+  CREATE TABLE IF NOT EXISTS proposals(id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, author TEXT, title TEXT,
+    body TEXT, status TEXT, branch TEXT, updated REAL);
+  CREATE TABLE IF NOT EXISTS proposal_notes(id INTEGER PRIMARY KEY AUTOINCREMENT, proposal_id INTEGER, ts REAL,
+    author TEXT, body TEXT);
   CREATE TABLE IF NOT EXISTS claude_status(session_id TEXT PRIMARY KEY, ts REAL, effort TEXT, pid TEXT, json TEXT);
   CREATE TABLE IF NOT EXISTS quota_history(account TEXT, ts REAL, session_id TEXT, five REAL, seven REAL);
   -- App-only tables; the Python side never reads them.

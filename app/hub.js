@@ -6,6 +6,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const { Proposals } = require('./proposals');
 
 const MAX_FILE = 200 * 1024 * 1024;
 const PORT_DEFAULT = 47800;
@@ -13,6 +14,8 @@ const PORT_DEFAULT = 47800;
 class Hub {
   constructor({ db, root, configPath, onChange }) {
     this.db = db; this.root = root; this.configPath = configPath; this.onChange = onChange || (() => {});
+    this.proposals = new Proposals(db, (t) => this.ago(t));
+    this.digestPath = path.join(path.dirname(configPath), 'steward', 'digest.md');
     this.filesDir = path.join(root, 'files');
     this.servers = []; this.errors = [];
     this.config = this.loadConfig();
@@ -97,7 +100,11 @@ class Hub {
 
     if (p === '/rpc' && req.method === 'POST') {
       const { tool, args = {}, as, meta = {} } = JSON.parse((await this.readBody(req, 4 << 20)).toString('utf8'));
-      const text = await this.tool(tool, { ...args, as: args.as || as }, meta, peer);
+      const a = { ...args, as: args.as || as }, t0 = Date.now();
+      let text;
+      try { text = await this.tool(tool, a, meta, peer); } catch (e) { this.logEvent(a.as, tool, false, Date.now() - t0, e.message); throw e; }
+      this.logEvent(a.as, tool, true, Date.now() - t0, tool === 'bus_inbox'
+        ? `delivered=${text === 'No new messages.' ? 0 : text.split('\n\n#').length} waited=${Number(a.wait_seconds) || 0}` : '');
       this.onChange();
       return this.json(res, { text });
     }
@@ -138,6 +145,10 @@ class Hub {
       stats=COALESCE(excluded.stats,agent_meta.stats), addr=excluded.addr`)
       .run(name, meta.cli || '', meta.session_id || '', meta.effort || '', meta.pid || '', meta.host || '',
         meta.platform || '', this.now(), stats, addr);
+  }
+  // Usage telemetry for the steward, same shape as agent_bus_mcp.py's log_event: never message text.
+  logEvent(agent, name, ok, ms, detail) {
+    try { this.db.prepare("INSERT INTO events(ts,agent,kind,name,ok,ms,detail) VALUES(?,?,'hub',?,?,?,?)").run(this.now(), agent || '', String(name), ok ? 1 : 0, ms, String(detail || '').slice(0, 300)); } catch {}
   }
   need(a) { if (!a.as) throw new Error("Not registered. Call bus_register first (or pass 'as')."); return a.as; }
   exists(name) { return !!this.db.prepare('SELECT 1 FROM agents WHERE name=?').get(name); }
@@ -222,6 +233,19 @@ class Hub {
           .all(name, name, Number(a.limit) || 20);
         return rows.map((r) => `#${r.id} ${r.name} (${r.size.toLocaleString('en-US')} bytes) ${r.sender} -> ${r.recipient}, ${this.ago(r.ts)}`).join('\n') || 'No files.';
       }
+      case 'bus_usage_digest':
+        return fs.existsSync(this.digestPath) ? fs.readFileSync(this.digestPath, 'utf8')
+          : 'No usage digest yet. The Agent Bus app writes one while it runs (Steward -> Refresh digest).';
+      case 'bus_propose': {
+        const author = this.need(a), id = this.proposals.propose(author, a.title, a.body);
+        return `Filed proposal #${id}: ${String(a.title).trim()}`;
+      }
+      case 'bus_proposals': return this.proposals.listText(a.status, a.limit);
+      case 'bus_proposal': return this.proposals.showText(a.proposal_id);
+      case 'bus_proposal_note': this.proposals.note(this.need(a), a.proposal_id, a.body); return `Added a note to proposal #${a.proposal_id}.`;
+      case 'bus_proposal_status':
+        this.proposals.setStatus(this.need(a), a.proposal_id, a.status, a.note);
+        return `Proposal #${a.proposal_id} is now '${String(a.status).trim().toLowerCase()}'.`;
       default: throw new Error(`Unknown tool ${tool}`);
     }
   }

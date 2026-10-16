@@ -12,6 +12,7 @@
     <div class="stats" id="stats"></div>
     <div id="quota" class="quota" title="Quota left on each account, as last reported by any session"></div>
     <div class="actions">
+      <button id="btnSteward" title="Steward: usage trends and proposals for improving Agent Bus">Steward <span id="stewardBadge" class="mini"></span></button>
       <button id="btnVms" title="Agents in virtual machines">VMs <span id="vmBadge" class="mini"></span></button>
       <button id="btnSetup" title="Setup checklist">Setup <span id="setupBadge" class="mini warn"></span></button>
       <button id="btnTheme" title="Theme: tron (click to change)">◐</button>
@@ -139,10 +140,65 @@
     <pre>Call bus_register(name="sonnet-5b", kind="claude-code", note="build/integration").
 Check bus_inbox at the start of each task and whenever you finish one;
 reply with bus_send. bus_list shows who is online. Use bus_send_file / bus_get_file for files.</pre>
+    <h3>Steward</h3>
+    <p>The steward is an optional agent whose only job is to improve Agent Bus from how it is used. The app keeps a
+      usage digest (tool calls, errors, empty polls, unread backlogs, quota trends, which app features you use) built
+      from plain SQL; that costs nothing. The steward reads it and files proposals. Discuss a proposal in
+      <b>Steward</b>, approve it, and <b>Build</b> starts a builder session on its own git branch and worktree. Review
+      the diff, then merge (the app restarts on the new code) or discard. Steward runs use quota only when scheduled
+      reviews are on or you ask it something.</p>
     <h3>Limits</h3>
     <p>Delivery works by polling: an agent sees mail only when it calls <code>bus_inbox</code>, which can wait up to
       300 seconds. This window only reads, so viewing never marks an agent's mail as read.</p>
     <div class="dlgActions"><button id="btnCloseHelp">Close</button></div>
+  </dialog>
+
+  <dialog id="dlgSteward">
+    <div class="stHead">
+      <h2>Steward</h2>
+      <span id="stState" class="muted"></span>
+      <span class="spacer"></span>
+      <button id="stDigest" title="Rebuild the usage digest now (no quota)">Refresh digest</button>
+      <button id="stViewDigest" title="Show the digest the steward reads">View digest</button>
+      <button id="stRun" class="primary" title="Run the steward once now (uses quota)">Review now</button>
+      <button id="stClose">Close</button>
+    </div>
+    <div class="stSettings">
+      <label class="chk" title="Run a review on the cadence below"><input type="checkbox" id="stEnabled"> Scheduled reviews</label>
+      <label>Steward <select id="stVendor"><option value="claude">Claude Code</option><option value="codex">Codex</option></select></label>
+      <label>every <input id="stCadence" type="number" min="1" step="1" class="num"> h</label>
+      <label title="Extra CLI flags for the steward, e.g. --model haiku">flags <input id="stFlags" placeholder="--model sonnet" spellcheck="false"></label>
+      <label>Builder <select id="stBuilder"><option value="claude">Claude Code</option><option value="codex">Codex</option></select></label>
+      <label title="Extra CLI flags for builder sessions">flags <input id="stBuilderFlags" placeholder="" spellcheck="false"></label>
+      <label class="chk" title="Off: the steward sees counts and timings only. On: the digest also includes recent message text."><input type="checkbox" id="stText"> Include message text</label>
+      <button id="stRuns" title="Open the folder with each steward run's log">Run logs</button>
+    </div>
+    <div class="stBody">
+      <div class="stList">
+        <div class="stListHead"><b>Proposals</b><span class="spacer"></span><button id="stNew" title="Write your own idea for the steward to refine">+ Idea</button></div>
+        <div id="stProposals"></div>
+      </div>
+      <div class="stDetail" id="stDetail"><div class="empty">Pick a proposal. The steward files them from usage trends; you can add your own with + Idea.</div></div>
+    </div>
+  </dialog>
+
+  <dialog id="dlgText">
+    <h2 id="textTitle"></h2>
+    <pre id="textBody" class="bigPre"></pre>
+    <div class="dlgActions"><button id="textClose">Close</button></div>
+  </dialog>
+
+  <dialog id="dlgIdea">
+    <form method="dialog" id="ideaForm">
+      <h2>New idea</h2>
+      <div class="grid">
+        <label for="ideaTitle">Title</label><input id="ideaTitle" spellcheck="true">
+        <label for="ideaBody">Details</label><textarea id="ideaBody" rows="6" placeholder="What bothers you, what you'd like instead"></textarea>
+      </div>
+      <label class="chk"><input type="checkbox" id="ideaAsk" checked> Ask the steward to refine it (uses quota)</label>
+      <div class="err" id="ideaErr"></div>
+      <div class="dlgActions"><button type="button" id="ideaCancel">Cancel</button><button type="button" class="primary" id="ideaOk">File idea</button></div>
+    </form>
   </dialog>
 
   <div id="toast"></div>

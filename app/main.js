@@ -13,14 +13,33 @@ const { Hub, MAX_FILE } = require('./hub');
 const { discover } = require('./net');
 const { Stats } = require('./stats');
 const { Setup } = require('./setup');
+const { Proposals } = require('./proposals');
+const { Steward } = require('./steward');
 
 const ROOT = path.join(__dirname, '..');
 const DB_PATH = process.env.AGENT_BUS_DB || path.join(ROOT, 'bus.sqlite');
 const OWNER = 'owner';
-let db, win, hub, stats, setup, lastSeenId = 0, net = { adapters: [], vmAdapters: [], listenOn: [], guests: [] };
+let db, win, hub, stats, setup, proposals, steward, lastSeenId = 0, net = { adapters: [], vmAdapters: [], listenOn: [], guests: [] };
 
 const now = () => Date.now() / 1000;
 const isWin = process.platform === 'win32';
+
+// Every IPC handler goes through here so the steward can see which app features the owner uses (and which
+// fail). Polling channels are left out; only the channel name, timing and any error are kept.
+const QUIET = new Set(['bus:snapshot', 'bus:stats', 'net:info', 'setup:status', 'steward:state', 'proposal:list', 'proposal:get', 'profile:preview']);
+function handle(channel, fn) {
+  ipcMain.handle(channel, async (...args) => {
+    const t0 = Date.now();
+    try {
+      const r = await fn(...args);
+      if (!QUIET.has(channel)) steward?.event('ui', channel, true, Date.now() - t0);
+      return r;
+    } catch (e) {
+      steward?.event('ui', channel, false, Date.now() - t0, e.message);
+      throw e;
+    }
+  });
+}
 
 function openDb() {
   db = new DatabaseSync(DB_PATH);
@@ -52,7 +71,7 @@ function sessionList() {
   return out;
 }
 
-ipcMain.handle('bus:snapshot', (_e, limit = 2000) => {
+handle('bus:snapshot', (_e, limit = 2000) => {
   db.prepare('UPDATE agents SET last_seen=? WHERE name=?').run(now(), OWNER);
   const agents = db.prepare(`SELECT a.name, a.kind, a.note, a.cwd, a.last_seen, m.remote, m.host, m.platform, m.addr, m.session_id, m.effort,
       (SELECT COUNT(*) FROM messages x WHERE (x.recipient=a.name OR (x.recipient='all' AND x.sender<>a.name))
@@ -75,9 +94,9 @@ ipcMain.handle('bus:snapshot', (_e, limit = 2000) => {
   };
 });
 
-ipcMain.handle('bus:stats', () => stats.collect(sessionList()));
+handle('bus:stats', () => stats.collect(sessionList()));
 
-ipcMain.handle('bus:send', (_e, { to, body }) => {
+handle('bus:send', (_e, { to, body }) => {
   body = String(body || '').trim();
   if (!body) throw new Error('Message is empty');
   if (to !== 'all' && !db.prepare('SELECT 1 FROM agents WHERE name=?').get(to)) throw new Error(`Unknown agent ${to}`);
@@ -86,25 +105,25 @@ ipcMain.handle('bus:send', (_e, { to, body }) => {
 });
 
 // Forgetting removes the bus registration only; a saved launch profile (and its project) is kept.
-ipcMain.handle('bus:forget', (_e, name) => {
+handle('bus:forget', (_e, name) => {
   if (name === OWNER) return false;
   db.prepare('DELETE FROM agents WHERE name=?').run(name);
   db.prepare('DELETE FROM agent_meta WHERE name=?').run(name);
   return true;
 });
 
-ipcMain.handle('bus:openFolder', () => shell.openPath(ROOT));
+handle('bus:openFolder', () => shell.openPath(ROOT));
 
 // ---------------------------------------------------------------- files
 
-ipcMain.handle('file:send', async (e, to) => {
+handle('file:send', async (e, to) => {
   const r = await dialog.showOpenDialog(BrowserWindow.fromWebContents(e.sender), { title: `Send a file to ${to}`, properties: ['openFile'] });
   if (r.canceled) return null;
   const file = r.filePaths[0];
   if (fs.statSync(file).size > MAX_FILE) throw new Error('Files are limited to 200 MB; zip or split it first');
   return hub.storeFile(OWNER, to, path.basename(file), fs.readFileSync(file), '');
 });
-ipcMain.handle('file:save', async (e, id) => {
+handle('file:save', async (e, id) => {
   const row = db.prepare('SELECT name, path FROM files WHERE id=?').get(id);
   if (!row || !fs.existsSync(row.path)) throw new Error(`File #${id} is no longer in the store`);
   const r = await dialog.showSaveDialog(BrowserWindow.fromWebContents(e.sender), { defaultPath: row.name });
@@ -112,7 +131,7 @@ ipcMain.handle('file:save', async (e, id) => {
   fs.copyFileSync(row.path, r.filePath);
   return r.filePath;
 });
-ipcMain.handle('file:reveal', (_e, id) => {
+handle('file:reveal', (_e, id) => {
   const row = db.prepare('SELECT path FROM files WHERE id=?').get(id);
   if (row && fs.existsSync(row.path)) shell.showItemInFolder(row.path);
 });
@@ -121,7 +140,7 @@ ipcMain.handle('file:reveal', (_e, id) => {
 
 const PROFILE_FIELDS = ['project', 'cli', 'cwd', 'mode', 'session', 'extra', 'prompt'];
 
-ipcMain.handle('profile:save', (_e, p) => {
+handle('profile:save', (_e, p) => {
   const name = String(p.name || '').trim();
   if (!name || name === OWNER || name === 'all') throw new Error('Pick a session name other than "owner" or "all"');
   if (!['claude', 'codex'].includes(p.cli)) throw new Error('CLI must be claude or codex');
@@ -134,7 +153,7 @@ ipcMain.handle('profile:save', (_e, p) => {
   return name;
 });
 
-ipcMain.handle('profile:delete', (_e, name) => { db.prepare('DELETE FROM profiles WHERE name=?').run(name); return true; });
+handle('profile:delete', (_e, name) => { db.prepare('DELETE FROM profiles WHERE name=?').run(name); return true; });
 
 function ensureProfile(name) {
   if (db.prepare('SELECT 1 FROM profiles WHERE name=?').get(name)) return;
@@ -144,23 +163,23 @@ function ensureProfile(name) {
     .run(name, cli, a.cwd || null, a.session_id ? 'session' : 'pick', a.session_id || null);
 }
 
-ipcMain.handle('project:assign', (_e, { name, project }) => {
+handle('project:assign', (_e, { name, project }) => {
   ensureProfile(name);
   if (project) db.prepare('INSERT OR IGNORE INTO projects(name) VALUES(?)').run(project);
   db.prepare('UPDATE profiles SET project=? WHERE name=?').run(project || null, name);
   return true;
 });
-ipcMain.handle('project:collapse', (_e, { project, collapsed }) => {
+handle('project:collapse', (_e, { project, collapsed }) => {
   db.prepare('UPDATE projects SET collapsed=? WHERE name=?').run(collapsed ? 1 : 0, project);
 });
-ipcMain.handle('project:rename', (_e, { from, to }) => {
+handle('project:rename', (_e, { from, to }) => {
   to = String(to || '').trim();
   if (!to) throw new Error('Project name is empty');
   db.prepare('INSERT OR IGNORE INTO projects(name) VALUES(?)').run(to);
   db.prepare('UPDATE profiles SET project=? WHERE project=?').run(to, from);
   db.prepare('DELETE FROM projects WHERE name=?').run(from);
 });
-ipcMain.handle('project:delete', (_e, project) => {
+handle('project:delete', (_e, project) => {
   db.prepare('UPDATE profiles SET project=NULL WHERE project=?').run(project);
   db.prepare('DELETE FROM projects WHERE name=?').run(project);
 });
@@ -173,7 +192,7 @@ function popup(e, tmpl) {
     Menu.buildFromTemplate(wire(tmpl)).popup({ window: BrowserWindow.fromWebContents(e.sender), callback: () => setImmediate(() => resolve(picked)) });
   });
 }
-ipcMain.handle('menu:session', (e, { name, online, hasProfile, remote }) => {
+handle('menu:session', (e, { name, online, hasProfile, remote }) => {
   const projects = db.prepare('SELECT name FROM projects ORDER BY name COLLATE NOCASE').all().map((r) => r.name);
   const current = db.prepare('SELECT project FROM profiles WHERE name=?').get(name)?.project || null;
   return popup(e, [
@@ -195,7 +214,7 @@ ipcMain.handle('menu:session', (e, { name, online, hasProfile, remote }) => {
     { label: 'Delete launch profile', enabled: hasProfile, pick: { action: 'deleteProfile' } },
   ]);
 });
-ipcMain.handle('menu:project', (e) => popup(e, [
+handle('menu:project', (e) => popup(e, [
   { label: 'Launch all offline sessions', pick: { action: 'launchAll' } },
   { label: 'Message the whole project', pick: { action: 'message' } },
   { type: 'separator' },
@@ -231,7 +250,7 @@ const cmdQuote = (s) => /^[\w@+=:,./\\-]+$/.test(s) ? s : `"${String(s).replace(
 const shQuote = (s) => /^[\w@+=:,./-]+$/.test(s) ? s : `'${String(s).replace(/'/g, `'\\''`)}'`;
 const commandLine = (p) => (isWin ? cliArgs(p).map(cmdQuote) : cliArgs(p).map(shQuote)).join(' ');
 
-ipcMain.handle('profile:preview', (_e, p) => commandLine(p));
+handle('profile:preview', (_e, p) => commandLine(p));
 
 function launchSession(name) {
   ensureProfile(name);
@@ -273,9 +292,9 @@ function launchSession(name) {
   db.prepare('UPDATE profiles SET last_launch=? WHERE name=?').run(now(), name);
   return line;
 }
-ipcMain.handle('session:launch', (_e, name) => launchSession(name));
+handle('session:launch', (_e, name) => launchSession(name));
 
-ipcMain.handle('dialog:pickFolder', async (e, start) => {
+handle('dialog:pickFolder', async (e, start) => {
   const r = await dialog.showOpenDialog(BrowserWindow.fromWebContents(e.sender), { properties: ['openDirectory'], defaultPath: start || undefined });
   return r.canceled ? null : r.filePaths[0];
 });
@@ -288,7 +307,7 @@ async function refreshNetwork(force = false) {
   if (force || prev !== net.listenOn.join(',') || hub.listening().length === 0) await hub.listen(net.listenOn);
 }
 
-ipcMain.handle('net:info', async () => {
+handle('net:info', async () => {
   await refreshNetwork();
   const listening = hub.listening();
   const urls = listening.filter((a) => a !== '127.0.0.1').map((a) => {
@@ -300,7 +319,7 @@ ipcMain.handle('net:info', async () => {
   return { port: hub.config.port, token: hub.config.token, lan: hub.config.lan, enabled: hub.config.enabled, urls, errors: hub.errors,
     vmAdapters: net.vmAdapters, guests: net.guests, remote, now: now() };
 });
-ipcMain.handle('net:set', async (_e, patch) => {
+handle('net:set', async (_e, patch) => {
   const p = {};
   if ('lan' in patch) p.lan = !!patch.lan;
   if ('enabled' in patch) p.enabled = !!patch.enabled;
@@ -310,10 +329,51 @@ ipcMain.handle('net:set', async (_e, patch) => {
   await refreshNetwork(true);
   return true;
 });
-ipcMain.handle('clipboard:write', (_e, text) => clipboard.writeText(String(text)));
+handle('clipboard:write', (_e, text) => clipboard.writeText(String(text)));
 
-ipcMain.handle('setup:status', () => setup.status());
-ipcMain.handle('setup:fix', (_e, id) => setup.fix(id));
+handle('setup:status', () => setup.status());
+handle('setup:fix', (_e, id) => setup.fix(id));
+
+// ---------------------------------------------------------------- steward and improvement proposals
+
+handle('steward:state', () => steward.state());
+handle('steward:config', (_e, patch) => {
+  const allowed = ['enabled', 'vendor', 'flags', 'cadenceHours', 'includeText', 'builder', 'builderFlags'];
+  return steward.saveConfig(Object.fromEntries(Object.entries(patch || {}).filter(([k]) => allowed.includes(k))));
+});
+handle('steward:digest', () => steward.digest());
+handle('steward:run', () => steward.run('on-demand'));
+handle('steward:openRuns', () => shell.openPath(steward.runsDir));
+handle('proposal:list', () => proposals.list(null, 200).map((p) => ({ ...p,
+  notes: db.prepare('SELECT COUNT(*) AS n FROM proposal_notes WHERE proposal_id=?').get(p.id).n })));
+handle('proposal:get', (_e, id) => ({ ...proposals.row(id), notes: proposals.notes(id) }));
+handle('proposal:new', (_e, { title, body }) => proposals.propose(OWNER, title, body));
+handle('proposal:note', (_e, { id, body, ask }) => {
+  proposals.note(OWNER, id, body);
+  const p = proposals.row(id);
+  if (ask) {
+    if (p.status === 'proposed') proposals.setStatus(OWNER, id, 'refining', null, { owner: true });
+    steward.run('owner reply', p.id);
+  }
+  return true;
+});
+handle('proposal:status', (_e, { id, status, note }) => { proposals.setStatus(OWNER, id, status, note, { owner: true }); return true; });
+handle('proposal:build', (_e, { id, vendor }) => steward.build(id, vendor || steward.config.builder));
+handle('proposal:diff', (_e, id) => steward.diff(id));
+handle('proposal:discard', (_e, id) => { steward.discard(id); return true; });
+handle('proposal:merge', (_e, id) => {
+  steward.merge(id);
+  setTimeout(() => { app.relaunch(); app.exit(0); }, 800);   // restart on the merged code
+  return true;
+});
+
+function launchBuilder({ name, cli, cwd, prompt, extra }) {
+  db.prepare('INSERT OR IGNORE INTO projects(name) VALUES(?)').run('Agent Bus builds');
+  db.prepare(`INSERT INTO profiles(name,project,cli,cwd,mode,session,extra,prompt) VALUES(?,?,?,?,'new',NULL,?,?)
+    ON CONFLICT(name) DO UPDATE SET cli=excluded.cli, cwd=excluded.cwd, mode='new', extra=excluded.extra, prompt=excluded.prompt`)
+    .run(name, 'Agent Bus builds', cli, cwd, extra || null, prompt);
+  return launchSession(name);
+}
 
 // ---------------------------------------------------------------- notifications and window
 
@@ -351,10 +411,21 @@ else {
     hub = new Hub({ db, root: ROOT, configPath: path.join(path.dirname(DB_PATH), 'hub.json') });
     stats = new Stats(db);
     setup = new Setup(ROOT, hub);
+    proposals = new Proposals(db, (t) => hub.ago(t));
+    steward = new Steward({ db, root: ROOT, dataDir: path.dirname(DB_PATH), proposals, launchBuilder });
     createWindow();
     await refreshNetwork(true).catch(() => {});
     setInterval(pollForOwnerMail, 3000);
     setInterval(() => refreshNetwork().catch(() => {}), 30000);  // VMs that start later get picked up
+    // The digest and stats snapshots are plain SQL and cost no quota; the steward itself only runs when enabled
+    // (on its cadence) or when the owner asks it something.
+    const hourly = async () => {
+      try { steward.snapshotStats(await stats.collect(sessionList())); } catch {}
+      try { steward.digest(); } catch {}
+    };
+    setTimeout(hourly, 60000);
+    setInterval(hourly, 3600000);
+    setInterval(() => steward.tick(), 600000);
   });
   app.on('window-all-closed', () => app.quit());
   app.on('before-quit', () => { hub?.close(); });
