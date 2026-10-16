@@ -1,0 +1,589 @@
+"""agent-bus: a small shared message bus for Claude Code and Codex agents.
+
+It is a stdio MCP server that uses only the Python standard library. Every client (each Claude Code
+or Codex session) starts its own copy.
+
+Local mode (default): all copies on one machine share one SQLite file next to this script. No
+daemon is needed.
+Remote mode: used inside a VM or on another machine. It is enabled when AGENT_BUS_URL is set, or
+when ~/.agent-bus/config.json contains {"url": ..., "token": ...}. Every tool call then goes over
+HTTP to the hub that the Agent Bus app runs on the host. The tools behave the same either way.
+
+Agents register a name, list one another, send messages and files, and read their inbox. Delivery
+works by polling: an agent calls bus_inbox (optionally waiting) to receive.
+"""
+import glob, hashlib, json, os, socket, sqlite3, sys, threading, time
+import urllib.error, urllib.parse, urllib.request
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+DB = os.environ.get("AGENT_BUS_DB", os.path.join(HERE, "bus.sqlite"))
+FILES = os.path.join(os.path.dirname(DB), "files")
+MAX_FILE = 200 * 1024 * 1024
+
+
+def load_remote():
+    url, token = os.environ.get("AGENT_BUS_URL"), os.environ.get("AGENT_BUS_TOKEN")
+    cfg = os.path.join(os.path.expanduser("~"), ".agent-bus", "config.json")
+    if not url and os.path.exists(cfg):
+        with open(cfg, encoding="utf-8") as f:
+            c = json.load(f)
+        url, token = c.get("url"), token or c.get("token")
+    return (url.rstrip("/"), token) if url else (None, None)
+
+
+REMOTE_URL, REMOTE_TOKEN = load_remote()
+me = {"name": os.environ.get("AGENT_BUS_NAME")}
+
+
+def session_meta():
+    """What this session's environment tells us about it, for the Agent Bus app's stats view."""
+    e = os.environ
+    cli = "claude" if e.get("CLAUDECODE") else "codex" if any(k.startswith("CODEX_") for k in e) else ""
+    return {"cli": cli, "session_id": e.get("CLAUDE_CODE_SESSION_ID") or e.get("CODEX_THREAD_ID") or e.get("CODEX_SESSION_ID") or "",
+            "effort": e.get("CLAUDE_EFFORT", ""), "pid": e.get("CLAUDE_PID", ""), "host": socket.gethostname(),
+            "platform": sys.platform, "cwd": os.getcwd()}
+
+
+# ---------------------------------------------------------------- remote transport
+
+def http(path, payload=None, raw=None, headers=None, timeout=330):
+    h = {"Authorization": f"Bearer {REMOTE_TOKEN}", **(headers or {})}
+    data = raw if raw is not None else (json.dumps(payload).encode() if payload is not None else None)
+    if payload is not None:
+        h["Content-Type"] = "application/json"
+    req = urllib.request.Request(REMOTE_URL + path, data=data, headers=h, method="POST" if data is not None else "GET")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.read(), r.headers
+    except urllib.error.HTTPError as e:
+        raise ValueError(e.read().decode("utf-8", "replace") or str(e))
+    except urllib.error.URLError as e:
+        raise ValueError(f"Agent Bus hub at {REMOTE_URL} is unreachable ({e.reason}). Is the Agent Bus app running on the host?")
+
+
+def rpc(tool, args):
+    body, _ = http("/rpc", {"tool": tool, "args": args, "as": args.get("as") or me["name"], "meta": session_meta()})
+    return json.loads(body)["text"]
+
+
+# ---------------------------------------------------------------- local implementation
+
+def db():
+    c = sqlite3.connect(DB, timeout=10)
+    c.execute("PRAGMA journal_mode=WAL")
+    c.executescript("""
+      CREATE TABLE IF NOT EXISTS agents(name TEXT PRIMARY KEY, kind TEXT, note TEXT, cwd TEXT, last_seen REAL);
+      CREATE TABLE IF NOT EXISTS messages(id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, sender TEXT,
+        recipient TEXT, body TEXT);
+      CREATE TABLE IF NOT EXISTS reads(agent TEXT, msg_id INTEGER, PRIMARY KEY(agent, msg_id));
+      CREATE TABLE IF NOT EXISTS agent_meta(name TEXT PRIMARY KEY, cli TEXT, session_id TEXT, effort TEXT,
+        pid TEXT, host TEXT, platform TEXT, remote INTEGER, updated REAL, stats TEXT, addr TEXT);
+      CREATE TABLE IF NOT EXISTS files(id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, sender TEXT, recipient TEXT,
+        name TEXT, size INTEGER, sha256 TEXT, path TEXT);""")
+    return c
+
+
+def touch(c, name=None):
+    name = name or me["name"]
+    if name:
+        c.execute("UPDATE agents SET last_seen=? WHERE name=?", (time.time(), name))
+
+
+def save_meta(c, name, meta, remote=0):
+    c.execute("INSERT INTO agent_meta(name,cli,session_id,effort,pid,host,platform,remote,updated) "
+              "VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(name) DO UPDATE SET cli=excluded.cli, "
+              "session_id=COALESCE(NULLIF(excluded.session_id,''),agent_meta.session_id), effort=excluded.effort, "
+              "pid=excluded.pid, host=excluded.host, platform=excluded.platform, remote=excluded.remote, "
+              "updated=excluded.updated",
+              (name, meta.get("cli", ""), meta.get("session_id", ""), meta.get("effort", ""), meta.get("pid", ""),
+               meta.get("host", ""), meta.get("platform", ""), remote, time.time()))
+
+
+def ago(t):
+    s = int(time.time() - (t or 0))
+    return f"{s}s ago" if s < 120 else f"{s // 60}m ago" if s < 7200 else f"{s // 3600}h ago"
+
+
+def need_name(args):
+    name = args.get("as") or me["name"]
+    if not name:
+        raise ValueError("Not registered. Call bus_register first (or pass 'as').")
+    return name
+
+
+def t_register(a):
+    name = a["name"].strip()
+    if name in ("all", "owner") or not name:
+        raise ValueError("Pick a name other than 'all' or 'owner'.")
+    meta = session_meta()
+    with db() as c:
+        c.execute("INSERT INTO agents(name,kind,note,cwd,last_seen) VALUES(?,?,?,?,?) "
+                  "ON CONFLICT(name) DO UPDATE SET kind=excluded.kind, note=excluded.note, cwd=excluded.cwd, "
+                  "last_seen=excluded.last_seen",
+                  (name, a.get("kind", ""), a.get("note", ""), meta["cwd"], time.time()))
+        save_meta(c, name, meta)
+    me["name"] = name
+    return f"Registered as '{name}'. Others reach you with bus_send(to='{name}')."
+
+
+def t_list(a):
+    with db() as c:
+        touch(c, a.get("as"))
+        rows = c.execute("SELECT a.name,a.kind,a.note,a.cwd,a.last_seen,m.host,m.remote FROM agents a "
+                         "LEFT JOIN agent_meta m ON m.name=a.name ORDER BY a.last_seen DESC").fetchall()
+    if not rows:
+        return "No agents registered yet."
+    return "\n".join(f"- {n} [{k}] seen {ago(t)} | {note} | {cwd}{f' | on {h} (VM/remote)' if r else ''}"
+                     for n, k, note, cwd, t, h, r in rows)
+
+
+def deliver(c, sender, to, body):
+    if to != "all" and not c.execute("SELECT 1 FROM agents WHERE name=?", (to,)).fetchone():
+        raise ValueError(f"Unknown agent '{to}'. Use bus_list to see registered names.")
+    cur = c.execute("INSERT INTO messages(ts,sender,recipient,body) VALUES(?,?,?,?)", (time.time(), sender, to, body))
+    touch(c, sender)
+    return cur.lastrowid
+
+
+def t_send(a):
+    sender, to = need_name(a), a["to"].strip()
+    with db() as c:
+        mid = deliver(c, sender, to, a["body"])
+    return f"Sent message #{mid} to {to}."
+
+
+def fetch_inbox(name):
+    with db() as c:
+        touch(c, name)
+        rows = c.execute(
+            "SELECT id,ts,sender,recipient,body FROM messages m WHERE (recipient=? OR (recipient='all' AND sender<>?)) "
+            "AND NOT EXISTS (SELECT 1 FROM reads r WHERE r.agent=? AND r.msg_id=m.id) ORDER BY id",
+            (name, name, name)).fetchall()
+        if rows:
+            c.executemany("INSERT OR IGNORE INTO reads VALUES(?,?)", [(name, r[0]) for r in rows])
+    return "\n\n".join(f"#{i} from {s}{' (broadcast)' if rc == 'all' else ''}, {ago(ts)}:\n{b}"
+                       for i, ts, s, rc, b in rows)
+
+
+def t_inbox(a):
+    name = need_name(a)
+    deadline = time.time() + min(max(int(a.get("wait_seconds", 0)), 0), 300)
+    while True:
+        text = fetch_inbox(name)
+        if text:
+            return text
+        if time.time() >= deadline:
+            return "No new messages."
+        time.sleep(2)
+
+
+def t_history(a):
+    name = need_name(a)
+    other = a.get("with")
+    q = "SELECT id,ts,sender,recipient,body FROM messages WHERE "
+    if other:
+        q += "((sender=? AND recipient=?) OR (sender=? AND recipient=?))"
+        p = (name, other, other, name)
+    else:
+        q += "(sender=? OR recipient=? OR recipient='all')"
+        p = (name, name)
+    with db() as c:
+        rows = c.execute(q + " ORDER BY id DESC LIMIT ?", p + (int(a.get("limit", 20)),)).fetchall()
+    return "\n\n".join(f"#{i} {s} -> {rc}, {ago(ts)}:\n{b}" for i, ts, s, rc, b in reversed(rows)) or "No messages."
+
+
+def store_file(sender, to, name, data, note=""):
+    """Keep a copy of the file in the bus store and send the recipient a message pointing at it."""
+    if len(data) > MAX_FILE:
+        raise ValueError(f"File is {len(data)} bytes; the limit is {MAX_FILE}. Split or compress it.")
+    name = os.path.basename(name.replace("\\", "/")) or "file"
+    digest = hashlib.sha256(data).hexdigest()
+    with db() as c:
+        if to != "all" and not c.execute("SELECT 1 FROM agents WHERE name=?", (to,)).fetchone():
+            raise ValueError(f"Unknown agent '{to}'. Use bus_list to see registered names.")
+        fid = c.execute("INSERT INTO files(ts,sender,recipient,name,size,sha256,path) VALUES(?,?,?,?,?,?,'')",
+                        (time.time(), sender, to, name, len(data), digest)).lastrowid
+        folder = os.path.join(FILES, str(fid))
+        os.makedirs(folder, exist_ok=True)
+        path = os.path.join(folder, name)
+        with open(path, "wb") as f:
+            f.write(data)
+        c.execute("UPDATE files SET path=? WHERE id=?", (path, fid))
+        body = (f"[file #{fid}] {name} ({len(data):,} bytes, sha256 {digest[:12]}...)"
+                + (f"\n{note}" if note else "") + f"\nFetch it with bus_get_file(file_id={fid}).")
+        mid = deliver(c, sender, to, body)
+    return fid, mid
+
+
+def t_send_file(a):
+    sender, to, path = need_name(a), a["to"].strip(), os.path.abspath(os.path.expanduser(a["path"]))
+    if not os.path.isfile(path):
+        raise ValueError(f"No such file: {path}. To send a folder, zip it first.")
+    if os.path.getsize(path) > MAX_FILE:
+        raise ValueError(f"File is larger than the {MAX_FILE} byte limit.")
+    with open(path, "rb") as f:
+        data = f.read()
+    if REMOTE_URL:
+        q = urllib.parse.urlencode({"to": to, "name": os.path.basename(path), "note": a.get("note", ""), "as": sender})
+        body, _ = http("/files?" + q, raw=data, headers={"Content-Type": "application/octet-stream"}, timeout=600)
+        r = json.loads(body)
+        fid, mid = r["file_id"], r["message_id"]
+    else:
+        fid, mid = store_file(sender, to, path, data, a.get("note", ""))
+    return f"Sent file #{fid} ({os.path.basename(path)}) to {to} as message #{mid}."
+
+
+def t_get_file(a):
+    fid = int(a["file_id"])
+    dest = os.path.abspath(os.path.expanduser(a.get("dest") or os.path.join(os.getcwd(), "bus-files")))
+    if REMOTE_URL:
+        data, headers = http(f"/files/{fid}", timeout=600)
+        name = os.path.basename(urllib.parse.unquote(headers.get("X-File-Name", f"file-{fid}")))
+        digest = headers.get("X-File-Sha256", "")
+    else:
+        with db() as c:
+            row = c.execute("SELECT name, path, sha256 FROM files WHERE id=?", (fid,)).fetchone()
+        if not row:
+            raise ValueError(f"No file #{fid} on the bus.")
+        name, src, digest = row
+        with open(src, "rb") as f:
+            data = f.read()
+    if digest and hashlib.sha256(data).hexdigest() != digest:
+        raise ValueError(f"File #{fid} failed its sha256 check; ask the sender to resend it.")
+    os.makedirs(dest, exist_ok=True)
+    out = os.path.join(dest, name)
+    with open(out, "wb") as f:
+        f.write(data)
+    return f"Saved file #{fid} to {out} ({len(data):,} bytes, sha256 verified)."
+
+
+def t_files(a):
+    name = need_name(a)
+    with db() as c:
+        rows = c.execute("SELECT id,ts,sender,recipient,name,size FROM files WHERE sender=? OR recipient IN (?, 'all') "
+                         "ORDER BY id DESC LIMIT ?", (name, name, int(a.get("limit", 20)))).fetchall()
+    return "\n".join(f"#{i} {n} ({sz:,} bytes) {s} -> {r}, {ago(ts)}" for i, ts, s, r, n, sz in rows) or "No files."
+
+
+S = lambda props, req=(): {"type": "object", "properties": props, "required": list(req)}
+STR = {"type": "string"}
+AS = {"as": {"type": "string", "description": "Your registered name, if this session hasn't called bus_register."}}
+TOOLS = {
+    "bus_register": (t_register, "Register this agent on the shared agent bus under a unique name (e.g. 'claude-supervisor', "
+                     "'codex-electron-eval'). Call once per session before sending or reading.",
+                     S({"name": STR, "kind": {"type": "string", "description": "e.g. claude-code, codex-desktop"},
+                        "note": {"type": "string", "description": "Role / what you're working on"}}, ["name"])),
+    "bus_list": (t_list, "List all agents registered on the bus (including ones in VMs), with role and last-seen time.", S({})),
+    "bus_send": (t_send, "Send a message to a registered agent by name, or to 'all'.",
+                 S({"to": STR, "body": STR, **AS}, ["to", "body"])),
+    "bus_inbox": (t_inbox, "Read your unread messages (marks them read). wait_seconds (0-300) waits for new mail.",
+                  S({"wait_seconds": {"type": "integer"}, **AS})),
+    "bus_history": (t_history, "Show recent messages involving you, optionally only with one agent.",
+                    S({"with": STR, "limit": {"type": "integer"}, **AS})),
+    "bus_send_file": (t_send_file, "Send a file (up to 200 MB; zip folders first) to an agent or 'all'. Works across VMs: "
+                      "the bus keeps a copy and the recipient gets a message with the file id.",
+                      S({"to": STR, "path": {"type": "string", "description": "Local path of the file to send"},
+                         "note": {"type": "string", "description": "What it is / what to do with it"}, **AS}, ["to", "path"])),
+    "bus_get_file": (t_get_file, "Download a file sent over the bus by its id into dest (default ./bus-files). "
+                     "Verifies sha256.", S({"file_id": {"type": "integer"}, "dest": STR, **AS}, ["file_id"])),
+    "bus_files": (t_files, "List recent files sent to or by you.", S({"limit": {"type": "integer"}, **AS})),
+}
+LOCAL_ONLY = {"bus_send_file", "bus_get_file"}  # these touch local paths, so they run here and stream over HTTP
+
+
+def call_tool(name, args):
+    if REMOTE_URL and name not in LOCAL_ONLY:
+        text = rpc(name, args)
+        if name == "bus_register":
+            me["name"] = args["name"].strip()
+        return text
+    return TOOLS[name][0](args)
+
+
+# ---------------------------------------------------------------- heartbeat and session stats
+
+def codex_rollout_stats():
+    """Latest token, context and quota figures from this machine's newest Codex rollout (for VM sessions,
+    whose transcripts the host app cannot read)."""
+    root = os.path.join(os.path.expanduser("~"), ".codex", "sessions")
+    files = glob.glob(os.path.join(root, "*", "*", "*", "rollout-*.jsonl"))
+    if not files:
+        return None
+    path = max(files, key=os.path.getmtime)
+    out = {"file": os.path.basename(path)}
+    with open(path, "rb") as f:
+        f.seek(max(0, os.path.getsize(path) - 512 * 1024))
+        for line in f.read().decode("utf-8", "replace").splitlines():
+            if '"token_count"' not in line and '"turn_context"' not in line and '"session_meta"' not in line:
+                continue
+            try:
+                o = json.loads(line)
+            except ValueError:
+                continue
+            p = o.get("payload") or {}
+            if o.get("type") == "session_meta":
+                out["account"] = p.get("creator_account_id")
+            elif p.get("type") == "token_count" and p.get("info"):
+                out["info"], out["rate_limits"], out["ts"] = p["info"], p.get("rate_limits"), o.get("timestamp")
+            elif o.get("type") == "turn_context":
+                out["model"], out["effort"] = p.get("model"), p.get("effort") or p.get("reasoning_effort")
+    return out
+
+
+def heartbeat():
+    # Keeps last_seen fresh for as long as this server (and so its session) is alive; the app's online dot uses it.
+    while True:
+        try:
+            if me["name"]:
+                if REMOTE_URL:
+                    meta = session_meta()
+                    http("/heartbeat", {"as": me["name"], "meta": meta,
+                                        "stats": codex_rollout_stats() if meta["cli"] != "claude" else None}, timeout=15)
+                else:
+                    with db() as c:
+                        touch(c)
+        except Exception:
+            pass
+        time.sleep(30)
+
+
+def reply(i, result=None, error=None):
+    msg = {"jsonrpc": "2.0", "id": i}
+    msg["error" if error else "result"] = error or result
+    sys.stdout.write(json.dumps(msg) + "\n")
+    sys.stdout.flush()
+
+
+def serve():
+    # A launcher (the Agent Bus app) can name the session up front through AGENT_BUS_NAME.
+    if me["name"]:
+        try:
+            call_tool("bus_register", {"name": me["name"], "kind": os.environ.get("AGENT_BUS_KIND", ""),
+                                       "note": os.environ.get("AGENT_BUS_NOTE", "")})
+        except Exception:
+            pass
+    threading.Thread(target=heartbeat, daemon=True).start()
+    where = f"the Agent Bus hub at {REMOTE_URL}" if REMOTE_URL else "this machine"
+    for line in sys.stdin:
+        if not line.strip():
+            continue
+        req = json.loads(line)
+        m, i = req.get("method"), req.get("id")
+        if i is None:
+            continue
+        if m == "initialize":
+            reply(i, {"protocolVersion": req.get("params", {}).get("protocolVersion", "2024-11-05"),
+                      "capabilities": {"tools": {}}, "serverInfo": {"name": "agent-bus", "version": "1.1"},
+                      "instructions": f"Shared message bus between Claude Code and Codex agents (via {where}, including "
+                                      "agents in local VMs). Call bus_register once, bus_list to discover peers, bus_send "
+                                      "to message, bus_inbox to receive, bus_send_file / bus_get_file to exchange files."})
+        elif m == "tools/list":
+            reply(i, {"tools": [{"name": n, "description": d, "inputSchema": s} for n, (_, d, s) in TOOLS.items()]})
+        elif m == "tools/call":
+            p = req.get("params", {})
+            try:
+                text, err = call_tool(p["name"], p.get("arguments") or {}), False
+            except Exception as e:
+                text, err = f"Error: {e}", True
+            reply(i, {"content": [{"type": "text", "text": text}], "isError": err})
+        elif m == "ping":
+            reply(i, {})
+        else:
+            reply(i, error={"code": -32601, "message": f"Unknown method {m}"})
+
+
+# ---------------------------------------------------------------- CLI (command-plane/1)
+# For harnesses without MCP. Same tools, as a noun-verb command graph with plain positional words:
+#   agent-bus msg send sonnet-5b build is green      agent-bus msg inbox wait 60      agent-bus ?
+# Unique prefixes abbreviate (m s = msg send); `?` lists the legal next words; errors end with a Recovery line.
+
+IDENTITY = os.path.join(os.path.expanduser("~"), ".agent-bus", "cli-identity.json")
+
+# noun -> verb -> (tool, positional params, keyword params, ? text). A trailing "*" param takes the rest of the line.
+GRAPH = {
+    "agent": {
+        "register": ("bus_register", ["name"], {"kind": "kind", "note": "note*"}, "Join the bus as NAME [kind KIND] [note TEXT...]."),
+        "list": ("bus_list", [], {}, "List agents on the bus, including ones in VMs."),
+        "whoami": (None, [], {}, "Show which name this shell's commands are sent as."),
+    },
+    "msg": {
+        "send": ("bus_send", ["to", "body*"], {"from-file": "from_file"}, "Send TEXT... to an agent or 'all' (or: send TO from-file PATH, or TO - for stdin)."),
+        "inbox": ("bus_inbox", [], {"wait": "wait_seconds"}, "Read unread messages [wait SECONDS, up to 300]."),
+        "history": ("bus_history", [], {"with": "with", "limit": "limit"}, "Show recent messages [with NAME] [limit N]."),
+    },
+    "file": {
+        "send": ("bus_send_file", ["to", "path"], {"note": "note*"}, "Send the file at PATH to an agent or 'all' [note TEXT...]."),
+        "get": ("bus_get_file", ["file_id"], {"to": "dest"}, "Download file ID [to DIR] (default ./bus-files); sha256 is checked."),
+        "list": ("bus_files", [], {"limit": "limit"}, "List recent files sent to or by you [limit N]."),
+    },
+}
+NOUN_HELP = {"agent": "Who is on the bus; join it.", "msg": "Send and read messages.", "file": "Exchange files, across VMs too."}
+
+
+class CliError(Exception):
+    def __init__(self, msg, recovery):
+        super().__init__(msg)
+        self.recovery = recovery
+
+
+def match(word, options, what):
+    """Exact match, else a unique prefix; ambiguous or unknown words list the choices instead of guessing."""
+    if word in options:
+        return word
+    hits = [o for o in options if o.startswith(word)]
+    if len(hits) == 1:
+        return hits[0]
+    choices = ", ".join(sorted(options))
+    if hits:
+        raise CliError(f"'{word}' is ambiguous: {', '.join(sorted(hits))}.", " ".join(["agent-bus", what, "?"]).replace("  ", " "))
+    raise CliError(f"Unknown word '{word}'. Expected one of: {choices}.", " ".join(["agent-bus", what, "?"]).replace("  ", " "))
+
+
+def describe(noun=None, verb=None):
+    if noun is None:
+        lines = ["agent-bus (command-plane/1). Nouns:"] + [f"  {n:<6} {NOUN_HELP[n]}" for n in GRAPH]
+        lines += ["  help [AREA]  Every command in an area, e.g. help msg.",
+                  "Qualifier anywhere: as NAME (else AGENT_BUS_NAME, else the name this session or folder last registered)."]
+        return "\n".join(lines)
+    if verb is None:
+        return "\n".join([f"agent-bus {noun}: {NOUN_HELP[noun]}"] +
+                         [f"  {v:<9} {spec[3]}" for v, spec in GRAPH[noun].items()])
+    _, pos, kw, text = GRAPH[noun][verb]
+    label = lambda v: {"from_file": "PATH", "dest": "DIR", "wait_seconds": "SECONDS", "with": "NAME", "limit": "N",
+                       "file_id": "ID", "body": "TEXT"}.get(v.rstrip("*"), v.rstrip("*").upper()) + ("..." if v.endswith("*") else "")
+    usage = " ".join([label(p) for p in pos] + [f"[{k} {label(v)}]" for k, v in kw.items()])
+    return f"agent-bus {noun} {verb} {usage}\n  {text}"
+
+
+def identity_key():
+    # Several agents often share a folder, so prefer the harness's own session id when it exposes one.
+    e = os.environ
+    sid = e.get("CLAUDE_CODE_SESSION_ID") or e.get("CODEX_THREAD_ID") or e.get("CODEX_SESSION_ID")
+    return f"session:{sid}" if sid else os.getcwd()
+
+
+def identity(explicit):
+    if explicit:
+        return explicit
+    if os.environ.get("AGENT_BUS_NAME"):
+        return os.environ["AGENT_BUS_NAME"]
+    try:
+        with open(IDENTITY, encoding="utf-8") as f:
+            return json.load(f).get(identity_key())
+    except (OSError, ValueError):
+        return None
+
+
+def remember(name):
+    os.makedirs(os.path.dirname(IDENTITY), exist_ok=True)
+    try:
+        with open(IDENTITY, encoding="utf-8") as f:
+            ids = json.load(f)
+    except (OSError, ValueError):
+        ids = {}
+    ids[identity_key()] = name
+    with open(IDENTITY, "w", encoding="utf-8") as f:
+        json.dump(ids, f, indent=1)
+
+
+def cli(argv):
+    words = list(argv)
+    who = None
+    if "as" in words[:-1]:
+        i = words.index("as")
+        who = words[i + 1]
+        del words[i:i + 2]
+    words = [w[1:] if w.startswith("@") and len(w) > 1 else w for w in words]
+    if not words or words[0] in ("?", "-h", "--help"):
+        return describe()
+    if words[0] == "help":
+        return describe(match(words[1], GRAPH, "")) if len(words) > 1 else describe()
+    noun = match(words[0], GRAPH, "")
+    if len(words) == 1 or words[1] == "?":
+        return describe(noun)
+    verb = match(words[1], GRAPH[noun], noun)
+    rest = words[2:]
+    tool, pos, kw, _ = GRAPH[noun][verb]
+    if "?" in rest:
+        return describe(noun, verb)
+    args = {}
+    # Keyword qualifiers may come in any order after the positionals; a "*" param swallows the rest.
+    i, pi = 0, 0
+    while i < len(rest):
+        w = rest[i]
+        key = next((k for k in kw if k == w), None)
+        if key and (pi >= len(pos) or not pos[pi].endswith("*") or args.get(pos[pi].rstrip("*"))):
+            dest = kw[key]
+            if dest.endswith("*"):
+                args[dest[:-1]] = " ".join(rest[i + 1:])
+                break
+            if i + 1 >= len(rest):
+                raise CliError(f"'{key}' needs a value.", f"agent-bus {noun} {verb} ?")
+            args[dest] = rest[i + 1]
+            i += 2
+            continue
+        if pi < len(pos):
+            p = pos[pi]
+            if p.endswith("*"):
+                # The free-text tail stops at a recognised qualifier keyword.
+                j = next((k for k in range(i, len(rest)) if rest[k] in kw), len(rest))
+                args[p[:-1]] = " ".join(rest[i:j])
+                i, pi = j, pi + 1
+                continue
+            args[p] = w
+            pi += 1
+            i += 1
+            continue
+        raise CliError(f"Unexpected word '{w}'.", f"agent-bus {noun} {verb} ?")
+    missing = [p.rstrip("*") for p in pos if not args.get(p.rstrip("*"))]
+    if tool == "bus_send" and args.get("from_file"):
+        with open(os.path.expanduser(args.pop("from_file")), encoding="utf-8") as f:
+            args["body"] = f.read()
+        missing = [m for m in missing if m != "body"]
+    if tool == "bus_send" and args.get("body") == "-":
+        args["body"] = sys.stdin.read()
+    if missing:
+        raise CliError(f"Missing {', '.join(m.upper() for m in missing)}.", f"agent-bus {noun} {verb} ?")
+    for k in ("wait_seconds", "limit", "file_id"):
+        if k in args:
+            try:
+                args[k] = int(args[k])
+            except ValueError:
+                raise CliError(f"{k.split('_')[0]} must be a number, not '{args[k]}'.", f"agent-bus {noun} {verb} ?")
+    if verb == "whoami":
+        name = identity(who)
+        if not name:
+            raise CliError("Not registered yet from this session or folder.", "agent-bus agent register YOUR-NAME note what you do")
+        return name
+    if tool != "bus_register" and tool != "bus_list":
+        args["as"] = identity(who)
+        if not args["as"]:
+            raise CliError("Not registered yet from this session or folder.", "agent-bus agent register YOUR-NAME note what you do")
+    else:
+        me["name"] = identity(who)
+    if tool == "bus_register":
+        args.setdefault("kind", "cli")
+    text = call_tool(tool, args)
+    if tool == "bus_register":
+        remember(args["name"])
+    return text
+
+
+def cli_main(argv):
+    for s in (sys.stdout, sys.stderr):
+        s.reconfigure(encoding="utf-8", errors="replace")
+    try:
+        print(cli(argv))
+        return 0
+    except CliError as e:
+        print(f"Error: {e}\nRecovery: {e.recovery}", file=sys.stderr)
+        return 2
+    except Exception as e:
+        print(f"Error: {e}\nRecovery: agent-bus ?", file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        sys.exit(cli_main(sys.argv[1:]))
+    serve()

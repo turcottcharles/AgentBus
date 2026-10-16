@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+  <title>Agent Bus</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="logo">◆</span> Agent Bus</div>
+    <div class="stats" id="stats"></div>
+    <div id="quota" class="quota" title="Quota left on each account, as last reported by any session"></div>
+    <div class="actions">
+      <button id="btnVms" title="Agents in virtual machines">VMs <span id="vmBadge" class="mini"></span></button>
+      <button id="btnSetup" title="Setup checklist">Setup <span id="setupBadge" class="mini warn"></span></button>
+      <button id="btnTheme" title="Theme: tron (click to change)">◐</button>
+      <button id="btnHelp" title="Help">?</button>
+    </div>
+  </header>
+
+  <main>
+    <aside id="agentsPane">
+      <div class="paneHead">
+        <span class="paneTitle">Sessions</span>
+        <label class="chk" title="Group sessions by project"><input type="checkbox" id="groupBy" checked> By project</label>
+        <button id="btnNewSession" title="Add a Claude Code or Codex CLI session you can launch from here">+ Session</button>
+      </div>
+      <div id="agents"></div>
+      <div class="paneFoot">Click to filter · double-click for stats · right-click for more</div>
+    </aside>
+
+    <section id="logPane">
+      <div class="toolbar">
+        <select id="filterAgent" title="Show messages involving"></select>
+        <input id="search" type="search" placeholder="Search messages…  (Ctrl+F)">
+        <label class="chk"><input type="checkbox" id="autoscroll" checked> Follow</label>
+      </div>
+      <div id="log"></div>
+      <form id="compose">
+        <div class="composeRow">
+          <span class="from">owner →</span>
+          <select id="to"></select>
+          <button type="button" id="btnAttach" title="Send a file to the selected session">📎 File</button>
+          <span class="hint">Ctrl+Enter to send</span>
+          <span class="err" id="sendErr"></span>
+        </div>
+        <div class="composeRow">
+          <textarea id="body" rows="3" placeholder="Message to the selected session, a project, or all"></textarea>
+          <button type="submit" id="btnSend">Send</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <dialog id="dlgProfile">
+    <form id="profileForm" method="dialog">
+      <h2 id="profileTitle">Launch settings</h2>
+      <div class="grid">
+        <label for="pName">Session name</label>
+        <input id="pName" required placeholder="e.g. sonnet-5b" spellcheck="false">
+        <label for="pCli">CLI</label>
+        <select id="pCli"><option value="claude">Claude Code (claude)</option><option value="codex">Codex CLI (codex)</option></select>
+        <label for="pCwd">Working folder</label>
+        <div class="row"><input id="pCwd" placeholder="Folder the session works in" spellcheck="false"><button type="button" id="pBrowse">Browse…</button></div>
+        <label for="pMode">Start as</label>
+        <select id="pMode">
+          <option value="continue">Continue the most recent session in that folder</option>
+          <option value="session">Resume a specific session id / name</option>
+          <option value="pick">Choose from the CLI's session list when it starts</option>
+          <option value="new">Start a new session</option>
+        </select>
+        <label for="pSession">Session id</label>
+        <input id="pSession" placeholder="Session UUID (shown in Session stats once it has run)" spellcheck="false">
+        <label for="pProject">Project</label>
+        <input id="pProject" list="projectList" placeholder="(none)">
+        <label for="pExtra">Extra flags</label>
+        <input id="pExtra" placeholder="e.g. --model sonnet   or   -m gpt-5" spellcheck="false">
+        <label for="pPrompt">Startup prompt</label>
+        <textarea id="pPrompt" rows="3" placeholder="Default: tells the session it is on the bus and to check bus_inbox"></textarea>
+      </div>
+      <div class="preview"><span>Command</span><code id="pPreview"></code></div>
+      <div class="err" id="pErr"></div>
+      <div class="dlgActions">
+        <button type="button" id="pCancel">Cancel</button>
+        <button type="button" id="pSave">Save</button>
+        <button type="button" id="pSaveLaunch" class="primary">Save and launch</button>
+      </div>
+    </form>
+  </dialog>
+  <datalist id="projectList"></datalist>
+
+  <dialog id="dlgAsk">
+    <form method="dialog" id="askForm">
+      <h3 id="askTitle"></h3>
+      <input id="askInput" list="projectList" spellcheck="false">
+      <div class="dlgActions"><button type="button" id="askCancel">Cancel</button><button class="primary" id="askOk">OK</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="dlgStats">
+    <h2 id="statsTitle">Session stats</h2>
+    <div id="statsBody"></div>
+    <div class="dlgActions"><button id="statsClose">Close</button></div>
+  </dialog>
+
+  <dialog id="dlgVms">
+    <h2>Agents in virtual machines</h2>
+    <p class="muted">The hub lets agents in local VMs use the bus, including file exchange. It listens only on this
+      computer's virtual-machine networks (and loopback) and needs the token below.</p>
+    <div id="vmBody"></div>
+    <div class="dlgActions"><button id="vmClose">Close</button></div>
+  </dialog>
+
+  <dialog id="dlgSetup">
+    <h2>Setup checklist</h2>
+    <p class="muted">Everything the bus needs on this computer. Each fix makes a backup of any config file it edits.</p>
+    <div id="setupBody"></div>
+    <div class="dlgActions"><button id="setupRecheck">Re-check</button> <button id="setupClose">Close</button></div>
+  </dialog>
+
+  <dialog id="help">
+    <h2>How Agent Bus works</h2>
+    <p>Agents talk through the <code>agent-bus</code> MCP server (<code>agent_bus_mcp.py</code>). Each Claude Code or
+      Codex session starts its own copy. On this computer all copies share one SQLite file:</p>
+    <p><code id="dbPath"></code> <button id="btnFolder">Open folder</button></p>
+    <p>Agents in VMs use the same server pointed at this app's hub (see <b>VMs</b>). Agents that can't use MCP can run
+      the <code>agent-bus</code> command-line tool instead (see the README).</p>
+    <h3>Sessions</h3>
+    <p><b>+ Session</b> or ▶ opens a Claude Code or Codex CLI session in a terminal, already named on the bus. While a
+      session runs, its MCP server sends a heartbeat every 30 seconds: the dot stays green while it runs and turns grey
+      about two minutes after it exits. Right-click a session to add it to a project.</p>
+    <h3>Stats and quota</h3>
+    <p>Tokens, model, effort and context come from the transcripts each CLI already writes. Codex rollouts also carry
+      the account's quota. Claude's 5-hour and 7-day quota, context size and cost come from the Agent Bus status line
+      (turn it on in <b>Setup</b>). "Quota used" for a session adds up the rises seen while it ran. If several sessions
+      share an account at once, each one's figure also includes the others' use.</p>
+    <h3>Telling an agent about the bus</h3>
+    <pre>Call bus_register(name="sonnet-5b", kind="claude-code", note="build/integration").
+Check bus_inbox at the start of each task and whenever you finish one;
+reply with bus_send. bus_list shows who is online. Use bus_send_file / bus_get_file for files.</pre>
+    <h3>Limits</h3>
+    <p>Delivery works by polling: an agent sees mail only when it calls <code>bus_inbox</code>, which can wait up to
+      300 seconds. This window only reads, so viewing never marks an agent's mail as read.</p>
+    <div class="dlgActions"><button id="btnCloseHelp">Close</button></div>
+  </dialog>
+
+  <div id="toast"></div>
+  <script src="renderer.js"></script>
+</body>
+</html>

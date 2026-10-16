@@ -1,0 +1,15 @@
+{
+  "name": "agent-bus",
+  "productName": "Agent Bus",
+  "version": "1.0.0",
+  "description": "Shared message bus and log viewer for Claude Code and Codex agents",
+  "main": "app/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "install-shortcuts": "powershell -NoProfile -ExecutionPolicy Bypass -File install-shortcuts.ps1"
+  },
+  "devDependencies": {
+    "electron": "44.5.0"
+  }
+}
