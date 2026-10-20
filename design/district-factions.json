@@ -1,0 +1,380 @@
+{
+  "version": 1,
+  "title": "First District · Engineering cultures",
+  "intent": "Six original groups give the district a deeper identity through materials, silhouettes and real work specialties. They are helpful working cultures, not enemies, demographics, provider brands or permission levels.",
+  "authorship": {
+    "basis": "New names and designs authored for Agent Bus from broad institutional, inventive fabrication, mobile relay, civic knowledge, recovery and experience-lab themes.",
+    "constraints": [
+      "No franchise names, logos, near-copy silhouettes or story references.",
+      "No crime, weapons, intimidation, harmful stereotypes or age-exclusive motifs.",
+      "No productivity multipliers, cosmetic success rewards or fictional quota/resource claims.",
+      "Names are original design proposals; no assertion of worldwide trademark exclusivity."
+    ]
+  },
+  "contract": {
+    "capabilities": "Faction identity describes a specialty. The real worker/provider/run determines capability and authorization.",
+    "truth": "A label never proves work happened. Activity requires a report/observation; completion requires the actual candidate-bound result.",
+    "implementationStatus": "Existing bus/Test paths are implemented baseline. District V2 module references mean source is present; root owns final runtime/browser/provider qualification. Faction-specific behavior and advanced facilities remain future design.",
+    "selection": "Do not auto-assign a faction to a provider or alter permissions. The same Codex/Claude worker may perform any authorized supported specialty.",
+    "firstDistrict": "Use a compact readable legend and at most a small badge/material trim. Preserve the approved map and all existing facility identities.",
+    "accessibility": "Every glyph/accent is paired with a plain specialty label. Faction names are optional flavor; the action says what it actually does."
+  },
+  "factions": [
+    {
+      "id": "aster-measure",
+      "name": "Aster Measure",
+      "role": "Verification guild",
+      "specialty": "Check work against evidence",
+      "facility": "test",
+      "glyph": "□",
+      "accent": "#64e4ed",
+      "token": "--dv-faction-aster-measure",
+      "materials": [
+        "Pale ceramic instrument plates",
+        "Dark indigo structural frames",
+        "Precisely spaced cyan inlays",
+        "Brushed steel fasteners"
+      ],
+      "silhouette": "Compact stepped instrument towers, square apertures, symmetric equipment housings and visible measuring rails; precise rather than imposing.",
+      "workerTraits": [
+        "Calm observers",
+        "Careful measurement",
+        "Readable annotated checklists",
+        "Helmet-mounted inspection lamps"
+      ],
+      "display": {
+        "badgeLabel": "Checks",
+        "legend": "Aster Measure · checks",
+        "firstDistrictAccent": "One cyan outlined square and thin material seam at Test; no new building.",
+        "workerTreatment": "Neutral engineer sprite plus a small labeled Checks badge."
+      },
+      "implemented": [
+        {
+          "capability": "Run Agent Bus's six real smoke checks",
+          "status": "implemented-baseline",
+          "evidence": [
+            "README.md:18-24",
+            "app/map-jobs.js"
+          ],
+          "limit": "Tests Agent Bus itself; source/provenance/cancellation guards must still pass. Faction does not grant a pass.",
+          "signal": "Six named observed results, process exits and matching source hashes."
+        },
+        {
+          "capability": "Check and snapshot the generated project",
+          "status": "source-present; integration qualification pending",
+          "evidence": [
+            "app/district/recipes.js"
+          ],
+          "limit": "Five fixed source/artifact checks are not full behavioral/browser testing.",
+          "signal": "Named check results plus exact artifact/source manifest."
+        }
+      ],
+      "future": [
+        "User-chosen project test recipes with explicit safe command contracts",
+        "Inspectable test coverage and regression history"
+      ],
+      "noClaim": "A bright badge, an online heartbeat or model prose cannot satisfy a check."
+    },
+    {
+      "id": "copper-patch",
+      "name": "Copper Patch",
+      "role": "Fabrication collective",
+      "specialty": "Make and build useful changes",
+      "facility": "build",
+      "glyph": "⌁",
+      "accent": "#ffbe63",
+      "token": "--dv-faction-copper-patch",
+      "materials": [
+        "Reclaimed copper conduits",
+        "Graphite workbenches",
+        "Repaired slate armor plates",
+        "Small amber work lights"
+      ],
+      "silhouette": "Offset work bays, modular brackets, visible tool drawers and purposeful repair seams; inventive and well maintained.",
+      "workerTraits": [
+        "Practical makers",
+        "Small reversible experiments",
+        "Marked reusable components",
+        "Utility aprons over the shared suit"
+      ],
+      "display": {
+        "badgeLabel": "Build",
+        "legend": "Copper Patch · build",
+        "firstDistrictAccent": "Existing amber workshop lighting and one restrained copper tab.",
+        "workerTreatment": "Neutral engineer sprite plus a labeled Build badge; no raster recoloring required."
+      },
+      "implemented": [
+        {
+          "capability": "Scoped read/write work in a generated project",
+          "status": "source-present; integration/provider qualification pending",
+          "evidence": [
+            "app/district/workspaces.js",
+            "app/district/project-agent-mcp.js",
+            "app/district/agent-session.js"
+          ],
+          "limit": "Only managed project files; no general shell or external workspace editing. A file change is not a successful build.",
+          "signal": "Actual file-write event and changed content hash."
+        },
+        {
+          "capability": "Create an immutable public artifact from checked bytes",
+          "status": "source-present; integration qualification pending",
+          "evidence": [
+            "app/district/recipes.js"
+          ],
+          "limit": "The current recipe copies the bounded starter project; arbitrary framework builds are future work.",
+          "signal": "Artifact directory, manifest and candidate hash."
+        }
+      ],
+      "future": [
+        "Additional bounded project templates",
+        "Project-specific real build recipes and artifact formats"
+      ],
+      "noClaim": "A workshop animation or a copied file cannot imply application behavior was verified."
+    },
+    {
+      "id": "farline-relay",
+      "name": "Farline Relay",
+      "role": "Field communications network",
+      "specialty": "Connect people, sessions and files",
+      "facility": "idle",
+      "glyph": "⋈",
+      "accent": "#9fbfff",
+      "token": "--dv-faction-farline-relay",
+      "materials": [
+        "Slate travel cases",
+        "Blue-grey woven covers",
+        "Anodized antenna masts",
+        "Blue signal identification tabs"
+      ],
+      "silhouette": "Low portable relay kits, folding supports, compact antennas and clearly labeled cargo; mobile without a vehicle or combat motif.",
+      "workerTraits": [
+        "Patient coordinators",
+        "Clear destination labels",
+        "Delivery receipts",
+        "Portable diagnostic packs"
+      ],
+      "display": {
+        "badgeLabel": "Relay",
+        "legend": "Farline Relay · messages",
+        "firstDistrictAccent": "A blue labeled Relay badge near the existing central communications tower.",
+        "workerTreatment": "Neutral engineer sprite with a small Relay tag; provider/account identity remains separate."
+      },
+      "implemented": [
+        {
+          "capability": "Exchange messages and files between registered agents",
+          "status": "implemented-baseline",
+          "evidence": [
+            "README.md:43-49",
+            "agent_bus_mcp.py:423-434",
+            "app/hub.js:176-188"
+          ],
+          "limit": "Inbox delivery is polling; a message delivered/read is not an executed task.",
+          "signal": "Message/read receipt and file byte/hash record."
+        },
+        {
+          "capability": "Reach the bus from local VMs",
+          "status": "implemented-baseline",
+          "evidence": [
+            "README.md:44",
+            "app/hub.js"
+          ],
+          "limit": "VM bus connectivity does not make a remote map worker executable. Current District bridge is loopback only.",
+          "signal": "Authenticated hub connection and real bus operation result."
+        }
+      ],
+      "future": [
+        "Explicitly authorized remote task execution with host identity",
+        "Offline transfer reconciliation and resumable artifact delivery"
+      ],
+      "noClaim": "A connected antenna or heartbeat means reachable, not productive, authenticated to a model or quota available."
+    },
+    {
+      "id": "open-lantern",
+      "name": "Open Lantern",
+      "role": "Civic knowledge cooperative",
+      "specialty": "Read, explain and research",
+      "facility": "research",
+      "glyph": "▤",
+      "accent": "#c99bff",
+      "token": "--dv-faction-open-lantern",
+      "materials": [
+        "Warm-grey ceramic shelves",
+        "Translucent violet information panes",
+        "Soft amber reading lamps",
+        "Open timber-and-steel public worktables"
+      ],
+      "silhouette": "Welcoming open bays, stepped shelves, large shared tables and one modest observatory instrument; knowledge is shared rather than mysterious.",
+      "workerTraits": [
+        "Curious investigators",
+        "Plain-language explanations",
+        "Source notes",
+        "Careful distinction between findings and guesses"
+      ],
+      "display": {
+        "badgeLabel": "Research",
+        "legend": "Open Lantern · research",
+        "firstDistrictAccent": "A violet labeled Research badge; keep the approved cyan Research building/sign intact.",
+        "workerTreatment": "Neutral engineer sprite with a Research label; no implied personality, age or demographic assignment."
+      },
+      "implemented": [
+        {
+          "capability": "Show an agent's reported research phase immediately",
+          "status": "source-present; integration qualification pending",
+          "evidence": [
+            "app/district/activity.js",
+            "app/district/runtime.js"
+          ],
+          "limit": "This is Agent-reported activity. It does not establish a research artifact or grant execution authority.",
+          "signal": "Correlated report identity, text, freshness and Agent-reported basis label."
+        },
+        {
+          "capability": "Read bounded files in the managed project",
+          "status": "source-present; integration/provider qualification pending",
+          "evidence": [
+            "app/district/project-agent-mcp.js",
+            "app/district/workspaces.js"
+          ],
+          "limit": "No arbitrary repository, network search or external content permission is added by the faction.",
+          "signal": "Observed scoped tool/file result when available; reported intent stays labeled reported."
+        }
+      ],
+      "future": [
+        "Source-linked findings artifacts",
+        "User-approved research tools with explicit scope and citation checks"
+      ],
+      "noClaim": "Research location and a thoughtful message are not evidence that an external source was read or verified."
+    },
+    {
+      "id": "harbor-reset",
+      "name": "Harbor Reset",
+      "role": "Recovery station",
+      "specialty": "Save, compare and recover work",
+      "facility": "review",
+      "glyph": "↶",
+      "accent": "#83ddb3",
+      "token": "--dv-faction-harbor-reset",
+      "materials": [
+        "Rounded steel archive cases",
+        "Moss-green recovery labels",
+        "Durable rubber corners",
+        "Warm white inventory strips"
+      ],
+      "silhouette": "Stable low archive stacks, protected recessed handles and paired before/after storage bays; reliable and approachable rather than militarized.",
+      "workerTraits": [
+        "Methodical recoverers",
+        "Named saved states",
+        "Before/after comparisons",
+        "Explicit restore confirmation"
+      ],
+      "display": {
+        "badgeLabel": "Recovery",
+        "legend": "Harbor Reset · checkpoints",
+        "firstDistrictAccent": "A small labeled Recovery tab in checkpoint controls; do not recolor Review's outcome states.",
+        "workerTreatment": "Neutral engineer sprite with a Recovery tag only when correlated recovery work is reported/observed."
+      },
+      "implemented": [
+        {
+          "capability": "Create, inspect and restore managed project checkpoints",
+          "status": "source-present; integration qualification pending",
+          "evidence": [
+            "app/district/checkpoints.js:151",
+            "app/district/checkpoints.js:244",
+            "app/district/checkpoints.js:265"
+          ],
+          "limit": "Only owned workspace files. Restore archives current state first; the user/runtime command owns authority.",
+          "signal": "Immutable checkpoint ID, stored bytes/hashes, actual diff and restore result."
+        },
+        {
+          "capability": "Cancel owned Test processes and record interrupted jobs",
+          "status": "implemented-baseline",
+          "evidence": [
+            "README.md:20",
+            "app/map-jobs.js:31"
+          ],
+          "limit": "A cancellation request is not confirmed exit. It does not promise rollback of arbitrary external work.",
+          "signal": "Observed process termination or explicit unconfirmed/interrupted status."
+        }
+      ],
+      "future": [
+        "Verified multi-artifact recovery bundles",
+        "Workspace-specific recovery policies with visible manifests"
+      ],
+      "noClaim": "A checkpoint icon cannot replace saved bytes; a restore animation cannot prove the expected files returned."
+    },
+    {
+      "id": "prism-yard",
+      "name": "Prism Yard",
+      "role": "Experience laboratory",
+      "specialty": "See and refine the built result",
+      "facility": "preview",
+      "glyph": "◇",
+      "accent": "#e0a3fa",
+      "token": "--dv-faction-prism-yard",
+      "materials": [
+        "Slate display frames",
+        "Pale cyan aperture rails",
+        "Muted violet roof panels",
+        "Small amber service lamps"
+      ],
+      "silhouette": "A compact freestanding rectangular preview arch with recessed display aperture, exposed service conduit and one small console; no franchise gate motifs.",
+      "workerTraits": [
+        "Attentive reviewers",
+        "Precise element references",
+        "Small feedback loops",
+        "Visible candidate identity"
+      ],
+      "display": {
+        "badgeLabel": "Preview",
+        "legend": "Prism Yard · preview",
+        "firstDistrictAccent": "The reusable GPU-rendered portal at the existing landing pad, plus a small labeled Preview badge.",
+        "workerTreatment": "Neutral engineer sprite; selected element and candidate identity live in the real preview UI."
+      },
+      "implemented": [
+        {
+          "capability": "Reusable original 3D preview facility locator",
+          "status": "GPU-render-qualified asset",
+          "evidence": [
+            "app/assets/district-v2/preview-portal.png",
+            "design/blender/preview-portal.blend",
+            "design/blender/create-preview-portal.py",
+            "design/blender/preview-portal.render.log:122"
+          ],
+          "limit": "This static facility artwork is not a software preview or acceptance evidence.",
+          "signal": "Blender render log confirms NVIDIA RTX3070Ti OptiX path tracing; editable mesh/source and PNG hashes retained."
+        },
+        {
+          "capability": "Preview exact built artifact and request an element change",
+          "status": "source-present; integrated browser/provider qualification pending",
+          "evidence": [
+            "app/district/preview.js",
+            "app/district-feedback.js",
+            "app/district/runtime.js"
+          ],
+          "limit": "Current candidate/run/nonce must match. A page visible is not functional or human UX acceptance.",
+          "signal": "Actual loopback preview identity, selected element, submitted instruction and subsequent real edit/check/candidate."
+        }
+      ],
+      "future": [
+        "Additional project previews with meaningful behavioral checks",
+        "Recorded before/after review tied to exact candidates"
+      ],
+      "noClaim": "Neither a glowing portal nor the faction badge certifies a candidate. The real browser and evidence remain inspectable."
+    }
+  ],
+  "integration": {
+    "firstDistrictLegend": [
+      "Aster Measure · checks",
+      "Copper Patch · build",
+      "Farline Relay · messages",
+      "Open Lantern · research",
+      "Harbor Reset · checkpoints",
+      "Prism Yard · preview"
+    ],
+    "workerBinding": "Optional display metadata only. Do not create duplicate executable workers, remap provider identity, dispatch commands or infer activity from a faction choice.",
+    "badgeRule": "One small glyph/accent and a text specialty label; details panel can reveal the group name and material description.",
+    "warning": "Faction green is an identity accent only and must not be rendered as a passed check badge. Existing success/error/evidence-basis styles remain authoritative.",
+    "phaseVersusFaction": "Facility phase stays tied to real activity. Faction accent belongs on a separate small label, never on completion meters.",
+    "noExpansion": "No new districts, currencies, progression system, combat or unrelated building changes are part of this milestone."
+  },
+  "validationBoundary": "This ledger is implemented design data only. Source references were inspected; integrated behavior, accessibility and provider acceptance remain with root. Faction-specific work mechanics are not implemented."
+}

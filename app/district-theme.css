@@ -1,0 +1,233 @@
+/* District V2: shared materials and legibility, independent of task state. */
+:root {
+  --dv-ink: #0b1021;
+  --dv-bg: #0b1021;
+  --dv-panel: #11192d;
+  --dv-panel-raised: #1b263d;
+  --dv-panel-soft: #162138;
+  --dv-panel-solid: #10192b;
+  --dv-panel-translucent: rgba(14, 23, 41, .96);
+  --dv-surface: var(--dv-panel);
+  --dv-surface-raised: var(--dv-panel-raised);
+  --dv-surface-hover: #25344c;
+  --dv-surface-selected: #183d48;
+  --dv-panel-gradient: linear-gradient(145deg, #1b2940 0%, #10192b 74%);
+  --dv-text: #edf6ff;
+  --dv-text-strong: #ffffff;
+  --dv-muted: #a7b6ce;
+  --dv-text-muted: var(--dv-muted);
+  --dv-subtle: #879ab7;
+  --dv-line: #435670;
+  --dv-line-soft: #2c3d56;
+  --dv-line-strong: #6d839e;
+  --dv-border: var(--dv-line);
+  --dv-teal: #64e4ed;
+  --dv-cyan: var(--dv-teal);
+  --dv-accent: var(--dv-teal);
+  --dv-violet: #c99bff;
+  --dv-purple: var(--dv-violet);
+  --dv-amber: #ffbe63;
+  --dv-orange: var(--dv-amber);
+  --dv-green: #83ddb3;
+  --dv-rose: #ff8b9c;
+  --dv-blue: #9fbfff;
+  --dv-research: var(--dv-teal);
+  --dv-edit: var(--dv-amber);
+  --dv-build: var(--dv-amber);
+  --dv-test: var(--dv-violet);
+  --dv-review: #e0a3fa;
+  --dv-preview: var(--dv-teal);
+  --dv-idle: var(--dv-muted);
+  --dv-success: var(--dv-green);
+  --dv-warning: var(--dv-amber);
+  --dv-danger: var(--dv-rose);
+  --dv-error: var(--dv-danger);
+  --dv-reported: var(--dv-violet);
+  --dv-observed: var(--dv-teal);
+  --dv-inferred: var(--dv-muted);
+  --dv-stale: var(--dv-amber);
+  --dv-faction-aster-measure: var(--dv-teal);
+  --dv-faction-copper-patch: var(--dv-amber);
+  --dv-faction-farline-relay: var(--dv-blue);
+  --dv-faction-open-lantern: var(--dv-violet);
+  --dv-faction-harbor-reset: var(--dv-green);
+  --dv-faction-prism-yard: #e0a3fa;
+  --dv-success-bg: #17382e;
+  --dv-warning-bg: #3a2c1e;
+  --dv-danger-bg: #3b2333;
+  --dv-reported-bg: #302341;
+  --dv-observed-bg: #17383f;
+  --dv-focus: #a0f5ff;
+  --dv-focus-shadow: 0 0 0 5px #0b1021;
+  --dv-font-body: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --dv-font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --dv-font-mono: "Cascadia Code", "Cascadia Mono", Consolas, monospace;
+  --dv-font: var(--dv-font-body);
+  --dv-mono: var(--dv-font-mono);
+  --dv-text-xs: 12px;
+  --dv-text-sm: 13px;
+  --dv-text-base: 14px;
+  --dv-text-lg: 17px;
+  --dv-text-title: 24px;
+  --dv-line-height: 1.5;
+  --dv-space-1: 4px;
+  --dv-space-2: 8px;
+  --dv-space-3: 12px;
+  --dv-space-4: 16px;
+  --dv-space-5: 20px;
+  --dv-space-6: 24px;
+  --dv-radius-sm: 6px;
+  --dv-radius: 10px;
+  --dv-radius-lg: 16px;
+  --dv-radius-panel: 18px;
+  --dv-control-height: 40px;
+  --dv-hit-target: 44px;
+  --dv-shadow-panel: 0 14px 38px rgba(2, 6, 17, .52), inset 0 1px 0 rgba(219, 237, 255, .08);
+  --dv-shadow-float: 0 6px 16px rgba(2, 6, 17, .6);
+  --dv-shadow-sprite: drop-shadow(0 4px 2px rgba(3, 7, 17, .58));
+  --dv-duration-fast: 120ms;
+  --dv-duration: 180ms;
+  --dv-duration-travel: 520ms;
+  --dv-ease: cubic-bezier(.2, .7, .2, 1);
+  --dv-world-width: 1536px;
+  --dv-world-height: 1024px;
+  --dv-worker-height: 72px;
+  --dv-worker-foot-x: 50%;
+  --dv-worker-foot-y: 96.4%;
+  --dv-z-art: 0;
+  --dv-z-workers: 20;
+  --dv-z-facilities: 30;
+  --dv-z-hud: 60;
+  --dv-z-overlay: 80;
+  --dv-z-modal: 100;
+}
+
+:where(#districtV2, .dv-theme) {
+  color-scheme: dark;
+  color: var(--dv-text);
+  background-color: var(--dv-ink);
+  font-family: var(--dv-font-body);
+  font-size: var(--dv-text-base);
+  line-height: var(--dv-line-height);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  accent-color: var(--dv-teal);
+}
+
+:where(#districtV2, .dv-theme) *,
+:where(#districtV2, .dv-theme) *::before,
+:where(#districtV2, .dv-theme) *::after { box-sizing: border-box; }
+
+:where(#districtV2, .dv-theme) :where(button, input, select, textarea) {
+  font: inherit;
+}
+
+:where(#districtV2, .dv-theme) :where(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--dv-focus);
+  outline-offset: 3px;
+}
+
+:where(#districtV2, .dv-theme) :where(button, input, select, textarea):disabled {
+  cursor: not-allowed;
+}
+
+:where(#districtV2, .dv-theme) :where(code, pre, kbd, samp) {
+  font-family: var(--dv-font-mono);
+  font-variant-ligatures: none;
+}
+
+:where(#districtV2, .dv-theme) ::selection {
+  color: var(--dv-ink);
+  background: var(--dv-teal);
+}
+
+:where(#districtV2, .dv-theme) :where(input, textarea)::placeholder {
+  color: var(--dv-muted);
+  opacity: 1;
+}
+
+:where(#districtV2, .dv-theme) :where([aria-live], [role="status"], [role="alert"]) {
+  overflow-wrap: anywhere;
+}
+
+:where(#districtV2, .dv-theme) :where(*) {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dv-line-strong) var(--dv-panel);
+}
+
+/* Optional shared primitives. Feature owners retain layout and interaction. */
+.dv-material {
+  color: var(--dv-text);
+  background: var(--dv-panel-gradient);
+  border: 1px solid var(--dv-line);
+  border-radius: var(--dv-radius-panel);
+  box-shadow: var(--dv-shadow-panel);
+}
+
+.dv-tabular { font-variant-numeric: tabular-nums; }
+.dv-phase-research { --dv-phase: var(--dv-research); }
+.dv-phase-edit, .dv-phase-build { --dv-phase: var(--dv-build); }
+.dv-phase-test { --dv-phase: var(--dv-test); }
+.dv-phase-review { --dv-phase: var(--dv-review); }
+.dv-phase-preview { --dv-phase: var(--dv-preview); }
+
+.dv-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 7px;
+  color: var(--dv-muted);
+  border: 1px solid currentColor;
+  border-radius: var(--dv-radius-sm);
+  font-size: var(--dv-text-xs);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.dv-signal[data-basis="reported"] { color: var(--dv-reported); background: var(--dv-reported-bg); }
+.dv-signal[data-basis="observed"] { color: var(--dv-observed); background: var(--dv-observed-bg); }
+.dv-signal[data-basis="inferred"] { color: var(--dv-inferred); background: var(--dv-panel); }
+.dv-signal[data-freshness="stale"] { color: var(--dv-stale); background: var(--dv-warning-bg); }
+
+.dv-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dv-duration-fast: 0ms;
+    --dv-duration: 0ms;
+    --dv-duration-travel: 0ms;
+  }
+  :where(#districtV2, .dv-theme) { scroll-behavior: auto; }
+}
+
+@media (forced-colors: active) {
+  :where(#districtV2, .dv-theme) {
+    --dv-text: CanvasText;
+    --dv-text-strong: CanvasText;
+    --dv-muted: CanvasText;
+    --dv-text-muted: CanvasText;
+    --dv-subtle: CanvasText;
+    --dv-ink: Canvas;
+    --dv-panel: Canvas;
+    --dv-panel-raised: Canvas;
+    --dv-panel-soft: Canvas;
+    --dv-panel-solid: Canvas;
+    --dv-panel-gradient: Canvas;
+    --dv-line: ButtonText;
+    --dv-line-soft: ButtonText;
+    --dv-line-strong: ButtonText;
+    --dv-focus: Highlight;
+  }
+  .dv-material { box-shadow: none; }
+  .dv-signal { color: CanvasText !important; background: Canvas !important; }
+}

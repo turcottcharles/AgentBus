@@ -1,0 +1,1701 @@
+{
+  "at": "2026-10-18T02:14:45.507Z",
+  "purpose": "Illustrative line-art production storyboard, no product or provider session",
+  "scratch": "C:\\Users\\Admin\\AppData\\Local\\Temp\\agent-bus-flow-board-j4YNMK",
+  "bounds": {
+    "x": -1494,
+    "y": 10,
+    "width": 1452,
+    "height": 848
+  },
+  "errors": [],
+  "renderer": "Hardware WebGL2, native Electron on owner-designated 4K monitor",
+  "encoder": "h264_nvenc",
+  "movie": {
+    "file": "flow-animatic.mp4",
+    "seconds": 24,
+    "sha256": "0a04ca90bd76eb719d1c766f58f2d97f1447cdbee066e78461b1c5acc818221d",
+    "bytes": 2705711
+  },
+  "inputs": {
+    "design/district-3d/storyboard/flow-scene.js": "95f4e600a24cf26b2f06a982a1ace8602d51081ca3c7cbe706ed3106fbee1f75",
+    "design/district-3d/STORYBOARD.json": "e521a73acd0527b703db6ff5d24c97b3b162d9fdb4578ab8fca3b419973ef2d4",
+    "app/assets/district-v2/district-world.glb": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc",
+    "app/assets/district-v2/district-host.glb": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037"
+  },
+  "frames": [
+    {
+      "id": "S01A",
+      "shot": "S01",
+      "phase": 0,
+      "file": "frames/flow-S01-1.png",
+      "sha256": "0d6f8f45341637a1c1025e69d9570df46a917ff1f2e7f0962beea1daebd7596b",
+      "sceneSha256": "cf0f96d7580193f683c0788d24144cd8f62e72c690c83ceea1067361eb7aa58d",
+      "bytes": 711359,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 3,
+        "frame": {
+          "shot": "S01",
+          "phase": 0
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 368,
+        "triangles": 182328,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.1,
+            5.1,
+            14.7
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          3.7412968516224763,
+          2.397272776787931,
+          13.3245654646001
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 265,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S01B",
+      "shot": "S01",
+      "phase": 1,
+      "file": "frames/flow-S01-2.png",
+      "sha256": "e8e0a861a2754a2076b0c577c6608907ef020674229ec54274d3004c84240828",
+      "sceneSha256": "16fbb1561978e227ff7b58ca7de191dd974e6cdabb92806b96b771eb027ccbe8",
+      "bytes": 472972,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 4,
+        "frame": {
+          "shot": "S01",
+          "phase": 1
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 450,
+        "triangles": 200796,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            9,
+            5.4,
+            20
+          ],
+          "target": [
+            5,
+            3.7,
+            12
+          ],
+          "fov": 44
+        },
+        "packetWorld": [
+          3.78612688861947,
+          2.508148107505551,
+          13.53851013721814
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S01C",
+      "shot": "S01",
+      "phase": 2,
+      "file": "frames/flow-S01-3.png",
+      "sha256": "62b3277a76a8211d0f7e4e05913550aee4203dca3fbfa87eeb9f3b826f1ad9cd",
+      "sceneSha256": "c4ca08313a707e1235a9bc96f679f06cda7b39b161b668138b3664ce8e1ce7e5",
+      "bytes": 499402,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 5,
+        "frame": {
+          "shot": "S01",
+          "phase": 2
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 389,
+        "triangles": 188932,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            4.8,
+            4.6,
+            16.3
+          ],
+          "target": [
+            3.8,
+            4.2,
+            14.4
+          ],
+          "fov": 38
+        },
+        "packetWorld": [
+          3.786855995058731,
+          3.948558757740492,
+          14.406050791064974
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S01D",
+      "shot": "S01",
+      "phase": 3,
+      "file": "frames/flow-S01-4.png",
+      "sha256": "902fede380d54e5f5cf50e6910d7f3b4c87ecc88bf891a6708567a4c75068c02",
+      "sceneSha256": "32329f3bdb62f4969acf59d488eaeb9ed5377a59af59f7a47cc44460fce6e960",
+      "bytes": 450993,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 6,
+        "frame": {
+          "shot": "S01",
+          "phase": 3
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 446,
+        "triangles": 200664,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            7.5,
+            5.6,
+            16.2
+          ],
+          "target": [
+            -2,
+            2.8,
+            -1
+          ],
+          "fov": 60
+        },
+        "packetWorld": [
+          5.622697190107893,
+          3.976445094196408,
+          9.374206384179717
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S02A",
+      "shot": "S02",
+      "phase": 0,
+      "file": "frames/flow-S02-1.png",
+      "sha256": "4c5224888d7857d168762c0495a2f41094d740fca22041d1f4f4d802491eb68b",
+      "sceneSha256": "29306f8f54093fb6083a4ece0b979860362935ffaa3b6e7fb85191e798eeb2ce",
+      "bytes": 302958,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 7,
+        "frame": {
+          "shot": "S02",
+          "phase": 0
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 348,
+        "triangles": 182108,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -7.6,
+            2.7,
+            -2.4
+          ],
+          "target": [
+            -11,
+            1.5,
+            -7.1
+          ],
+          "fov": 48
+        },
+        "packetWorld": [
+          -11,
+          0.9,
+          -7.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S02B",
+      "shot": "S02",
+      "phase": 1,
+      "file": "frames/flow-S02-2.png",
+      "sha256": "6d07017674906bbe07541c7430d2617d113c20da69585456114ff812cc3f9d65",
+      "sceneSha256": "4d728b97a9448c7548cce05e1711ec58b88d74600de8d6d11601e8912026443b",
+      "bytes": 471978,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 8,
+        "frame": {
+          "shot": "S02",
+          "phase": 1
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 327,
+        "triangles": 174872,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -9,
+            2.4,
+            -4
+          ],
+          "target": [
+            -11,
+            1.6,
+            -7.1
+          ],
+          "fov": 34
+        },
+        "packetWorld": [
+          -11,
+          0.9,
+          -7.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S02C",
+      "shot": "S02",
+      "phase": 2,
+      "file": "frames/flow-S02-3.png",
+      "sha256": "d553cb7818b2dd240409d449bf17ad80542bae1d062fc2f957904f6e34afb63f",
+      "sceneSha256": "9619afcf60df2faa30dd5c9b694071b967dd6a1a86d52be814abc137a2bc9656",
+      "bytes": 283416,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 9,
+        "frame": {
+          "shot": "S02",
+          "phase": 2
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 422,
+        "triangles": 189236,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -5,
+            2.5,
+            -8.8
+          ],
+          "target": [
+            -1,
+            1.8,
+            -5.3
+          ],
+          "fov": 58
+        },
+        "packetWorld": [
+          -1.0089761705325644,
+          1.721946151787313,
+          -6.104880952849865
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 327,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S02D",
+      "shot": "S02",
+      "phase": 3,
+      "file": "frames/flow-S02-4.png",
+      "sha256": "d19f584772fe7ad5f5271c29e97aae7590adcaa81c2fcb91273be829f0b008db",
+      "sceneSha256": "3226a1b44d20ee6f11e0f68d1a521242ebfee63ed177c1223c2dda651359496a",
+      "bytes": 364713,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 10,
+        "frame": {
+          "shot": "S02",
+          "phase": 3
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 366,
+        "triangles": 182172,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.1,
+            2.4,
+            0.8
+          ],
+          "target": [
+            9,
+            1.4,
+            -3.1
+          ],
+          "fov": 46
+        },
+        "packetWorld": [
+          9,
+          1.0000000000000002,
+          -3.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 327,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S03A",
+      "shot": "S03",
+      "phase": 0,
+      "file": "frames/flow-S03-1.png",
+      "sha256": "dec156f093051cd791f26baf75ce19773645249d8da4a39a93a4f615c6c03fae",
+      "sceneSha256": "e9df16acb7fb38919f115a895d1273cb08176121dbf9b95a6e78b3ab58ca4d41",
+      "bytes": 207095,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 11,
+        "frame": {
+          "shot": "S03",
+          "phase": 0
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 329,
+        "triangles": 119604,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            4,
+            1.8,
+            2.5
+          ],
+          "target": [
+            9,
+            1.8,
+            -3.1
+          ],
+          "fov": 62
+        },
+        "packetWorld": [
+          9,
+          1.25,
+          -3.1
+        ],
+        "projectWorld": [
+          9,
+          0.9,
+          -3.1
+        ],
+        "memory": {
+          "geometries": 369,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S03B",
+      "shot": "S03",
+      "phase": 1,
+      "file": "frames/flow-S03-2.png",
+      "sha256": "2620065e70b761e199413d01c119807b4cf83658cdf10646d5e9fad0b241c7db",
+      "sceneSha256": "5ae732a75bb2118b90f5bc11ff0931df1f3722d400936a58276db7b70dc567b5",
+      "bytes": 467459,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 12,
+        "frame": {
+          "shot": "S03",
+          "phase": 1
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 292,
+        "triangles": 111692,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            8.2,
+            2.6,
+            -0.4
+          ],
+          "target": [
+            9,
+            1.8,
+            -3.1
+          ],
+          "fov": 42
+        },
+        "packetWorld": [
+          9,
+          1.25,
+          -3.1
+        ],
+        "projectWorld": [
+          9,
+          0.9,
+          -3.1
+        ],
+        "memory": {
+          "geometries": 369,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S03C",
+      "shot": "S03",
+      "phase": 2,
+      "file": "frames/flow-S03-3.png",
+      "sha256": "f71ac86163ebb8de231caca7fb17a10be2216ff48496a2a68622371e6dbebfa3",
+      "sceneSha256": "72dffa6ac905663ddfa10987cd8946123b16070371461ad7055cbeea9c0d90a9",
+      "bytes": 418251,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 13,
+        "frame": {
+          "shot": "S03",
+          "phase": 2
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 547,
+        "triangles": 206960,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -21,
+            3.3,
+            12.5
+          ],
+          "target": [
+            -18,
+            1.7,
+            8.7
+          ],
+          "fov": 52
+        },
+        "packetWorld": [
+          -18,
+          1.2,
+          8.7
+        ],
+        "projectWorld": [
+          -18,
+          0.85,
+          8.7
+        ],
+        "memory": {
+          "geometries": 369,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S03D",
+      "shot": "S03",
+      "phase": 3,
+      "file": "frames/flow-S03-4.png",
+      "sha256": "e2a0592a29c2eb8a106c9a9b4e3a8b094833afc622c42b8bba2ddfb1a1ce6a31",
+      "sceneSha256": "8f30608e7eb73685545236703af9f246f04e322af80d2198fc78a96b6b53e3c8",
+      "bytes": 641553,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 14,
+        "frame": {
+          "shot": "S03",
+          "phase": 3
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 465,
+        "triangles": 195376,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -18.5,
+            2.5,
+            11.6
+          ],
+          "target": [
+            -17.1,
+            1.75,
+            8.7
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          -18,
+          1.2,
+          8.7
+        ],
+        "projectWorld": [
+          -18,
+          0.85,
+          8.7
+        ],
+        "memory": {
+          "geometries": 369,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S04A",
+      "shot": "S04",
+      "phase": 0,
+      "file": "frames/flow-S04-1.png",
+      "sha256": "b46fa25b4440511bc745bfc9fbfde5597b18d1087fbba7e8316a92cebe142865",
+      "sceneSha256": "3dd2aaf8487404765c364eed5429dc547cb887b8d71de19a27d4e350ea94c4da",
+      "bytes": 297909,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 15,
+        "frame": {
+          "shot": "S04",
+          "phase": 0
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 468,
+        "triangles": 187688,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            20.5,
+            2.8,
+            7.6
+          ],
+          "target": [
+            18,
+            2.5,
+            3.5
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          2.15,
+          3.5
+        ],
+        "projectWorld": [
+          18,
+          1.75,
+          3.5
+        ],
+        "memory": {
+          "geometries": 369,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S04B",
+      "shot": "S04",
+      "phase": 1,
+      "file": "frames/flow-S04-2.png",
+      "sha256": "faf066e5c2f8ed2379ff5c9f43848e12d1e9794174e6b3e565e30d7b6fe25b68",
+      "sceneSha256": "c1ee1b5f7d028e7cedfad0579b5122999f9a5bc5678d9a95fe68c24ec6e6150f",
+      "bytes": 296793,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 16,
+        "frame": {
+          "shot": "S04",
+          "phase": 1
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 405,
+        "triangles": 133396,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            24,
+            4.5,
+            7.1
+          ],
+          "target": [
+            21.72,
+            3.6,
+            4.62
+          ],
+          "fov": 42
+        },
+        "packetWorld": [
+          18,
+          2.15,
+          3.5
+        ],
+        "projectWorld": [
+          18,
+          1.75,
+          3.5
+        ],
+        "memory": {
+          "geometries": 369,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S04C",
+      "shot": "S04",
+      "phase": 2,
+      "file": "frames/flow-S04-3.png",
+      "sha256": "5f84366c9c59451fe3c11981773146abb2d78d68f3d39b9dc015c63a06e6f5e7",
+      "sceneSha256": "6c3a3e49848a69eb60e7f6de48d82a68f63bcfa8f86d6736dfd88e2f53748a50",
+      "bytes": 272758,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 17,
+        "frame": {
+          "shot": "S04",
+          "phase": 2
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 425,
+        "triangles": 138200,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            24,
+            2.7,
+            21
+          ],
+          "target": [
+            15.5,
+            3.8,
+            4.5
+          ],
+          "fov": 48
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 369,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S04D",
+      "shot": "S04",
+      "phase": 3,
+      "file": "frames/flow-S04-4.png",
+      "sha256": "030e7e3e3a8ddfb6b9ac944979f5fbd65a70d821f0a44af937ee7a8fc43f0cb0",
+      "sceneSha256": "d6ca2a5f9eec514da19aa1cc559b75a6acf3abfe524e75891b199e1b8f5f9106",
+      "bytes": 459310,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 18,
+        "frame": {
+          "shot": "S04",
+          "phase": 3
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 410,
+        "triangles": 181516,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            15.8,
+            2.6,
+            18
+          ],
+          "target": [
+            18,
+            1.9,
+            15.5
+          ],
+          "fov": 44
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 369,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S05A",
+      "shot": "S05",
+      "phase": 0,
+      "file": "frames/flow-S05-1.png",
+      "sha256": "d92fe5eb6d91c57ffb43c4e5015ad77b704847274330aeef2f5639f2fc0bc489",
+      "sceneSha256": "5006fc364762ddaedf2e3ad70827b6a993501b25185edb76c67b3897004fda6d",
+      "bytes": 269888,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 19,
+        "frame": {
+          "shot": "S05",
+          "phase": 0
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 441,
+        "triangles": 197372,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            16.5,
+            3.8,
+            17
+          ],
+          "target": [
+            5,
+            4,
+            12
+          ],
+          "fov": 50
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S05B",
+      "shot": "S05",
+      "phase": 1,
+      "file": "frames/flow-S05-2.png",
+      "sha256": "ece1194848bf383dba751c33837b00f49c464e240507284da45d7c3b89a5b727",
+      "sceneSha256": "eaf2638af4be32304a88ec5f234b25ffe31264806183ad4a7a6ef295a17052eb",
+      "bytes": 454894,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 20,
+        "frame": {
+          "shot": "S05",
+          "phase": 1
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 402,
+        "triangles": 190000,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            5,
+            3.7,
+            16
+          ],
+          "target": [
+            3.8,
+            3.8,
+            13.7
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S05C",
+      "shot": "S05",
+      "phase": 2,
+      "file": "frames/flow-S05-3.png",
+      "sha256": "b2b5f87d698e625aa566d63ab58fc0e7343311c70de919fdd9173ecb6b05203d",
+      "sceneSha256": "729ff53e7a97dbfb4ee4d13187ed62ef3e9f28fa6b5c6dd4182fdff373af06f2",
+      "bytes": 489689,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 21,
+        "frame": {
+          "shot": "S05",
+          "phase": 2
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 422,
+        "triangles": 187732,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            3.2,
+            5.1,
+            15.8
+          ],
+          "target": [
+            5,
+            4.9,
+            12
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "S05D",
+      "shot": "S05",
+      "phase": 3,
+      "file": "frames/flow-S05-4.png",
+      "sha256": "7b284bb8ee662142caa82058c13f57c1232ce411887a16434c955a28c7f932df",
+      "sceneSha256": "f9101bb7c17c7103d8877da93e35240a6950248785351ff9aa704949a8f3ce19",
+      "bytes": 647173,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 22,
+        "frame": {
+          "shot": "S05",
+          "phase": 3
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 389,
+        "triangles": 184260,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.1,
+            5.1,
+            14.7
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "P01A",
+      "shot": "P01",
+      "phase": 0,
+      "file": "frames/flow-P01-1.png",
+      "sha256": "e05317e9214effa9e54193b9016f9cfc06744624d15f27186ec276f483572148",
+      "sceneSha256": "2fb88b2a894d3d215ecda6a46904f710370d9bf6d2aa62b12debf33205ef2d26",
+      "bytes": 397863,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 23,
+        "frame": {
+          "shot": "P01",
+          "phase": 0
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 482,
+        "triangles": 202748,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            12,
+            7,
+            26
+          ],
+          "target": [
+            2.2,
+            3.6,
+            11.7
+          ],
+          "fov": 43
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "P01B",
+      "shot": "P01",
+      "phase": 1,
+      "file": "frames/flow-P01-2.png",
+      "sha256": "bc2a9742128db027dabaabe211f66667e463255e507abc40e53a7f2818a17984",
+      "sceneSha256": "0d7122dbbc11eea61e96c5dfaf97d8ceaf8bb78cf8a2023fa4c30a2281027d3f",
+      "bytes": 430474,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 24,
+        "frame": {
+          "shot": "P01",
+          "phase": 1
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 555,
+        "triangles": 207952,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            24.444,
+            21.259,
+            34.296
+          ],
+          "target": [
+            1.63,
+            3.185,
+            8.148
+          ],
+          "fov": 43
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "P01C",
+      "shot": "P01",
+      "phase": 2,
+      "file": "frames/flow-P01-3.png",
+      "sha256": "e5ffa7402bec0c2c0dad9778de0b9f40245958f66bb5abbaa694b51d8cafef16",
+      "sceneSha256": "82f03ea5fc95795c0acf4d35364c5c7c8a90a95cb7f863fcebc1847bdfd5524c",
+      "bytes": 230297,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 25,
+        "frame": {
+          "shot": "P01",
+          "phase": 2
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 435,
+        "triangles": 139768,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            47.556,
+            47.741,
+            49.704
+          ],
+          "target": [
+            0.57,
+            2.415,
+            1.552
+          ],
+          "fov": 43
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        }
+      }
+    },
+    {
+      "id": "P01D",
+      "shot": "P01",
+      "phase": 3,
+      "file": "frames/flow-P01-4.png",
+      "sha256": "cd14ee35ae8cc8931432f0f32dfe358bc53b198a6c13d702520a04a1ce0d1780",
+      "sceneSha256": "9d3ed844745265d072bd5f0d47c18d87484b2414060125a266a64c11f792d00a",
+      "bytes": 196464,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 26,
+        "frame": {
+          "shot": "P01",
+          "phase": 3
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 435,
+        "triangles": 139768,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "orthographic",
+          "position": [
+            60,
+            62,
+            58
+          ],
+          "target": [
+            0,
+            2,
+            -2
+          ],
+          "fov": null
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        }
+      }
+    }
+  ],
+  "canonicalInputNote": "The renderer reads the canonical camera setup. After successful capture/encoding the writer changes only delivery readiness (animaticReady=false to true) and copies the same camera metadata back into the final canonical JSON. inputs records the delivered canonical file; this is a line-art staging study, not a product build qualification."
+}

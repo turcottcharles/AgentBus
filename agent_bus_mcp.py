@@ -3,14 +3,15 @@
 It is a stdio MCP server that uses only the Python standard library. Every client (each Claude Code
 or Codex session) starts its own copy.
 
-Local mode (default): all copies on one machine share one SQLite file next to this script. No
-daemon is needed.
-Remote mode: used inside a VM or on another machine. It is enabled when AGENT_BUS_URL is set, or
-when ~/.agent-bus/config.json contains {"url": ..., "token": ...}. Every tool call then goes over
-HTTP to the hub that the Agent Bus app runs on the host. The tools behave the same either way.
+Local mode: copies on one machine share one SQLite file next to this script (or AGENT_BUS_DB).
+Remote/push mode: every tool call goes over HTTP to the hub. Discovery order is AGENT_BUS_URL,
+then bus-connection.json beside that exact database (the running desktop or standalone hub),
+then ~/.agent-bus/config.json. A local descriptor wins over a leftover home URL so host
+Codex/Cursor sessions stay on the owner app. Direct SQLite writes remain durable but do not
+publish push events.
 
-Agents register a name, list one another, send messages and files, and read their inbox. Delivery
-works by polling: an agent calls bus_inbox (optionally waiting) to receive.
+Agents register a name, list one another, send messages and files, and read their inbox.
+bus_inbox marks messages read. Stream delivery (bus-watch) does not.
 """
 import glob, hashlib, json, os, socket, sqlite3, sys, threading, time
 import urllib.error, urllib.parse, urllib.request
@@ -21,14 +22,35 @@ FILES = os.path.join(os.path.dirname(DB), "files")
 MAX_FILE = 200 * 1024 * 1024
 
 
+def _loopback_hub(url, token, db_path=None):
+    target = urllib.parse.urlparse(url or "")
+    if target.scheme != "http" or target.hostname != "127.0.0.1" or not token:
+        return None
+    if db_path is not None and os.path.normcase(os.path.abspath(db_path)) != os.path.normcase(os.path.abspath(DB)):
+        return None
+    return url.rstrip("/"), token
+
+
 def load_remote():
     url, token = os.environ.get("AGENT_BUS_URL"), os.environ.get("AGENT_BUS_TOKEN")
+    if url:
+        return url.rstrip("/"), token
+    descriptor = os.path.join(os.path.dirname(DB), "bus-connection.json")
+    if os.path.exists(descriptor):
+        with open(descriptor, encoding="utf-8") as f:
+            local = json.load(f)
+        found = _loopback_hub(local.get("url"), local.get("token"), local.get("db", ""))
+        if not found:
+            raise ValueError("Invalid local Agent Bus connection descriptor")
+        return found
     cfg = os.path.join(os.path.expanduser("~"), ".agent-bus", "config.json")
-    if not url and os.path.exists(cfg):
+    if os.path.exists(cfg):
         with open(cfg, encoding="utf-8") as f:
             c = json.load(f)
         url, token = c.get("url"), token or c.get("token")
-    return (url.rstrip("/"), token) if url else (None, None)
+        if url:
+            return url.rstrip("/"), token
+    return None, None
 
 
 REMOTE_URL, REMOTE_TOKEN = load_remote()
@@ -481,6 +503,9 @@ def log_event(name, args, ok, ms, detail=""):
 
 
 def call_tool(name, args):
+    global REMOTE_URL, REMOTE_TOKEN
+    if not REMOTE_URL:
+        REMOTE_URL, REMOTE_TOKEN = load_remote()
     if REMOTE_URL and name not in LOCAL_ONLY:
         text = rpc(name, args)   # the hub logs remote calls
         if name == "bus_register":
@@ -574,11 +599,13 @@ def serve():
         if i is None:
             continue
         if m == "initialize":
+            named = me["name"] or "unset — call bus_register with a unique name first"
             reply(i, {"protocolVersion": req.get("params", {}).get("protocolVersion", "2024-11-05"),
                       "capabilities": {"tools": {}}, "serverInfo": {"name": "agent-bus", "version": "1.1"},
-                      "instructions": f"Shared message bus between Claude Code and Codex agents (via {where}, including "
-                                      "agents in local VMs). Call bus_register once, bus_list to discover peers, bus_send "
-                                      "to message, bus_inbox to receive, bus_send_file / bus_get_file to exchange files."})
+                      "instructions": (f"Shared Agent Bus via {where}, including agents in local VMs. "
+                                       f"Your routing name is '{named}'. At the start of each turn call bus_inbox. "
+                                       "Reply with bus_send to the sender, to 'owner', or to a name from bus_list. "
+                                       "These tools deliver mail; they do not wake a sleeping Codex/Cursor/Claude session.")})
         elif m == "tools/list":
             reply(i, {"tools": [{"name": n, "description": d, "inputSchema": s} for n, (_, d, s) in TOOLS.items()]})
         elif m == "tools/call":
@@ -814,6 +841,14 @@ def cli_main(argv):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "district":
+        # One command service for the desktop and CLI; pass literal argv, never a shell string.
+        import shutil, subprocess
+        node = shutil.which("node")
+        if not node:
+            print("Error: Node.js is required for district commands.\nRecovery: install Node.js and open Agent Bus.", file=sys.stderr)
+            sys.exit(1)
+        sys.exit(subprocess.call([node, os.path.join(HERE, "bin", "district.cjs"), *sys.argv[2:]]))
     if len(sys.argv) > 1:
         sys.exit(cli_main(sys.argv[1:]))
     serve()

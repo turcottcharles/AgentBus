@@ -1,0 +1,6 @@
+{
+  "mailbox": "cursor-worker",
+  "chatTitle": "this Cursor session",
+  "allowSenders": ["editor-agent-bus"],
+  "skipSenders": ["cursor-worker", "hub-47801-probe"]
+}

@@ -2,7 +2,7 @@
 // Agent Bus desktop app. Shows the shared bus.sqlite that agent_bus_mcp.py writes, lets the owner read
 // everything and post as "owner", launches or resumes Claude Code / Codex CLI sessions, groups sessions into
 // projects, tracks token, context and quota stats, and runs the hub that agents in local VMs connect to.
-const { app, BrowserWindow, ipcMain, Menu, Notification, shell, dialog, clipboard } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu, Notification, shell, dialog, clipboard, screen } = require('electron');
 const path = require('node:path');
 const fs = require('node:fs');
 const crypto = require('node:crypto');
@@ -16,18 +16,35 @@ const { Setup } = require('./setup');
 const { Proposals } = require('./proposals');
 const { Steward } = require('./steward');
 const { Keyring } = require('./keyring');
+const { MapJobs } = require('./map-jobs');
+const { DistrictRuntime } = require('./district/runtime');
+const { DistrictBridge } = require('./district/bridge');
+const { DisplayManager } = require('./district/displays');
+const { SpeechInput } = require('./district/speech');
+const { readDistrictAsset } = require('./district/assets');
 
 const ROOT = path.join(__dirname, '..');
 const DB_PATH = process.env.AGENT_BUS_DB || path.join(ROOT, 'bus.sqlite');
 const OWNER = 'owner';
-let db, win, hub, stats, setup, proposals, steward, keyring, lastSeenId = 0, net = { adapters: [], vmAdapters: [], listenOn: [], guests: [] };
+let db, win, hub, stats, setup, proposals, steward, keyring, mapJobs, districtRuntime, districtBridge, speechInput, lastSeenId = 0, net = { adapters: [], vmAdapters: [], listenOn: [], guests: [] };
+let busConnectionNonce=crypto.randomBytes(16).toString('hex');
+const busConnectionPath=path.join(path.dirname(DB_PATH),'bus-connection.json');
+function busChanged(){
+  if(win&&!win.isDestroyed()&&!win.webContents.isDestroyed())win.webContents.send('bus:changed');
+  if(db)pollForOwnerMail();
+}
+// Isolated acceptance instances preserve the owner's live app and its session state.
+if (process.env.AGENT_BUS_USER_DATA && path.isAbsolute(process.env.AGENT_BUS_USER_DATA)) {
+  fs.mkdirSync(process.env.AGENT_BUS_USER_DATA, { recursive: true });
+  app.setPath('userData', process.env.AGENT_BUS_USER_DATA);
+}
 
 const now = () => Date.now() / 1000;
 const isWin = process.platform === 'win32';
 
 // Every IPC handler goes through here so the steward can see which app features the owner uses (and which
 // fail). Polling channels are left out; only the channel name, timing and any error are kept.
-const QUIET = new Set(['bus:snapshot', 'bus:stats', 'net:info', 'setup:status', 'steward:state', 'proposal:list', 'proposal:get', 'profile:preview', 'keyring:list']);
+const QUIET = new Set(['district:snapshot', 'map:workers', 'map:jobs', 'bus:snapshot', 'bus:stats', 'net:info', 'setup:status', 'steward:state', 'proposal:list', 'proposal:get', 'profile:preview', 'keyring:list']);
 function handle(channel, fn) {
   ipcMain.handle(channel, async (...args) => {
     const t0 = Date.now();
@@ -96,13 +113,25 @@ handle('bus:snapshot', (_e, limit = 2000) => {
 });
 
 handle('bus:stats', () => stats.collect(sessionList()));
+handle('map:jobs', () => mapJobs.list());
+handle('map:workers', () => mapJobs.workers());
+handle('map:run', (_e, assignment) => mapJobs.start(assignment || {}));
+handle('map:cancel', (_e, id) => mapJobs.cancel(id));
+function districtOwner(event) {
+  if (!win || event.sender !== win.webContents || event.senderFrame !== win.webContents.mainFrame) throw new Error('District commands require the owner window');
+}
+handle('district:snapshot', (event) => { districtOwner(event); return districtRuntime.snapshot(); });
+handle('district:command', (event, command) => { districtOwner(event); return districtRuntime.command({ ...command, origin: 'gui' }); });
+handle('district:voice-status', (event) => { districtOwner(event); return speechInput.status(); });
+handle('district:voice-start', (event) => { districtOwner(event); return speechInput.start(); });
+handle('district:voice-stop', (event) => { districtOwner(event); return speechInput.stop(); });
+handle('district:read-asset', (event, name) => { districtOwner(event); return readDistrictAsset(name); });
 
 handle('bus:send', (_e, { to, body }) => {
   body = String(body || '').trim();
   if (!body) throw new Error('Message is empty');
   if (to !== 'all' && !db.prepare('SELECT 1 FROM agents WHERE name=?').get(to)) throw new Error(`Unknown agent ${to}`);
-  const r = db.prepare('INSERT INTO messages(ts,sender,recipient,body) VALUES(?,?,?,?)').run(now(), OWNER, to, body);
-  return Number(r.lastInsertRowid);
+  return hub.deliver(OWNER,to,body);
 });
 
 // Forgetting removes the bus registration only; a saved launch profile (and its project) is kept.
@@ -306,8 +335,13 @@ handle('dialog:pickFolder', async (e, start) => {
 
 async function refreshNetwork(force = false) {
   const prev = net.listenOn.join(',');
-  net = await discover({ lan: !!hub.config.lan });
+  net = process.env.AGENT_BUS_LOOPBACK_ONLY==='1'
+    ? {adapters:[],vmAdapters:[],listenOn:['127.0.0.1'],guests:[]}
+    : await discover({ lan: !!hub.config.lan });
   if (force || prev !== net.listenOn.join(',') || hub.listening().length === 0) await hub.listen(net.listenOn);
+  if(hub.listening().includes('127.0.0.1')){
+    fs.writeFileSync(busConnectionPath,JSON.stringify({version:1,db:path.resolve(DB_PATH),url:'http://127.0.0.1:'+hub.config.port,token:hub.config.token,nonce:busConnectionNonce}),{mode:0o600});
+  }
 }
 
 handle('net:info', async () => {
@@ -400,13 +434,38 @@ function pollForOwnerMail() {
 
 function createWindow() {
   const icon = path.join(__dirname, 'icon.ico');
+  const testDisplay = process.env.AGENT_BUS_TEST_DISPLAY_ID && screen.getAllDisplays().find(display => String(display.id) === process.env.AGENT_BUS_TEST_DISPLAY_ID);
+  if (process.env.AGENT_BUS_TEST_DISPLAY_ID && !testDisplay) throw new Error('The requested acceptance-test display is disconnected');
+  const testBounds = testDisplay?.workArea;
+  const size = testBounds ? { width: Math.min(1440, testBounds.width - 32), height: Math.min(940, testBounds.height - 48) } : { width: 1600, height: 1000 };
   win = new BrowserWindow({
-    width: 1400, height: 880, minWidth: 900, minHeight: 540,
+    ...size, minWidth: 900, minHeight: 640,
+    ...(testBounds ? { x: testBounds.x + Math.floor((testBounds.width - size.width) / 2), y: testBounds.y + 24, show: false } : {}),
     title: 'Agent Bus', backgroundColor: '#02060b', autoHideMenuBar: true,
     ...(fs.existsSync(icon) ? { icon } : {}),
     webPreferences: { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, sandbox: true },
   });
+  const notifyDistrictVisibility = () => {
+    if (win && !win.isDestroyed() && !win.webContents.isDestroyed()) {
+      win.webContents.send('district:window-visibility', win.isVisible() && !win.isMinimized());
+    }
+  };
+  for (const event of ['show', 'hide', 'minimize', 'restore']) win.on(event, notifyDistrictVisibility);
+  win.webContents.on('did-finish-load', notifyDistrictVisibility);
   win.loadFile(path.join(__dirname, 'index.html'));
+  win.on('closed', () => { Promise.resolve(speechInput?.stop()).catch(() => {}); });
+  if (testBounds) win.once('ready-to-show', () => win.showInactive());
+  win.webContents.session.setPermissionRequestHandler((_contents, _permission, callback) => callback(false));
+  win.webContents.session.setPermissionCheckHandler(() => false);
+  const allowedPreview = (url) => districtRuntime?.previewManager.list().some(preview => {
+    try { const target = new URL(url), allowed = new URL(preview.url); return target.origin === allowed.origin && target.pathname.startsWith(allowed.pathname.slice(0, allowed.pathname.lastIndexOf('/') + 1)); } catch { return false; }
+  });
+  win.webContents.on('will-frame-navigate', (event) => {
+    if (event.isMainFrame || !allowedPreview(event.url)) event.preventDefault();
+  });
+  win.webContents.on('will-redirect', (event, url, _inPlace, isMainFrame) => {
+    if (isMainFrame || !allowedPreview(url)) event.preventDefault();
+  });
   // Links in messages open in the system browser rather than inside the app.
   win.webContents.setWindowOpenHandler(({ url }) => { if (/^https?:/.test(url)) shell.openExternal(url); return { action: 'deny' }; });
 }
@@ -417,15 +476,27 @@ else {
   app.setAppUserModelId('local.agent-bus');
   app.whenReady().then(async () => {
     openDb();
-    hub = new Hub({ db, root: ROOT, configPath: path.join(path.dirname(DB_PATH), 'hub.json') });
+    hub = new Hub({ db, root: ROOT, configPath: path.join(path.dirname(DB_PATH), 'hub.json'),onChange:busChanged });
     stats = new Stats(db);
     setup = new Setup(ROOT, hub);
+    speechInput = new SpeechInput({ onEvent: event => {
+      if (win && !win.isDestroyed() && !win.webContents.isDestroyed()) win.webContents.send('district:voice-event', event);
+    } });
+    mapJobs = new MapJobs({ db, root: ROOT, findPython: () => setup.findPython() });
+    const defaultTestDisplayId = process.env.AGENT_BUS_TEST_DISPLAY_ID || String(screen.getPrimaryDisplay().id);
+    districtRuntime = new DistrictRuntime({ db, appRoot: ROOT,
+      workRoot: process.env.AGENT_BUS_WORK_ROOT || path.join(app.getPath('userData'), 'district-projects'),
+      defaultTestDisplayId,
+      displayManager: new DisplayManager({ screen, BrowserWindow, defaultDisplayId: defaultTestDisplayId }) });
+    const connectionFile = process.env.AGENT_BUS_DISTRICT_CONNECTION || path.join(path.dirname(DB_PATH), 'district-connection.json');
+    districtBridge = new DistrictBridge({ runtime: districtRuntime, connectionFile });
+    try { districtRuntime.connection = await districtBridge.start(); }
+    catch (error) { districtRuntime.connection = { connectionFile, error: error.message }; }
     proposals = new Proposals(db, (t) => hub.ago(t));
     keyring = new Keyring(db, (t) => hub.ago(t));
     steward = new Steward({ db, root: ROOT, dataDir: path.dirname(DB_PATH), proposals, launchBuilder });
     createWindow();
     await refreshNetwork(true).catch(() => {});
-    setInterval(pollForOwnerMail, 3000);
     setInterval(() => refreshNetwork().catch(() => {}), 30000);  // VMs that start later get picked up
     // The digest and stats snapshots are plain SQL and cost no quota; the steward itself only runs when enabled
     // (on its cadence) or when the owner asks it something.
@@ -438,5 +509,14 @@ else {
     setInterval(() => steward.tick(), 600000);
   });
   app.on('window-all-closed', () => app.quit());
-  app.on('before-quit', () => { hub?.close(); });
+  let districtQuitReady = false;
+  app.on('before-quit', (event) => {
+    if (districtQuitReady) return;
+    event.preventDefault();
+    mapJobs?.close(); hub?.close();
+    try{if(JSON.parse(fs.readFileSync(busConnectionPath,'utf8')).nonce===busConnectionNonce)fs.unlinkSync(busConnectionPath);}catch{}
+    Promise.allSettled([Promise.resolve(districtBridge?.close()), Promise.resolve(speechInput?.close())]).then(() => districtRuntime?.close()).catch(() => {}).finally(() => {
+      districtQuitReady = true; app.quit();
+    });
+  });
 }

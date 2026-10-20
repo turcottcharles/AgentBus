@@ -1,0 +1,4 @@
+DISTRICT_GPU_PROBE={"backends": {"CUDA": [{"id": "CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00", "name": "NVIDIA GeForce RTX 3070 Ti Laptop GPU", "type": "CUDA"}, {"id": "CPU", "name": "12th Gen Intel Core i7-12700H", "type": "CPU"}], "OPTIX": [{"id": "CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00_OptiX", "name": "NVIDIA GeForce RTX 3070 Ti Laptop GPU", "type": "OPTIX"}, {"id": "CPU", "name": "12th Gen Intel Core i7-12700H", "type": "CPU"}]}, "blender": "5.2.2 LTS", "gpu_available": true}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

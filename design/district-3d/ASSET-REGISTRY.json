@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "title": "District permanent 3D asset registry",
+  "recordedAtUtc": "2026-10-18T01:11:03.5981680Z",
+  "purpose": "Keep the accepted original models, editable Blender sources, generators and provenance in this project. No duplicate ZIP or memory-folder copy is needed.",
+  "acceptance": {
+    "date": "2026-10-17",
+    "scope": "Owner accepted the original district/host visual direction. Functional outcomes, display behavior and individual checks retain separate evidence.",
+    "designLanguage": "design/district-3d/DESIGN-LANGUAGE.md",
+    "acceptedHostSha256": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037"
+  },
+  "licensing": {
+    "originalProjectAssets": {
+      "assetIds": [
+        "district-world",
+        "district-host",
+        "preview-portal",
+        "attract-portal-reveal"
+      ],
+      "basis": "Original project-authored scripted Blender geometry; no third-party model, texture, character, logo or franchise asset imported.",
+      "terms": "Project art remains governed by the project owner's distribution terms. This registry records authorship and does not assign a new public asset license."
+    },
+    "runtimeNotices": [
+      {
+        "component": "Three.js",
+        "version": "0.186.1",
+        "license": "MIT",
+        "notice": {
+          "path": "app/vendor/THREE-LICENSE.txt",
+          "bytes": 1081,
+          "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+        },
+        "scope": "Local renderer and bundled Three addons; preserve the copyright and permission notice."
+      },
+      {
+        "component": "Earcut as bundled within Three.js",
+        "version": "Bundled copy in Three.js 0.186.1",
+        "license": "ISC",
+        "notice": {
+          "path": "app/vendor/EARCUT-LICENSE.txt",
+          "bytes": 738,
+          "sha256": "324139c19d87af03fda38afea1590e00ca354c4159bdb2ae9e9cec070cfa46a8"
+        },
+        "scope": "Polygon triangulation dependency; preserve its copyright and permission notice."
+      }
+    ]
+  },
+  "coordinateContract": {
+    "world": "XZ floor, Y up; central plaza [0,0.55,0]; view from +X/+Z",
+    "host": "Y up, front +Z, floor 0, local height 3",
+    "embeddedResourcesOnly": true,
+    "rendering": "Hardware GPU only. CPU geometry construction/export and metadata/hash validation are allowed; CPU rasterization and CPU light transport are not."
+  },
+  "assets": [
+    {
+      "id": "district-world",
+      "role": "Permanent shared environment for cinematic introduction and management view",
+      "format": "glTF 2.0 GLB",
+      "files": {
+        "runtime": {
+          "path": "app/assets/district-v2/district-world.glb",
+          "bytes": 2979624,
+          "sha256": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc"
+        },
+        "editableBlend": {
+          "path": "design/blender/district-world.blend",
+          "bytes": 512645,
+          "sha256": "921652e8771c559b5f19fd89998aaa57e16ae19f635f78815ff51f2d63c08f29"
+        },
+        "generator": {
+          "path": "design/blender/district-world.py",
+          "bytes": 27259,
+          "sha256": "da27e03f1dfebef6e6efbf1a87f2f1aeeac71e775ccb6f4994ff6ff00db96ae1"
+        },
+        "provenance": {
+          "path": "design/blender/district-world.provenance.json",
+          "bytes": 17380,
+          "sha256": "152ab938b57ec14436dfcef3fc0ac9b8e9ef33cb04f9d7472d6dec737d1f41d7"
+        }
+      },
+      "geometry": {
+        "triangles": 58636,
+        "meshBatches": 75,
+        "materials": 15,
+        "primitiveDraws": 75,
+        "textures": 0,
+        "externalResources": [],
+        "boundsYUp": {
+          "min": [
+            -27.04,
+            -2,
+            -29.12
+          ],
+          "max": [
+            29.12,
+            22.77,
+            26
+          ],
+          "radius_xz": 32.30702709937886
+        }
+      },
+      "facilityAnchors": {
+        "CentralPlaza": [
+          0,
+          0.55,
+          0
+        ],
+        "ResearchObservatory": [
+          -11,
+          0,
+          -17
+        ],
+        "ConstructionForge": [
+          9,
+          0,
+          -15
+        ],
+        "VerificationLab": [
+          -18,
+          0,
+          -1
+        ],
+        "PreviewGateway": [
+          18,
+          0,
+          3
+        ],
+        "ReviewArchive": [
+          -10,
+          0,
+          12
+        ]
+      },
+      "revision": {
+        "addition": "ReviewArchive at [-10,0,12]",
+        "acceptedExistingMeshesCompared": 66,
+        "changedExistingMeshes": [],
+        "sourcePreservation": "Existing 66 accepted mesh signatures retained; nine ReviewArchive material batches added.",
+        "scope": "Actual layout/entrance/pin/footprint metadata is in district-world.provenance.json; visual and runtime qualification remain separate.",
+        "frozenBy": "Environment asset owner confirmed final current export and provenance on 2026-10-17"
+      }
+    },
+    {
+      "id": "district-host",
+      "role": "Permanent original personable hovering service host for cinematic introduction",
+      "format": "glTF 2.0 GLB",
+      "files": {
+        "runtime": {
+          "path": "app/assets/district-v2/district-host.glb",
+          "bytes": 1070752,
+          "sha256": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037"
+        },
+        "editableBlend": {
+          "path": "design/blender/district-host.blend",
+          "bytes": 608156,
+          "sha256": "68652e723f99a5bc625351716c9b740df839b230a3dd812e1412bca49d80a23b"
+        },
+        "generator": {
+          "path": "design/blender/district-host.py",
+          "bytes": 22506,
+          "sha256": "5c61bb1ab910deb42c58c216635cb9f3a0674db69ab384fd92e500be49129ead"
+        },
+        "provenance": {
+          "path": "design/blender/district-host.provenance.json",
+          "bytes": 5528,
+          "sha256": "2ba48b07941ed17b6a51f077351e79d7099fff695be9bbdcfef4f59ba867ac48"
+        }
+      },
+      "geometry": {
+        "triangles": 34092,
+        "triangleBudget": 40000,
+        "meshNodes": 5,
+        "materials": 12,
+        "primitiveDraws": 40,
+        "textures": 0,
+        "externalResources": [],
+        "boundsYUp": {
+          "min": [
+            -1.3558012947,
+            0,
+            -0.6327273098
+          ],
+          "max": [
+            1.3558012947,
+            3.0000002168,
+            0.5434711339
+          ]
+        }
+      },
+      "rig": {
+        "root": "HostRoot",
+        "groups": [
+          "Head",
+          "ArmL",
+          "ArmR",
+          "Core"
+        ],
+        "animationClips": 0,
+        "runtime": "Named group pivots support head, shoulder, hover and core motion. No mandatory animation clip."
+      },
+      "validation": "Independent embedded-resource/hierarchy/triangle audit passed. One inspected 3840x2160 OptiX authoring still used GPU path tracing and GPU denoising, with CPU devices disabled; proof is in provenance."
+    },
+    {
+      "id": "preview-portal",
+      "role": "Earlier editable 3D facility rendered as a transparent illustration for the approved 2D plate",
+      "format": "PNG from original Blender geometry",
+      "files": {
+        "runtime": {
+          "path": "app/assets/district-v2/preview-portal.png",
+          "bytes": 1026627,
+          "sha256": "9a0977ac5b4cea1f19ac6af5d9b83f203def29e9deb52f49eae8539fc3f885bf"
+        },
+        "editableBlend": {
+          "path": "design/blender/preview-portal.blend",
+          "bytes": 134946,
+          "sha256": "8967e89a3a2ded421383c2e870102b605a53216909a0f62c3d7bd4d0d633b17d"
+        },
+        "generator": {
+          "path": "design/blender/create-preview-portal.py",
+          "bytes": 11570,
+          "sha256": "b077736a15693cd235c1ece5f9a79c2714564219e708ef7778ebac7e21d10a05"
+        },
+        "provenance": {
+          "path": "design/blender/preview-portal.provenance.json",
+          "bytes": 2530,
+          "sha256": "81356b5d86d5c3c526e8365f7c0de135436c79f193bd9e0d052f919344d41eef"
+        }
+      },
+      "render": {
+        "width": 1024,
+        "height": 1024,
+        "engine": "Cycles GPU OPTIX",
+        "samples": 96,
+        "cpuRenderDevicesEnabled": false
+      },
+      "use": "Illustrative facility only; actual candidate/output identity belongs to explicit preview controls."
+    },
+    {
+      "id": "attract-portal-reveal",
+      "role": "Earlier illustrative six-second physical portal assembly vignette; retained editable source",
+      "format": "H264 MP4",
+      "files": {
+        "runtime": {
+          "path": "app/assets/district-v2/attract-portal-reveal.mp4",
+          "bytes": 2062620,
+          "sha256": "79759c08093c526c4a1b76c853e24ee98a41400c62b46c8e68db4199e149b15f"
+        },
+        "editableBlend": {
+          "path": "design/blender/attract-portal-reveal.blend",
+          "bytes": 136222,
+          "sha256": "d21b58484528f219250a4ca8d6d770007180a591eaeb434627536d02a0ff23be"
+        },
+        "generator": {
+          "path": "design/blender/attract-portal-reveal.py",
+          "bytes": 5606,
+          "sha256": "fb352e13445fa63f8677afa7a4ce9133e848cf95df8599e14d1ffa68ed5ee9a3"
+        },
+        "provenance": {
+          "path": "design/blender/attract-portal-reveal.provenance.json",
+          "bytes": 6577,
+          "sha256": "1039e1189cf00a7068101dc3abbb6bd182cd732cc616c688f0494fa838af1b3a"
+        }
+      },
+      "media": {
+        "width": 1280,
+        "height": 720,
+        "durationSeconds": 6,
+        "deliveryFps": 24,
+        "deliveryFrames": 144,
+        "uniqueGpuRenderedFrames": 120,
+        "sourceFps": 20,
+        "audio": false,
+        "render": "Cycles OPTIX path tracing + GPU OptiX denoising; CPU devices disabled",
+        "encode": "H264 NVENC"
+      },
+      "use": "Optional illustrative asset; current interactive 3D world can present its own demo. Retaining a file does not claim it is currently mounted or live app output."
+    }
+  ],
+  "cameras": {
+    "sharedWorldAssetId": "district-world",
+    "sameFacilitiesMaterialsAndIBL": true,
+    "cinematic": {
+      "projection": "perspective",
+      "shots": {
+        "hook": {
+          "position": [
+            12,
+            7,
+            26
+          ],
+          "target": [
+            -5,
+            3.6,
+            8
+          ],
+          "fovDegrees": 43
+        },
+        "crew": {
+          "position": [
+            17,
+            10,
+            26
+          ],
+          "target": [
+            -1,
+            3.8,
+            5
+          ],
+          "fovDegrees": 43
+        },
+        "make": {
+          "position": [
+            32,
+            21,
+            29
+          ],
+          "target": [
+            0,
+            3.8,
+            -5
+          ],
+          "fovDegrees": 44
+        },
+        "turn": {
+          "position": [
+            19,
+            10,
+            28
+          ],
+          "target": [
+            -2,
+            3.6,
+            7
+          ],
+          "fovDegrees": 43
+        }
+      }
+    },
+    "management": {
+      "projection": "orthographic",
+      "position": [
+        60,
+        62,
+        58
+      ],
+      "target": [
+        0,
+        2,
+        -2
+      ],
+      "verticalSpan": 68,
+      "near": 0.2,
+      "far": 260,
+      "elevationDegrees": 35.264,
+      "azimuthDegrees": 45,
+      "foregroundHost": false,
+      "demoProps": false,
+      "overlay": "DOM facility labels and project-scoped agent tokens projected through the same camera"
+    }
+  },
+  "approvedVisualReference": {
+    "file": {
+      "path": "app/assets/district.png",
+      "bytes": 3494080,
+      "sha256": "42920755069644cd52825078a53e9a022754ded314a4f28eea3ae38db416f07b"
+    },
+    "status": "Existing approved plate retained unchanged; visual reference and illustrated fallback. Separate from the original Blender-model authorship statement."
+  },
+  "preservation": {
+    "permanentPaths": [
+      "app/assets/district-v2/",
+      "design/blender/",
+      "design/district-3d/accepted-v1/"
+    ],
+    "temporaryProof": "Temporary authoring stills/logs are evidence references in provenance; editable models do not depend on them.",
+    "excludedRuntimeStaging": [
+      "design/blender/attract-portal-reveal-frames/"
+    ],
+    "policy": "Retain source, editable scene, output and provenance together; refresh affected registry hashes after an authorized asset revision.",
+    "noDuplicateZip": true,
+    "acceptedVersionRetention": "Retain accepted-v1 files separately; exact recovered artifacts and reconstructed editable files have different preservation labels."
+  },
+  "relatedDesignNotes": [
+    "design/district-art-direction.json",
+    "design/district-factions.json",
+    "design/attract-art-direction.json",
+    "design/district-3d/ACTIVITY-MAPPING.md",
+    "design/district-3d/WYSIWYG-STORY.md"
+  ],
+  "validation": {
+    "filesHashedFromDisk": true,
+    "hostAcceptedHashPreserved": true,
+    "worldIncludesReviewArchive": true,
+    "source": "Registry metadata and dependency notices inspected locally. Runtime and artistic evidence is recorded separately by the integration owner.",
+    "acceptedArchiveFilesHashedFromDisk": 12,
+    "currentWorldFinalFreezeConfirmed": true,
+    "acceptedWorldShaPreserved": true,
+    "acceptedHostShaPreserved": true
+  },
+  "acceptedVersions": [
+    {
+      "id": "accepted-v1",
+      "directory": "design/district-3d/accepted-v1/",
+      "role": "Historical owner-approved visual baseline, kept distinct from later current runtime assets",
+      "immutable": true,
+      "world": {
+        "runtime": {
+          "path": "design/district-3d/accepted-v1/district-world.glb",
+          "bytes": 2759216,
+          "sha256": "12e7cde93555d6812238c772247bdd35c2dc0807edee7e866e7fdd3f8fdade23"
+        },
+        "generator": {
+          "path": "design/district-3d/accepted-v1/district-world.py",
+          "bytes": 21387,
+          "sha256": "6912433b0a5a717fca883195c2719886eae068a7dae5ed495d25cd405d04605b"
+        },
+        "editableBlend": {
+          "path": "design/district-3d/accepted-v1/district-world.blend",
+          "bytes": 491203,
+          "sha256": "37f278f9dc8721ded88a725263a9d055327ec10a3a76a40d5692e99a226587da"
+        },
+        "originalProvenance": {
+          "path": "design/district-3d/accepted-v1/district-world.provenance.json",
+          "bytes": 1994,
+          "sha256": "d5dbef22b6a90d360575b0edcbb1140b0f9540874c18344369a2f54a12e6f396"
+        },
+        "reconstructionRecord": {
+          "path": "design/district-3d/accepted-v1/district-world.reconstruction.json",
+          "bytes": 2034,
+          "sha256": "7befc19d210f9716e056098042c96bd4a47db117603b600b9316f78c22fc3eaa"
+        },
+        "hashManifest": {
+          "path": "design/district-3d/accepted-v1/district-world.hash-manifest.json",
+          "bytes": 2948,
+          "sha256": "c1b48ce02a109818d445311a94a4535a039850c21292723cce38c59a1934cc98"
+        },
+        "triangles": 54340,
+        "meshBatches": 66,
+        "preservation": {
+          "runtimeGLB": "byte-exact-verified",
+          "generator": "byte-exact-verified",
+          "editableBlend": "scene-reconstructed-not-original-binary",
+          "acceptedOriginalBlendSha256": "c5bc568e912bf4f840b59400029460b60c16cde948a6af0e9d90bf38212e2c08",
+          "actualReconstructedBlendSha256": "37f278f9dc8721ded88a725263a9d055327ec10a3a76a40d5692e99a226587da",
+          "qualification": "Original world blend container bytes were overwritten before explicit snapshot preservation; they were not recovered. Reconstructed editable scene from exact generator exports byte-identical accepted GLB. Do not describe the archived blend as the original binary."
+        }
+      },
+      "host": {
+        "runtime": {
+          "path": "design/district-3d/accepted-v1/district-host.glb",
+          "bytes": 1070752,
+          "sha256": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037"
+        },
+        "generator": {
+          "path": "design/district-3d/accepted-v1/district-host.py",
+          "bytes": 22506,
+          "sha256": "5c61bb1ab910deb42c58c216635cb9f3a0674db69ab384fd92e500be49129ead"
+        },
+        "editableBlend": {
+          "path": "design/district-3d/accepted-v1/district-host.blend",
+          "bytes": 608156,
+          "sha256": "68652e723f99a5bc625351716c9b740df839b230a3dd812e1412bca49d80a23b"
+        },
+        "provenance": {
+          "path": "design/district-3d/accepted-v1/district-host.provenance.json",
+          "bytes": 5528,
+          "sha256": "2ba48b07941ed17b6a51f077351e79d7099fff695be9bbdcfef4f59ba867ac48"
+        },
+        "preservation": "Byte-exact copies of the accepted host files; current host GLB remains the same accepted hash."
+      },
+      "references": {
+        "introLoop": {
+          "path": "design/district-3d/accepted-v1/intro-loop.mp4",
+          "bytes": 7629251,
+          "sha256": "3791913768cbc71eefee0e819a422c489edc0373c9ca984619be1fa63f7255ad"
+        },
+        "lowAngleReference": {
+          "path": "design/district-3d/accepted-v1/low-angle-reference.png",
+          "bytes": 3851768,
+          "sha256": "35edd7e1bdb5540a4a346823138c517303aa88f35b11ba49864baa1ae820ed99"
+        },
+        "role": "Archived accepted loop and low-angle appearance reference, not runtime job evidence"
+      },
+      "currentRevisionRelation": "Current runtime world adds ReviewArchive at [-10,0,12] while retaining the 66 existing accepted mesh batches. Current runtime files remain separately registered under assets; do not replace this historical archive when exporting future revisions."
+    }
+  ],
+  "studyAttachments": {
+    "industrialThrusters": {
+      "source": "design/district-3d/storyboard/host-thrusters.js",
+      "scene": "design/district-3d/storyboard/mechanical-opening-scene.js",
+      "brief": "design/district-3d/INTRO-REVEAL.md",
+      "movie": "design/district-3d/storyboard/mechanical-opening.mp4",
+      "status": "Additive original hardware in a separate opening motion study; permanent host GLB unchanged",
+      "nozzles": 3
+    }
+  }
+}

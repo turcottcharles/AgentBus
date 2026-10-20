@@ -1,0 +1,1567 @@
+{
+  "version": 1,
+  "title": "Agent Bus showcase production",
+  "status": "current_candidate_acceptance_pending",
+  "objective": "One continuous muted cinematic-to-real-work experience plus a truthful, usable multi-project harness, directed by a maintained shot list.",
+  "integrationOwner": "/root",
+  "releaseScope": "Local showcase candidate. No push/deploy. Runtime qualification and provider-live qualification remain explicit gates.",
+  "tasks": [
+    {
+      "id": "SC-01",
+      "agent": "/root/t3_01_product",
+      "title": "Direction and maintained shot list",
+      "ownership": [
+        "design/showcase/SHOT-LIST.json",
+        "design/showcase/SHOT-LIST.md",
+        "design/showcase/CAPABILITIES.json"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/01.json",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/01.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Maintained current showcase direction after root phase-routing integration: twelve shots,sixteen gates,nineteen task mappings and nineteen pinned T3 rows. T01B/C may visit the actual scoped phase facility; Test remains core acceptance. Dynamic checkPlan and seven-project latest/unresolved snapshot pins are source-backed. Current native/provider qualification remains pending.",
+      "qualification": [
+        "Root freeze and source/bundle provenance for the integrated candidate.",
+        "Native warm-profile and all early/mid/late explicit-run handoffs; actual scoped phase travel,checkPlan counts,history/stale/unknown suppression and immediate results during travel.",
+        "Actual4K hardwareGPU shader/light/thruster/face occlusion,performance,context loss,visibility,disposal,reduced motion and owner artistic judgment.",
+        "Current authenticated provider edit/check/preview/error/cancel behavior only if separately authorized; installed CLI and historical evidence do not prove login/quota/model compatibility.",
+        "Actual multi-project top/side and overview/split interactions,preview identity/browser checks,display geometry and recovery comparison guards.",
+        "Physical microphone/human speech and human accessibility/usability remain separate acceptance."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Maintained current showcase direction after root phase-routing integration: twelve shots,sixteen gates,nineteen task mappings and nineteen pinned T3 rows. T01B/C may visit the actual scoped phase facility; Test remains core acceptance. Dynamic checkPlan and seven-project latest/unresolved snapshot pins are source-backed. Current native/provider qualification remains pending.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-02",
+      "agent": "/root/t3_16_quality",
+      "title": "Production opening and original thrusters",
+      "ownership": [
+        "app/district-3d/showcase-opening.js",
+        "app/district-3d/host-thrusters.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/02.json",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/02.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Production-only deterministic12second rocket opening, delayed warm helpful profile and original additive thrusters.",
+      "qualification": [
+        "Root integration/midintro blend and exactsource bundle.",
+        "Root-only hardwareGPU shader compilation, actual exhaust/dust/lighting/occlusion and performance.",
+        "Native artistic acceptance, contextloss/visibility/cleanup and real scoped Test handoff.",
+        "Exactcandidate source/bundle/installer gates."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Production-only deterministic12second rocket opening, delayed warm helpful profile and original additive thrusters.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-03",
+      "agent": "/root/t3_18_inclusive",
+      "title": "Continuous workbench handoff",
+      "ownership": [
+        "app/district-workbench.js",
+        "tests/showcase-workbench.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/03.json",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/03.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Continuous cinematic-to-real-entry handoff, truthful cross-project attention, persisted top/side project navigation, and preserved independent overview/split workspaces.",
+      "qualification": [
+        "Root frozen-candidate Electron/GPU visual and lifecycle acceptance, including actual M01-M04 preemption angles, reduced motion, hidden app view and responsive output/input balance.",
+        "Root exact iframe identity handshake/current-candidate verification integration and real browser interaction qualification.",
+        "Root seven-project native top/side navigation and overview/split acceptance.",
+        "Authenticated provider-live operation, quota/authentication and microphone behavior remain unqualified by these fixture tests."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Continuous cinematic-to-real-entry handoff, truthful cross-project attention, persisted top/side project navigation, and preserved independent overview/split workspaces.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-04",
+      "agent": "/root/t3_04_providers",
+      "title": "Codex provider operation",
+      "ownership": [
+        "app/district/providers/codex.js",
+        "tests/showcase-codex.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/04.json",
+      "shots": [
+        "T01A",
+        "T01D",
+        "T01E"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/04.json"
+      ],
+      "blockers": [
+        "Current authenticated Codex execution, model availability, quota and native Codex process-tree cancellation remain unqualified in this lane. Root alone may perform the authorized live qualification.",
+        "The current workspace files are untracked relative to the repository HEAD; a frozen integrated candidate and final whole-product qualification still belong to root."
+      ],
+      "summary": "Current qualification: current acceptance pending. Hardened the dedicated Codex CLI project adapter and corrected concrete stream semantics: exact scoped MCP process configuration, no inherited JavaScript preload injection, MCP status-only failures preserved, nonfatal CLI diagnostics retained as public detail, fatal quota/auth/stream errors preserved, and unexpected unscoped operations rejected. Shared createLaunch/parseLine interface remains unchanged.",
+      "qualification": [
+        "Installed package metadata 0.160.0 is not proof that the exact CLI binary accepts every launch flag/config key. A bounded root-owned compatibility check and later authenticated exact-candidate run remain separate gates.",
+        "Persistent native app-server threads, native turn IDs, resume/fork/steer, interactive provider approvals, account/catalog/quota discovery and rich normalized operation persistence remain product gaps rather than implemented parity.",
+        "This CLI adapter has no native transport reconnect/automatic resume or replay. Nonfatal CLI retry diagnostics remain visible; a fatal stream/turn error fails the session. The shared private-ticket MCP receipts only provide bounded same-assignment tool retry continuity.",
+        "The 1,000,000-byte parser frame cap remains intentional. Broad large-file/provider-frame compatibility is not established by the current small-project fixtures.",
+        "Provider createLaunch validates launch scope and keeps the CLI read-only; generated-workspace ownership, traversal/link protection, signed evidence, ticket expiry/revocation and final outcome qualification are enforced by adjacent modules and need integrated qualification.",
+        "The legacy Agent Bus smoke worker uses app/map-agents.js rather than this project adapter; this lane does not claim every Codex entrypoint has been unified or requalified.",
+        "Visual/cinematic acceptance, GPU performance, browser acceptance and release approval are outside this provider lane."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Hardened the dedicated Codex CLI project adapter and corrected concrete stream semantics: exact scoped MCP process configuration, no inherited JavaScript preload injection, MCP status-only failures preserved, nonfatal CLI diagnostics retained as public detail, fatal quota/auth/stream errors preserved, and unexpected unscoped operations rejected. Shared createLaunch/parseLine interface remains unchanged.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Only the recorded explicit narrow edit/check/preview in this production candidate; no sustained quota or general provider capability claim.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-05",
+      "agent": "/root/cli_adapter",
+      "title": "CLI and MCP parity",
+      "ownership": [
+        "bin/district.cjs",
+        "bin/district-mcp.cjs",
+        "app/district/client.js",
+        "tests/showcase-cli.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/05.json",
+      "shots": [
+        "T01A",
+        "T01D",
+        "T01E",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/05.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. CLI and MCP use the existing shared command authority. Exact optional report linkage, authoritative command catalog parity, durable retry recovery and structured errors are implemented and tested without native rendering or live providers.",
+      "qualification": [
+        "Root must freeze the integrated source and rebuild the shared renderer bundle once all source lanes are ready.",
+        "Native GUI entry/handoff, typing/focus behavior, hardware GPU presentation and exact scene continuity remain root/SC-19 qualification gates.",
+        "Actual authenticated Claude/Codex sessions, provider allowance and real live edits remain explicitly unqualified by these offline fixture tests.",
+        "Desktop display geometry, native preview windows and interactive browser/visual checks were not started by this lane."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "CLI and MCP use the existing shared command authority. Exact optional report linkage, authoritative command catalog parity, durable retry recovery and structured errors are implemented and tested without native rendering or live providers.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-06",
+      "agent": "/root/t3_06_threads",
+      "title": "Real agent session lifecycle",
+      "ownership": [
+        "app/district/agent-session.js",
+        "app/district/project-agent-mcp.js",
+        "tests/showcase-sessions.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/06.json",
+      "shots": [
+        "T01A",
+        "T01D",
+        "T01E"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/06.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Hardened owned agent-session stopping, bound native session identity, and retired idle scoped MCP processes when assignment authority expires. Added backend proof that root's unresolved-ownership quarantine survives persisted restart while other projects remain usable. Focused local-process fixtures pass; paid provider and native showcase qualification remain separate.",
+      "qualification": [
+        "Root integration and frozen-candidate tests, including any future explicit runtime ownership reconciliation surface.",
+        "Real authenticated Codex/Claude model sessions, installed model choices, account/quota behavior and provider transport failure against the exact integrated candidate.",
+        "Hardware-GPU showcase rendering and event-to-host performance qualification by root. This receipt proves no visual or frame-rate claim.",
+        "Full native descendant termination across abrupt app/OS crashes requires durable process ownership or equivalent platform authority; the idle MCP watchdog alone does not establish it.",
+        "Native CLI zero exit plus signed writes does not currently require a provider completed-result frame. Real runtime checks still control application pass, but explicit provider terminal-frame presence needs a coordinated end-of-stream contract across session and both adapters."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Hardened owned agent-session stopping, bound native session identity, and retired idle scoped MCP processes when assignment authority expires. Added backend proof that root's unresolved-ownership quarantine survives persisted restart while other projects remain usable. Focused local-process fixtures pass; paid provider and native showcase qualification remain separate.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-07",
+      "agent": "/root/t3_07_workspaces",
+      "title": "Multiple-project isolation and selection",
+      "ownership": [
+        "app/district/workspaces.js",
+        "app/district-selection.js",
+        "tests/showcase-projects.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/07.json",
+      "shots": [
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/07.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Seven-project source/run isolation and caller-owned selection/view persistence are covered by focused executable tests. Workspaces.list now degrades a missing or invalid root into one unavailable project record rather than failing the whole project snapshot. Added pure top/side plus overview/split preference helpers without changing existing selection serialization or dispatch authority.",
+      "qualification": [
+        "Root integrates and freezes the changing shared candidate before final qualification.",
+        "Actual seven-project top/side navigation and overview/tiled layout behavior, keyboard focus, drafts, pane lifecycle and visual fit require workbench integration tests and root-only native/GPU acceptance.",
+        "Actual provider sessions, quota/account concurrency, remote hosts and termination behavior are outside these local recipe fixtures.",
+        "Root's run-history fairness fix passes the new focused regression. The earlier 19 tests and this added test passed in separate targeted invocations; no new broad or native suite was run."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Seven-project source/run isolation and caller-owned selection/view persistence are covered by focused executable tests. Workspaces.list now degrades a missing or invalid root into one unavailable project record rather than failing the whole project snapshot. Added pure top/side plus overview/split preference helpers without changing existing selection serialization or dispatch authority.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Older seven-project/top-side/overview-split observations are historical after UI changes. No inferred carry-forward from a new one-project movie.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-08",
+      "agent": "/root/t3_08_sourcecontrol",
+      "title": "Checkpoints and recovery",
+      "ownership": [
+        "app/district/checkpoints.js",
+        "tests/showcase-checkpoints.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/08.json",
+      "shots": [
+        "T01E"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/08.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Added verified saved-file inspection, exact project/source/run attribution, bounded hash-identified comparisons, optional stale-comparison restore guards and actionable archive/partial-failure recovery. Existing immutable byte snapshots and archive-before-restore behavior remain. These are source/backend capabilities; root UI/runtime integration and current native qualification remain pending.",
+      "qualification": [
+        "Root must freeze and qualify the assembled UI/native candidate. The new real-runtime command-boundary tests qualify guards, identity, diagnostics and HTTP preview invalidation; they do not prove DOM controls, displayed partial-recovery copy or native interaction.",
+        "Provider conversation rewind, arbitrary external repository rollback, Git checkpoint refs, Git commits/PR operations, directory-structure collision removal and destructive cleanup remain outside this lane.",
+        "Saved versions preserve managed public source only. Internal artifact/checkpoint data, databases, Git history, provider-side state and external actions are excluded.",
+        "Per-file immediate hash checks and runtime idle ownership reduce races but do not provide an OS-level atomic transaction against a hostile concurrent filesystem process; partial outcomes keep the verified prior archive and identify changed paths.",
+        "Very large current-file text is deliberately omitted from diff display after the bounded cap; full hashes/counts remain complete and saved-file inspect supports one bounded full saved file."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Added verified saved-file inspection, exact project/source/run attribution, bounded hash-identified comparisons, optional stale-comparison restore guards and actionable archive/partial-failure recovery. Existing immutable byte snapshots and archive-before-restore behavior remain. These are source/backend capabilities; root UI/runtime integration and current native qualification remain pending.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-09",
+      "agent": "/root/t3_09_tools",
+      "title": "Exact-candidate preview",
+      "ownership": [
+        "app/district/preview.js",
+        "tests/showcase-preview.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/09.json",
+      "shots": [
+        "W01",
+        "R01",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/09.json"
+      ],
+      "blockers": [
+        "Root must integrate strict frame readiness with the new identity handshake; the preview server cannot independently control or attest a different selected-project UI frame.",
+        "Root-owned runtime must guard current-only preview_start/play actions against source-hash mismatch, preserving historical output only with explicit stale labeling.",
+        "Root-owned cancellation cleanup should call identity-conditional stop with the returned preview tuple so a cancelled opening cannot leave current-looking output or close a newer replacement."
+      ],
+      "summary": "Current qualification: current acceptance pending. Strengthened exact-candidate preview delivery and lifecycle. Verified snapshot bytes remain project/run bound; repeat opens keep the live binding, one run cannot be rebound to other bytes, replacement/shutdown are safe, and explicit per-load identity verification is available for root-owned frame controls. Local HTTP/source fixtures pass; integrated native/browser/provider qualification remains separate.",
+      "qualification": [
+        "Root freezes the integrated source candidate and runs the exact assembled native/browser path.",
+        "Actual checklist add/complete/remove and Rally score/theme/reset interactions, keyboard input, frame reload/navigation and cross-project switches require a real isolated browser check.",
+        "Verify that wrong-origin navigation cannot remain visibly labeled ready, stale source cannot be presented as current, and late cancellation cannot terminate a newer candidate.",
+        "GPU world, cinematic continuity, reduced motion, display placement, owner artistic acceptance and live provider/auth/quota behavior were not run or qualified here.",
+        "Changes are provisional until root integrates; HEAD alone does not identify the shared uncommitted candidate."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Strengthened exact-candidate preview delivery and lifecycle. Verified snapshot bytes remain project/run bound; repeat opens keep the live binding, one run cannot be rebound to other bytes, replacement/shutdown are safe, and explicit per-load identity verification is available for root-owned frame controls. Local HTTP/source fixtures pass; integrated native/browser/provider qualification remains separate.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-10",
+      "agent": "/root/protocol_review",
+      "title": "Independent security and capability-gap review",
+      "ownership": [
+        "Read-only production",
+        "evidence/showcase/security-review.json",
+        "design/showcase/PRODUCT-GAPS.md"
+      ],
+      "status": "reviewed",
+      "report": "evidence/showcase/lanes/10.json",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/10.json"
+      ],
+      "blockers": [
+        "SC10-F01: new showcase adapter must normalize actual five-check project runs versus six-step smoke runs.",
+        "SC10-F02: assembled current showcase/native/provider qualification remains root-owned and pending."
+      ],
+      "summary": "Current qualification: current acceptance pending. Independent source/capability review: bounded local authority negatives pass 8/8; required check-count adapter normalization reproduced; continuous showcase/current native/provider qualification remains pending; broad T3 gaps and explicit trust limits documented.",
+      "qualification": [
+        {
+          "gate": "Preview/selection/project identity",
+          "state": "source_reviewed_current_runtime_not_requalified",
+          "evidence": [
+            {
+              "file": "app/district/runtime.js",
+              "line": 381,
+              "claim": "Preview root resolves only to this run artifact under owned project output."
+            },
+            {
+              "file": "app/district/preview.js",
+              "line": 251,
+              "claim": "Immutable loopback preview sandbox; no Node, external connects, forms, frames or object capability."
+            },
+            {
+              "file": "app/district-feedback.js",
+              "line": 229,
+              "claim": "Selection verifies exact iframe, origin, nonce, project, run and candidate before explicit feedback."
+            }
+          ]
+        },
+        {
+          "gate": "Showcase continuous handoff and true check counts",
+          "state": "pending_integration_and_native",
+          "finding": "SC10-F01/SC10-F02"
+        },
+        {
+          "gate": "Actual current provider edit/check/preview/cancel/error",
+          "state": "root_qualification_required",
+          "note": "CLI presence and prior live evidence do not qualify this changing candidate."
+        },
+        {
+          "gate": "Multi-project display/selection/isolation and recovery",
+          "state": "source_reviewed_lane_tests_and_native_required"
+        }
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Independent source/capability review: bounded local authority negatives pass 8/8; required check-count adapter normalization reproduced; continuous showcase/current native/provider qualification remains pending; broad T3 gaps and explicit trust limits documented.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-11",
+      "agent": "/root/t3_11_mcp",
+      "title": "Truthful automatic activity",
+      "ownership": [
+        "app/district/activity.js",
+        "app/district-world-state.js",
+        "tests/showcase-activity.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/11.json",
+      "shots": [
+        "W01",
+        "T01D",
+        "T01E",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/11.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Truthful automatic activity projection now preserves explicit reported/observed/inferred phase labels, exact project/run/attempt/session scope, durable sequence ordering, terminal and stop protections, stale/unknown quieting, and separate concurrent same-provider visual identities without minting executable workers or results.",
+      "qualification": [
+        "Root must qualify the assembled native/GPU candidate and exact source manifest after integration; no native launch or visual acceptance was performed in this lane.",
+        "Root alone may perform live Codex/Claude qualification. These tests prove local lifecycle/projection and authenticated CLI boundary behavior, not auth/quota/provider availability.",
+        "Completed state is historical projection only; actual live-transition acknowledgement remains renderer/run-controller responsibility.",
+        "Durable event/sequence/fence marker records grow with observed events. Retention/compaction preserving dedup and terminal safety remains future work.",
+        "Per-project concurrent instances are exposed and source-wired; final integrated management/GPU interaction acceptance remains root/lane17 qualification."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Truthful automatic activity projection now preserves explicit reported/observed/inferred phase labels, exact project/run/attempt/session scope, durable sequence ordering, terminal and stop protections, stale/unknown quieting, and separate concurrent same-provider visual identities without minting executable workers or results.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-12",
+      "agent": "/root/t3_12_remote",
+      "title": "Display region assignments",
+      "ownership": [
+        "app/district/displays.js",
+        "app/district/regions.js",
+        "app/district-screen-picker.js",
+        "app/district-screen-picker.css",
+        "tests/showcase-regions.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/12.json",
+      "shots": [
+        "W01",
+        "R01",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/12.json"
+      ],
+      "blockers": [
+        "Root-owned UI/runtime still need the proposed snapshot-refresh and persisted geometry-revision hooks to make the new revision check span separate assignment/open sessions. This lane did not edit those files.",
+        "Actual current-candidate native 4K placement, owner-monitor isolation and accessible visual acceptance were deliberately not run by this lane."
+      ],
+      "summary": "Current qualification: current acceptance pending. Hardened per-project physical monitor and fractional area selection. Live geometry/scale drift and disconnection fail closed; affected manager-owned windows are hidden/destroyed. The cyberdeck distinguishes physical IDs from zones, explains saved-area overlap, supports pointer/percent/keyboard selection, and revalidates refreshed monitor metadata. Root integration and native qualification remain pending.",
+      "qualification": [
+        "Root integrates the hooks, freezes the exact candidate, and reruns focused tests plus its required integrated acceptance; these lane changes are provisional until then.",
+        "Use isolated app data on actual physical 4K monitor 1 / display ID 3242010503 and verify its current native dimensions, logical workArea and scale. Keep the owner's 1080p monitor 2 / display ID 4060505759 and existing windows untouched.",
+        "Through the actual cyberdeck GUI assign independent projects to left-third and middle-third of that same physical monitor, then open candidate-bound previews and browser checks. Measure actual outer DIP bounds, shared edge and workArea containment; confirm there are no invented physical-monitor IDs or implicit test starts.",
+        "Exercise actual pointer draw, percent fields, keyboard presets/arrow resize, status/focus announcements, compact sizing, high contrast and reduced motion. Synthetic DOM tests establish event/command behavior, not rendered layout or screen-reader acceptance.",
+        "Qualify a root-authorized isolated topology/scale-change fixture with already-open owned windows and an in-flight load. Confirm only affected owned preview windows close and the UI exposes the monitor cause. No owner hardware/display configuration was changed in this lane.",
+        "Reopen the app and prove persisted physical ID, normalized zone and geometry revision survive separately; a missing/changed monitor must require deliberate review rather than fall back to the primary display.",
+        "OS display IDs plus bounds/workArea/scale detect observable topology changes, but cannot distinguish a replacement device reusing the same ID and identical metadata. Physical hardware identity beyond supplied OS metadata remains unknown.",
+        "An OS may relocate windows before delivering a display-removal event. The manager closes its affected owned windows when notified; zero-frame obstruction of the owner's monitor requires native observation and cannot be claimed from these synthetic tests."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Hardened per-project physical monitor and fractional area selection. Live geometry/scale drift and disconnection fail closed; affected manager-owned windows are hidden/destroyed. The cyberdeck distinguishes physical IDs from zones, explains saved-area overlap, supports pointer/percent/keyboard selection, and revalidates refreshed monitor metadata. Root integration and native qualification remain pending.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-13",
+      "agent": "/root/t3_13_accounts",
+      "title": "Claude provider operation",
+      "ownership": [
+        "app/district/providers/claude.js",
+        "tests/showcase-claude.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/13.json",
+      "shots": [
+        "T01A",
+        "T01D",
+        "T01E"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/13.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: historical; current evidence pending. Claude adapter now requests native early block events, reports scoped tool preparation/running/results without claiming execution evidence, and rejects permission/auth/HTTP errors, noncompleted terminal reasons, refusal/truncation stops, malformed outcome fields and oversized frames. Scoped MCP must use the supplied runtime executable and fixed owned entry/ticket arguments. Exports remain createLaunch/parseLine/discover. Source and isolated protocol fixtures are qualified; this wave performed no paid/provider sessions or auth changes.",
+      "qualification": [
+        "Root-owned authorized live Claude2.1.302 assignment with explicit model/effort, actual signed scoped edit, final result, local recipe and candidate preview.",
+        "Root-owned actual login/quota/permission refusal and Stop/cancellation process-tree behavior on the frozen candidate; fixtures and previous live records cannot qualify them anew.",
+        "Native partial-event ordering and startup/tool progress appearance in the real UI; no GPU/browser/native rendering was launched by this lane.",
+        "A separate session-policy decision is still needed if native terminal-envelope presence must be mandatory before accepting zero process exit."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Claude adapter now requests native early block events, reports scoped tool preparation/running/results without claiming execution evidence, and rejects permission/auth/HTTP errors, noncompleted terminal reasons, refusal/truncation stops, malformed outcome fields and oversized frames. Scoped MCP must use the supplied runtime executable and fixed owned entry/ticket arguments. Exports remain createLaunch/parseLine/discover. Source and isolated protocol fixtures are qualified; this wave performed no paid/provider sessions or auth changes.",
+      "currentQualification": {
+        "state": "historical_not_current",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Historical live provider evidence is applicable only to the listed unchanged backend hashes. It is not a requalification of the current complete UI, native handoff, authentication lifetime or quota.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": false
+      }
+    },
+    {
+      "id": "SC-14",
+      "agent": "/root/t3_14_background",
+      "title": "Cross-project attention feed",
+      "ownership": [
+        "app/district-attention.js",
+        "tests/showcase-attention.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/14.json",
+      "shots": [],
+      "evidence": [
+        "evidence/showcase/lanes/14.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Pure browser/CommonJS cross-project attention projection from actual scoped runs and activity. Preserves seven projects and source/evidence identity; deduplicates repeated observations without dispatching work or fabricating read receipts.",
+      "qualification": [
+        "Lane03 consumer/workbench integration and root-owned script load order must be qualified in the assembled candidate.",
+        "Targeted Node/VM tests establish projection behavior only; they do not claim native UI, provider-live, GPU rendering or owner artistic acceptance.",
+        "UI-owned seen hints are intentionally not a backend durable acknowledgement service."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Pure browser/CommonJS cross-project attention projection from actual scoped runs and activity. Preserves seven projects and source/evidence identity; deduplicates repeated observations without dispatching work or fabricating read receipts.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-15",
+      "agent": "/root/t3_15_interface",
+      "title": "Console-quality shell and responsive polish",
+      "ownership": [
+        "app/district-workbench.css",
+        "app/district-entry.css",
+        "app/district-showcase.css"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/15.json",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/15.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Continuous full-viewport cinematic shell with compact entry attention overlay, narrower real-candidate preview, persistent input, explicit top/side project management and visible actual status/evidence.",
+      "qualification": [
+        "Root must retake native entry/real-result screenshots to verify full viewport, compact attention pointer/keyboard expansion and character/preview balance, including mobile/short height; this lane only viewed supplied captures and parsed CSS.",
+        "Root hardware-GPU/native review for M01-M04 silhouette and lower-input clearance; no GPU/native app launched by this lane.",
+        "Root real seven-project top/side, overview/split, keyboard focus and short/mobile viewport review, including actual failure/unknown/stale attention.",
+        "Root R01 exact-candidate preview usability with visible freshness/provenance, reachable rejection/status and full feedback controls inside the bounded scroll surface.",
+        "Root reduced-motion and forced-colors native review; renderer reduced-motion settling remains runtime-owned.",
+        "Owner artistic acceptance, integrated candidate qualification and provider-live behavior are not established by CSS source checks."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Continuous full-viewport cinematic shell with compact entry attention overlay, narrower real-candidate preview, persistent input, explicit top/side project management and visible actual status/evidence.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-16",
+      "agent": "/root/t3_05_orchestration",
+      "title": "Performance and lifecycle audit",
+      "ownership": [
+        "Read-only production",
+        "evidence/showcase/gpu-probe.cjs",
+        "tests/showcase-lifecycle.test.js"
+      ],
+      "status": "reviewed",
+      "report": "evidence/showcase/lanes/16.json",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/16.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Authored an import-safe root-only isolated hardware-GPU lifecycle probe and 17 focused actual-source lifecycle regressions. All 17 now pass after root corrected reduced-motion redraw/settling and complete candidate/base identity. Added one-opening/mid-intro handoff, unavailable freeze/resume and cross-project historical-result tests. Production remained read-only; no native/GPU/provider qualification was run by this lane.",
+      "qualification": [
+        "Freeze final sources and bundle before root runs exactly one isolated current-app hardware probe on monitor 1 ID3242010503; recompute the manifest digest after all lane integrations.",
+        "Lane19/root must exercise actual assignment during opening, multiple-project selection/history, candidate changes and opening-to-live continuity using real scoped commands/results in the actual client.",
+        "Root-only native probe must qualify real context loss/restoration, main-view/native visibility, reduced motion, actual hardware corroboration, bounded sample/resource counters and final renderer/process disposal.",
+        "Visual/artistic acceptance, sustained frame rates, GPU execution timing and precise GPU VRAM use are not established by these source tests or a limited frame-counter sample.",
+        "No provider, native speech, hardware renderer or native app was launched by this lane."
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Authored an import-safe root-only isolated hardware-GPU lifecycle probe and 17 focused actual-source lifecycle regressions. All 17 now pass after root corrected reduced-motion redraw/settling and complete candidate/base identity. Added one-opening/mid-intro handoff, unavailable freeze/resume and cross-project historical-result tests. Production remained read-only; no native/GPU/provider qualification was run by this lane.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Clean capture shutdown is not the full hidden-view/context-loss/reduced-motion/disposal audit. Older lifecycle checks remain historical after visual/UI changes.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-17",
+      "agent": "/root/t3_17_wysiwyg",
+      "title": "Working management map interaction",
+      "ownership": [
+        "app/district-scene.js",
+        "app/district-scene.css",
+        "tests/showcase-management.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/17.json",
+      "shots": [],
+      "evidence": [
+        "evidence/showcase/lanes/17.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Completed the management map source integration with the shared physical 3D district, authoritative projected facility and worker positions, truthful scoped CLI activity, explicit assignment controls, illustrated fallback and visibility disposal. This is source and focused contract-test evidence; native rendering remains the root gate.",
+      "qualification": [
+        "Root freezes and rebuilds one assembled candidate, then runs hardware GPU/native acceptance for the actual management camera, real GLB projection, labels, occlusion, drag hit areas and 720/810-height layouts.",
+        "Verify player-selected management entry, return to the accepted low-angle scene, shared worker identity and multiple visible project panes in the assembled app.",
+        "Verify actual CLI/provider activity and real create/build/test/preview flow under the root-owned native/provider gate. The focused API fixture does not qualify rendering, providers, broad integration, release or performance."
+      ],
+      "historicalShotRefs": [
+        "P01A",
+        "P01B",
+        "P01C",
+        "P01D"
+      ],
+      "implementationSummary": "Completed the management map source integration with the shared physical 3D district, authoritative projected facility and worker positions, truthful scoped CLI activity, explicit assignment controls, illustrated fallback and visibility disposal. This is source and focused contract-test evidence; native rendering remains the root gate.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Older seven-project/top-side/overview-split observations are historical after UI changes. No inferred carry-forward from a new one-project movie.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-18",
+      "agent": "/root/t3_03_claude",
+      "title": "Approachable conversation and access",
+      "ownership": [
+        "app/district-conversation.js",
+        "app/district-conversation.css",
+        "tests/showcase-conversation.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/18.json",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "T01A",
+        "T01D",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/18.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Conversation input remains editable from mount and throughout pending requests while dispatch remains explicit and at most once. Added a separate setPending operation lock, rejection-aware status, visible keyboard/speech support hints, Escape cancellation and resilient teardown.",
+      "qualification": [
+        "No native microphone was started or owner speech captured. Actual OS permission, recognizer availability, microphone capture, recognition quality, final-event delivery and cancellation require separate explicitly started native qualification.",
+        "No GPU/native window, provider or broad suite ran in this lane. Root must assess assembled first-frame visibility, contrast, compact layouts, focus navigation and continuous cinematic-to-real-work behavior.",
+        "Fixture DOM verifies behavioral event/focus/draft contracts, not screen-reader interoperability or complete accessibility compliance."
+      ],
+      "historicalShotRefs": [
+        "S05"
+      ],
+      "implementationSummary": "Conversation input remains editable from mount and throughout pending requests while dispatch remains explicit and at most once. Added a separate setPending operation lock, rejection-aware status, visible keyboard/speech support hints, Escape cancellation and resilient teardown.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-19",
+      "agent": "/root/t3_19_adoption",
+      "title": "Independent integrated qualification",
+      "ownership": [
+        "evidence/showcase/runtime-review.cjs",
+        "evidence/showcase/acceptance-plan.json",
+        "tests/showcase-integration.test.js"
+      ],
+      "status": "implemented",
+      "report": "evidence/showcase/lanes/19.json",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "evidence": [
+        "evidence/showcase/lanes/19.json"
+      ],
+      "blockers": [],
+      "summary": "Current qualification: current acceptance pending. Import-safe independent integrated acceptance harness and explicit acceptance plan. Actual disposable SQLite/projects/recipes/preview and MapJobs checks are qualified by focused Node cases. Root-only native UI/GPU acceptance is authored and not yet executed by this lane.",
+      "qualification": [
+        "Root frozen-candidate execution of the authored native harness, actual GPU metadata, screenshots, source equality and owned cleanup receipt",
+        "Root/owner visual review of cold mechanical to warm profile staging and actual camera/host handoff smoothness; diagnostics alone cannot grant artistic acceptance",
+        "Authenticated live providers, quota/authentication, native microphone/speech and packaged/production-main startup",
+        "Broad performance/release readiness beyond bounded current-candidate samples"
+      ],
+      "historicalShotRefs": [],
+      "implementationSummary": "Import-safe independent integrated acceptance harness and explicit acceptance plan. Actual disposable SQLite/projects/recipes/preview and MapJobs checks are qualified by focused Node cases. Root-only native UI/GPU acceptance is authored and not yet executed by this lane.",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "The current film covers only its recorded timing. Earlier commit timing, history, failure, unknown and cancellation cases require current acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    }
+  ],
+  "updatedAt": "2026-10-18T21:25:02.637Z",
+  "integration": {
+    "owner": "/root",
+    "status": "current_candidate_acceptance_pending",
+    "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+    "runtimeSourceHash": "8d46194df8d75422e568c68ade0182b812d0d6087d70661da46d84cadc4b453b",
+    "qualification": "evidence/showcase/qualification.json",
+    "qualificationSha256": "9df5398241121f30017d0d19847c4452a3c9fed4a38250ac3359fdcf6daa04b0",
+    "gates": [
+      {
+        "id": "experience",
+        "title": "Current production cinematic and real creation",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Actual production opening, scoped work, candidate output and captured camera continuation only. It does not substitute for seven-project, lifecycle, negative-case or artistic acceptance.",
+        "receipt": "evidence/showcase/experience-04/validation.json"
+      },
+      {
+        "id": "tests",
+        "title": "Current frozen-candidate full regression",
+        "state": "failed",
+        "status": "current acceptance failed",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Counts are parsed from the completed current log. Missing logs, incomplete summaries, failures, skips and changed source cannot pass.",
+        "receipt": "evidence/showcase/full-suite-current.tap"
+      },
+      {
+        "id": "multi",
+        "title": "Current seven-project native views and isolation",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Older seven-project/top-side/overview-split observations are historical after UI changes. No inferred carry-forward from a new one-project movie.",
+        "receipt": "evidence/showcase/native-candidate-02/validation.json"
+      },
+      {
+        "id": "handoff",
+        "title": "Current early/mid/late handoff and native negative cases",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "The current film covers only its recorded timing. Earlier commit timing, history, failure, unknown and cancellation cases require current acceptance.",
+        "receipt": "evidence/showcase/native-candidate-02/validation.json"
+      },
+      {
+        "id": "lifecycle",
+        "title": "Current native visibility, context and disposal lifecycle",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Clean capture shutdown is not the full hidden-view/context-loss/reduced-motion/disposal audit. Older lifecycle checks remain historical after visual/UI changes.",
+        "receipt": "evidence/showcase/production-candidate-06/validation.json"
+      },
+      {
+        "id": "codex",
+        "title": "Current production live Codex narrow assignment",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Only the recorded explicit narrow edit/check/preview in this production candidate; no sustained quota or general provider capability claim.",
+        "receipt": "evidence/showcase/experience-04/validation.json"
+      },
+      {
+        "id": "claude-component",
+        "title": "Historical Claude backend component evidence",
+        "state": "historical_not_current",
+        "status": "historical; current evidence pending",
+        "required": false,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Historical live provider evidence is applicable only to the listed unchanged backend hashes. It is not a requalification of the current complete UI, native handoff, authentication lifetime or quota.",
+        "receipt": "evidence/showcase/live-provider-receipt.json"
+      },
+      {
+        "id": "bundle",
+        "title": "Current GPU bundle reproducibility",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Requires the recorded rebuild to equal the current bundle bytes; old bundle evidence does not qualify new visual code.",
+        "receipt": "evidence/showcase/bundle-reproducibility.json"
+      },
+      {
+        "id": "models",
+        "title": "Approved original models preserved",
+        "state": "passed",
+        "status": "passed within the recorded scope",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "",
+        "receipt": null
+      }
+    ],
+    "evidence": [
+      "evidence/showcase/qualification.json"
+    ],
+    "historicalEvidence": [
+      "evidence/showcase/native-candidate-02/validation.json",
+      "evidence/showcase/production-candidate-06/validation.json",
+      "evidence/showcase/live-provider-receipt.json"
+    ],
+    "previousQualification": "evidence/showcase/qualification-history/a686779c9676b9369c8dc290a309d31e19e895312280335155d1e53d010b867a.json",
+    "remaining": [
+      "Current production cinematic and real creation: pending",
+      "Current frozen-candidate full regression: failed",
+      "Current seven-project native views and isolation: pending",
+      "Current early/mid/late handoff and native negative cases: pending",
+      "Current native visibility, context and disposal lifecycle: pending",
+      "Current production live Codex narrow assignment: pending",
+      "Current GPU bundle reproducibility: pending",
+      "Owner artistic acceptance and physical microphone/human usability remain separate.",
+      "Current production live Codex assignment remains pending or failed as recorded.",
+      "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+    ],
+    "shots": {
+      "M01": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "M02": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "M03": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "M04": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "W01": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "W02": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "I01": "current acceptance pending: Current-candidate acceptance is not recorded for this shot. No historical pass is inherited.",
+      "T01A": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "T01B": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "T01C": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "T01D": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "T01E": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "R01": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "P01": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical."
+    }
+  },
+  "shots": [
+    {
+      "id": "M01",
+      "title": "Industrial ignition",
+      "phase": "opening",
+      "action": "Ground-height exhaust macro: cold heat-darkened steel bells ignite amber; brief powered surge decelerates into precise hover. Face stays outside frame.",
+      "owners": [
+        "SC-02",
+        "SC-03",
+        "SC-15",
+        "SC-16",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-01",
+        "ACC-02",
+        "ACC-03",
+        "ACC-04",
+        "ACC-10",
+        "ACC-15"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "M02",
+      "title": "Copper precision",
+      "phase": "opening",
+      "action": "Tight shoulder/joint insert: the mechanism adjusts and holds with weight. Compact original hardware, no face reveal.",
+      "owners": [
+        "SC-02",
+        "SC-03",
+        "SC-15",
+        "SC-16",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-01",
+        "ACC-02",
+        "ACC-03",
+        "ACC-04",
+        "ACC-10",
+        "ACC-15"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "M03",
+      "title": "Controlled power",
+      "phase": "opening",
+      "action": "Low rear crane discovers the hovering body; reveal weight, protective ribs and control while eyes remain withheld.",
+      "owners": [
+        "SC-02",
+        "SC-03",
+        "SC-15",
+        "SC-16",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-01",
+        "ACC-02",
+        "ACC-03",
+        "ACC-04",
+        "ACC-10",
+        "ACC-15"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "M04",
+      "title": "A helpful person",
+      "phase": "opening",
+      "action": "Delayed profile: optics lead a checking glance, asymmetric brow and delicate head tilt; camera eases around/back as compact dish opens.",
+      "owners": [
+        "SC-02",
+        "SC-03",
+        "SC-15",
+        "SC-16",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-01",
+        "ACC-02",
+        "ACC-03",
+        "ACC-04",
+        "ACC-10",
+        "ACC-15"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "W01",
+      "title": "Warm ready and real attention",
+      "phase": "operational",
+      "action": "The warm face reveal leads directly into W02. One physical worker scale throughout; the camera makes the close-up.",
+      "owners": [
+        "SC-03",
+        "SC-14",
+        "SC-15",
+        "SC-18",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-02",
+        "ACC-06",
+        "ACC-07",
+        "ACC-09",
+        "ACC-10",
+        "ACC-14"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "W02",
+      "title": "One worker, a district ready to use",
+      "phase": "transition",
+      "action": "Automatically crane and dolly out from the single cute antenna-and-rockets robot into the three-quarter isometric district. Buildings are ready for real work. No decorative or disconnected bots.",
+      "owners": [
+        "SC-03",
+        "SC-15",
+        "SC-19"
+      ],
+      "acceptance": [
+        "Single featured robot remains at worker scale.",
+        "Automatic pullback reaches true orthographic 35.264 degree elevation and 45 degree azimuth.",
+        "No ambient or installed-only provider robots.",
+        "Typing never dispatches or pauses the camera."
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "I01",
+      "title": "Drag the worker to real Test work",
+      "phase": "interaction",
+      "action": "Drag the original single robot onto Test, choose actual executor and explicitly assign its checkout smoke test. Keep W02 orthographic camera and shared robot scale. Show actual named checks, reported activity, checkout/run identity and output in an edge dock.",
+      "owners": [
+        "SC-03",
+        "SC-15",
+        "SC-18",
+        "SC-19"
+      ],
+      "acceptance": [
+        "Actual pointer drag and keyboard equivalent select Test without dispatch.",
+        "One explicit assignment starts one owned runner.",
+        "Six observed smoke checks and actual provider session/result; no timer-generated pass.",
+        "Camera stays orthographic and unchanged through assignment/results.",
+        "Read failure and stop remain truthful; disposal cleans UI without canceling work implicitly."
+      ],
+      "qualification": "current acceptance pending: Current-candidate acceptance is not recorded for this shot. No historical pass is inherited.",
+      "currentQualification": {
+        "state": "pending",
+        "summary": "Current-candidate acceptance is not recorded for this shot. No historical pass is inherited.",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "T01A",
+      "title": "Notice an actual assignment",
+      "phase": "operational",
+      "action": "Optics lead; asymmetric brow and delicate head tilt acknowledge the actual selected assignment.",
+      "owners": [
+        "SC-03",
+        "SC-05",
+        "SC-06",
+        "SC-11",
+        "SC-18",
+        "SC-19",
+        "SC-04",
+        "SC-13"
+      ],
+      "acceptance": [
+        "ACC-04",
+        "ACC-05",
+        "ACC-06",
+        "ACC-07",
+        "ACC-10",
+        "ACC-12"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "T01B",
+      "title": "Orient toward the actual phase facility",
+      "phase": "operational",
+      "action": "Compact dish extends/searches/locks toward the run's current eligible facility. Scoped reported Research or Editing may orient to Research/Workshop; observed building/testing selects the corresponding operation facility. Head leads body; Test remains the core acceptance slice.",
+      "owners": [
+        "SC-02",
+        "SC-03",
+        "SC-11",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-03",
+        "ACC-05",
+        "ACC-06",
+        "ACC-07",
+        "ACC-15"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "T01C",
+      "title": "Purposeful travel to the actual phase",
+      "phase": "operational",
+      "action": "Follow the authored clear-road route from the actual current host position to the current phase facility. Research, Workshop, Test, Review, Preview and hub use saved approach points; no duplicate job is dispatched.",
+      "owners": [
+        "SC-03",
+        "SC-11",
+        "SC-17",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-03",
+        "ACC-05",
+        "ACC-06",
+        "ACC-09",
+        "ACC-15"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "T01D",
+      "title": "Watch actual checks",
+      "phase": "operational",
+      "action": "At the routed facility, show actual phase/basis and run evidence. When checks run, include actual check name/recorded count/kind; Test remains the core six-smoke/five-source/browser acceptance slice. No timed scan or green result for reported research.",
+      "owners": [
+        "SC-03",
+        "SC-06",
+        "SC-11",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-05",
+        "ACC-06",
+        "ACC-07",
+        "ACC-08",
+        "ACC-11",
+        "ACC-16"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "T01E",
+      "title": "Acknowledge the recorded outcome",
+      "phase": "operational",
+      "action": "One restrained relief cue for a fresh observed pass, concern for failure. Cancellation/interruption/timeout/unknown termination settle without relief.",
+      "owners": [
+        "SC-03",
+        "SC-06",
+        "SC-08",
+        "SC-11",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-05",
+        "ACC-06",
+        "ACC-07",
+        "ACC-08",
+        "ACC-11",
+        "ACC-16"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "R01",
+      "title": "Inspect the exact candidate",
+      "phase": "operational",
+      "action": "Prepare an immutable checked candidate without covering the helper. Only explicit Try your creation opens its usable preview; Close returns to the same scene and draft. New first projects use the supported checklist starter; preserve existing explicitly chosen Rally projects as historical/user content.",
+      "owners": [
+        "SC-03",
+        "SC-05",
+        "SC-09",
+        "SC-12",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-06",
+        "ACC-10",
+        "ACC-11",
+        "ACC-12",
+        "ACC-13"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    },
+    {
+      "id": "P01",
+      "title": "Choose the same district from above",
+      "phase": "operational",
+      "action": "Only explicit Your district/map-view choice reveals the same facilities and scoped workers from three-quarter overhead; labels and hit areas project through that camera.",
+      "owners": [
+        "SC-03",
+        "SC-07",
+        "SC-11",
+        "SC-14",
+        "SC-15",
+        "SC-17",
+        "SC-19"
+      ],
+      "acceptance": [
+        "ACC-03",
+        "ACC-06",
+        "ACC-09",
+        "ACC-14",
+        "ACC-15"
+      ],
+      "qualification": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "currentQualification": {
+        "state": "pending",
+        "evidence": [
+          "evidence/showcase/experience-04/validation.json"
+        ],
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+        "remaining": [
+          "Current production cinematic and real creation: pending",
+          "Current frozen-candidate full regression: failed",
+          "Current seven-project native views and isolation: pending",
+          "Current early/mid/late handoff and native negative cases: pending",
+          "Current native visibility, context and disposal lifecycle: pending",
+          "Current production live Codex narrow assignment: pending",
+          "Current GPU bundle reproducibility: pending",
+          "Owner artistic acceptance and physical microphone/human usability remain separate.",
+          "Current production live Codex assignment remains pending or failed as recorded.",
+          "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+        ],
+        "receipt": "evidence/showcase/qualification.json"
+      }
+    }
+  ],
+  "coordination": {
+    "state": "full_app_transport_and_gui_verified",
+    "evidence": "evidence/showcase/message-exchange-02/validation.json",
+    "checks": 7,
+    "modelCalls": 0,
+    "delivery": "Persistent authenticated SSE between workers; main-process IPC notifications refresh GUI; automatic same-database local descriptor discovery.",
+    "handoff": "HANDOFF.md",
+    "shortcut": "Agent Bus.lnk on Desktop and Start menu",
+    "limits": [
+      "Actual unsolicited model wakeup in Cursor/Codex/Claude is harness-specific and not qualified by Python transport roles",
+      "Current full-suite/multiview acceptance is not inferred from this scoped proof"
+    ]
+  }
+}

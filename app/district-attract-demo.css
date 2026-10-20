@@ -1,0 +1,77 @@
+[data-neon-rally-app] {
+  min-height: 100vh; min-height: 100svh; margin: 0; padding: 20px;
+  display: grid; place-items: center; box-sizing: border-box;
+  background: radial-gradient(ellipse at 30% 10%, #473459, transparent 60%), #18172a;
+}
+.district-attract-demo {
+  --nr-a: #ff835e; --nr-a-dark: #a63f38; --nr-b: #b3a1ff; --nr-b-dark: #6654a3;
+  --nr-ink: #242044; --nr-paper: #fff4d8; --nr-shell: #ffcb53;
+  position: relative; isolation: isolate; container-type: inline-size;
+  width: min(100%, 820px); margin: auto; box-sizing: border-box; padding: 14px;
+  color: var(--nr-ink); border: 3px solid #25203f; border-radius: 28px; background: var(--nr-shell);
+  box-shadow: 0 9px 0 #b47836, 0 12px 0 #29213d, 0 22px 40px #080b204d, inset 0 3px 0 #ffffff80;
+  font-family: ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
+}
+.district-attract-demo *, .district-attract-demo *::before, .district-attract-demo *::after { box-sizing: border-box; }
+.district-attract-demo[data-theme="sunset"] { --nr-a: #ff6289; --nr-a-dark: #a42e59; --nr-b: #ffb666; --nr-b-dark: #aa663c; --nr-shell: #b6a5f8; }
+.district-attract-demo[data-theme="lagoon"] { --nr-a: #68e5ca; --nr-a-dark: #258776; --nr-b: #a5b5ff; --nr-b-dark: #556baf; --nr-shell: #f3e9bd; }
+/* This is an embedded toy header, independent of the desktop's global header. */
+.district-attract-demo .nr-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 0; margin: 0; min-height: 18px; border: 0; border-radius: 0;
+  background: transparent; box-shadow: none; color: var(--nr-ink);
+  font-size: 9px; font-weight: 900; line-height: 1.2; letter-spacing: .12em;
+}
+.district-attract-demo .nr-edition { opacity: .8; }
+.district-attract-demo .nr-demo-label { padding: 4px 7px; color: #fff4d8; background: #29213f; border-radius: 5px; font-size: 8px; line-height: 1.2; white-space: nowrap; }
+.district-attract-demo .nr-title { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 6px 0 8px; transform: rotate(-2deg); }
+.district-attract-demo .nr-title-neon { writing-mode: vertical-rl; transform: rotate(180deg); font-size: clamp(10px, 2.3cqw, 13px); letter-spacing: .18em; font-weight: 1000; }
+.district-attract-demo .nr-title-rally { margin: 0; font-size: clamp(36px, 9cqw, 50px); font-weight: 1000; line-height: 1; letter-spacing: -.065em; font-style: italic; text-shadow: 2px 3px 0 #fff7dd; }
+.district-attract-demo .nr-title-star { font-size: clamp(27px, 6.5cqw, 38px); line-height: 1; color: #fdf2d1; text-shadow: 2px 3px 0 #29213f; }
+.district-attract-demo .nr-board { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); position: relative; gap: 14px; }
+.district-attract-demo .nr-team { min-width: 0; padding: 12px; border: 2px solid var(--nr-ink); border-radius: 18px; background: var(--nr-a); box-shadow: 0 5px 0 var(--nr-a-dark), inset 0 2px 0 #ffffff80; }
+.district-attract-demo .nr-team-bolts { background: var(--nr-b); box-shadow: 0 5px 0 var(--nr-b-dark), inset 0 2px 0 #ffffff80; }
+.district-attract-demo .nr-team-heading { display: flex; align-items: center; gap: 7px; min-height: 26px; }
+.district-attract-demo .nr-team-symbol { width: 26px; height: 26px; flex: 0 0 auto; border: 2px solid currentColor; border-radius: 50%; display: grid; place-items: center; font: 900 21px/1 system-ui; }
+.district-attract-demo .nr-team-name { margin: 0; font-size: clamp(12px, 2.8cqw, 18px); font-weight: 1000; line-height: 1.2; letter-spacing: .05em; }
+.district-attract-demo .nr-player-number { margin-left: auto; font-size: 9px; line-height: 1.2; border: 1px solid currentColor; border-radius: 4px; padding: 3px; font-weight: 900; }
+.district-attract-demo .nr-score { display: block; margin: 8px 0 10px; padding: 6px 4px; border: 2px solid var(--nr-ink); border-radius: 12px; background: #28213e; color: #fff6d7; text-align: center; font-family: "Arial Black", Impact, system-ui, sans-serif; font-size: clamp(58px, 16cqw, 88px); font-weight: 1000; letter-spacing: -.055em; line-height: 1; font-variant-numeric: tabular-nums; box-shadow: inset 0 5px 0 #110e2390, 0 2px 0 #ffffff50; text-shadow: 0 4px 0 #00000040; }
+.district-attract-demo button { font: inherit; cursor: pointer; touch-action: manipulation; }
+.district-attract-demo .nr-score-button { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 7px 10px; border: 2px solid var(--nr-ink); border-radius: 10px; background: var(--nr-paper); color: var(--nr-ink); font-size: clamp(12px, 2.5cqw, 15px); line-height: 1.2; font-weight: 1000; letter-spacing: .1em; box-shadow: 0 4px 0 var(--nr-ink); transition: transform 90ms ease, box-shadow 90ms ease; }
+.district-attract-demo .nr-button-plus { font-size: 24px; line-height: .9; }
+.district-attract-demo .nr-score-button:hover { background: white; transform: translateY(-1px); }
+.district-attract-demo .nr-score-button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--nr-ink); }
+.district-attract-demo button:focus-visible, .district-attract-demo select:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.district-attract-demo .nr-versus { position: absolute; top: 50%; left: 50%; display: grid; place-items: center; width: 34px; height: 34px; border: 2px solid var(--nr-ink); border-radius: 50%; background: var(--nr-shell); font-size: 10px; font-weight: 1000; transform: translate(-50%, -50%) rotate(-10deg); box-shadow: 0 3px 0 #00000030; }
+.district-attract-demo .nr-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.district-attract-demo .nr-status { max-width: 44%; margin: 0; font-size: 11px; font-weight: 1000; line-height: 1.4; letter-spacing: .03em; }
+.district-attract-demo .nr-controls { display: flex; align-items: flex-end; gap: 10px; }
+.district-attract-demo .nr-theme-label { display: flex; flex-direction: column; gap: 4px; color: var(--nr-ink); font-size: 8px; font-weight: 1000; line-height: 1.2; letter-spacing: .12em; }
+.district-attract-demo .nr-theme, .district-attract-demo .nr-reset { min-height: 34px; padding: 6px 9px; border: 2px solid var(--nr-ink); border-radius: 8px; color: var(--nr-ink); background: var(--nr-paper); font-size: 10px; line-height: 1.2; font-weight: 900; box-shadow: 0 3px 0 var(--nr-ink); }
+.district-attract-demo .nr-reset:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--nr-ink); }
+.district-attract-demo .nr-console-grip { width: 64px; height: 4px; margin: 8px auto 0; border-top: 1px solid #29213f50; border-bottom: 1px solid #29213f50; }
+@container (max-width: 430px) {
+  .district-attract-demo .nr-board { gap: 12px; }
+  .district-attract-demo .nr-team { padding: 10px; border-radius: 15px; }
+  .district-attract-demo .nr-player-number { display: none; }
+  .district-attract-demo .nr-team-heading { gap: 5px; }
+  .district-attract-demo .nr-team-symbol { width: 23px; height: 23px; font-size: 19px; }
+  .district-attract-demo .nr-status { max-width: 39%; font-size: 10px; }
+  .district-attract-demo .nr-controls { gap: 7px; }
+}
+/* The owned preview can be a wide, short iframe. Preserve readable controls,
+   reducing decorative gaps and score type instead of clipping/scaling the app. */
+@media (max-height: 520px) {
+  [data-neon-rally-app] { padding: 8px 14px 20px; }
+  .district-attract-demo { padding: 12px; border-radius: 24px; }
+  .district-attract-demo .nr-title { padding: 4px 0 6px; }
+  .district-attract-demo .nr-title-rally { font-size: clamp(34px, 8cqw, 46px); }
+  .district-attract-demo .nr-score { font-size: clamp(56px, 15cqw, 80px); }
+  .district-attract-demo .nr-team { padding: 10px; }
+  .district-attract-demo .nr-bottom { margin-top: 10px; }
+  .district-attract-demo .nr-console-grip { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .district-attract-demo *, .district-attract-demo *::before, .district-attract-demo *::after { transition: none !important; animation: none !important; }
+  .district-attract-demo .nr-score-button:hover, .district-attract-demo .nr-score-button:active, .district-attract-demo .nr-reset:active { transform: none; }
+}

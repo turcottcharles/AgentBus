@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "title": "Original dimensional creation district",
+  "scope": "Original Blender-authored environment meshes. Asset export only; no offline render. GPU runtime/visual acceptance is separate.",
+  "blender": "5.2.2 LTS",
+  "blender_build": "d13f752e3b9c",
+  "coordinates": {
+    "export": "XZ floor, Y up",
+    "camera_view_from": [
+      "+X",
+      "+Z"
+    ],
+    "central_plaza": [
+      0,
+      0.55,
+      0
+    ]
+  },
+  "bounds_yup": {
+    "min": [
+      -27.04,
+      -2.0,
+      -29.12
+    ],
+    "max": [
+      29.12,
+      22.77,
+      26.0
+    ],
+    "radius_xz": 32.30702709937886
+  },
+  "triangles": 54340,
+  "mesh_batches": 66,
+  "materials": 15,
+  "gltf_meshes": 66,
+  "gltf_primitives": 66,
+  "external_resources": [],
+  "textures": 0,
+  "notable_groups": [
+    "TerrainTerraces",
+    "CentralPlaza",
+    "ResearchObservatory",
+    "ConstructionForge",
+    "VerificationLab",
+    "PreviewGateway",
+    "ElevatedRoads",
+    "EnergyChannels",
+    "RearCitySpires",
+    "StreetFurniture"
+  ],
+  "facility_anchors": {
+    "CentralPlaza": [
+      0.0,
+      0.55,
+      0.0
+    ],
+    "ResearchObservatory": [
+      -11,
+      0,
+      -17
+    ],
+    "ConstructionForge": [
+      9,
+      0,
+      -15
+    ],
+    "VerificationLab": [
+      -18,
+      0,
+      -1
+    ],
+    "PreviewGateway": [
+      18,
+      0,
+      3
+    ]
+  },
+  "files": [
+    {
+      "path": "design/district-3d/accepted-v1/district-world.py",
+      "bytes": 21387,
+      "sha256": "6912433b0a5a717fca883195c2719886eae068a7dae5ed495d25cd405d04605b"
+    },
+    {
+      "path": "design/district-3d/accepted-v1/district-world.blend",
+      "bytes": 491203,
+      "sha256": "37f278f9dc8721ded88a725263a9d055327ec10a3a76a40d5692e99a226587da"
+    },
+    {
+      "path": "design/district-3d/accepted-v1/district-world.glb",
+      "bytes": 2759216,
+      "sha256": "12e7cde93555d6812238c772247bdd35c2dc0807edee7e866e7fdd3f8fdade23"
+    }
+  ]
+}

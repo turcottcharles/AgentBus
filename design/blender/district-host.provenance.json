@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "asset": "app/assets/district-v2/district-host.glb",
+  "title": "District service host",
+  "status": "exported; runtime artistic acceptance remains owner judgment",
+  "originality": {
+    "method": "Original scripted Blender geometry authored for District; no reference asset imported",
+    "design": "Swept pearl carapace, indigo optical face, copper articulated utility arms, open service grippers, conical hovering core with three stabilizer vanes",
+    "resources": "Embedded PBR colors, normals and emissive materials only; no external textures, logos, text, audio or executable logic",
+    "capabilityHonesty": "Character is an illustrative host. Animation carries no provider, operation, progress or completion claim"
+  },
+  "source": {
+    "script": "design/blender/district-host.py",
+    "blend": "design/blender/district-host.blend",
+    "scriptSha256": "5c61bb1ab910deb42c58c216635cb9f3a0674db69ab384fd92e500be49129ead",
+    "blendSha256": "68652e723f99a5bc625351716c9b740df839b230a3dd812e1412bca49d80a23b"
+  },
+  "export": {
+    "tool": "Blender",
+    "version": "5.2.2 LTS",
+    "format": "glTF 2.0 GLB",
+    "sha256": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037",
+    "bytes": 1070752,
+    "upAxis": "Y",
+    "frontAxis": "+Z",
+    "floor": 0,
+    "height": 3,
+    "bounds": {
+      "min": [
+        -1.3558013439178467,
+        0.0,
+        -0.632727324962616
+      ],
+      "max": [
+        1.3558013439178467,
+        3.0,
+        0.5434711575508118
+      ]
+    },
+    "triangles": 34092,
+    "sourceVertices": 17290,
+    "meshNodes": 5,
+    "materialCount": 12,
+    "sourcePartCount": 120,
+    "primitiveDraws": 40,
+    "embeddedBuffers": 1,
+    "externalResources": 0,
+    "triangleBudget": 40000,
+    "animations": 0
+  },
+  "rig": {
+    "root": "HostRoot",
+    "directChildren": [
+      "Head",
+      "ArmL",
+      "ArmR",
+      "Core"
+    ],
+    "semantics": {
+      "Head": "neck pivot; gentle look and nod",
+      "ArmL": "left shoulder pivot",
+      "ArmR": "right shoulder pivot",
+      "Core": "power impeller pivot; rotate subtly or pulse emissive child material"
+    },
+    "coordinateNote": "Blender source Z-up and forward -Y; exporter converts to runtime Y-up and forward +Z",
+    "recommendation": "Small idle oscillations only; do not bind personality animation to invented productivity"
+  },
+  "rendering": {
+    "offlineRenderPerformed": true,
+    "runtime": "GPU WebGL2 renderer owned by Scene16",
+    "editableSceneRenderEngine": "CYCLES GPU OPTIX",
+    "enabledGpuDevices": [
+      "NVIDIA GeForce RTX 3070 Ti Laptop GPU"
+    ],
+    "cpuRenderDevicesEnabled": false,
+    "note": "One isolated 4K authoring still was rendered using OPTIX path tracing and OPTIX GPU denoising with CPU devices disabled. Geometry and export are CPU tasks; no CPU rasterization or CPU light transport.",
+    "authoringStill": {
+      "path": "C:\\Users\\Admin\\AppData\\Local\\Temp\\district-host-author-20261017\\host-4k.png",
+      "sha256": "b0e503cd1f3a13041680b5fb5506aa58b5f37cfbf3c98071fb77ca91a960138d",
+      "width": 3840,
+      "height": 2160,
+      "samples": 32,
+      "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+      "backend": "OPTIX",
+      "denoiser": "OPTIX GPU",
+      "cpuEnabled": false,
+      "renderSeconds": 4.26036,
+      "logPath": "C:\\Users\\Admin\\AppData\\Local\\Temp\\district-host-author-20261017\\preview.log",
+      "logSha256": "c81e5873230e4f3958e0ecf21f3ae41b69ff958a0cb796da587af40d054299f3",
+      "pathTracingProofLine": 83,
+      "pathTracingProof": "Path tracing on: NVIDIA GeForce RTX 3070 Ti Laptop GPU (OptiX)",
+      "denoisingProofLine": 86,
+      "denoisingProof": "Denoising on: NVIDIA GeForce RTX 3070 Ti Laptop GPU (OptiX)",
+      "temporaryPreviewScriptPath": "C:\\Users\\Admin\\AppData\\Local\\Temp\\district-host-author-20261017\\preview.py",
+      "previewScriptSha256": "3f96e0c920002d6306ddba292c15b1ed25a2651aa72ae1159b7e6afac9c60831",
+      "temporaryOutputOnly": true,
+      "visualInspection": "Viewed 4K source still: hovering rounded pearl/indigo service host, two cyan lenses, copper hinges, open soft grippers and visible violet/cyan core. No text, weapons, logos or copied asset observed. Runtime owner art acceptance pending."
+    }
+  },
+  "audit": {
+    "sourceBoundsFinite": true,
+    "heightAndFloorAsserted": true,
+    "triangleBudgetAsserted": true,
+    "namedGroupsDirectUnderRoot": true,
+    "runtimeVisualValidation": "pending parent 4K isolated-display integration",
+    "independentByteAudit": {
+      "reviewer": "lane09",
+      "triangles": 34092,
+      "primitiveInstanceDraws": 40,
+      "materials": 12,
+      "meshes": 5,
+      "uniqueRigNames": [
+        "HostRoot",
+        "Head",
+        "ArmL",
+        "ArmR",
+        "Core"
+      ],
+      "embeddedBuffers": 1,
+      "externalResources": 0,
+      "images": 0,
+      "textures": 0,
+      "clips": 0,
+      "actualPositionBounds": {
+        "min": [
+          -1.3558012947,
+          0,
+          -0.6327273098
+        ],
+        "max": [
+          1.3558012947,
+          3.0000002168,
+          0.5434711339
+        ]
+      },
+      "note": "Geometry metadata passed; final export was rebuilt only to correct source provenance counting, so final hash is export.sha256. No runtime visual acceptance asserted."
+    }
+  },
+  "frozenAtLocal": "2026-10-17T17:48:05.3913974-07:00"
+}

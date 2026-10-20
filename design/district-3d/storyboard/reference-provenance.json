@@ -1,0 +1,119 @@
+{
+  "at": "2026-10-18T01:26:01.012Z",
+  "purpose": "Storyboarding camera/geometry composition only; illustrative crew, no Agent Bus runtime or work commands",
+  "output": "D:\\ASM\\agent-bus\\design\\district-3d\\storyboard\\frames\\06-management.png",
+  "sha256": "ee3d0377b4c4370276a0bb037412deb8a31cbf66b447dddf7c6f4c2b2bcbcf0a",
+  "lowOutput": "D:\\ASM\\agent-bus\\design\\district-3d\\storyboard\\frames\\03-reveal.png",
+  "lowSha256": "fca19b26a51dd07ab867271893b44b1388b73ff5954a7d76baa94d73e6ef50ac",
+  "scratch": "C:\\Users\\Admin\\AppData\\Local\\Temp\\agent-bus-storyboard-gpu-uc0Cvq",
+  "bounds": {
+    "x": -1488,
+    "y": 24,
+    "width": 1440,
+    "height": 816
+  },
+  "diagnostic": {
+    "ready": true,
+    "phase": "ready",
+    "renderer": "webgl2",
+    "frames": 4,
+    "renderedFrames": 4,
+    "fps": 0.8408307407718825,
+    "cpuFrameMs": 4.300000011920929,
+    "cpuFrameEMA": 611.8779488026919,
+    "width": 1428,
+    "height": 781,
+    "dpr": 1,
+    "maxDPR": 1,
+    "maxFPS": 30,
+    "pixelBudget": 3000000,
+    "drawCalls": 258,
+    "triangles": 144232,
+    "memory": {
+      "geometries": 147,
+      "textures": 4
+    },
+    "gpu": {
+      "vendor": "Google Inc. (NVIDIA)",
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+    },
+    "paused": false,
+    "contextLost": false,
+    "disposed": false,
+    "worldAsset": "loaded",
+    "hostAsset": "loaded",
+    "assetErrors": {},
+    "assetStats": {
+      "host": {
+        "triangles": 34092,
+        "meshes": 40,
+        "textures": 0
+      },
+      "world": {
+        "triangles": 58636,
+        "meshes": 75,
+        "textures": 0
+      }
+    },
+    "beat": "hook",
+    "view": "management",
+    "engaged": false,
+    "activity": {
+      "state": "idle",
+      "label": ""
+    },
+    "workerCount": 4,
+    "gpuWorkersReady": true,
+    "bloom": false,
+    "limits": {
+      "maxDPR": 1.5,
+      "pixelBudget": 5500000,
+      "maxFPS": 60,
+      "managementFPS": 30,
+      "managementDPR": 1,
+      "managementPixelBudget": 3000000,
+      "workers": 32,
+      "assetBytes": 25165824,
+      "worldTriangles": 1200000,
+      "hostTriangles": 150000,
+      "worldMeshes": 1000,
+      "hostMeshes": 250,
+      "sceneTextures": 16,
+      "textures": 32,
+      "drawCalls": 1200,
+      "frameTriangles": 4000000
+    },
+    "error": null,
+    "ibl": true,
+    "camera": {
+      "type": "orthographic",
+      "position": [
+        60,
+        62,
+        58
+      ],
+      "target": [
+        0,
+        2,
+        -2
+      ],
+      "verticalSpan": 68
+    },
+    "backbufferWidth": 1428,
+    "backbufferHeight": 781,
+    "nativeVisible": true
+  },
+  "errors": [],
+  "studyOnlyAdjustments": {
+    "managementFogDensity": 0.0035,
+    "cinematicFogDensity": 0.0105,
+    "reason": "Preserve readable foreground materials at the farther overhead camera; no product source or bundle modified",
+    "temporarySourceSha256": "cde765e20a8856564a72766c13462e1b8147f2539bc3629476db251c95700bb1"
+  },
+  "inputs": {
+    "app/district-3d/world-entry.js": "1512cd0573fdd50f78ed0aabe8debaf6849a0e3a611e1dc0b3f1845799f223c0",
+    "app/assets/district-v2/district-world.glb": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc",
+    "app/assets/district-v2/district-host.glb": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037"
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "version": 1,
+  "title": "Original dimensional creation district",
+  "scope": "Original Blender-authored environment meshes. Asset export only; no offline render. GPU runtime/visual acceptance is separate.",
+  "blender": "5.2.2 LTS",
+  "blender_build": "d13f752e3b9c",
+  "coordinates": {
+    "export": "XZ floor, Y up",
+    "camera_view_from": [
+      "+X",
+      "+Z"
+    ],
+    "central_plaza": [
+      0,
+      0.55,
+      0
+    ]
+  },
+  "bounds_yup": {
+    "min": [
+      -27.04,
+      -2.0,
+      -29.12
+    ],
+    "max": [
+      29.12,
+      22.77,
+      26.0
+    ],
+    "radius_xz": 32.30702709937886
+  },
+  "triangles": 58636,
+  "mesh_batches": 75,
+  "materials": 15,
+  "gltf_meshes": 75,
+  "gltf_primitives": 75,
+  "external_resources": [],
+  "textures": 0,
+  "notable_groups": [
+    "TerrainTerraces",
+    "CentralPlaza",
+    "ResearchObservatory",
+    "ConstructionForge",
+    "VerificationLab",
+    "PreviewGateway",
+    "ReviewArchive",
+    "ElevatedRoads",
+    "EnergyChannels",
+    "RearCitySpires",
+    "StreetFurniture"
+  ],
+  "facility_anchors": {
+    "CentralPlaza": [
+      0.0,
+      0.55,
+      0.0
+    ],
+    "ResearchObservatory": [
+      -11,
+      0,
+      -17
+    ],
+    "ConstructionForge": [
+      9,
+      0,
+      -15
+    ],
+    "VerificationLab": [
+      -18,
+      0,
+      -1
+    ],
+    "PreviewGateway": [
+      18,
+      0,
+      3
+    ],
+    "ReviewArchive": [
+      -10,
+      0,
+      12
+    ]
+  },
+  "facility_layout": {
+    "ResearchObservatory": {
+      "anchor": [
+        -11,
+        0,
+        -17
+      ],
+      "entrance": [
+        -11,
+        0,
+        -9.9
+      ],
+      "pin": [
+        -11,
+        10.7,
+        -17
+      ],
+      "bounds_yup": {
+        "min": [
+          -16.5,
+          0.0,
+          -22.0
+        ],
+        "max": [
+          -5.5,
+          10.577215194702148,
+          -10.004999999999999
+        ]
+      },
+      "footprint": [
+        [
+          -16.5,
+          0,
+          -22.0
+        ],
+        [
+          -5.5,
+          0,
+          -22.0
+        ],
+        [
+          -5.5,
+          0,
+          -10.004999999999999
+        ],
+        [
+          -16.5,
+          0,
+          -10.004999999999999
+        ]
+      ]
+    },
+    "ConstructionForge": {
+      "anchor": [
+        9,
+        0,
+        -15
+      ],
+      "entrance": [
+        9,
+        0,
+        -7.9
+      ],
+      "pin": [
+        9,
+        14.7,
+        -15
+      ],
+      "bounds_yup": {
+        "min": [
+          3.5,
+          0.0,
+          -19.9
+        ],
+        "max": [
+          14.5,
+          14.506291389465332,
+          -7.984999999999999
+        ]
+      },
+      "footprint": [
+        [
+          3.5,
+          0,
+          -19.9
+        ],
+        [
+          14.5,
+          0,
+          -19.9
+        ],
+        [
+          14.5,
+          0,
+          -7.984999999999999
+        ],
+        [
+          3.5,
+          0,
+          -7.984999999999999
+        ]
+      ]
+    },
+    "VerificationLab": {
+      "anchor": [
+        -18,
+        0,
+        -1
+      ],
+      "entrance": [
+        -18,
+        0,
+        5.75
+      ],
+      "pin": [
+        -15.6,
+        9.55,
+        -0.5
+      ],
+      "bounds_yup": {
+        "min": [
+          -23.9,
+          0.0,
+          -5.6
+        ],
+        "max": [
+          -12.1,
+          9.25,
+          5.695
+        ]
+      },
+      "footprint": [
+        [
+          -23.9,
+          0,
+          -5.6
+        ],
+        [
+          -12.1,
+          0,
+          -5.6
+        ],
+        [
+          -12.1,
+          0,
+          5.695
+        ],
+        [
+          -23.9,
+          0,
+          5.695
+        ]
+      ]
+    },
+    "PreviewGateway": {
+      "anchor": [
+        18,
+        0,
+        3
+      ],
+      "entrance": [
+        18,
+        0,
+        10.4
+      ],
+      "pin": [
+        18,
+        9.3,
+        2.45
+      ],
+      "bounds_yup": {
+        "min": [
+          12.1,
+          0.0,
+          -1.9000000000000004
+        ],
+        "max": [
+          23.9,
+          8.965,
+          10.265
+        ]
+      },
+      "footprint": [
+        [
+          12.1,
+          0,
+          -1.9000000000000004
+        ],
+        [
+          23.9,
+          0,
+          -1.9000000000000004
+        ],
+        [
+          23.9,
+          0,
+          10.265
+        ],
+        [
+          12.1,
+          0,
+          10.265
+        ]
+      ]
+    },
+    "ReviewArchive": {
+      "anchor": [
+        -10,
+        0,
+        12
+      ],
+      "entrance": [
+        -10,
+        0,
+        17.3
+      ],
+      "pin": [
+        -10,
+        5.75,
+        11.2
+      ],
+      "bounds_yup": {
+        "min": [
+          -13.9,
+          0.0,
+          8.6
+        ],
+        "max": [
+          -6.1,
+          5.3902974128723145,
+          17.3
+        ]
+      },
+      "footprint": [
+        [
+          -13.9,
+          0,
+          8.6
+        ],
+        [
+          -6.1,
+          0,
+          8.6
+        ],
+        [
+          -6.1,
+          0,
+          17.3
+        ],
+        [
+          -13.9,
+          0,
+          17.3
+        ]
+      ]
+    },
+    "CentralPlaza": {
+      "anchor": [
+        0,
+        0.55,
+        0
+      ],
+      "entrance": [
+        0,
+        0.55,
+        5.4
+      ],
+      "pin": [
+        0,
+        0.7,
+        0
+      ],
+      "bounds_yup": {
+        "min": [
+          -5.6,
+          -0.06,
+          -5.6
+        ],
+        "max": [
+          5.6,
+          0.6189711431702997,
+          6.0649999999999995
+        ]
+      },
+      "footprint": [
+        [
+          -5.6,
+          0,
+          -5.6
+        ],
+        [
+          5.6,
+          0,
+          -5.6
+        ],
+        [
+          5.6,
+          0,
+          6.0649999999999995
+        ],
+        [
+          -5.6,
+          0,
+          6.0649999999999995
+        ]
+      ]
+    }
+  },
+  "mesh_signatures": {
+    "CentralPlaza / Blue slate terraces": "c5de9d057a9c6bf2b4c8503ca40e57b846ad94d6c539097b5fb3436472b0ffd5",
+    "CentralPlaza / Blue steel bevels": "03ee303b505a9a7106a6e27dec6f1e697a62fed4bdd1411a4685760324347129",
+    "CentralPlaza / Cyan luminous inlay": "94826ba2ecf2bace438fe875820f20cb59b002b6c5a8e224048f96999454a68f",
+    "CentralPlaza / Ink structural alloy": "d62406c23c50371e87a610123aa563afbbbe90a1f4d16e115545edb4638f99c3",
+    "CentralPlaza / Patinated teal ceramic": "a2214fb30bebbba77476edce1d619f1d2c1906f0bf540728a00a4de5259d33b9",
+    "CentralPlaza / Warm ceramic trim": "2210533b256dc761853a2dff1fa45494e78d85d2a49d179adeb10ca63b0bf8e8",
+    "ConstructionForge / Amber luminous windows": "b578d5b46dbc4940d52e21af5c8bf51cddfb8064183d00df59a7734a22975156",
+    "ConstructionForge / Blue steel bevels": "34f0f11d3873a1191c64718637ed38667d16aa74f7eebd6e0677c2972374c52d",
+    "ConstructionForge / Ink structural alloy": "34753c1d399eb17b51442f80804d65845d7d2bf09757f86c4f406c09ba5550ba",
+    "ConstructionForge / Patinated teal ceramic": "24ad7c6f63b73f15df8a75c0ef358e0e769004dee78e9e994d1713b8f1dac54f",
+    "ConstructionForge / Violet enamel": "9c642f6f0251d045cbe197f46c4b444f49aa3566067c3c5222ed2898bf79e7f8",
+    "ConstructionForge / Warm ceramic trim": "1a28679f9983b4c2b5c7c6420ec5b5db33ec2941f8b2898955c6638bcd9d056e",
+    "ConstructionForge / Warm copper roofs": "f635bc6aa54350f697e5290050234785de80491e5e473c00af373fa35f52bdff",
+    "ElevatedRoads / Blue steel bevels": "38ce27b5640e798719e64000f7e2fc583a44248f2ed492a712fc61ae1e3a184d",
+    "ElevatedRoads / Cyan luminous inlay": "a2a97ffc498f406657c20e6355565d2a79122a74c51fe62706e5675408c93e0d",
+    "ElevatedRoads / Ink structural alloy": "e32284ef97dae34f83dbaa27fa84d67e59b58497c1e7ead224bec5a5c4a8663e",
+    "ElevatedRoads / Road graphite": "5d54178f3b7c1ad76dc948ff54bb20496896bf3326c8ef4a87e69ebb756a80b0",
+    "ElevatedRoads / Warm ceramic trim": "1c111affe3bbb0bfeb6a2cc0131dc7f514f4a7e1c0d8146949118cb4539c6fb5",
+    "EnergyChannels / Cyan energy water": "43fb1852e3524e951a88c77c58f9f1ee608f33516344a165e725b7c14fbbf91f",
+    "EnergyChannels / Cyan luminous inlay": "5ba7471871c0d4ed5e78f1470d0577ea2b7ec9ea8a3e359626bef32d7e425686",
+    "EnergyChannels / Ink structural alloy": "ec3f972ce6a35661ea42feae4159919377fca5d2822363b7a72cd264f4af7cfe",
+    "EnergyChannels / Patinated teal ceramic": "e2c7d615a753b7a01e59ca111ee0aaf2e9233408f8b62460a7e2be7d6c47e83e",
+    "PreviewGateway / Amber luminous windows": "2cc636a9060bcaeae2537f30bc48d5ece6990148f271705be03dd164dc61b5d7",
+    "PreviewGateway / Blue steel bevels": "09331de7675ed0fd2742467acf31101cdbe701e359d1a1663fca6ae977339513",
+    "PreviewGateway / Cyan luminous inlay": "a8be5c5903c1216798c1eb38c4730c26767825bc948ffa6bd808a07d1a539666",
+    "PreviewGateway / Ink structural alloy": "2aa5cee5ecae79b79758ce2f0d80e342b98376673c6aa8956f071667ea7b69a1",
+    "PreviewGateway / Lilac luminous glass": "04fff07cff1058f768204917c57cf9bdc789a6c904d735291da2ab5cf0e9d474",
+    "PreviewGateway / Patinated teal ceramic": "fa3a448126fec9d3e62c34d956b0db6a90c4c84a25d141a25aae1713cca37483",
+    "PreviewGateway / Violet enamel": "75ea01d8b8013f5e0ffa290975539c953ec6f98505115e203a97c202bbae78ce",
+    "PreviewGateway / Warm ceramic trim": "fb170122f4156282c203416f3f0d16354c6f0c9c22070f72ae14d008be17defe",
+    "PreviewGateway / Warm copper roofs": "6334a2cfc11d6db5f73c1ca2d800840059650b494902f54205a85b26800e400b",
+    "RearCitySpires / Amber luminous windows": "f159cfbd4717be6b5b5dd0c163bea2629eda6ef98ebb5ebaf14732c672beddee",
+    "RearCitySpires / Blue steel bevels": "e9cf2585a8a7c69554168c6e5cadb813c8113aac7d835985dd87609456f13d32",
+    "RearCitySpires / Cyan luminous inlay": "da3a80ee9a15fc8eb662a8636650d8274387e136fdef98b6cb2a5ccbd338e357",
+    "RearCitySpires / Ink structural alloy": "3dbb1f1a5e0a0e351a466c0693df764ec7725c2968770f921f7c698f7d5822b3",
+    "RearCitySpires / Patinated teal ceramic": "390044155772c59ed4d7a42d7b06305e45740d25e0be4e0e70b35c8a370d8d8d",
+    "RearCitySpires / Petrol blue enamel": "a62b1fb4c5107c1d3304145eadde373211b06d1678b4efd8d1987213d56b1f20",
+    "RearCitySpires / Violet enamel": "fccdb016d8f13509351c173dfea8ad2fd1d860bfd19c69afc6d1e22e41de7bf0",
+    "ResearchObservatory / Amber luminous windows": "d077e5e0ede6b6b7fc5ef01ee9727af22040290d43c8fba2e66bf31f76d2a0f2",
+    "ResearchObservatory / Blue steel bevels": "03890756c39ce57f286ccd23e8d7fbb6cf9765d300d8e889dcb11c611d84e035",
+    "ResearchObservatory / Cyan luminous inlay": "051802637aadcc272e696b9bf7f41748a4c4d12af1ebf59080e610af792d1bfb",
+    "ResearchObservatory / Deep teal glass": "71f0d9e9d45ac3f141847166fce13db34d5418f7d879d13ac999c87e72b90f6c",
+    "ResearchObservatory / Ink structural alloy": "e1e851e0c847ea543fe8809439fe0493e0346ee06b7ac0b3f8fdd9deca3e6ffc",
+    "ResearchObservatory / Patinated teal ceramic": "7e414774591b6230c5c8abca66cf77a8be899582bf77e7ebb3cffc89ee3015d9",
+    "ResearchObservatory / Petrol blue enamel": "2a1f0de4968593a3a6a8f2d033ceaee7cdef09b63628ba63a104af4f5028ad77",
+    "ResearchObservatory / Warm ceramic trim": "6e052910e421da3db0f6cdc083010affb559b28a5eb6b871634cf664fdfd7d99",
+    "ResearchObservatory / Warm copper roofs": "4912600baf55d5684397e547b93dfcf0e6f75b0dd1fdfc0ec5f525c5a1a6e164",
+    "ReviewArchive / Amber luminous windows": "e00bc3efd1368f0242b06a059af3c45bcb8b6f43a3b1b8f957e86ac9fd154605",
+    "ReviewArchive / Blue steel bevels": "9dab8849c61615b15b0ec93fb959ca205b820cd3142990407e728fbb562ab3ae",
+    "ReviewArchive / Ink structural alloy": "e9482935b99e0820472e5e7a94bdf317f3c3a36e998543816643c4628fb3af92",
+    "ReviewArchive / Lilac luminous glass": "8f812d3c62dab07a9598293cdb95e9555194896f862158f003c333519be542c6",
+    "ReviewArchive / Patinated teal ceramic": "86ed1b8f13bf6f532c9208f3283cf0a9f37142c5eb743b957aec6b38fcd4c16a",
+    "ReviewArchive / Road graphite": "01b062a548f69a8413723ab7c1628b58464071b199f4ba7cea88bbb4737451a5",
+    "ReviewArchive / Violet enamel": "1acdde6e1db8b6caa3287cc85ff91ac662385e6873fb287a4ba5be4b8020cb1b",
+    "ReviewArchive / Warm ceramic trim": "543a3bf67f7d964b24a474fd3ff9d7695a2de76918b342890270ff54ae46bb5d",
+    "ReviewArchive / Warm copper roofs": "74fbb1a04044409ab7a1ba481724b2277b1bdf464d0b674e5805222e4bc262bf",
+    "StreetFurniture / Amber luminous windows": "7893bec32a388612f77fde21bc7c656fba6d22d6727794edf715ecee2579b6dc",
+    "StreetFurniture / Blue steel bevels": "a133c018084ccee8a2352556273ee48653b95adf2da2457dcc7efcf1f4a910a1",
+    "StreetFurniture / Cyan luminous inlay": "aa6118f88e30aa0d497936014c112b3fc2d685e2ec41e10f6c9dad55dcbefe55",
+    "StreetFurniture / Ink structural alloy": "adfcb7967321003db9b8d42a62caf7c9caceecd7ec389ecfb044e32a791ac5ad",
+    "StreetFurniture / Patinated teal ceramic": "e49a80315d6394487a5adc4e164707be80c4d85502e0da2748efb378778ec92a",
+    "StreetFurniture / Terrace greenery": "628887662536170f532ad7b505164f13482221947fc9ddbbd527aad0d5954939",
+    "StreetFurniture / Warm ceramic trim": "052519de9008f80e43e840f020c2a219172d11be7e0da5ca5d92be6cc0fb1423",
+    "TerrainTerraces / Blue slate terraces": "b2e644296dcee481a6116407836ccd76ad40b8ff2de473501ea12f4497633186",
+    "TerrainTerraces / Blue steel bevels": "02137ce02d135a50bf5745554ee210def9df67a6e5269280b4dd4e03be189e6e",
+    "TerrainTerraces / Ink structural alloy": "8d0de1dd0b272bab726db94ea39667da0f455437ee96b0e19d27732e8e7e6716",
+    "TerrainTerraces / Patinated teal ceramic": "f1ee99e55386ebaa9616fc453c33aa9360754ec492685759b0327a0fd17f809a",
+    "VerificationLab / Blue steel bevels": "28f251e3f60ee6c1fe93eddcc0df1f4032fbc0e9ab509003f49062b961a1d61b",
+    "VerificationLab / Cyan luminous inlay": "df82879a64ad18117681729d9758ea73211849353bc9cb1001cec7c997d35782",
+    "VerificationLab / Deep teal glass": "ec2b55fe266833d3170dde6e2f7541a424e6643acbd94e7e86e014973297810e",
+    "VerificationLab / Ink structural alloy": "d7e1b59c1d214b0db1a699fdffc8235bc620c4fc14d89d795a139322e8ee9471",
+    "VerificationLab / Lilac luminous glass": "117faea44df7d4080c723d280bb6b19266500fe4b7f40b026ec6eaf02e8a2478",
+    "VerificationLab / Patinated teal ceramic": "a5742c4f9596b58b2162ac6889b7153ac0605add346a36e6f623b9173f99064c",
+    "VerificationLab / Petrol blue enamel": "6bc0a4e46b5f7ca0986ac61ec888a7a48b105ae69ac2530c6a7a45176eaa8747",
+    "VerificationLab / Warm ceramic trim": "e7eba956548281c4c1bc26cb52e6806f50c0cbf0c0a3b6ffe29218d3e9b9e0e2"
+  },
+  "accepted_geometry_preserved": {
+    "compared_meshes": 66,
+    "changed_existing_meshes": [],
+    "added_meshes": [
+      "ReviewArchive / Amber luminous windows",
+      "ReviewArchive / Blue steel bevels",
+      "ReviewArchive / Ink structural alloy",
+      "ReviewArchive / Lilac luminous glass",
+      "ReviewArchive / Patinated teal ceramic",
+      "ReviewArchive / Road graphite",
+      "ReviewArchive / Violet enamel",
+      "ReviewArchive / Warm ceramic trim",
+      "ReviewArchive / Warm copper roofs"
+    ]
+  },
+  "files": [
+    {
+      "path": "design/blender/district-world.py",
+      "bytes": 27259,
+      "sha256": "da27e03f1dfebef6e6efbf1a87f2f1aeeac71e775ccb6f4994ff6ff00db96ae1"
+    },
+    {
+      "path": "design/blender/district-world.blend",
+      "bytes": 512645,
+      "sha256": "921652e8771c559b5f19fd89998aaa57e16ae19f635f78815ff51f2d63c08f29"
+    },
+    {
+      "path": "app/assets/district-v2/district-world.glb",
+      "bytes": 2979624,
+      "sha256": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc"
+    }
+  ],
+  "revision_history": [
+    {
+      "reason": "Before additive ReviewArchive at approved [-10,0,12]",
+      "files": [
+        {
+          "path": "design/blender/district-world.py",
+          "bytes": 21387,
+          "sha256": "6912433b0a5a717fca883195c2719886eae068a7dae5ed495d25cd405d04605b"
+        },
+        {
+          "path": "design/blender/district-world.blend",
+          "bytes": 491207,
+          "sha256": "c5bc568e912bf4f840b59400029460b60c16cde948a6af0e9d90bf38212e2c08"
+        },
+        {
+          "path": "app/assets/district-v2/district-world.glb",
+          "bytes": 2759216,
+          "sha256": "12e7cde93555d6812238c772247bdd35c2dc0807edee7e866e7fdd3f8fdade23"
+        }
+      ],
+      "bounds_yup": {
+        "min": [
+          -27.04,
+          -2.0,
+          -29.12
+        ],
+        "max": [
+          29.12,
+          22.77,
+          26.0
+        ],
+        "radius_xz": 32.30702709937886
+      },
+      "triangles": 54340,
+      "mesh_batches": 66
+    }
+  ],
+  "accepted_v1_preservation": {
+    "manifest": "design/district-3d/accepted-v1/district-world.hash-manifest.json",
+    "generator_and_glb": "byte-exact-verified",
+    "editable_blend": "scene-reconstructed-not-original-binary"
+  },
+  "review_geometry_validation": {
+    "mesh_batches": 9,
+    "negative_signed_volume_batches": 0,
+    "accepted_mesh_comparisons": 66,
+    "changed_accepted_meshes": 0,
+    "rendering": "none; CPU geometry only, GPU runtime separate"
+  }
+}

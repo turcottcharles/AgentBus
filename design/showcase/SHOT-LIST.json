@@ -1,0 +1,1997 @@
+{
+  "schemaVersion": 1,
+  "taskId": "SC-01",
+  "title": "Current operational showcase shot list",
+  "reviewedAtUtc": "2026-10-18T03:59:46.5557375Z",
+  "status": "Source-backed direction; 19-lane integration in progress, current candidate qualification pending.",
+  "precedence": [
+    "design/showcase/CREW-BRIEF.md",
+    "design/showcase/tasks.json",
+    "design/showcase/SHOT-LIST.json"
+  ],
+  "sourceSnapshot": {
+    "repositoryHead": "a47c3e596bd9f3d8a2d600a3ecb6674cda7ffd80",
+    "workingTreeChanging": true,
+    "note": "HEAD alone does not identify this in-progress working tree. Root freezes and qualifies the integrated candidate."
+  },
+  "objective": "Accepted muted industrial opening joins real assignment attention, purposeful Test travel, actual checks/results and explicitly chosen management in one continuous scene.",
+  "rules": {
+    "latestOwnerCameraCorrection": "W02 automatically pulls back after the cute close reveal into three-quarter isometric overhead. Start with ONE robot and ready-to-use buildings. No filler bots. Additional matching robots require actual connected sessions or assignments. T01/R01 remain overhead.",
+    "designAnchor": "The tuned antenna-and-rockets robot defines the surrounding design language at one consistent worker scale. Pearl/slate/copper/cyan materials and helpful, industrious, slightly fragile personality. Close-ups come from the camera. No giant mascot or decorative workers.",
+    "rendererDispatches": false,
+    "defaultSound": "muted",
+    "timedOpeningSeconds": 12,
+    "operationalShotsEventBound": true,
+    "midIntroAssignment": "A valid run preempts any opening shot. Preserve actual current pose/camera, cease intro pose updates, then continue live performance. Never wait for or replay the opening.",
+    "truth": "Record identity, actual state/basis/check counts and candidate freshness outrank pose timing. Historical results cannot celebrate.",
+    "input": "Conversation available from frame one. Drafting/focus/partial speech never dispatches or interrupts. Explicit commit sends once.",
+    "management": "W02 automatically reveals the isometric district. P01 explicitly opens full project controls.",
+    "rendering": "Hardware GPU only; this lane performs no GPU/native launches.",
+    "originalAssets": "Preserve accepted host/current world/compact dish; new original thrusters are additive.",
+    "rejected": "No floating comic scoreboard/card; retain historical artifacts without treating them as current direction."
+  },
+  "contextContract": {
+    "mount": "DistrictAttractWorld.mount({container,view:'cinematic',showcase:true})",
+    "update": "setShowcaseContext({projectId,run,activity,unavailable:false,follow:false})",
+    "opening": "createShowcaseOpening({scene,hostGroup,joints,actor,camera,lights}) -> {duration:12,pose(seconds,{reducedMotion:false}),setMood(welcome),thrusters,destroy()}",
+    "dataBoundary": "Context is a validated presentation snapshot, not a command, provider prompt or trusted page instruction.",
+    "handoffEnd": {
+      "hostPosition": [
+        5,
+        0.95,
+        12
+      ],
+      "hostYaw": 0.45,
+      "cameraPosition": [
+        8.5,
+        5.5,
+        14.3
+      ],
+      "cameraTarget": [
+        5,
+        5.25,
+        12
+      ],
+      "fov": 46,
+      "headYawOffset": 0.22,
+      "armsZOffsets": [
+        0.035,
+        -0.035
+      ],
+      "sensor": {
+        "extension": 1,
+        "open": 1,
+        "yaw": -0.3,
+        "pitch": -0.12,
+        "locked": true
+      }
+    },
+    "reducedMotion": "Settled warm end pose and immediate actual text/state; no mandatory camera ride.",
+    "owner": "root integrates renderer/run adapter; SC-02 opening; SC-03 workbench context; SC-14 attention",
+    "handoffWarmth": "opening.setMood(1) warms only lamps/environment/exposure recommendation without resetting host/actor/camera; after preemption keep additive thrusters posing against the actual host.",
+    "optionalActivity": "SC-03 may supply activity with the scoped run to preserve reported/observed detail. Root validates linkage; activity text never becomes a command or result.",
+    "follow": "True only for owned explicit entry command/run IDs, including a terminal recipe first observed after that explicit command. Unrelated saved terminal history is never followed as fresh work.",
+    "checkPlan": "Root runtime publishes checkPlan when a recipe/browser run is accepted. Performance uses checkPlan.length, explicit total, legacy smoke6, or actual terminal records; unknown project totals stay unknown.",
+    "routing": "showcase-routing.facilityFor(run,activity) chooses only an eligible matching nonstale phase or observed run-state fallback. Movement is presentation; reported phase remains reported."
+  },
+  "authoritySystems": [
+    {
+      "id": "smoke-map",
+      "commands": "window.bus.mapRun / mapCancel through app/map-jobs.js",
+      "identity": [
+        "job.id",
+        "root",
+        "sha",
+        "manifest",
+        "created"
+      ],
+      "evidence": "Actual six named smoke steps, exit/output/source manifest; current T01 supports this baseline.",
+      "paths": [
+        "app/map.js",
+        "app/map-jobs.js",
+        "app/district/test-performance.js"
+      ]
+    },
+    {
+      "id": "district-project",
+      "commands": "DistrictRuntime.command through GUI/CLI/MCP bridge",
+      "identity": [
+        "projectId",
+        "run.id",
+        "commandId",
+        "source.hash",
+        "artifact.candidateHash when present"
+      ],
+      "evidence": "Owned provider/session signed file observations, five recipe checks, separate candidate-bound browser checks.",
+      "paths": [
+        "app/district/runtime.js",
+        "app/district/agent-session.js",
+        "app/district/project-agent-mcp.js",
+        "app/district/recipes.js"
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "phase": "opening",
+      "authority": {
+        "source": "presentation_clock_only",
+        "allowedDispatch": false,
+        "resultAuthority": "none",
+        "meaning": "Character acting and mood only; no assignment, provider work, pass or quota claim."
+      },
+      "entryConditions": [
+        "Hardware GPU ready and accepted host/world loaded or documented substantive GPU fallback.",
+        "Showcase opening has not already been consumed in this renderer lifecycle; no bound live run preempts it."
+      ],
+      "exitConditions": [
+        "Local shot end advances the opening only.",
+        "A real scoped assignment at any time preempts to T01A using the current pose/camera handoff; actual job and status never wait for the film."
+      ],
+      "continuity": "One renderer/world/host. Do not restart opening, reset the camera/body or load a movie over a live assignment.",
+      "ownerTaskIds": [
+        "SC-02",
+        "SC-03",
+        "SC-15",
+        "SC-16",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "SC02_source_and_offline_groups_ready;root_handoff_hardware_qualification_pending",
+        "paths": [
+          "app/district-3d/showcase-opening.js",
+          "app/district-3d/host-thrusters.js",
+          "app/district-3d/world-entry.js",
+          "app/district-workbench.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-01",
+        "ACC-02",
+        "ACC-03",
+        "ACC-04",
+        "ACC-10",
+        "ACC-15"
+      ],
+      "id": "M01",
+      "title": "Industrial ignition",
+      "time": {
+        "kind": "fixed_opening_seconds",
+        "start": 0,
+        "end": 2.5,
+        "qualification": "Production boundaries follow createShowcaseOpening; archived sampled endpoints have frame quantization."
+      },
+      "direction": {
+        "action": "Ground-height exhaust macro: cold heat-darkened steel bells ignite amber; brief powered surge decelerates into precise hover. Face stays outside frame.",
+        "lighting": "Cold steel/amber; no warm face light.",
+        "sound": "muted",
+        "cameraFrom": {
+          "position": [
+            6.5,
+            1.25,
+            13.65
+          ],
+          "target": [
+            5,
+            1.62,
+            10.8
+          ],
+          "fov": 38
+        },
+        "cameraTo": {
+          "position": [
+            6.150288425925926,
+            1.3998763888888888,
+            13.450164814814814
+          ],
+          "target": [
+            5,
+            1.62,
+            12
+          ],
+          "fov": 38
+        },
+        "framingAuthority": "Accepted mechanical-opening study; production module returns actual camera diagnostics."
+      }
+    },
+    {
+      "phase": "opening",
+      "authority": {
+        "source": "presentation_clock_only",
+        "allowedDispatch": false,
+        "resultAuthority": "none",
+        "meaning": "Character acting and mood only; no assignment, provider work, pass or quota claim."
+      },
+      "entryConditions": [
+        "Hardware GPU ready and accepted host/world loaded or documented substantive GPU fallback.",
+        "Showcase opening has not already been consumed in this renderer lifecycle; no bound live run preempts it."
+      ],
+      "exitConditions": [
+        "Local shot end advances the opening only.",
+        "A real scoped assignment at any time preempts to T01A using the current pose/camera handoff; actual job and status never wait for the film."
+      ],
+      "continuity": "One renderer/world/host. Do not restart opening, reset the camera/body or load a movie over a live assignment.",
+      "ownerTaskIds": [
+        "SC-02",
+        "SC-03",
+        "SC-15",
+        "SC-16",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "SC02_source_and_offline_groups_ready;root_handoff_hardware_qualification_pending",
+        "paths": [
+          "app/district-3d/showcase-opening.js",
+          "app/district-3d/host-thrusters.js",
+          "app/district-3d/world-entry.js",
+          "app/district-workbench.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-01",
+        "ACC-02",
+        "ACC-03",
+        "ACC-04",
+        "ACC-10",
+        "ACC-15"
+      ],
+      "id": "M02",
+      "title": "Copper precision",
+      "time": {
+        "kind": "fixed_opening_seconds",
+        "start": 2.5,
+        "end": 4.2,
+        "qualification": "Production boundaries follow createShowcaseOpening; archived sampled endpoints have frame quantization."
+      },
+      "direction": {
+        "action": "Tight shoulder/joint insert: the mechanism adjusts and holds with weight. Compact original hardware, no face reveal.",
+        "lighting": "Keep cold low-key body light.",
+        "sound": "muted",
+        "cameraFrom": {
+          "position": [
+            7.8,
+            3.8,
+            12.4
+          ],
+          "target": [
+            6.32,
+            4,
+            11.36
+          ],
+          "fov": 32
+        },
+        "cameraTo": {
+          "position": [
+            7.550284581345033,
+            3.8,
+            12.4
+          ],
+          "target": [
+            6.32,
+            4,
+            11.36
+          ],
+          "fov": 32
+        },
+        "framingAuthority": "Accepted mechanical-opening study; production module returns actual camera diagnostics."
+      }
+    },
+    {
+      "phase": "opening",
+      "authority": {
+        "source": "presentation_clock_only",
+        "allowedDispatch": false,
+        "resultAuthority": "none",
+        "meaning": "Character acting and mood only; no assignment, provider work, pass or quota claim."
+      },
+      "entryConditions": [
+        "Hardware GPU ready and accepted host/world loaded or documented substantive GPU fallback.",
+        "Showcase opening has not already been consumed in this renderer lifecycle; no bound live run preempts it."
+      ],
+      "exitConditions": [
+        "Local shot end advances the opening only.",
+        "A real scoped assignment at any time preempts to T01A using the current pose/camera handoff; actual job and status never wait for the film."
+      ],
+      "continuity": "One renderer/world/host. Do not restart opening, reset the camera/body or load a movie over a live assignment.",
+      "ownerTaskIds": [
+        "SC-02",
+        "SC-03",
+        "SC-15",
+        "SC-16",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "SC02_source_and_offline_groups_ready;root_handoff_hardware_qualification_pending",
+        "paths": [
+          "app/district-3d/showcase-opening.js",
+          "app/district-3d/host-thrusters.js",
+          "app/district-3d/world-entry.js",
+          "app/district-workbench.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-01",
+        "ACC-02",
+        "ACC-03",
+        "ACC-04",
+        "ACC-10",
+        "ACC-15"
+      ],
+      "id": "M03",
+      "title": "Controlled power",
+      "time": {
+        "kind": "fixed_opening_seconds",
+        "start": 4.2,
+        "end": 6.2,
+        "qualification": "Production boundaries follow createShowcaseOpening; archived sampled endpoints have frame quantization."
+      },
+      "direction": {
+        "action": "Low rear crane discovers the hovering body; reveal weight, protective ribs and control while eyes remain withheld.",
+        "lighting": "Cold light settles; no result-coded illumination.",
+        "sound": "muted",
+        "cameraFrom": {
+          "position": [
+            3.2,
+            1.8000753110532408,
+            9.3
+          ],
+          "target": [
+            5,
+            2.1000675202546297,
+            12
+          ],
+          "fov": 42
+        },
+        "cameraTo": {
+          "position": [
+            3.2,
+            3.2488050925925926,
+            9.3
+          ],
+          "target": [
+            5,
+            3.398928703703704,
+            12
+          ],
+          "fov": 42
+        },
+        "framingAuthority": "Accepted mechanical-opening study; production module returns actual camera diagnostics."
+      }
+    },
+    {
+      "phase": "opening",
+      "authority": {
+        "source": "presentation_clock_only",
+        "allowedDispatch": false,
+        "resultAuthority": "none",
+        "meaning": "Character acting and mood only; no assignment, provider work, pass or quota claim."
+      },
+      "entryConditions": [
+        "Hardware GPU ready and accepted host/world loaded or documented substantive GPU fallback.",
+        "Showcase opening has not already been consumed in this renderer lifecycle; no bound live run preempts it."
+      ],
+      "exitConditions": [
+        "Local shot end advances the opening only.",
+        "A real scoped assignment at any time preempts to T01A using the current pose/camera handoff; actual job and status never wait for the film."
+      ],
+      "continuity": "One renderer/world/host. Do not restart opening, reset the camera/body or load a movie over a live assignment.",
+      "ownerTaskIds": [
+        "SC-02",
+        "SC-03",
+        "SC-15",
+        "SC-16",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "SC02_source_and_offline_groups_ready;root_handoff_hardware_qualification_pending",
+        "paths": [
+          "app/district-3d/showcase-opening.js",
+          "app/district-3d/host-thrusters.js",
+          "app/district-3d/world-entry.js",
+          "app/district-workbench.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-01",
+        "ACC-02",
+        "ACC-03",
+        "ACC-04",
+        "ACC-10",
+        "ACC-15"
+      ],
+      "id": "M04",
+      "title": "A helpful person",
+      "time": {
+        "kind": "fixed_opening_seconds",
+        "start": 6.2,
+        "end": 12,
+        "qualification": "Production boundaries follow createShowcaseOpening; archived sampled endpoints have frame quantization."
+      },
+      "direction": {
+        "action": "Delayed profile: optics lead a checking glance, asymmetric brow and delicate head tilt; camera eases around/back as compact dish opens.",
+        "lighting": "Rise to warm face light; industrious, slightly fragile, helpful.",
+        "sound": "muted",
+        "cameraFrom": {
+          "position": [
+            8.899997525163137,
+            5.150002165482257,
+            12.40001175547511
+          ],
+          "target": [
+            5,
+            5.050001237418432,
+            12
+          ],
+          "fov": 38
+        },
+        "cameraTo": {
+          "position": [
+            8.500061633641002,
+            5.499946070564124,
+            14.299707240205246
+          ],
+          "target": [
+            5,
+            5.249969183179499,
+            12
+          ],
+          "fov": 46
+        },
+        "framingAuthority": "Accepted mechanical-opening study; production module returns actual camera diagnostics."
+      }
+    },
+    {
+      "id": "W01",
+      "title": "Warm ready and real attention",
+      "phase": "operational",
+      "time": {
+        "kind": "event_bound",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "The warm face reveal leads directly into W02. One physical worker scale throughout; the camera makes the close-up.",
+        "camera": {
+          "position": [
+            8.5,
+            5.5,
+            14.3
+          ],
+          "target": [
+            5,
+            5.25,
+            12
+          ],
+          "fov": 46,
+          "style": "Settled warm profile; tiny nonproductive ambient movement."
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "source": "Opening consumed; no current active assignment. Attention entries come from DistrictAttention.projectAttention(snapshot,selectedIds).",
+        "allowedDispatch": false,
+        "resultAuthority": "Actual scoped run/check/candidate records only",
+        "meaning": "Attention is a deduplicated view of records, not a scheduler or automatic continuation."
+      },
+      "entryConditions": [
+        "Opening consumed; no current active assignment. Attention entries come from DistrictAttention.projectAttention(snapshot,selectedIds)."
+      ],
+      "exitConditions": [
+        "Matching live assignment -> T01A.",
+        "Explicit Your district -> P01.",
+        "Unavailable/stale snapshot -> quiet unknown text/effects, preserving last known work as historical."
+      ],
+      "continuity": "Preserve same project/run identity and world. Read actual status immediately; presentation time does not delay work, change results or dispatch.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-14",
+        "SC-15",
+        "SC-18",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "source_modules_present;current_integrated_behavior_qualification_pending",
+        "paths": [
+          "app/district-3d/world-entry.js",
+          "app/district-workbench.js",
+          "app/district-attention.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-02",
+        "ACC-06",
+        "ACC-07",
+        "ACC-09",
+        "ACC-10",
+        "ACC-14"
+      ]
+    },
+    {
+      "id": "W02",
+      "title": "One worker, a district ready to use",
+      "phase": "transition",
+      "time": {
+        "kind": "timed",
+        "durationSeconds": 5.5
+      },
+      "direction": {
+        "action": "Automatically crane and dolly out from the single cute antenna-and-rockets robot into the three-quarter isometric district. Buildings are ready for real work. No decorative or disconnected bots.",
+        "camera": {
+          "position": [
+            60,
+            62,
+            58
+          ],
+          "target": [
+            0,
+            2,
+            -2
+          ],
+          "verticalSpan": 52,
+          "style": "Continuous perspective pullback settling into orthographic isometric."
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "allowedDispatch": false,
+        "source": "Camera presentation only; additional workers require actual run/session identity."
+      },
+      "continuity": "Same host geometry, .65 worker scale, world, input and work state. No remount, fake jobs or extra crew.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-15",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "implemented_current_native_review_pending",
+        "paths": [
+          "app/district-3d/world-entry.js",
+          "app/district-3d/showcase-opening.js",
+          "app/district-3d/robot-crew.js"
+        ]
+      },
+      "acceptance": [
+        "Single featured robot remains at worker scale.",
+        "Automatic pullback reaches true orthographic 35.264 degree elevation and 45 degree azimuth.",
+        "No ambient or installed-only provider robots.",
+        "Typing never dispatches or pauses the camera."
+      ]
+    },
+    {
+      "id": "I01",
+      "title": "Drag the worker to real Test work",
+      "phase": "interaction",
+      "time": {
+        "kind": "user_driven",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "Drag the original single robot onto Test, choose actual executor and explicitly assign its checkout smoke test. Keep W02 orthographic camera and shared robot scale. Show actual named checks, reported activity, checkout/run identity and output in an edge dock.",
+        "camera": {
+          "position": [
+            60,
+            62,
+            58
+          ],
+          "target": [
+            0,
+            2,
+            -2
+          ],
+          "verticalSpan": 52,
+          "style": "Locked W02 isometric; no job-triggered close-up or remount."
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "source": "Existing MapJobs desktop assignment and scoped smoke tool. Local runner and model worker are explicitly distinguished.",
+        "allowedDispatch": "Explicit assignment button only; drag/drop selects. Renderer never dispatches."
+      },
+      "continuity": "Same actor, world, camera and draft. Keyboard robot/facility selection is equivalent. Cancel drag/outside drop/hover/inspection starts no work. No filler robots.",
+      "implementation": {
+        "status": "scoped_native_verified",
+        "paths": [
+          "app/district-map-interaction.js",
+          "app/district-workbench.js",
+          "app/district-entry.js",
+          "app/map-jobs.js"
+        ],
+        "evidence": "evidence/showcase/interactive-delivery.json"
+      },
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-15",
+        "SC-18",
+        "SC-19"
+      ],
+      "acceptance": [
+        "Actual pointer drag and keyboard equivalent select Test without dispatch.",
+        "One explicit assignment starts one owned runner.",
+        "Six observed smoke checks and actual provider session/result; no timer-generated pass.",
+        "Camera stays orthographic and unchanged through assignment/results.",
+        "Read failure and stop remain truthful; disposal cleans UI without canceling work implicitly."
+      ]
+    },
+    {
+      "id": "T01A",
+      "title": "Notice an actual assignment",
+      "phase": "operational",
+      "time": {
+        "kind": "event_bound",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "Optics lead; asymmetric brow and delicate head tilt acknowledge the actual selected assignment.",
+        "camera": {
+          "style": "Blend from the actual opening/hold camera and current host joints to intimate face framing. No hardcoded reset jump."
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "source": "An owner-authorized GUI/CLI/MCP command produced a run bound to selected projectId/runId; legacy smoke mapRun retains its own job/root/sha/manifest identity.",
+        "allowedDispatch": false,
+        "resultAuthority": "Actual scoped run/check/candidate records only",
+        "meaning": "Accepted/waiting is not execution; a detected CLI is not signed-in/available allowance."
+      },
+      "entryConditions": [
+        "An owner-authorized GUI/CLI/MCP command produced a run bound to selected projectId/runId; legacy smoke mapRun retains its own job/root/sha/manifest identity.",
+        "follow is allowed only for this explicitly owned command/run; it covers a real terminal result received before the first snapshot without treating unrelated history as fresh."
+      ],
+      "exitConditions": [
+        "Continue physical attention to T01B.",
+        "Failure/cancel/unknown remains visible immediately without pretending success.",
+        "New bound identity resets only the performance for that identity, never the opening."
+      ],
+      "continuity": "Preserve same project/run identity and world. Read actual status immediately; presentation time does not delay work, change results or dispatch.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-05",
+        "SC-06",
+        "SC-11",
+        "SC-18",
+        "SC-19",
+        "SC-04",
+        "SC-13"
+      ],
+      "implementation": {
+        "status": "root_routing_dynamic_plan_and_handoff_source_present;current_native_qualification_pending",
+        "paths": [
+          "app/map.js",
+          "app/map-jobs.js",
+          "app/district-workbench.js",
+          "app/district/runtime.js",
+          "app/district/test-performance.js",
+          "app/district-3d/test-scene.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-04",
+        "ACC-05",
+        "ACC-06",
+        "ACC-07",
+        "ACC-10",
+        "ACC-12"
+      ]
+    },
+    {
+      "id": "T01B",
+      "title": "Orient toward the actual phase facility",
+      "phase": "operational",
+      "time": {
+        "kind": "event_bound",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "Compact dish extends/searches/locks toward the run's current eligible facility. Scoped reported Research or Editing may orient to Research/Workshop; observed building/testing selects the corresponding operation facility. Head leads body; Test remains the core acceptance slice.",
+        "camera": {
+          "style": "Dolly back to include compact dish; aim from the actual current position toward the routed authored approach. Preserve gaze and handoff."
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "source": "Same bound run remains available; orienting is a presentation response to its assignment, not a new command.",
+        "allowedDispatch": false,
+        "resultAuthority": "Actual scoped run/check/candidate records only",
+        "meaning": "Dish orientation identifies current reported/observed phase only; it never grants file-change, execution, check or result authority."
+      },
+      "entryConditions": [
+        "Same scoped available run; root supplies presentationFacility from facilityFor(run, matching current activity). No phase is inferred from prose."
+      ],
+      "exitConditions": [
+        "Dish lock/turn -> T01C at the current facility; reduced motion settles without inventing work.",
+        "A phase change replans from current position without run/intro reset.",
+        "Actual terminal/unavailable text updates immediately."
+      ],
+      "continuity": "Preserve same project/run identity and world. Read actual status immediately; presentation time does not delay work, change results or dispatch.",
+      "ownerTaskIds": [
+        "SC-02",
+        "SC-03",
+        "SC-11",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "root_routing_dynamic_plan_and_handoff_source_present;current_native_qualification_pending",
+        "paths": [
+          "app/district-3d/test-scene.js",
+          "app/district-3d/host-rig.js",
+          "app/district/test-performance.js",
+          "app/district/showcase-routing.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-03",
+        "ACC-05",
+        "ACC-06",
+        "ACC-07",
+        "ACC-15"
+      ]
+    },
+    {
+      "id": "T01C",
+      "title": "Purposeful travel to the actual phase",
+      "phase": "operational",
+      "time": {
+        "kind": "event_bound",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "Follow the authored clear-road route from the actual current host position to the current phase facility. Research, Workshop, Test, Review, Preview and hub use saved approach points; no duplicate job is dispatched.",
+        "camera": {
+          "style": "Low tracking dolly follows head/body along authored clear approach roads; never automatic overhead.",
+          "routingSource": "app/district/showcase-routing.js:routeFor/sampleRoute",
+          "targets": {
+            "research": [
+              -11,
+              0.95,
+              -8.6
+            ],
+            "build": [
+              9,
+              0.95,
+              -6.5
+            ],
+            "test": [
+              -18,
+              0.95,
+              7
+            ],
+            "review": [
+              -10,
+              0.95,
+              18.5
+            ],
+            "preview": [
+              18,
+              0.95,
+              11.7
+            ],
+            "hub": [
+              0,
+              0.95,
+              6
+            ]
+          },
+          "coreTestRoute": [
+            [
+              5,
+              0.95,
+              12
+            ],
+            [
+              1,
+              0.95,
+              7
+            ],
+            [
+              -18,
+              0.95,
+              7
+            ]
+          ],
+          "coreTestAnchor": [
+            -18,
+            0,
+            -1
+          ],
+          "coreTestEntrance": [
+            -18,
+            0,
+            5.75
+          ]
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "source": "Current bound Test performance; runner already started independently through its command owner.",
+        "allowedDispatch": false,
+        "resultAuthority": "Actual scoped run/check/candidate records only",
+        "meaning": "Travel represents a current reported/observed phase location. It cannot grant productive edits, check progress, result or permission."
+      },
+      "entryConditions": [
+        "A current scoped run and its eligible phase facility are bound. Actual work already starts independently of camera timing."
+      ],
+      "exitConditions": [
+        "Arrive and hold at current facility; Test/check operation watches actual evidence in T01D.",
+        "A new eligible phase replans from current sampled position, preserving base run/candidate enrichment continuity.",
+        "Results arriving en route update immediately; halted/unknown states freeze travel; explicit P01 changes presentation only."
+      ],
+      "continuity": "Preserve same project/run identity and world. Read actual status immediately; presentation time does not delay work, change results or dispatch.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-11",
+        "SC-17",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "root_routing_dynamic_plan_and_handoff_source_present;current_native_qualification_pending",
+        "paths": [
+          "app/district/test-performance.js",
+          "app/district-3d/test-scene.js",
+          "app/district-3d/world-entry.js",
+          "app/district/showcase-routing.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-03",
+        "ACC-05",
+        "ACC-06",
+        "ACC-09",
+        "ACC-15"
+      ]
+    },
+    {
+      "id": "T01D",
+      "title": "Watch actual checks",
+      "phase": "operational",
+      "time": {
+        "kind": "event_bound",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "At the routed facility, show actual phase/basis and run evidence. When checks run, include actual check name/recorded count/kind; Test remains the core six-smoke/five-source/browser acceptance slice. No timed scan or green result for reported research.",
+        "camera": {
+          "style": "Gentle crane at Test forecourt, then hold. Existing T01 uses 46° FOV; instruments and text must remain readable."
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "source": "Host at Test and current record available. Supported record adapters supply actual steps/checks, total and evidence kind.",
+        "allowedDispatch": false,
+        "resultAuthority": "Actual scoped run/check/candidate records only",
+        "meaning": "Actual checkPlan declares expected checks; it does not mark them executed. steps/checks alone provide recorded states. Smoke/source/browser labels stay distinct."
+      },
+      "entryConditions": [
+        "Host at current phase facility and matching record available; Test instruments correspond to actual checking state.",
+        "Root supplies steps/checks and published checkPlan for supported project runs; unknown totals remain unknown."
+      ],
+      "exitConditions": [
+        "New matching terminal transition -> T01E.",
+        "Same active record remains here without manufacturing progress.",
+        "Snapshot error -> unknown/frozen work effects.",
+        "A historical terminal record is settled inspection, not an entering celebration."
+      ],
+      "continuity": "Preserve same project/run identity and world. Read actual status immediately; presentation time does not delay work, change results or dispatch.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-06",
+        "SC-11",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "root_routing_dynamic_plan_and_handoff_source_present;current_native_qualification_pending",
+        "paths": [
+          "app/map-jobs.js",
+          "app/district/recipes.js",
+          "app/district/runtime.js",
+          "app/district/test-performance.js",
+          "app/district-3d/test-scene.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-05",
+        "ACC-06",
+        "ACC-07",
+        "ACC-08",
+        "ACC-11",
+        "ACC-16"
+      ]
+    },
+    {
+      "id": "T01E",
+      "title": "Acknowledge the recorded outcome",
+      "phase": "operational",
+      "time": {
+        "kind": "event_bound",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "One restrained relief cue for a fresh observed pass, concern for failure. Cancellation/interruption/timeout/unknown termination settle without relief.",
+        "camera": {
+          "style": "Close three-quarter view beside Test; retain instruments and current district. Small acknowledgment, no city-wide victory or forced camera lift."
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "source": "Newly observed terminal transition for the same bound identity and current evidence; no first-bind historical result or repeat-poll trigger.",
+        "allowedDispatch": false,
+        "resultAuthority": "Actual scoped run/check/candidate records only",
+        "meaning": "Source checks passed is not browser behavior passed, published, approved, or artistically accepted. Process stop requested is not termination confirmed."
+      },
+      "entryConditions": [
+        "Newly observed terminal transition for the same bound identity and current evidence; no first-bind historical result or repeat-poll trigger."
+      ],
+      "exitConditions": [
+        "After one short cue, settle into inspectable actual result.",
+        "Explicit preview/authorized completed workflow -> R01 only if candidate gates pass.",
+        "Explicit management -> P01.",
+        "New assignment binds its own identity."
+      ],
+      "continuity": "Preserve same project/run identity and world. Read actual status immediately; presentation time does not delay work, change results or dispatch.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-06",
+        "SC-08",
+        "SC-11",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "root_routing_dynamic_plan_and_handoff_source_present;current_native_qualification_pending",
+        "paths": [
+          "app/district/test-performance.js",
+          "app/district-3d/test-scene.js",
+          "app/district-workbench.js",
+          "app/map.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-05",
+        "ACC-06",
+        "ACC-07",
+        "ACC-08",
+        "ACC-11",
+        "ACC-16"
+      ]
+    },
+    {
+      "id": "R01",
+      "title": "Inspect the exact candidate",
+      "phase": "operational",
+      "time": {
+        "kind": "event_bound",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "Prepare an immutable checked candidate without covering the helper. Only explicit Try your creation opens its usable preview; Close returns to the same scene and draft. New first projects use the supported checklist starter; preserve existing explicitly chosen Rally projects as historical/user content.",
+        "camera": {
+          "style": "Current low world persists around usable app. No rejected floating comic scoreboard; gateway glow alone cannot stand in for real output."
+        },
+        "sound": "muted",
+        "composition": "A smooth horizontal perspective framing adjustment reserves the right-hand output drawer while preserving the host silhouette on the left; same full viewport/world, no re-mounted renderer."
+      },
+      "authority": {
+        "source": "Actual preview_start/open_preview_window or authorized pipeline has a matching passed project/run artifact, current source/candidate hash and preview identity.",
+        "allowedDispatch": false,
+        "resultAuthority": "Actual scoped run/check/candidate records only",
+        "meaning": "Opening the checked app is separate from a browser check result. Candidate selection and page content cannot grant command authority."
+      },
+      "entryConditions": [
+        "Actual preview_start/open_preview_window or authorized pipeline has a matching passed project/run artifact, current source/candidate hash and preview identity."
+      ],
+      "exitConditions": [
+        "Source edit marks prior output historical/stale; rebuild before current preview/browser checks.",
+        "Explicit feedback submits bounded selection context to an actual task.",
+        "Close preview is a presentation/service action with its own receipt; never a cinematic result."
+      ],
+      "continuity": "Preserve same project/run identity and world. Read actual status immediately; presentation time does not delay work, change results or dispatch.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-05",
+        "SC-09",
+        "SC-12",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "source_modules_present;current_integrated_behavior_qualification_pending",
+        "paths": [
+          "app/district/runtime.js",
+          "app/district/preview.js",
+          "app/district-workbench.js",
+          "app/district-feedback.js",
+          "app/district-ui.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-06",
+        "ACC-10",
+        "ACC-11",
+        "ACC-12",
+        "ACC-13"
+      ]
+    },
+    {
+      "id": "P01",
+      "title": "Choose the same district from above",
+      "phase": "operational",
+      "time": {
+        "kind": "event_bound",
+        "durationSeconds": null
+      },
+      "direction": {
+        "action": "Only explicit Your district/map-view choice reveals the same facilities and scoped workers from three-quarter overhead; labels and hit areas project through that camera.",
+        "camera": {
+          "projection": "orthographic",
+          "position": [
+            60,
+            62,
+            58
+          ],
+          "target": [
+            0,
+            2,
+            -2
+          ],
+          "verticalSpan": 68,
+          "near": 0.2,
+          "far": 260
+        },
+        "sound": "muted"
+      },
+      "authority": {
+        "source": "Explicit player presentation choice, never opening end, Enter, pass, timeout or automatic attention.",
+        "allowedDispatch": false,
+        "resultAuthority": "Actual scoped run/check/candidate records only",
+        "meaning": "Same world, state and identity as low view. Management selection, camera or drag preview alone cannot dispatch."
+      },
+      "entryConditions": [
+        "Explicit player presentation choice, never opening end, Enter, pass, timeout or automatic attention."
+      ],
+      "exitConditions": [
+        "Remain until another player view choice.",
+        "Selection inspects only; explicit assignment/action controls own work.",
+        "Hidden panes dispose/stop presentation without cancelling real runs."
+      ],
+      "continuity": "Preserve same project/run identity and world. Read actual status immediately; presentation time does not delay work, change results or dispatch.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-07",
+        "SC-11",
+        "SC-14",
+        "SC-15",
+        "SC-17",
+        "SC-19"
+      ],
+      "implementation": {
+        "status": "source_modules_present;current_integrated_behavior_qualification_pending",
+        "paths": [
+          "app/district-workbench.js",
+          "app/district-scene.js",
+          "app/district-3d/world-entry.js",
+          "app/district-world-state.js",
+          "app/district-selection.js"
+        ],
+        "rootOwnedIntegration": true
+      },
+      "acceptance": [
+        "ACC-03",
+        "ACC-06",
+        "ACC-09",
+        "ACC-14",
+        "ACC-15"
+      ]
+    }
+  ],
+  "acceptanceChecks": [
+    {
+      "id": "ACC-01",
+      "name": "Hardware GPU and identity",
+      "criterion": "Root captures actual hardware WebGL2 renderer, loaded accepted assets, budgets and fallback; no software rasterizer or false ready.",
+      "owners": [
+        "SC-16",
+        "SC-19"
+      ],
+      "paths": [
+        "evidence/showcase/gpu-probe.cjs"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-02",
+      "name": "Muted opening",
+      "criterion": "New opening creates no audio; existing rough sound is not auto-played. Sound remains muted unless a later accepted explicit choice changes it.",
+      "owners": [
+        "SC-02",
+        "SC-03",
+        "SC-19"
+      ],
+      "paths": [
+        "app/district-3d/showcase-opening.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-03",
+      "name": "Saved character and geography",
+      "criterion": "Host GLB2475a8cd… and current world4675bede… stay unchanged; original compact dish/thrusters are additive. Camera and agent anchors retain one district.",
+      "owners": [
+        "SC-02",
+        "SC-17",
+        "SC-19"
+      ],
+      "paths": [
+        "design/district-3d/ASSET-REGISTRY.json"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-04",
+      "name": "Mid-opening assignment continuity",
+      "criterion": "From early M01, mid M02/M03, late M04 and settled warm W01, deliver an explicit scoped run. Preserve actual current body/joints/camera and monotonic consumed opening, blend1.8s into live performance, never reset/replay or defer the job. Include terminal-before-first-snapshot with owned follow, and unrelated historical terminal with follow:false.",
+      "owners": [
+        "SC-02",
+        "SC-03",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-workbench.test.js",
+        "app/district-3d/world-entry.js",
+        "app/district-3d/showcase-opening.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-05",
+      "name": "Actual progress at any arrival time",
+      "criterion": "Use actual run.checkPlan/steps/checks and kind: source5, legacy smoke6, browser declared plan, unknown project total stays unknown. Counts/result text update even during travel; candidate enrichment cannot reset the performance.",
+      "owners": [
+        "SC-03",
+        "SC-11",
+        "SC-19"
+      ],
+      "paths": [
+        "app/district/test-performance.js",
+        "tests/district-test-performance.test.js",
+        "app/district/runtime.js",
+        "app/district/showcase-routing.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-06",
+      "name": "Exact scope",
+      "criterion": "Wrong project/run/attempt/source/candidate cannot drive the selected host or preview; switching project binds its independent state and draft.",
+      "owners": [
+        "SC-03",
+        "SC-07",
+        "SC-11",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-projects.test.js",
+        "tests/showcase-activity.test.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-07",
+      "name": "Historical and unavailable state",
+      "criterion": "First-bind terminal history, duplicate polls, stale/unknown data and refresh failure do not celebrate or invent working; text identifies saved/unconfirmed state.",
+      "owners": [
+        "SC-03",
+        "SC-11",
+        "SC-14",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-attention.test.js",
+        "tests/showcase-workbench.test.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-08",
+      "name": "One actual terminal cue",
+      "criterion": "Only a newly observed matching terminal transition can cue once; pass is restrained relief, failure concern, cancelled/interrupted/timed_out/stopping/termination_unknown never pass.",
+      "owners": [
+        "SC-03",
+        "SC-11",
+        "SC-19"
+      ],
+      "paths": [
+        "app/district/test-performance.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-09",
+      "name": "Explicit management",
+      "criterion": "Only Your district/map presentation choice enters P01. End of opening, Enter, pass and provider events do not force overhead or dispatch an assignment.",
+      "owners": [
+        "SC-03",
+        "SC-17",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-management.test.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-10",
+      "name": "Draft and commit",
+      "criterion": "Typing/focus/partial speech keep presentation moving and dispatch nothing; Enter or explicit completed dictation commits once; failure keeps the draft; reduced motion remains usable.",
+      "owners": [
+        "SC-03",
+        "SC-18",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-conversation.test.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-11",
+      "name": "Kinds of evidence",
+      "criterion": "Legacy six smoke steps, five project recipe checks and separate browser checks retain their actual names/counts/source identity. Source pass is not browser pass or owner art acceptance.",
+      "owners": [
+        "SC-03",
+        "SC-06",
+        "SC-09",
+        "SC-19"
+      ],
+      "paths": [
+        "app/map-jobs.js",
+        "app/district/recipes.js",
+        "app/district/runtime.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-12",
+      "name": "Provider failure truth",
+      "criterion": "Installed CLI is not authenticated or quota-ready. Explicit model/effort is retained or rejected; provider/auth/limit/exit failure preserves work and cannot qualify a prose-only edit.",
+      "owners": [
+        "SC-04",
+        "SC-06",
+        "SC-13",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-codex.test.js",
+        "tests/showcase-claude.test.js",
+        "tests/showcase-sessions.test.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-13",
+      "name": "Exact candidate preview",
+      "criterion": "Preview/window/browser check uses current project/run/candidate hash plus nonce/display/region where applicable; source change or tampering rejects freshness. Prior result remains historical.",
+      "owners": [
+        "SC-09",
+        "SC-12",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-preview.test.js",
+        "tests/showcase-regions.test.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-14",
+      "name": "Multiple projects and attention",
+      "criterion": "All seven projects retain latest and active/unresolved run identity under noisy history, plus independent drafts/regions/top-side and overview-split views. Runtime pins each project's latest and all nonterminal/termination_unknown runs before adding recent100; attention/selection never dispatches.",
+      "owners": [
+        "SC-07",
+        "SC-14",
+        "SC-17",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-projects.test.js",
+        "tests/showcase-attention.test.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-15",
+      "name": "Lifecycle and access",
+      "criterion": "Hidden panes stop/dispose their GPU resources; resize/context loss/reduced motion/fallback preserve controls and truthful text. Root owns 4K native qualification.",
+      "owners": [
+        "SC-15",
+        "SC-16",
+        "SC-17",
+        "SC-18",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-lifecycle.test.js",
+        "evidence/showcase/runtime-review.cjs"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    },
+    {
+      "id": "ACC-16",
+      "name": "Cancellation and recovery",
+      "criterion": "Cancellation shows stopping until owned-process termination evidence; unknown termination stays unknown. Checkpoint restore archives current owned bytes and requires new checks/preview.",
+      "owners": [
+        "SC-06",
+        "SC-08",
+        "SC-19"
+      ],
+      "paths": [
+        "tests/showcase-sessions.test.js",
+        "tests/showcase-checkpoints.test.js"
+      ],
+      "status": "pending_current_integrated_candidate_qualification"
+    }
+  ],
+  "taskCoverage": [
+    {
+      "taskId": "SC-01",
+      "title": "Direction and maintained shot list",
+      "owner": "/root/t3_01_product",
+      "paths": [
+        "design/showcase/SHOT-LIST.json",
+        "design/showcase/SHOT-LIST.md",
+        "design/showcase/CAPABILITIES.json"
+      ],
+      "shotIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "direction_or_independent_review"
+    },
+    {
+      "taskId": "SC-02",
+      "title": "Production opening and original thrusters",
+      "owner": "/root/t3_16_quality",
+      "paths": [
+        "app/district-3d/showcase-opening.js",
+        "app/district-3d/host-thrusters.js"
+      ],
+      "shotIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "T01B"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-03",
+      "title": "Continuous workbench handoff",
+      "owner": "/root/t3_18_inclusive",
+      "paths": [
+        "app/district-workbench.js",
+        "tests/showcase-workbench.test.js"
+      ],
+      "shotIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-04",
+      "title": "Codex provider operation",
+      "owner": "/root/t3_04_providers",
+      "paths": [
+        "app/district/providers/codex.js",
+        "tests/showcase-codex.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "T01A",
+        "T01E",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-05",
+      "title": "CLI and MCP parity",
+      "owner": "/root/cli_adapter",
+      "paths": [
+        "bin/district.cjs",
+        "bin/district-mcp.cjs",
+        "app/district/client.js",
+        "tests/showcase-cli.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "T01A",
+        "T01D",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-06",
+      "title": "Real agent session lifecycle",
+      "owner": "/root/t3_06_threads",
+      "paths": [
+        "app/district/agent-session.js",
+        "app/district/project-agent-mcp.js",
+        "tests/showcase-sessions.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "T01A",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-07",
+      "title": "Multiple-project isolation and selection",
+      "owner": "/root/t3_07_workspaces",
+      "paths": [
+        "app/district/workspaces.js",
+        "app/district-selection.js",
+        "tests/showcase-projects.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-08",
+      "title": "Checkpoints and recovery",
+      "owner": "/root/t3_08_sourcecontrol",
+      "paths": [
+        "app/district/checkpoints.js",
+        "tests/showcase-checkpoints.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-09",
+      "title": "Exact-candidate preview",
+      "owner": "/root/t3_09_tools",
+      "paths": [
+        "app/district/preview.js",
+        "tests/showcase-preview.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-10",
+      "title": "Independent security and capability-gap review",
+      "owner": "/root/protocol_review",
+      "paths": [
+        "evidence/showcase/security-review.json",
+        "design/showcase/PRODUCT-GAPS.md"
+      ],
+      "shotIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "direction_or_independent_review"
+    },
+    {
+      "taskId": "SC-11",
+      "title": "Truthful automatic activity",
+      "owner": "/root/t3_11_mcp",
+      "paths": [
+        "app/district/activity.js",
+        "app/district-world-state.js",
+        "tests/showcase-activity.test.js"
+      ],
+      "shotIds": [
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-12",
+      "title": "Display region assignments",
+      "owner": "/root/t3_12_remote",
+      "paths": [
+        "app/district/displays.js",
+        "app/district/regions.js",
+        "app/district-screen-picker.js",
+        "app/district-screen-picker.css",
+        "tests/showcase-regions.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-13",
+      "title": "Claude provider operation",
+      "owner": "/root/t3_13_accounts",
+      "paths": [
+        "app/district/providers/claude.js",
+        "tests/showcase-claude.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "T01A",
+        "T01E",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-14",
+      "title": "Cross-project attention feed",
+      "owner": "/root/t3_14_background",
+      "paths": [
+        "app/district-attention.js",
+        "tests/showcase-attention.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-15",
+      "title": "Console-quality shell and responsive polish",
+      "owner": "/root/t3_15_interface",
+      "paths": [
+        "app/district-workbench.css",
+        "app/district-entry.css",
+        "app/district-showcase.css"
+      ],
+      "shotIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-16",
+      "title": "Performance and lifecycle audit",
+      "owner": "/root/t3_05_orchestration",
+      "paths": [
+        "evidence/showcase/gpu-probe.cjs",
+        "tests/showcase-lifecycle.test.js"
+      ],
+      "shotIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "direction_or_independent_review"
+    },
+    {
+      "taskId": "SC-17",
+      "title": "Working management map interaction",
+      "owner": "/root/t3_17_wysiwyg",
+      "paths": [
+        "app/district-scene.js",
+        "app/district-scene.css",
+        "tests/showcase-management.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "T01C",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-18",
+      "title": "Approachable conversation and access",
+      "owner": "/root/t3_03_claude",
+      "paths": [
+        "app/district-conversation.js",
+        "app/district-conversation.css",
+        "tests/showcase-conversation.test.js"
+      ],
+      "shotIds": [
+        "W01",
+        "T01A",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "implementation_or_supporting_capability"
+    },
+    {
+      "taskId": "SC-19",
+      "title": "Independent integrated qualification",
+      "owner": "/root/t3_19_adoption",
+      "paths": [
+        "evidence/showcase/runtime-review.cjs",
+        "evidence/showcase/acceptance-plan.json",
+        "tests/showcase-integration.test.js"
+      ],
+      "shotIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E",
+        "R01",
+        "P01"
+      ],
+      "qualification": "Lane source/report is provisional until root integration and current candidate acceptance.",
+      "coverageRole": "direction_or_independent_review"
+    }
+  ],
+  "archivedDirections": [
+    {
+      "path": "design/district-3d/accepted-v1/intro-loop.mp4",
+      "seconds": 24,
+      "status": "Historical accepted look footage; superseded payoff/card is rejected. Never use film playback as live work proof."
+    },
+    {
+      "path": "design/district-3d/STORYBOARD.json",
+      "status": "Older24-secondS01–S05 production/line-art study. Preserve separately; it does not time this operational sequence."
+    },
+    {
+      "path": "design/district-3d/MECHANICAL-OPENING.json",
+      "seconds": 12,
+      "status": "Accepted industrial acting/camera reference. Production integrates source, not a movie restart; rough audio stays muted."
+    },
+    {
+      "path": "evidence/storyboard/test-scene-validation.json",
+      "status": "Prior native T01 smoke-slice evidence; historical source hashes. Not qualification of the new integrated showcase candidate."
+    }
+  ],
+  "knownIntegrationGaps": [
+    {
+      "id": "INT-01",
+      "gap": "Former hardcoded6 adapter gap has root source fix: dynamic checkPlan,steps/checks,kind/unknown totals and candidate enrichment; verify frozen-candidate native counts.",
+      "owner": "root",
+      "shots": [
+        "T01D",
+        "T01E"
+      ],
+      "status": "implemented_source_native_pending"
+    },
+    {
+      "id": "INT-02",
+      "gap": "Root source now integrates opening/context/attention and1.8s current-pose handoff; early/mid/late/warm native qualification remains.",
+      "owner": "root",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "T01A",
+        "W01"
+      ],
+      "status": "implemented_source_native_pending"
+    },
+    {
+      "id": "INT-03",
+      "gap": "SC03 removed active illustrative floating demo and reports12focused passes; current native rejected-card absence remains a gate.",
+      "owner": "SC-03",
+      "shots": [
+        "M01",
+        "M04",
+        "R01"
+      ],
+      "status": "source_and_local_fixtures_reported_native_pending"
+    },
+    {
+      "id": "INT-04",
+      "gap": "No provider-live run is authorized for this lane/wave; current CLI authentication/allowance and full product parity remain unqualified.",
+      "owner": "root",
+      "shots": [
+        "T01A",
+        "R01"
+      ]
+    },
+    {
+      "id": "INT-05",
+      "gap": "SC-09 preview verify/nonce/per-load identity handshake and current-source preview_start guard require root frame/runtime integration.",
+      "owner": "root",
+      "shots": [
+        "R01"
+      ]
+    },
+    {
+      "id": "INT-06",
+      "gap": "SC-08 optional backend restore comparison guards, structured partial recovery and saved-file inspect need root command/UI integration before current native recovery qualification.",
+      "owner": "root",
+      "shots": [
+        "T01E",
+        "R01",
+        "P01"
+      ]
+    }
+  ],
+  "integrationOwner": "/root",
+  "laneReceiptSnapshot": [
+    {
+      "taskId": "SC-02",
+      "status": "implemented",
+      "path": "evidence/showcase/lanes/02.json",
+      "scope": "Reported18 focused source/GLB behavioral groups and in-memory browser build; no hardware shader/native run."
+    },
+    {
+      "taskId": "SC-04",
+      "status": "implemented",
+      "path": "evidence/showcase/lanes/04.json",
+      "scope": "Reported final19/19 Codex adapter/local transport fixtures; historical stream replay only, no authenticated provider run."
+    },
+    {
+      "taskId": "SC-05",
+      "status": "implemented",
+      "path": "evidence/showcase/lanes/05.json",
+      "scope": "Reported25 focused CLI/MCP tests and authoritative13-command catalog parity; no native/provider run."
+    },
+    {
+      "taskId": "SC-06",
+      "status": "implemented",
+      "path": "evidence/showcase/lanes/06.json",
+      "scope": "Reported17 scoped MCP/local-process session fixtures and owned-PID stop tests; no paid model call."
+    },
+    {
+      "taskId": "SC-08",
+      "status": "implemented",
+      "path": "evidence/showcase/lanes/08.json",
+      "scope": "Reported20 checkpoint/temp-filesystem/SQLite tests and stale-guard negative control; root comparison-guard/recovery UI integration pending."
+    },
+    {
+      "taskId": "SC-10",
+      "status": "reviewed",
+      "path": "evidence/showcase/lanes/10.json",
+      "scope": "Reported8 bounded security negatives and reproduced5-check-to0/6 presentation mismatch; no new critical local authority defect reproduced."
+    },
+    {
+      "taskId": "SC-14",
+      "status": "implemented",
+      "path": "evidence/showcase/lanes/14.json",
+      "scope": "Reported14 pure attention projection Node/VM tests; no native UI or durable acknowledgement claim."
+    },
+    {
+      "taskId": "SC-18",
+      "status": "implemented",
+      "path": "evidence/showcase/lanes/18.json",
+      "scope": "Reported10 conversation tests, retained security case and in-memory editable-draft negative control; no microphone/native acceptance."
+    },
+    {
+      "taskId": "SC-03",
+      "path": "evidence/showcase/lanes/03.json",
+      "status": "implemented",
+      "scope": "Reported12 focused workbench/real-temp recipe+HTTP/recording-renderer cases; one showcase handle, explicit follow, no active floating demo; native/provider pending.",
+      "attribution": "Read owning-lane receipt; SC01 did not rerun these tests."
+    },
+    {
+      "taskId": "SC-07",
+      "path": "evidence/showcase/lanes/07.json",
+      "status": "implemented",
+      "scope": "Reported earlier19 workspace/selection cases plus separately added noisy-history1/1 regression after root pin fix; seven current/active states retained; native pending.",
+      "attribution": "Read owning-lane receipt; SC01 did not rerun these tests."
+    }
+  ],
+  "integrationStatus": "Root source integrates actual phase routing, dynamic checkPlan and all-project run pins. SC03 reports12workbench cases; SC07 reports targeted history pin regression. Native/real-provider qualification remains explicit.",
+  "revision": 2,
+  "qualificationPaths": [
+    {
+      "id": "QP-HANDOFF",
+      "shots": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "W01",
+        "T01A"
+      ],
+      "cases": [
+        {
+          "name": "early",
+          "atSeconds": 0.4,
+          "shot": "M01"
+        },
+        {
+          "name": "mid_joint",
+          "atSeconds": 3.3,
+          "shot": "M02"
+        },
+        {
+          "name": "mid_rear",
+          "atSeconds": 5.2,
+          "shot": "M03"
+        },
+        {
+          "name": "late_profile",
+          "atSeconds": 10.5,
+          "shot": "M04"
+        },
+        {
+          "name": "warm_hold",
+          "atSeconds": 13,
+          "shot": "W01"
+        }
+      ],
+      "trigger": "An explicit owned run arrives; repeat with passed-before-first-snapshot follow:true and unrelated historical pass follow:false.",
+      "checks": [
+        "One renderer/host; no opening replay or pose(12) reset.",
+        "Actual camera/body/joints captured; source blend1.8s; warm mood avoids transform reset.",
+        "Immediate authoritative status/counts; source actual checkPlan retained.",
+        "No automatic overhead or command from presentation."
+      ],
+      "sourceProof": [
+        "app/district-3d/world-entry.js:capturePose/animate/setShowcaseContext",
+        "app/district-3d/showcase-opening.js:createShowcaseOpening/setMood",
+        "app/district-workbench.js:syncAttractWorld"
+      ],
+      "status": "source_present;root_native_qualification_pending"
+    },
+    {
+      "id": "QP-ROUTING",
+      "shots": [
+        "T01B",
+        "T01C",
+        "T01D"
+      ],
+      "cases": [
+        "matching fresh reported research -> Research",
+        "matching fresh reported edit -> Workshop",
+        "observed building -> Workshop",
+        "observed testing/visual/pass -> Test",
+        "wrong-project/wrong-run/stale activity -> run-state fallback",
+        "phase change while traveling starts the new leg at current sampled position",
+        "cancel/stopping/interrupted/timeout/unknown freezes age/work effects"
+      ],
+      "sourceProof": [
+        "app/district/showcase-routing.js:facilityFor/routeFor/sampleRoute",
+        "app/district/test-performance.js:setRun/sample",
+        "app/district-3d/test-scene.js:poseTestScene"
+      ],
+      "status": "source_present;pure_Node_cases_and_root_native_qualification_separate"
+    },
+    {
+      "id": "QP-SEVEN-PINS",
+      "shots": [
+        "W01",
+        "P01"
+      ],
+      "cases": [
+        "150 noisy-project terminal records",
+        "six quiet projects keep latest records",
+        "older active/stopping/termination_unknown records remain",
+        "retained list unique/ordered; no persisted state rewrite"
+      ],
+      "sourceProof": [
+        "app/district/runtime.js:snapshot",
+        "tests/showcase-projects.test.js:noisy project history"
+      ],
+      "reportedEvidence": "evidence/showcase/lanes/07.json:focused added history regression passed1/1 after root fix; earlier19cases passed separately",
+      "status": "source_and_owning_lane_local_case_reported;native_pending"
+    }
+  ],
+  "runtimeDataContracts": {
+    "checkPlan": {
+      "producer": "app/district/runtime.js:start/startVisual",
+      "sourcePlan": "RECIPE_CHECKS fixed5 names",
+      "browserPlan": "expectedChecks from application contract",
+      "consumer": "app/district/test-performance.js:sample",
+      "countPrecedence": [
+        "nonempty run.checkPlan.length",
+        "positive integer run.total",
+        "legacy non-project smoke6",
+        "terminal project actual steps/checks length",
+        "unknown total"
+      ],
+      "candidateEnrichment": "Same base identity gaining source/candidate hash does not rewind age/route."
+    },
+    "snapshotRunRetention": {
+      "producer": "app/district/runtime.js:snapshot",
+      "policy": [
+        "Pin latest run per current project.",
+        "Pin all nonterminal and termination_unknown runs per project.",
+        "Union with recent100, dedupe by run.id, sort created descending."
+      ],
+      "sevenProjectPurpose": "A noisy project cannot hide six other projects' latest/unresolved state. Retention is a view; persisted store unchanged."
+    }
+  },
+  "visualRevision": {
+    "revision": 5,
+    "status": "scoped_interaction_verified_broader_acceptance_pending",
+    "ownerDirection": "Make the approved single-robot isometric district interactive with real work. Preserve camera and visual language.",
+    "shots": [
+      "W02",
+      "I01",
+      "T01",
+      "R01"
+    ],
+    "qualification": "Current source changes invalidate previous whole-candidate receipts; focused and native drag-to-work qualification pending."
+  }
+}

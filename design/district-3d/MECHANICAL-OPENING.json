@@ -1,0 +1,189 @@
+{
+  "title": "Ignition, then a helpful face",
+  "revision": 2,
+  "scope": "Original thruster attachment and mood-lighting study; staged DEMO",
+  "seconds": 12,
+  "fps": 24,
+  "video": "storyboard/mechanical-opening.mp4",
+  "thrusters": {
+    "originalAttachment": true,
+    "nozzles": 3,
+    "triangles": 9612,
+    "sourceHostModified": false
+  },
+  "preserves": "Existing accepted film, host GLB and district GLB",
+  "shots": [
+    {
+      "id": "M01",
+      "start": 0,
+      "end": 2.5,
+      "cameraFrom": {
+        "position": [
+          6.5,
+          1.25,
+          13.65
+        ],
+        "target": [
+          5,
+          1.62,
+          10.8
+        ],
+        "fov": 38
+      },
+      "cameraTo": {
+        "position": [
+          6.150288425925926,
+          1.3998763888888888,
+          13.450164814814814
+        ],
+        "target": [
+          5,
+          1.62,
+          12
+        ],
+        "fov": 38
+      },
+      "lightingFrom": {
+        "welcome": 0,
+        "exposure": 0.62,
+        "warmKeyIntensity": 0
+      },
+      "lightingTo": {
+        "welcome": 0,
+        "exposure": 0.62,
+        "warmKeyIntensity": 0
+      },
+      "faceVisible": false,
+      "sample": "storyboard/mechanical-opening-samples/drive.png"
+    },
+    {
+      "id": "M02",
+      "start": 2.5,
+      "end": 4.208333333333334,
+      "cameraFrom": {
+        "position": [
+          7.8,
+          3.8,
+          12.4
+        ],
+        "target": [
+          6.32,
+          4,
+          11.36
+        ],
+        "fov": 32
+      },
+      "cameraTo": {
+        "position": [
+          7.550284581345033,
+          3.8,
+          12.4
+        ],
+        "target": [
+          6.32,
+          4,
+          11.36
+        ],
+        "fov": 32
+      },
+      "lightingFrom": {
+        "welcome": 0,
+        "exposure": 0.62,
+        "warmKeyIntensity": 0
+      },
+      "lightingTo": {
+        "welcome": 0,
+        "exposure": 0.62,
+        "warmKeyIntensity": 0
+      },
+      "faceVisible": false,
+      "sample": "storyboard/mechanical-opening-samples/joint.png"
+    },
+    {
+      "id": "M03",
+      "start": 4.208333333333333,
+      "end": 6.208333333333334,
+      "cameraFrom": {
+        "position": [
+          3.2,
+          1.8000753110532408,
+          9.3
+        ],
+        "target": [
+          5,
+          2.1000675202546297,
+          12
+        ],
+        "fov": 42
+      },
+      "cameraTo": {
+        "position": [
+          3.2,
+          3.2488050925925926,
+          9.3
+        ],
+        "target": [
+          5,
+          3.398928703703704,
+          12
+        ],
+        "fov": 42
+      },
+      "lightingFrom": {
+        "welcome": 0,
+        "exposure": 0.62,
+        "warmKeyIntensity": 0
+      },
+      "lightingTo": {
+        "welcome": 0,
+        "exposure": 0.62,
+        "warmKeyIntensity": 0
+      },
+      "faceVisible": false,
+      "sample": "storyboard/mechanical-opening-samples/stop.png"
+    },
+    {
+      "id": "M04",
+      "start": 6.208333333333333,
+      "end": 12,
+      "cameraFrom": {
+        "position": [
+          8.899997525163137,
+          5.150002165482257,
+          12.40001175547511
+        ],
+        "target": [
+          5,
+          5.050001237418432,
+          12
+        ],
+        "fov": 38
+      },
+      "cameraTo": {
+        "position": [
+          8.500061633641002,
+          5.499946070564124,
+          14.299707240205246
+        ],
+        "target": [
+          5,
+          5.249969183179499,
+          12
+        ],
+        "fov": 46
+      },
+      "lightingFrom": {
+        "welcome": 0.00012274734907869613,
+        "exposure": 0.6200220945228341,
+        "warmKeyIntensity": 0.0017184628871017458
+      },
+      "lightingTo": {
+        "welcome": 1,
+        "exposure": 0.8,
+        "warmKeyIntensity": 14
+      },
+      "faceVisible": true,
+      "sample": "storyboard/mechanical-opening-samples/profile.png"
+    }
+  ]
+}

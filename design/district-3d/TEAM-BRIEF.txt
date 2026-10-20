@@ -1,0 +1,31 @@
+District cinematic 3D phase / 2026-10-17
+
+Goal: a real GPU-rendered cyberpunk creation district and original animated host.
+The trailer demonstrates an idea becoming a playable app before any instruction.
+The conversation remains usable over it. Typing never pauses it. Enter or an
+explicit speech final commits once. Demonstrations never claim actual agent work.
+Preserve real providers, owned workspace, checked preview, display isolation.
+
+Runtime contract (frozen): window.DistrictAttractWorld.mount({container}) returns
+{setBeat(name),setEngaged(bool),setActivity({state,label}),setPaused(bool),
+ getDiagnostics(),destroy()}. name = hook|crew|make|turn. No commands/network/audio
+inside renderer. It appends .daw-world canvas behind the existing DOM. Own resize,
+visibility, context errors and disposal. On failure returns diagnostics.ready=false
+and leaves existing illustrated background visible. GPU WebGL2 only, no CPU raster.
+Public script app/district-attract-world.js is bundled from
+app/district-3d/world-entry.js. Local Three 0.186.1, esbuild bundle, no CDN.
+
+Asset contract: app/assets/district-v2/district-world.glb and district-host.glb.
+Original Blender geometry, no franchise names, silhouettes or assets copied.
+World floor is XZ, Y up, central plaza near 0,0,0, radius 35, tallest <=24;
+camera views from +Z/+X. Keep left upper region visually calm for title and lower
+105 DIP clear for input. Host local floor y=0, about 3 units high. Host rig groups
+named HostRoot, Head, ArmL, ArmR, Core for runtime animation; no mandatory clip.
+GLB embedded colors/materials, emissions, no external textures, no custom JS.
+If assets pending renderer builds substantive original 3D geometry as fallback.
+Only root edits index.html/package/main/preload/evidence/source-manifest.
+16 owns world-entry.js / renderer styles. 18 owns workbench integration.
+01 owns host Blender source/GLB. 07 owns environment Blender source/GLB.
+Other agents read-only reviews or explicit separate evidence/tests/docs paths.
+Visible runtime tests: monitor 1 4K, display ID 3242010503, isolated own app data.
+Do not claim AAA achieved; actual owner artistic acceptance remains owner judgment.

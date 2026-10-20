@@ -11,6 +11,9 @@ const { Keyring } = require('./keyring');
 
 const MAX_FILE = 200 * 1024 * 1024;
 const PORT_DEFAULT = 47800;
+const MAX_EVENT_BUFFER = 256 * 1024;
+const MAX_AGENT_STREAMS = 4;
+const MAX_AGENT_WAITS = 16;
 
 class Hub {
   constructor({ db, root, configPath, onChange }) {
@@ -20,6 +23,7 @@ class Hub {
     this.digestPath = path.join(path.dirname(configPath), 'steward', 'digest.md');
     this.filesDir = path.join(root, 'files');
     this.servers = []; this.errors = [];
+    this.subscribers = new Map(); this.inboxWaiters = new Map(); this.closed = false;
     this.config = this.loadConfig();
   }
 
@@ -41,6 +45,7 @@ class Hub {
   // (Re)bind to the given addresses. Returns what is actually listening.
   async listen(addresses) {
     await this.close();
+    this.closed = false;
     this.errors = [];
     if (!this.config.enabled) return [];
     const uniq = [...new Set(['127.0.0.1', ...addresses])];
@@ -54,6 +59,9 @@ class Hub {
   }
   listening() { return this.servers.map((s) => s.addr); }
   close() {
+    this.closed = true;
+    for (const set of [...this.subscribers.values()]) for (const subscription of [...set]) subscription.close();
+    for (const set of [...this.inboxWaiters.values()]) for (const wake of [...set]) wake(false);
     const all = this.servers.splice(0);
     return Promise.all(all.map(({ server }) => new Promise((r) => { server.closeAllConnections?.(); server.close(() => r()); })));
   }
@@ -92,6 +100,10 @@ class Hub {
     const peer = req.socket.remoteAddress.replace(/^::ffff:/, '');
     if (p === '/health') return this.json(res, { ok: true, service: 'agent-bus', version: '1.1' });
     if (!this.authed(req, url)) return this.fail(res, 401, 'Missing or wrong Agent Bus token');
+    if (p === '/events') {
+      if (req.method !== 'GET') return this.fail(res, 405, 'Use GET for the event stream');
+      return this.events(req, res, url);
+    }
 
     if (p === '/agent_bus_mcp.py') {
       res.writeHead(200, { 'Content-Type': 'text/x-python; charset=utf-8' });
@@ -103,8 +115,13 @@ class Hub {
     if (p === '/rpc' && req.method === 'POST') {
       const { tool, args = {}, as, meta = {} } = JSON.parse((await this.readBody(req, 4 << 20)).toString('utf8'));
       const a = { ...args, as: args.as || as }, t0 = Date.now();
+      const abort = new AbortController();
+      const disconnected = () => { if (!res.writableEnded) abort.abort(); };
+      res.once('close', disconnected);
       let text;
-      try { text = await this.tool(tool, a, meta, peer); } catch (e) { this.logEvent(a.as, tool, false, Date.now() - t0, e.message); throw e; }
+      try { text = await this.tool(tool, a, meta, peer, abort.signal); } catch (e) { this.logEvent(a.as, tool, false, Date.now() - t0, e.message); throw e; }
+      finally { res.off('close', disconnected); }
+      if (res.destroyed) return;
       this.logEvent(a.as, tool, true, Date.now() - t0, tool === 'bus_inbox'
         ? `delivered=${text === 'No new messages.' ? 0 : text.split('\n\n#').length} waited=${Number(a.wait_seconds) || 0}` : '');
       this.onChange();
@@ -154,11 +171,78 @@ class Hub {
   }
   need(a) { if (!a.as) throw new Error("Not registered. Call bus_register first (or pass 'as')."); return a.as; }
   exists(name) { return !!this.db.prepare('SELECT 1 FROM agents WHERE name=?').get(name); }
+  // Push observes Hub.deliver commits only. Route every realtime participant
+  // through AGENT_BUS_URL; another process writing SQLite cannot emit here.
+  events(req, res, url) {
+    const name = (url.searchParams.get('as') || '').trim();
+    if (!name || !this.exists(name)) return this.fail(res, 400, 'Register the requested agent name before opening its stream');
+    const cursor = url.searchParams.get('after') ?? req.headers['last-event-id'] ?? '0';
+    if (!/^(0|[1-9]\d*)$/.test(cursor) || !Number.isSafeInteger(Number(cursor))) return this.fail(res, 400, 'after must be a nonnegative safe integer message id');
+    if (this.closed) return this.fail(res, 503, 'Hub is closing');
+    const set = this.subscribers.get(name) || new Set();
+    if (set.size >= MAX_AGENT_STREAMS) return this.fail(res, 429, 'Too many event streams for this agent');
+    res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-cache, no-transform', Connection: 'keep-alive', 'X-Accel-Buffering': 'no' });
+    res.flushHeaders?.(); req.socket.setTimeout?.(0); req.socket.setNoDelay?.(true);
+    const pending = []; let bytes = 0, blocked = false, closed = false, last = Number(cursor);
+    const close = () => {
+      if (closed) return; closed = true; pending.length = 0; bytes = 0;
+      set.delete(subscription); if (!set.size) this.subscribers.delete(name);
+      res.off('drain', drain); res.off('close', close); res.off('error', close); req.off('aborted', close);
+      if (!res.destroyed) res.destroy();
+    };
+    const flush = () => {
+      while (!closed && !blocked && pending.length) {
+        const frame = pending.shift(); bytes -= Buffer.byteLength(frame);
+        try { blocked = !res.write(frame); } catch { close(); return; }
+        if ((res.writableLength || 0) + bytes > MAX_EVENT_BUFFER) close();
+      }
+    };
+    const drain = () => { blocked = false; flush(); };
+    const subscription = { close, send: row => {
+      if (closed || row.id <= last) return;
+      const frame = `id: ${row.id}\nevent: message\ndata: ${JSON.stringify(row)}\n\n`, size = Buffer.byteLength(frame);
+      if (bytes + (res.writableLength || 0) + size > MAX_EVENT_BUFFER) return close();
+      last = row.id; pending.push(frame); bytes += size; flush();
+    } };
+    set.add(subscription); this.subscribers.set(name, set);
+    res.on('drain', drain); res.on('close', close); res.on('error', close); req.on('aborted', close);
+    // Subscribe and replay without an await: a delivery cannot interleave in
+    // this JS event loop. Rows remain durable, including after a slow disconnect.
+    try {
+      const rows = this.db.prepare("SELECT id,ts,sender,recipient,body FROM messages WHERE id>? AND (recipient=? OR (recipient='all' AND sender<>?)) ORDER BY id").iterate(last, name, name);
+      for (const row of rows) { if (closed) break; subscription.send(row); }
+    } catch (error) { close(); throw error; }
+  }
+  publish(row) {
+    this.onChange();
+    for (const [name, set] of this.subscribers) if (row.recipient === name || row.recipient === 'all' && row.sender !== name) for (const subscriber of [...set]) subscriber.send(row);
+    for (const [name, set] of this.inboxWaiters) if (row.recipient === name || row.recipient === 'all' && row.sender !== name) for (const wake of [...set]) wake(true);
+  }
+  waitForInbox(name, milliseconds, signal) {
+    if (this.closed || signal?.aborted || milliseconds <= 0) return Promise.resolve(false);
+    const set = this.inboxWaiters.get(name) || new Set();
+    if (set.size >= MAX_AGENT_WAITS) throw new Error('Too many waiting inbox calls for this agent');
+    return new Promise(resolve => {
+      let timer, done = false;
+      const wake = arrived => {
+        if (done) return; done = true; clearTimeout(timer); signal?.removeEventListener('abort', aborted);
+        set.delete(wake); if (!set.size) this.inboxWaiters.delete(name); resolve(arrived);
+      };
+      const aborted = () => wake(false);
+      set.add(wake); this.inboxWaiters.set(name, set);
+      signal?.addEventListener('abort', aborted, { once: true });
+      timer = setTimeout(() => wake(false), milliseconds);
+    });
+  }
   deliver(sender, to, body) {
     if (to !== 'all' && !this.exists(to)) throw new Error(`Unknown agent '${to}'. Use bus_list to see registered names.`);
-    const r = this.db.prepare('INSERT INTO messages(ts,sender,recipient,body) VALUES(?,?,?,?)').run(this.now(), sender, to, body);
+    if (this.db.isTransaction) throw new Error('Hub.deliver requires an autocommitted message, outside an open transaction');
+    const ts = this.now();
+    const r = this.db.prepare('INSERT INTO messages(ts,sender,recipient,body) VALUES(?,?,?,?)').run(ts, sender, to, body);
+    const id = Number(r.lastInsertRowid);
+    this.publish({ id, ts, sender, recipient: to, body });
     this.touch(sender);
-    return Number(r.lastInsertRowid);
+    return id;
   }
   ago(t) {
     const s = Math.floor(this.now() - (t || 0));
@@ -190,7 +274,7 @@ class Hub {
     return { file_id: fid, message_id: this.deliver(sender, to, body) };
   }
 
-  async tool(tool, a, meta, peer) {
+  async tool(tool, a, meta, peer, signal) {
     switch (tool) {
       case 'bus_register': {
         const name = String(a.name || '').trim();
@@ -214,12 +298,16 @@ class Hub {
       }
       case 'bus_inbox': {
         const name = this.need(a);
+        if (!this.exists(name)) throw new Error('Register the requested agent before waiting for its inbox');
         const deadline = Date.now() + Math.min(Math.max(Number(a.wait_seconds) || 0, 0), 300) * 1000;
         for (;;) {
           const t = this.inboxText(name);
           if (t) return t;
-          if (Date.now() >= deadline) return 'No new messages.';
-          await new Promise((r) => setTimeout(r, 1500));
+          if (Date.now() >= deadline || this.closed || signal?.aborted) return 'No new messages.';
+          // One deadline timer, no interval or recurring database scans. A
+          // matching committed delivery wakes this query immediately.
+          const arrived = await this.waitForInbox(name, deadline - Date.now(), signal);
+          if (!arrived && (this.closed || signal?.aborted)) return 'No new messages.';
         }
       }
       case 'bus_history': {
@@ -317,4 +405,4 @@ Invoke-RestMethod '${base}/health'
   }
 }
 
-module.exports = { Hub, MAX_FILE };
+module.exports = { Hub, MAX_FILE, MAX_EVENT_BUFFER, MAX_AGENT_STREAMS, MAX_AGENT_WAITS };

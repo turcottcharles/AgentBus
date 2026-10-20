@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-18T05:02:54.839Z",
+  "status": "LOCAL_SHOWCASE_QUALIFIED",
+  "ownerDirection": "Owner authorized the19-lane production wave. Maintain operational shots, integrate real scoped work, qualify actual desktop before declaring the local showcase complete.",
+  "blueprint": "design/district-3d/STORYBOARD.md",
+  "visualBoard": "design/district-3d/storyboard/index.html",
+  "canonicalShots": "design/district-3d/STORYBOARD.json",
+  "designLanguage": "design/district-3d/DESIGN-LANGUAGE.md",
+  "assetRegistry": "design/district-3d/ASSET-REGISTRY.json",
+  "current": {
+    "bundledRenderer": {
+      "path": "app/district-attract-world.js",
+      "sha256": "5c8a167a4acdf05caefa59f9ba77b116bbcf48bd2d2eb4c69cadf4e2fd5cc92d",
+      "scope": "Reproducible integrated production opening and live-work handoff. Current bounded native qualification passed."
+    },
+    "newRendererSource": {
+      "path": "app/district-3d/world-entry.js",
+      "sha256": "7801772b2bfcfcc9d000a258c84ddd5a386469948bb886a28669d67aef74c893",
+      "scope": "Integrated shared district, additive thrusters, scoped facility routes and explicit management; current native/GPU lifecycle passed."
+    },
+    "managementScene": {
+      "path": "app/district-scene.js",
+      "sha256": "861e02fe6b9321f10338cea77b5ae5d5c4f217a95b08d1c9dd3ef6819e9f8b1f",
+      "scope": "Physical3D projection and stable scoped worker identities; explicit native management and7-project navigation passed."
+    },
+    "world": {
+      "path": "app/assets/district-v2/district-world.glb",
+      "sha256": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc",
+      "scope": "Review Archive added; accepted existing mesh attributes/materials preserved"
+    },
+    "host": {
+      "path": "app/assets/district-v2/district-host.glb",
+      "sha256": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037",
+      "scope": "Unchanged accepted host"
+    }
+  },
+  "completedArtifactEvidence": [
+    "evidence/storyboard/final-validation.json",
+    "evidence/storyboard/render-validation.json",
+    "design/district-3d/storyboard/flow-provenance.json",
+    "design/district-3d/storyboard/motion-provenance.json",
+    "evidence/storyboard/motion-video-metadata.json",
+    "evidence/showcase/full-suite-final.tap",
+    "evidence/showcase/bundle-reproducibility.json",
+    "evidence/showcase/native-candidate-02/validation.json",
+    "evidence/showcase/production-candidate-06/validation.json",
+    "evidence/showcase/live-provider-receipt.json",
+    "evidence/showcase/qualification.json"
+  ],
+  "resume": "Local showcase milestone qualified. Preserve exact qualified source and shot direction; next product scope is existing-repository/worktree import, general real-project recipes, durable agent conversations and owner-directed visual polish. Full T3 parity/release remains outside this milestone.",
+  "historicalReference": "design/district-3d/accepted-v1/intro-loop.mp4",
+  "activeStoryboard": {
+    "version": "3.1",
+    "panels": 24,
+    "loopKeyframes": 20,
+    "playerChoiceFrames": 4,
+    "artistShotList": "design/district-3d/storyboard/FLOW-SHOT-LIST.md",
+    "animatic": "design/district-3d/storyboard/motion-blockout.mp4",
+    "scope": "Approved camera contrast plus 24 fps moving line-art blocking: courier dolly, machinery pushes, reveal crane, subject animation. No product/provider execution."
+  },
+  "operationalBlueprint": "design/showcase/SHOT-LIST.json",
+  "productionBoard": "design/showcase/index.html",
+  "qualification": {
+    "receipt": "evidence/showcase/qualification.json",
+    "sourceHash": "d00ef6a0eb7baad126e1a365cae6428bf7f907fce0beb47bfd1eaefdf29bc492",
+    "productionSourceDigest": "402ed2078ea608948b1e759ae28bced594af8e3d619b1f6fe0b9dfc617f04aa3",
+    "regressions": {
+      "passed": 522,
+      "failed": 0,
+      "command": "node --test --test-concurrency=2 tests/*.test.js"
+    },
+    "liveProviders": [
+      "codex",
+      "claude"
+    ],
+    "native": "Actual production main/preload/index, NVIDIA hardware GPU, preview selection, five browser checks on monitor1 left-third, visibility/reduced motion/context recovery/disposal"
+  }
+}

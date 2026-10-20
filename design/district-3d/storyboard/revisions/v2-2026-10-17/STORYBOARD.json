@@ -1,0 +1,863 @@
+{
+  "version": "2.0",
+  "title": "AGENT BUS — THE LIVING DISTRICT",
+  "subtitle": "24 line-art production panels · action, perspective and camera continuity",
+  "status": "Director’s working shot board. All 24 panels are illustrative staging studies; product visual implementation remains paused.",
+  "emotionalGoal": "Hey, that looks cool. He keeps watching because the next moment is even more satisfying. It needs to slap.",
+  "primaryRule": "Keep the accepted close, low-angle attract composition. Its background is the actual management district and its usual activity, seen from that camera.",
+  "loopSeconds": 24,
+  "referenceNote": "20 successive keyframes describe the 24-second attract loop. Four untimed P01 frames describe the later player-chosen management view. Lines, arrows and camera notes direct artists; these studies start no agents and report no live work.",
+  "angles": {
+    "cinematic": {
+      "frame": "frames/flow-S01-1.png",
+      "referenceType": "line-art-storyboard",
+      "title": "ATTRACT / LOW AND CLOSE",
+      "note": "The host and actual management district from a close, low camera. This framing continues throughout the repeating film."
+    },
+    "management": {
+      "frame": "frames/flow-P01-4.png",
+      "referenceType": "line-art-storyboard",
+      "title": "PLAY / THREE-QUARTER OVERHEAD",
+      "note": "Same district and facility positions. This reference is a later explicit player choice, outside the attract loop."
+    }
+  },
+  "nonNegotiables": [
+    "One district, two perspectives: the attract background and management view share the same world assets, facility positions and work state.",
+    "Keep something alive in the frame: gaze, hover, traffic or machinery. Give each large motion a readable cause and satisfying consequence.",
+    "The conversation is usable from the first frame. Typing, focus and partial speech never pause the loop. Enter or one completed, explicitly started utterance commits once.",
+    "The loop stays in its close cinematic language. The overhead management camera is a later player choice, never an automatic attract-loop ending.",
+    "Preserve the approved original host, slate/cyan/violet/copper/cream palette and layered dimensional buildings.",
+    "All storyboard activity is labelled DEMO. In production, actual work, results and movement consume the same scoped state; motion cannot manufacture completion.",
+    "All local 3D pictures, light, reflections and shadows render on hardware GPU. Unsupported hardware gets the preserved illustration.",
+    "No Help, FAQ, setup wizard or account wall interrupts the opening. Operational detail belongs behind the player's chosen controls.",
+    "No floating scoreboard, comic project card or replacement backdrop. The reveal is spatial and belongs to this district.",
+    "Use one identifiable copper/cyan packet, preserve visible custody, and show the cause before its consequence. Line art is sufficient for this production board."
+  ],
+  "beats": [
+    {
+      "id": "S01",
+      "kind": "loop",
+      "title": "Already alive",
+      "frame": "frames/flow-S01-1.png",
+      "start": 0,
+      "end": 3,
+      "duration": "0–3 s · 3 seconds",
+      "camera": "Low close-up · 43° FOV",
+      "focus": "Host and one copper/cyan packet",
+      "motion": "Track the gaze, then the hand; carry the packet toward Research.",
+      "mood": "Instant cool. Tangible, inviting, playful confidence.",
+      "meaning": "We are already inside the place the player will manage. Recognizable facilities occupy their real positions in the background.",
+      "transition": "Match on the packet into the Research intake.",
+      "interrupt": "Typing or Speak is available immediately. A draft keeps the camera and city moving.",
+      "copy": "Let action and perspective carry the beat.",
+      "sound": "Planned direction: one warm power-on accent over a restrained rhythmic bed. The visual hook must work with sound muted.",
+      "referenceType": "line-art-storyboard",
+      "panels": [
+        {
+          "id": "S01A",
+          "phase": 0,
+          "frame": "frames/flow-S01-1.png",
+          "start": 0,
+          "end": 0.75,
+          "time": "0.00–0.75 s",
+          "label": "Track",
+          "action": "Host hovers in foreground; lenses follow a passing courier. One sealed packet rests in the hand.",
+          "camera": "Low close-up · 43° FOV",
+          "movement": "Lens pan follows courier; hold the foreground host silhouette.",
+          "subject": "Host and one copper/cyan packet",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              12,
+              7,
+              26
+            ],
+            "target": [
+              2.2,
+              3.6,
+              11.7
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S01B",
+          "phase": 1,
+          "frame": "frames/flow-S01-2.png",
+          "start": 0.75,
+          "end": 1.5,
+          "time": "0.75–1.50 s",
+          "label": "Notice",
+          "action": "Host turns both lenses toward the viewer; head tilts before the arm moves.",
+          "camera": "Low close-up · 43° FOV",
+          "movement": "Small push in; eyes lead the pose.",
+          "subject": "Host and one copper/cyan packet",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              11.81851851851852,
+              6.9222222222222225,
+              25.662962962962965
+            ],
+            "target": [
+              2.2,
+              3.6,
+              11.7
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S01C",
+          "phase": 2,
+          "frame": "frames/flow-S01-3.png",
+          "start": 1.5,
+          "end": 2.25,
+          "time": "1.50–2.25 s",
+          "label": "Lift",
+          "action": "Gripper raises the SAME packet into view; copper tab and cyan seam establish its identity.",
+          "camera": "Low close-up · 43° FOV",
+          "movement": "Tilt down just enough to keep hand and eyes in the composition.",
+          "subject": "Host and one copper/cyan packet",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              11.481481481481481,
+              6.777777777777778,
+              25.037037037037038
+            ],
+            "target": [
+              2.2,
+              3.6,
+              11.7
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S01D",
+          "phase": 3,
+          "frame": "frames/flow-S01-4.png",
+          "start": 2.25,
+          "end": 3,
+          "time": "2.25–3.00 s",
+          "label": "Present",
+          "action": "Arm opens toward the Research intake; packet leads the eye into the district.",
+          "camera": "Low close-up · 43° FOV",
+          "movement": "Follow the gesture; cut on the packet moving toward Research.",
+          "subject": "Host and one copper/cyan packet",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              11.3,
+              6.7,
+              24.7
+            ],
+            "target": [
+              2.2,
+              3.6,
+              11.7
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "kind": "loop",
+      "title": "Follow the work",
+      "frame": "frames/flow-S02-1.png",
+      "start": 3,
+      "end": 6,
+      "duration": "3–6 s · 3 seconds",
+      "camera": "Medium tracking / insert · 43° FOV",
+      "focus": "Research intake → Workshop dock",
+      "motion": "Follow one identifiable packet through custody changes; never create a duplicate.",
+      "mood": "Personality and anticipation. A character welcomes you into a living toy world.",
+      "meaning": "The host directs attention. Its personality gesture carries no work, provider or completion claim.",
+      "transition": "Cut on the Workshop latch closing; retain custody of the same packet.",
+      "interrupt": "The existing conversation stays in place. No greeting is required before participating.",
+      "copy": "Let action and perspective carry the beat.",
+      "sound": "Planned direction: paired mechanical clicks followed by a brief rising accent, synchronized to the joints.",
+      "referenceType": "line-art-storyboard",
+      "panels": [
+        {
+          "id": "S02A",
+          "phase": 0,
+          "frame": "frames/flow-S02-1.png",
+          "start": 3,
+          "end": 3.75,
+          "time": "3.00–3.75 s",
+          "label": "Catch",
+          "action": "Research tray receives the packet presented in S01D; host hand withdraws.",
+          "camera": "Medium tracking / insert · 42° FOV",
+          "movement": "Match the packet position across the cut; keep travel left to right.",
+          "subject": "Research intake → Workshop dock",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              1,
+              9,
+              2
+            ],
+            "target": [
+              -11,
+              2.1,
+              -7.5
+            ],
+            "fov": 42,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S02B",
+          "phase": 1,
+          "frame": "frames/flow-S02-2.png",
+          "start": 3.75,
+          "end": 4.5,
+          "time": "3.75–4.50 s",
+          "label": "Inspect",
+          "action": "Instrument hoop closes around the packet; scan passes across the copper tab.",
+          "camera": "Medium tracking / insert · 42° FOV",
+          "movement": "Tighten to an insert; arrow marks the scan sweep.",
+          "subject": "Research intake → Workshop dock",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              -3,
+              6.5,
+              -0.2
+            ],
+            "target": [
+              -11,
+              2.1,
+              -7.5
+            ],
+            "fov": 42,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S02C",
+          "phase": 2,
+          "frame": "frames/flow-S02-3.png",
+          "start": 4.5,
+          "end": 5.25,
+          "time": "4.50–5.25 s",
+          "label": "Carry",
+          "action": "Courier lifts the inspected packet from the tray and turns toward Workshop.",
+          "camera": "Medium tracking / insert · 46° FOV",
+          "movement": "Track beside the courier; Research recedes behind it.",
+          "subject": "Research intake → Workshop dock",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              5,
+              5.5,
+              3
+            ],
+            "target": [
+              -1,
+              2.1,
+              -5.1
+            ],
+            "fov": 46,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S02D",
+          "phase": 3,
+          "frame": "frames/flow-S02-4.png",
+          "start": 5.25,
+          "end": 6,
+          "time": "5.25–6.00 s",
+          "label": "Dock",
+          "action": "Workshop latch catches the packet; courier opens its empty grippers.",
+          "camera": "Medium tracking / insert · 46° FOV",
+          "movement": "Stop with the packet at the same screen position; cut on latch closure.",
+          "subject": "Research intake → Workshop dock",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              3,
+              6.5,
+              6
+            ],
+            "target": [
+              9,
+              2.1,
+              -3.1
+            ],
+            "fov": 46,
+            "projection": "perspective"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "kind": "loop",
+      "referenceType": "line-art-storyboard",
+      "title": "Make. Check. Repair.",
+      "frame": "frames/flow-S03-1.png",
+      "start": 6,
+      "end": 11,
+      "duration": "6–11 s · 5 seconds",
+      "camera": "Mechanism close-ups · 44° FOV",
+      "focus": "Workshop arms → Verification Lab",
+      "motion": "Show anticipation, assembly, a visible fault, then repair and a second scan.",
+      "mood": "Momentum. Satisfying machinery, purposeful little characters, a bigger world opening up.",
+      "meaning": "Illustrative DEMO: assembly maps to saved edits; a named test finds a defect; repair and rerun precede the represented pass. The storyboard dispatches nothing.",
+      "transition": "Follow the same verified fixture to the Preview dock.",
+      "interrupt": "Drafting stays passive. A committed request branches into actual work without restarting the world.",
+      "copy": "Let action and perspective carry the beat.",
+      "sound": "Planned direction: short mechanical accents lock into a groove, leaving space for the reveal.",
+      "panels": [
+        {
+          "id": "S03A",
+          "phase": 0,
+          "frame": "frames/flow-S03-1.png",
+          "start": 6,
+          "end": 7.25,
+          "time": "6.00–7.25 s",
+          "label": "Brace",
+          "action": "Two mechanical arms brace the docked packet; hinges take up their weight.",
+          "camera": "Mechanism close-ups · 43° FOV",
+          "movement": "Low three-quarter close-up; arms frame the focal object.",
+          "subject": "Workshop arms → Verification Lab",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              3,
+              6.5,
+              6
+            ],
+            "target": [
+              9,
+              2.2,
+              -3.1
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S03B",
+          "phase": 1,
+          "frame": "frames/flow-S03-2.png",
+          "start": 7.25,
+          "end": 8.5,
+          "time": "7.25–8.50 s",
+          "label": "Assemble",
+          "action": "Hinged panels unfold into a dimensional project fixture; a raised collar leaves one visible gap.",
+          "camera": "Mechanism close-ups · 43° FOV",
+          "movement": "Arc a little around the fixture; preserve the copper tab.",
+          "subject": "Workshop arms → Verification Lab",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              3.5,
+              5.5,
+              4.5
+            ],
+            "target": [
+              9,
+              2.2,
+              -3.1
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S03C",
+          "phase": 2,
+          "frame": "frames/flow-S03-3.png",
+          "start": 8.5,
+          "end": 9.75,
+          "time": "8.50–9.75 s",
+          "label": "Find the gap",
+          "action": "Courier carries that fixture into Verification; a scan ring stops at the raised collar.",
+          "camera": "Mechanism close-ups · 43° FOV",
+          "movement": "Match-cut on the fixture; bracket the visible gap, not a floating failure card.",
+          "subject": "Workshop arms → Verification Lab",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              -26,
+              6.5,
+              18
+            ],
+            "target": [
+              -18,
+              2,
+              8.7
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S03D",
+          "phase": 3,
+          "frame": "frames/flow-S03-4.png",
+          "start": 9.75,
+          "end": 11,
+          "time": "9.75–11.00 s",
+          "label": "Seat + rescan",
+          "action": "A service tool seats the collar. The ring scans again and completes its band.",
+          "camera": "Mechanism close-ups · 43° FOV",
+          "movement": "Hold the same test angle so before/after is unmistakable.",
+          "subject": "Workshop arms → Verification Lab",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              -26,
+              6.5,
+              18
+            ],
+            "target": [
+              -18,
+              2,
+              8.7
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "kind": "loop",
+      "title": "The world answers",
+      "frame": "frames/flow-S04-1.png",
+      "start": 11,
+      "end": 19,
+      "duration": "11–19 s · 8 seconds",
+      "camera": "Low wide reveal + detail · 43° FOV",
+      "focus": "Preview Gateway and the same built fixture",
+      "motion": "The gateway reveals a spatial result inside this district; attached controls act on it.",
+      "mood": "The grin. A toy-commercial payoff you want to try yourself.",
+      "meaning": "Illustrative DEMO: the pavilion represents a candidate-bound preview. This composition is production direction, not an implemented new demo or real provider result.",
+      "transition": "Keep the living project visible as the host looks back toward the viewer.",
+      "interrupt": "The prompt remains usable. No camera movement, effect or glass panel may intercept the player's input.",
+      "copy": "A dimensional result responds inside the world.",
+      "sound": "Planned direction: a satisfying reveal hit, tactile scoring accents and one color-change flourish.",
+      "referenceType": "line-art-storyboard",
+      "panels": [
+        {
+          "id": "S04A",
+          "phase": 0,
+          "frame": "frames/flow-S04-1.png",
+          "start": 11,
+          "end": 13,
+          "time": "11.00–13.00 s",
+          "label": "Receive",
+          "action": "Verified fixture arrives at the Preview dock; its copper tab remains visible.",
+          "camera": "Low wide reveal + detail · 43° FOV",
+          "movement": "Low tracking arrival; gateway stands behind the fixture.",
+          "subject": "Preview Gateway and the same built fixture",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              29,
+              9,
+              23
+            ],
+            "target": [
+              18,
+              3.2,
+              8
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S04B",
+          "phase": 1,
+          "frame": "frames/flow-S04-2.png",
+          "start": 13,
+          "end": 15,
+          "time": "13.00–15.00 s",
+          "label": "Open",
+          "action": "Dock latches, struts lift, and gateway leaves pull apart in a mechanical chain.",
+          "camera": "Low wide reveal + detail · 43° FOV",
+          "movement": "Dolly back as the opening widens; arrows follow the leaf motion.",
+          "subject": "Preview Gateway and the same built fixture",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              27.962962962962962,
+              8.481481481481481,
+              22.999999999999996
+            ],
+            "target": [
+              18,
+              3.2,
+              8
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S04C",
+          "phase": 2,
+          "frame": "frames/flow-S04-3.png",
+          "start": 15,
+          "end": 17,
+          "time": "15.00–17.00 s",
+          "label": "Reveal",
+          "action": "The built project unfolds as a dimensional kinetic pavilion within the gateway.",
+          "camera": "Low wide reveal + detail · 43° FOV",
+          "movement": "Low wide; pause for the silhouette and depth to read.",
+          "subject": "Preview Gateway and the same built fixture",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              26.037037037037038,
+              7.518518518518519,
+              23
+            ],
+            "target": [
+              18,
+              3.2,
+              8
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S04D",
+          "phase": 3,
+          "frame": "frames/flow-S04-4.png",
+          "start": 17,
+          "end": 19,
+          "time": "17.00–19.00 s",
+          "label": "Respond",
+          "action": "A nearby hand presses the attached control; the pavilion vanes rotate in response.",
+          "camera": "Low wide reveal + detail · 43° FOV",
+          "movement": "Stay in the world; show hand, control and consequence in one composition.",
+          "subject": "Preview Gateway and the same built fixture",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              25,
+              7,
+              23
+            ],
+            "target": [
+              18,
+              3.2,
+              8
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "kind": "loop",
+      "title": "Your turn",
+      "frame": "frames/flow-S05-1.png",
+      "start": 19,
+      "end": 24,
+      "duration": "19–24 s · 5 seconds",
+      "camera": "Return to low close-up · 43° FOV",
+      "focus": "Host, living district and persistent input space",
+      "motion": "Return attention to the viewer while the district keeps breathing; match the loop seam.",
+      "mood": "Belonging and playful invitation. No obligation, homework or hurry.",
+      "meaning": "The player can type or speak over the trailer. An explicit commit makes a real owned project request; a draft alone does nothing to the work system.",
+      "transition": "No input: continue seamlessly into S01. Explicit input: keep this world and conversation while real work begins.",
+      "interrupt": "The intended sweet spot is partway through a second loop. Enter sends once; Shift+Enter keeps drafting; partial dictation never dispatches.",
+      "copy": "What will you make?",
+      "sound": "Planned direction: a brief melodic invitation that resolves into the opening rhythm; avoid an exhausting hard reset.",
+      "referenceType": "line-art-storyboard",
+      "panels": [
+        {
+          "id": "S05A",
+          "phase": 0,
+          "frame": "frames/flow-S05-1.png",
+          "start": 19,
+          "end": 20.25,
+          "time": "19.00–20.25 s",
+          "label": "Return",
+          "action": "Host looks from the moving pavilion back to the viewer.",
+          "camera": "Return to low close-up · 43° FOV",
+          "movement": "Follow the gaze toward the original low camera.",
+          "subject": "Host, living district and persistent input space",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              14,
+              7.8,
+              28
+            ],
+            "target": [
+              2.5,
+              3.6,
+              11
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S05B",
+          "phase": 1,
+          "frame": "frames/flow-S05-2.png",
+          "start": 20.25,
+          "end": 21.5,
+          "time": "20.25–21.50 s",
+          "label": "Invite",
+          "action": "Open gripper gestures toward the conversation area that has been available since frame one.",
+          "camera": "Return to low close-up · 43° FOV",
+          "movement": "Small inviting lean; leave the input area clear.",
+          "subject": "Host, living district and persistent input space",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              13.481481481481481,
+              7.592592592592593,
+              27.48148148148148
+            ],
+            "target": [
+              2.422222222222222,
+              3.5999999999999996,
+              11.18148148148148
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S05C",
+          "phase": 2,
+          "frame": "frames/flow-S05-3.png",
+          "start": 21.5,
+          "end": 22.75,
+          "time": "21.50–22.75 s",
+          "label": "Breathe",
+          "action": "Host settles into a hover; courier traffic and a distant mechanism continue.",
+          "camera": "Return to low close-up · 43° FOV",
+          "movement": "Hold the close framing; quiet motion remains visible.",
+          "subject": "Host, living district and persistent input space",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              12.518518518518519,
+              7.207407407407407,
+              26.51851851851852
+            ],
+            "target": [
+              2.277777777777778,
+              3.6,
+              11.518518518518519
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "S05D",
+          "phase": 3,
+          "frame": "frames/flow-S05-4.png",
+          "start": 22.75,
+          "end": 24,
+          "time": "22.75–24.00 s",
+          "label": "Loop match",
+          "action": "Host returns to the opening orientation as a courier enters the S01 travel path.",
+          "camera": "Return to low close-up · 43° FOV",
+          "movement": "Match S01A framing, light and pose phase; no automatic overhead move.",
+          "subject": "Host, living district and persistent input space",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              12,
+              7,
+              26
+            ],
+            "target": [
+              2.2,
+              3.6,
+              11.7
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "kind": "player-branch",
+      "title": "Choose your perspective",
+      "frame": "frames/flow-P01-1.png",
+      "start": null,
+      "end": null,
+      "duration": "Player-selected branch · outside the attract loop",
+      "camera": "Same world: low → three-quarter overhead",
+      "focus": "Player-selected management view",
+      "motion": "Only the explicit Your district choice changes camera. These four references are outside the loop.",
+      "mood": "The spectacle becomes ownership. The world they watched is the world they can use.",
+      "meaning": "Buildings and agent positions correspond to actual research reports, saved edits, named checks, review and candidate-bound previews. Selection inspects; explicit assignment starts work. Multiple projects keep separate state.",
+      "transition": "A later player-driven camera change, with recognizable geography throughout. Never insert this shot automatically into the repeating attract loop.",
+      "interrupt": "Every control remains keyboard-accessible. Dragging agents, CLI reports and GUI instructions share the same actual work state.",
+      "copy": "Your district · only when chosen.",
+      "sound": "Planned direction: the same sound palette becomes quieter, responsive feedback during real work.",
+      "referenceType": "line-art-storyboard",
+      "panels": [
+        {
+          "id": "P01A",
+          "phase": 0,
+          "frame": "frames/flow-P01-1.png",
+          "start": null,
+          "end": null,
+          "time": "Player choice · untimed",
+          "label": "Keep the state",
+          "action": "Current low camera holds the same host, project fixture and facility work state.",
+          "camera": "Same world: low → three-quarter overhead",
+          "movement": "Record the starting pose before the player chooses a view.",
+          "subject": "Player-selected management view",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              12,
+              7,
+              26
+            ],
+            "target": [
+              2.2,
+              3.6,
+              11.7
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "P01B",
+          "phase": 1,
+          "frame": "frames/flow-P01-2.png",
+          "start": null,
+          "end": null,
+          "time": "Player choice · untimed",
+          "label": "Choose",
+          "action": "Player explicitly chooses Your district; geography and project identity stay fixed.",
+          "camera": "Same world: low → three-quarter overhead",
+          "movement": "A motivated camera lift begins only after that choice.",
+          "subject": "Player-selected management view",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              24.444444444444443,
+              21.25925925925926,
+              34.2962962962963
+            ],
+            "target": [
+              1.6296296296296298,
+              3.185185185185185,
+              8.148148148148147
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "P01C",
+          "phase": 2,
+          "frame": "frames/flow-P01-3.png",
+          "start": null,
+          "end": null,
+          "time": "Player choice · untimed",
+          "label": "Compare",
+          "action": "Intermediate angle retains recognizable Research, Workshop, Test and Preview relationships.",
+          "camera": "Same world: low → three-quarter overhead",
+          "movement": "Continue the same arc; no replacement city or invented work state.",
+          "subject": "Player-selected management view",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              47.55555555555556,
+              47.74074074074074,
+              49.7037037037037
+            ],
+            "target": [
+              0.5703703703703705,
+              2.414814814814815,
+              1.5518518518518523
+            ],
+            "fov": 43,
+            "projection": "perspective"
+          }
+        },
+        {
+          "id": "P01D",
+          "phase": 3,
+          "frame": "frames/flow-P01-4.png",
+          "start": null,
+          "end": null,
+          "time": "Player choice · untimed",
+          "label": "Manage",
+          "action": "Camera settles at the familiar three-quarter overhead district view. Same work, direct control.",
+          "camera": "Three-quarter overhead · orthographic",
+          "movement": "Orthographic [60,62,58] → [0,2,-2], span 68; keep selection stable.",
+          "subject": "Player-selected management view",
+          "referenceType": "line-art-storyboard",
+          "renderCamera": {
+            "position": [
+              60,
+              62,
+              58
+            ],
+            "target": [
+              0,
+              2,
+              -2
+            ],
+            "fov": null,
+            "projection": "orthographic"
+          }
+        }
+      ]
+    }
+  ],
+  "productionRules": {
+    "sourceOfTruth": [
+      "STORYBOARD.json",
+      "STORYBOARD.md",
+      "storyboard/FLOW-SHOT-LIST.md",
+      "DESIGN-LANGUAGE.md",
+      "ASSET-REGISTRY.json"
+    ],
+    "reviewOrder": [
+      "Can the action be followed without captions?",
+      "Camera angle and silhouette",
+      "Custody and screen-direction continuity",
+      "Input and work-state truth",
+      "Same-world geography"
+    ],
+    "agentHandoff": "Name the shot ID, intended change, shared assets and camera, source of activity, fallback, and verification. Change the shared blueprint first when a decision affects several shots.",
+    "implementationState": "Current board replaces the earlier single-frame-per-shot treatment. The floating comic scoreboard direction is removed. Accepted host/world assets and earlier artifacts remain archived. Product management integration remains partial, paused and unqualified."
+  },
+  "emotionalArc": [
+    "Notice",
+    "Follow",
+    "Make / check / repair",
+    "Reveal / respond",
+    "Invite / repeat"
+  ],
+  "approvedAnimatic": "flow-animatic.mp4",
+  "animaticReady": true
+}

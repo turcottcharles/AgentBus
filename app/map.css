@@ -1,0 +1,93 @@
+[hidden] { display: none !important; }
+.mapView > header .stats, .mapView > header .quota { display: none; }
+.mapView > header .brand { white-space: nowrap; }
+.mapView > header .actions { margin-left: auto; }
+#district { flex: 1; min-height: 0; display: flex; flex-direction: column; background: #101922; color: #e9f1f3; }
+.districtHead { display: flex; gap: 25px; align-items: center; padding: 18px 24px; border-bottom: 1px solid #33404b; background: #15212c; }
+.districtEyebrow { font-size: 10px; letter-spacing: 2px; color: #8ca5b6; }
+.districtHead h1 { margin: 3px 0 0; font-size: 24px; font-weight: 600; letter-spacing: -.5px; }
+.districtGuide { margin-left: auto; color: #c4d0d7; font-size: 12px; }
+.districtGuide span { color: #91a4b4; font-size: 11px; }
+.mapTools { display: flex; gap: 5px; }
+.mapTools button { background: #203241; color: #d7e5ed; border-color: #3e5669; }
+.districtBody { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 325px; }
+.districtStage { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+#mapViewport { flex: 1; min-height: 260px; overflow: hidden; position: relative; background: #101b28; cursor: grab; touch-action: none; }
+#mapViewport:active { cursor: grabbing; }
+#mapWorld { width: 1536px; height: 1024px; position: absolute; transform-origin: top left; user-select: none; }
+#mapWorld > img { width: 100%; height: 100%; display: block; pointer-events: none; }
+.station { position: absolute; width: 25%; height: 25%; background: transparent; border: 2px solid transparent; border-radius: 26%; color: #f3f7fb; cursor: pointer; }
+.station:hover, .station:focus-visible { background: #70eaff14; border-color: #68e6f5aa; box-shadow: 0 0 25px #41d7ff33; outline: none; }
+.station > span { position: absolute; top: -7px; left: 50%; transform: translateX(-50%); min-width: 160px; padding: 8px 18px; background: #112638ed; border: 1px solid #657c8a; border-radius: 9px; font-weight: 700; font-size: 20px; box-shadow: 0 5px 20px #0008; }
+.station small { display: block; color: #9db2c1; font-size: 12px; font-weight: 400; }
+.stationResearch { left: 6%; top: 12%; }
+.stationBuild { left: 9%; top: 39%; }
+.stationReview { left: 67%; top: 39%; }
+.stationTest { left: 65%; top: 8%; border-color: #b9a1e955; }
+.stationTest > span { border-color: #b79bea; background: #2b2144ed; }
+.stationTest small { color: #d3c2ee; }
+.stationTest.dropTarget { border: 4px solid #a7fcdf; background: #67ffd12a; box-shadow: 0 0 45px #67ffd155; }
+.stationTest.busy { border-color: #b899ff; box-shadow: 0 0 35px #ad8cff55; }
+.stationTest.passed > span { border-color: #76e5aa; }
+.stationTest.failed > span { border-color: #ff8a8a; }
+#testProgress { display: block; width: 150px; height: 9px; margin-top: 7px; accent-color: #9cecd7; }
+.mapWorker { width: 66px; height: 82px; position: absolute; transform: translate(-50%, -80%); border: 0; padding: 0; background: transparent; cursor: grab; transition: left 900ms ease-in-out, top 900ms ease-in-out; z-index: 2; }
+.mapWorker:hover { background: transparent; }
+.mapWorker svg { width: 58px; height: 65px; overflow: visible; filter: drop-shadow(0 5px 3px #0008); }
+.mapWorker span { position: absolute; top: 65px; left: 50%; transform: translateX(-50%); max-width: 190px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 3px 9px; border-radius: 5px; background: #102738e8; border: 1px solid #607d8e; color: #edf8ff; font-size: 13px; }
+.mapWorker.selected svg { filter: drop-shadow(0 0 8px #75edff); }
+.mapWorker.selected span { border-color: #73e8f8; }
+.mapWorker.working svg { animation: workerWork 1.2s ease-in-out infinite; }
+.mapWorker.dragging { transition: none; z-index: 10; cursor: grabbing; }
+@keyframes workerWork { 50% { transform: translateY(-4px); } }
+.mapLegend { position: absolute; bottom: 12px; left: 14px; pointer-events: none; display: flex; align-items: center; gap: 8px; background: #0c1d2be8; border: 1px solid #496174; border-radius: 6px; padding: 7px 12px; color: #c5d8e4; font-size: 10px; }
+.mapLegend i { width: 6px; height: 6px; border-radius: 50%; background: #8bf0c6; }
+.mapLegend span { color: #5a788d; }
+.workerDock { padding: 12px 18px; background: #15212c; border-top: 1px solid #344453; }
+.dockTitle { font-size: 10px; letter-spacing: 1.6px; color: #93aaba; margin-bottom: 9px; }
+.dockTitle span { color: #6d8597; margin-left: 10px; letter-spacing: 0; }
+#workerRoster { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 3px; }
+.workerCard { flex: 0 0 auto; min-width: 160px; padding: 9px 12px; text-align: left; border-color: #3e5666; color: #dfeaf1; background: #1a2c3b; cursor: grab; }
+.workerCard[aria-pressed="true"] { border-color: #73e8f8; background: #1b3b4a; }
+.workerCard strong { display: block; max-width: 200px; overflow: hidden; text-overflow: ellipsis; }
+.workerCard small { color: #92acbd; font-size: 10px; }
+#jobPanel { background: #15212c; border-left: 1px solid #354655; padding: 22px 20px; overflow: auto; }
+.jobHeading { display: flex; align-items: center; justify-content: space-between; gap: 5px; }
+.jobState { font-size: 9px; letter-spacing: .7px; border: 1px solid #536d7b; padding: 3px 6px; border-radius: 4px; color: #b5cbd7; }
+.jobState[data-state="passed"] { color: #8bf0b7; border-color: #416b57; }
+.jobState[data-state="failed"], .jobState[data-state="timed_out"] { color: #ff9a96; border-color: #894f52; }
+#jobPanel h2 { font-size: 26px; margin: 14px 0 4px; font-weight: 600; }
+.jobIntro { font-size: 12px; color: #9bb0bf; margin: 0 0 20px; }
+#selectedWorker { padding: 10px 12px; border: 1px solid #3d5363; border-radius: 7px; color: #d1e1eb; margin-bottom: 9px; font-size: 12px; overflow-wrap: anywhere; }
+#selectedWorker small { display: block; color: #839eaf; margin-top: 3px; }
+#jobPanel .mapPrimary { width: 100%; padding: 10px; background: #87dfd2; color: #102f35; border: 0; font-weight: 700; }
+#cancelSmoke { width: 100%; margin-top: 8px; padding: 8px; color: #ffb1ad; background: #382d38; border-color: #735261; }
+#mapNotice { min-height: 18px; font-size: 11px; color: #f1bc7b; margin-top: 10px; }
+#agentActivity { font-size: 11px; line-height: 1.6; color: #d0c3ee; background: #28283e; padding: 9px; border-radius: 6px; margin-top: 8px; }
+#jobSteps { list-style: none; padding: 0; margin: 12px 0; }
+#jobSteps li { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #293c4a; font-size: 11px; color: #9db2c2; }
+#jobSteps li b { width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; border: 1px solid #4a6172; font-size: 10px; }
+#jobSteps li[data-state="passed"] { color: #b5e7ce; }
+#jobSteps li[data-state="failed"] { color: #ffaca6; }
+#jobSteps li[data-state="running"] { color: #cfc0fb; }
+#jobSummary { font-size: 12px; color: #b5c8d4; line-height: 1.6; }
+#jobEvidence { border: 1px solid #3c5263; border-radius: 7px; margin: 16px 0; padding: 10px; font-size: 11px; }
+#jobEvidence summary { cursor: pointer; color: #b5d3e7; }
+#jobProvenance { overflow-wrap: anywhere; }
+#jobProvenance dt { color: #8aa6b7; margin-top: 8px; font-size: 10px; }
+#jobProvenance dd { margin: 2px 0; color: #d3e4ed; }
+#jobOutput, #agentOutput { max-height: 260px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 10px; background: #0c1721; padding: 9px; color: #b9d8cb; }
+.jobHistory h3 { font-size: 10px; color: #93aaba; text-transform: uppercase; letter-spacing: 1.5px; }
+#jobHistory button { display: block; width: 100%; text-align: left; font-size: 10px; padding: 7px 9px; margin: 5px 0; color: #bdd1de; background: #1a2c3b; border-color: #384e60; }
+#jobHistory button[aria-pressed="true"] { border-color: #a597d6; }
+.executorNote { color: #839bac; font-size: 10px; line-height: 1.7; margin-top: 20px; }
+@media (max-width: 1100px) { .districtBody { grid-template-columns: minmax(0, 1fr) 285px; } .districtGuide { display: none; } .mapTools { margin-left: auto; } #jobPanel { padding: 16px 14px; } }
+@media (prefers-reduced-motion: reduce) { .mapWorker { transition: none; } .mapWorker.working svg { animation: none; } }
+#testScene { position:absolute; inset:0; z-index:8; background:#06101e; pointer-events:none; }
+#testScene[hidden] { display:none; }
+#testSceneWorld { position:absolute; inset:0; }
+.testSceneCaption { position:absolute; left:24px; right:24px; bottom:18px; padding:32px 18px 14px; background:linear-gradient(transparent,rgba(5,14,25,.94)); color:#e7f5f4; }
+.testSceneCaption > span { color:#64e4ed; font-size:10px; letter-spacing:.22em; }
+.testSceneCaption h2 { font-size:clamp(20px,2.5vw,32px); margin:6px 0; }
+.testSceneCaption p { margin:4px 0; color:#d0dfe9; font-size:12px; }
+.testSceneCaption small { color:#9ab0c4; font-size:10px; overflow-wrap:anywhere; }

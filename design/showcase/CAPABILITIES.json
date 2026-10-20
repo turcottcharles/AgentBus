@@ -1,0 +1,1400 @@
+{
+  "schemaVersion": 1,
+  "taskId": "SC-01",
+  "title": "Source-backed T3 inventory versus current Agent Bus showcase",
+  "reviewedAtUtc": "2026-10-18T03:59:46.5557375Z",
+  "comparison": {
+    "referenceProduct": "T3 Code",
+    "pinnedCommit": "07cb90286656393e395192d82f5c9980b604ef31",
+    "localPinnedHeadVerified": true,
+    "researchSource": "research/t3-2026-10-17/reports/01-product-inventory.json",
+    "researchScope": "19 umbrella rows; original source-backed versus documented statuses retained. This is not a complete parity denominator or a T3 runtime test.",
+    "currentHead": "a47c3e596bd9f3d8a2d600a3ecb6674cda7ffd80",
+    "workingTreeChanging": true,
+    "parityClaim": false,
+    "providerLiveQualifiedInThisLane": false,
+    "nativeQualifiedInThisLane": false,
+    "legacyAgentBusStatusesFromInitialResearchNotReused": true
+  },
+  "statusLegend": {
+    "source_present": "Direct current implementation paths inspected; not current native/provider qualification.",
+    "partial": "Some capability exists with explicit bounded differences.",
+    "partial_legacy_only": "Legacy bus/dashboard capability exists; not integrated District parity.",
+    "not_in_district_contract": "Not provided by the inspected District runtime/tool/command surface; no app-wide absence claim.",
+    "not_in_reviewed_district_contract": "No corresponding surface in reviewed contract; specialist review may refine."
+  },
+  "rows": [
+    {
+      "id": "01-surfaces",
+      "name": "One host process with web, desktop and mobile control surfaces",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "README.md",
+            "start": 3,
+            "end": 5
+          },
+          {
+            "path": "apps/web/src/routes/_chat.tsx",
+            "start": 214,
+            "end": 233
+          },
+          {
+            "path": "apps/desktop/src/window/DesktopWindow.ts",
+            "start": 682,
+            "end": 687
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "Electron desktop plus connected local CLI/MCP; legacy VM bus transport exists.",
+        "implementationPaths": [
+          "app/main.js",
+          "app/district/client.js",
+          "bin/district.cjs",
+          "bin/district-mcp.cjs",
+          "app/hub.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No equivalent web/mobile control client or cross-surface feature qualification.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-05",
+        "SC-10",
+        "SC-19"
+      ],
+      "shotIds": [
+        "W01",
+        "P01"
+      ]
+    },
+    {
+      "id": "01-provider-scope",
+      "name": "Selectable harnesses, accounts and model configurations",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/server/src/provider/builtInDrivers.ts",
+            "start": 29,
+            "end": 39
+          },
+          {
+            "path": "apps/web/src/routes/settings.providers.tsx",
+            "start": 7,
+            "end": 31
+          },
+          {
+            "path": "docs/user/install.md",
+            "start": 132,
+            "end": 171
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "District registers Codex and Claude; explicit model/effort and scoped launch adapters exist.",
+        "implementationPaths": [
+          "app/district/providers/index.js",
+          "app/district/providers/codex.js",
+          "app/district/providers/claude.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "T3 has nine registered driver families. No catalog/authentication/quota discovery in District; found CLI is not usable login/allowance.",
+      "ownerTaskIds": [
+        "SC-04",
+        "SC-06",
+        "SC-13",
+        "SC-19"
+      ],
+      "shotIds": [
+        "W01",
+        "T01A"
+      ]
+    },
+    {
+      "id": "01-project-task-workspace",
+      "name": "Projects, durable tasks and optional isolated workspaces",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/web/src/hooks/useHandleNewThread.ts",
+            "start": 45,
+            "end": 58
+          },
+          {
+            "path": "apps/web/src/hooks/useHandleNewThread.ts",
+            "start": 119,
+            "end": 160
+          },
+          {
+            "path": "docs/user/thread-sidebar.md",
+            "start": 3,
+            "end": 44
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "Bounded owned generated project directories, separate project IDs and concurrent independent project runs.",
+        "implementationPaths": [
+          "app/district/workspaces.js",
+          "app/district/runtime.js",
+          "app/district-selection.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "Checklist/Neon Rally starter workspace model; no existing-repository import or general task worktree/branch lifecycle.",
+      "ownerTaskIds": [
+        "SC-07",
+        "SC-10",
+        "SC-17",
+        "SC-19"
+      ],
+      "shotIds": [
+        "P01"
+      ]
+    },
+    {
+      "id": "01-conversation-control",
+      "name": "Rich task input, queues, steering, commands and goals",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/web/src/components/chat/ComposerPrimaryActions.tsx",
+            "start": 117,
+            "end": 155
+          },
+          {
+            "path": "docs/user/composer.md",
+            "start": 52,
+            "end": 79
+          },
+          {
+            "path": "docs/user/composer.md",
+            "start": 192,
+            "end": 246
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "Per-project draft, explicit single commit, task cancellation and explicitly started local dictation.",
+        "implementationPaths": [
+          "app/district-conversation.js",
+          "app/district-workbench.js",
+          "app/district/agent-session.js",
+          "app/main.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "Fresh dedicated runs; no durable thread send/steer queue, native resume/fork/goals across providers. Legacy terminal session resume is separate.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-06",
+        "SC-18",
+        "SC-19"
+      ],
+      "shotIds": [
+        "W01",
+        "T01A",
+        "P01"
+      ]
+    },
+    {
+      "id": "01-permission-decisions",
+      "name": "Thread permission modes and actionable approvals",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "docs/user/permission-modes.md",
+            "start": 3,
+            "end": 39
+          },
+          {
+            "path": "apps/web/src/components/chat/ComposerPendingApprovalActions.tsx",
+            "start": 32,
+            "end": 61
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "Fixed four-tool project capability, revoked tickets and owned process control bound the District session.",
+        "implementationPaths": [
+          "app/district/project-agent-mcp.js",
+          "app/district/agent-session.js",
+          "app/district/providers/codex.js",
+          "app/district/providers/claude.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No live provider approval conversation or per-thread permission profiles equivalent to T3; fixed restriction is a different product scope.",
+      "ownerTaskIds": [
+        "SC-04",
+        "SC-06",
+        "SC-10",
+        "SC-13"
+      ],
+      "shotIds": [
+        "T01A",
+        "T01E"
+      ]
+    },
+    {
+      "id": "01-work-evidence",
+      "name": "Inspectable activity, outputs and turn-specific changes",
+      "t3": {
+        "status": "documented_at_pin",
+        "sources": [
+          {
+            "path": "docs/user/activity-log.md",
+            "start": 3,
+            "end": 19
+          },
+          {
+            "path": "docs/user/source-control.md",
+            "start": 6,
+            "end": 11
+          },
+          {
+            "path": "docs/user/thread-sidebar.md",
+            "start": 218,
+            "end": 227
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "source_present",
+        "current": "Signed file observations, reported/observed phase activity, hashes, actual named records and published checkPlan exist. Root adapts steps/checks and dynamic kind/totals; eligible scoped phase routing changes position without work authority.",
+        "implementationPaths": [
+          "app/district/activity.js",
+          "app/district-world-state.js",
+          "app/district/runtime.js",
+          "app/district/recipes.js",
+          "app/district/test-performance.js",
+          "app/district/showcase-routing.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "Source normalization gap is fixed; current native early/mid/late/warm handoff, actual routing, source/browser/smoke count labels, stale/history suppression and candidate enrichment still need integrated qualification.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-06",
+        "SC-11",
+        "SC-19"
+      ],
+      "shotIds": [
+        "T01D",
+        "T01E",
+        "R01"
+      ]
+    },
+    {
+      "id": "01-terminals-actions",
+      "name": "Real terminals and project-specific command actions",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/web/src/components/terminal/useThreadTerminalActions.ts",
+            "start": 33,
+            "end": 60
+          },
+          {
+            "path": "apps/web/src/components/terminal/useThreadTerminalActions.ts",
+            "start": 81,
+            "end": 95
+          },
+          {
+            "path": "docs/user/terminal.md",
+            "start": 3,
+            "end": 17
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "not_in_district_contract",
+        "current": "Legacy dashboard launches external CLI terminals in real working directories.",
+        "implementationPaths": [
+          "app/main.js",
+          "app/district/project-agent-mcp.js",
+          "app/district/recipes.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No integrated District PTY panel/reconnect scrollback, arbitrary project scripts, dependency runner or general shell; fixed scoped tools intentionally exclude shell.",
+      "ownerTaskIds": [
+        "SC-06",
+        "SC-10"
+      ],
+      "shotIds": [
+        "P01"
+      ]
+    },
+    {
+      "id": "01-source-control",
+      "name": "Repository creation, cloning, diffs and pull-request workflows",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/web/src/routes/_chat.pull-requests.tsx",
+            "start": 287,
+            "end": 334
+          },
+          {
+            "path": "apps/web/src/routes/settings.source-control.tsx",
+            "start": 1,
+            "end": 7
+          },
+          {
+            "path": "docs/user/source-control.md",
+            "start": 117,
+            "end": 163
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial_legacy_only",
+        "current": "District byte checkpoints/diffs/restore exist; legacy Steward has proposal-specific Git worktree/build/review/merge machinery.",
+        "implementationPaths": [
+          "app/district/checkpoints.js",
+          "app/steward.js",
+          "app/proposals.js",
+          "app/district/contracts.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No integrated general repository clone/publish/branch/commit/push/PR review flow in District. Do not count legacy Steward as map parity.",
+      "ownerTaskIds": [
+        "SC-08",
+        "SC-10"
+      ],
+      "shotIds": [
+        "P01",
+        "R01"
+      ]
+    },
+    {
+      "id": "01-remote-environments",
+      "name": "Named remote environments, pairing and multiple connection routes",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/web/src/routes/settings.connections.tsx",
+            "start": 1,
+            "end": 7
+          },
+          {
+            "path": "docs/user/remote-access.md",
+            "start": 3,
+            "end": 63
+          },
+          {
+            "path": "docs/user/remote-access.md",
+            "start": 160,
+            "end": 190
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial_legacy_only",
+        "current": "Legacy authenticated bus/hub supports local VM messaging/file transport.",
+        "implementationPaths": [
+          "app/hub.js",
+          "app/net.js",
+          "app/main.js",
+          "app/district/bridge.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No T3-style remote host environment GUI/pairing, SSH/Tailscale route management, reconnect scope and control-client parity in the showcase.",
+      "ownerTaskIds": [
+        "SC-05",
+        "SC-10"
+      ],
+      "shotIds": [
+        "P01"
+      ]
+    },
+    {
+      "id": "01-outside-agent-control",
+      "name": "Outside agents can inspect and operate the same task service",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/server/src/mcp/OrchestratorMcpService.ts",
+            "start": 144,
+            "end": 190
+          },
+          {
+            "path": "docs/user/outside-agents.md",
+            "start": 3,
+            "end": 27
+          },
+          {
+            "path": "docs/user/outside-agents.md",
+            "start": 44,
+            "end": 50
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "District CLI/MCP speaks to the same runtime through local authenticated bridge; signed in-project MCP journals provide bounded file activity.",
+        "implementationPaths": [
+          "bin/district-mcp.cjs",
+          "bin/district.cjs",
+          "app/district/client.js",
+          "app/district/bridge.js",
+          "app/district/project-agent-mcp.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "Broad external-agent project grants, per-client scopes and one-use secret access equivalent to T3 are absent. SC-05 reports source-level13-command catalog parity and25 focused passes; current integrated/native/provider qualification remains separate.",
+      "ownerTaskIds": [
+        "SC-05",
+        "SC-06",
+        "SC-10",
+        "SC-19"
+      ],
+      "shotIds": [
+        "T01A",
+        "T01D",
+        "R01"
+      ]
+    },
+    {
+      "id": "01-automation",
+      "name": "Recurring tasks and webhook-triggered work",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/server/src/scheduledTasks/ScheduledTaskService.ts",
+            "start": 194,
+            "end": 227
+          },
+          {
+            "path": "apps/web/src/routes/settings.scheduled-tasks.tsx",
+            "start": 4,
+            "end": 13
+          },
+          {
+            "path": "docs/user/project-settings.md",
+            "start": 63,
+            "end": 119
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial_legacy_only",
+        "current": "Legacy Steward has opt-in periodic proposal/digest behavior.",
+        "implementationPaths": [
+          "app/steward.js",
+          "app/district/contracts.js",
+          "app/district/runtime.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No durable District prompt scheduler, webhook delivery/retry/template surface or equivalent recurring task lifecycle in its command contract.",
+      "ownerTaskIds": [
+        "SC-10"
+      ],
+      "shotIds": [
+        "P01"
+      ]
+    },
+    {
+      "id": "01-usage-availability",
+      "name": "Usage accounting and subscription availability",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/server/src/provider/builtInDrivers.ts",
+            "start": 41,
+            "end": 64
+          },
+          {
+            "path": "apps/web/src/routes/usage.tsx",
+            "start": 1,
+            "end": 15
+          },
+          {
+            "path": "docs/user/usage.md",
+            "start": 9,
+            "end": 47
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial_legacy_only",
+        "current": "Legacy dashboard reads token/context/quota/account statistics with separate source handling.",
+        "implementationPaths": [
+          "app/stats.js",
+          "app/renderer.js",
+          "app/district/providers/index.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "District provider discovery explicitly has authenticationCheck/quotaCheck/modelCatalog false; no equivalent per-project cross-provider usage ledger/catalog.",
+      "ownerTaskIds": [
+        "SC-04",
+        "SC-10",
+        "SC-13"
+      ],
+      "shotIds": [
+        "W01",
+        "P01"
+      ]
+    },
+    {
+      "id": "01-browser-surface",
+      "name": "Shared browser tabs with visible host execution",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/web/src/browser/ServerBrowserSurface.tsx",
+            "start": 138,
+            "end": 159
+          },
+          {
+            "path": "docs/user/remote-access.md",
+            "start": 191,
+            "end": 212
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "Immutable candidate-bound sandboxed preview plus explicit browser interaction checks and identified preview windows.",
+        "implementationPaths": [
+          "app/district/preview.js",
+          "app/district/runtime.js",
+          "app/main.js",
+          "app/district-feedback.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No general shared host browser tab service, stream/control handoff or remote session/browser storage UI. Candidate preview is narrower.",
+      "ownerTaskIds": [
+        "SC-09",
+        "SC-12",
+        "SC-19"
+      ],
+      "shotIds": [
+        "R01"
+      ]
+    },
+    {
+      "id": "01-device-surface",
+      "name": "Visible simulator/emulator work and direct interaction",
+      "t3": {
+        "status": "documented_at_pin",
+        "sources": [
+          {
+            "path": "docs/user/devices.md",
+            "start": 3,
+            "end": 32
+          },
+          {
+            "path": "packages/contracts/src/settings.ts",
+            "start": 1098,
+            "end": 1105
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "not_in_reviewed_district_contract",
+        "current": "Actual OS monitor/region assignment is implemented separately.",
+        "implementationPaths": [
+          "app/district/displays.js",
+          "app/district/regions.js",
+          "app/district/contracts.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No iOS Simulator/Android Emulator device hub, streaming device tabs or device tools; monitor choice is not emulator/device parity.",
+      "ownerTaskIds": [
+        "SC-10",
+        "SC-12"
+      ],
+      "shotIds": [
+        "P01"
+      ]
+    },
+    {
+      "id": "01-context-artifacts",
+      "name": "Attachments, screen context and interactive visual replies",
+      "t3": {
+        "status": "documented_at_pin",
+        "sources": [
+          {
+            "path": "docs/user/composer.md",
+            "start": 32,
+            "end": 48
+          },
+          {
+            "path": "docs/user/snap-shot.md",
+            "start": 3,
+            "end": 34
+          },
+          {
+            "path": "docs/user/html-renders.md",
+            "start": 3,
+            "end": 17
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "Text/local dictation, real project files via scoped tools and bounded candidate element-feedback context.",
+        "implementationPaths": [
+          "app/district-conversation.js",
+          "app/district/project-agent-mcp.js",
+          "app/district-feedback.js",
+          "app/district/runtime.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No integrated attachment/video upload, native screen-context capture, file editor, general HTML artifact/MCP App ecosystem in District.",
+      "ownerTaskIds": [
+        "SC-06",
+        "SC-10",
+        "SC-18"
+      ],
+      "shotIds": [
+        "T01A",
+        "R01"
+      ]
+    },
+    {
+      "id": "01-portable-continuity",
+      "name": "Provider switching, restart continuity and portable handoffs",
+      "t3": {
+        "status": "documented_at_pin",
+        "sources": [
+          {
+            "path": "docs/user/portable-handoffs.md",
+            "start": 3,
+            "end": 30
+          },
+          {
+            "path": "docs/user/thread-sidebar.md",
+            "start": 195,
+            "end": 209
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "not_in_district_contract",
+        "current": "Legacy dashboard supports native CLI resume by known session; District records its dedicated provider run/session.",
+        "implementationPaths": [
+          "app/main.js",
+          "app/district/agent-session.js",
+          "app/district/providers/codex.js",
+          "app/district/providers/claude.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No District durable thread resume/fork, cross-provider context-package transfer, attachment omission/retrieval manifest or budgeted portable handoff.",
+      "ownerTaskIds": [
+        "SC-06",
+        "SC-10"
+      ],
+      "shotIds": [
+        "T01A",
+        "P01"
+      ]
+    },
+    {
+      "id": "01-task-organization",
+      "name": "Search, pins, archive/restore, settle/unsettle and snooze/wake",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/web/src/hooks/useThreadActions.ts",
+            "start": 249,
+            "end": 283
+          },
+          {
+            "path": "docs/user/thread-sidebar.md",
+            "start": 127,
+            "end": 135
+          },
+          {
+            "path": "docs/user/thread-sidebar.md",
+            "start": 182,
+            "end": 216
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "Multiple project top/side tabs, overview/split, independent drafts and run records. Root snapshot pins each project's latest and active/unresolved records before recent100, so all seven retain attention under noisy history.",
+        "implementationPaths": [
+          "app/district-selection.js",
+          "app/district-workbench.js",
+          "app/district/contracts.js",
+          "app/district/runtime.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No full durable thread search/pin/archive/settle/snooze/wake lifecycle. Runtime snapshot pins and attention preserve actual visibility but do not schedule or continue work; seven-project native views remain separate.",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-07",
+        "SC-14",
+        "SC-17"
+      ],
+      "shotIds": [
+        "W01",
+        "P01"
+      ]
+    },
+    {
+      "id": "01-setup-settings",
+      "name": "Guided setup, scoped settings and progressive access",
+      "t3": {
+        "status": "implementation_backed_at_pin",
+        "sources": [
+          {
+            "path": "apps/web/src/routes/settings.tsx",
+            "start": 147,
+            "end": 190
+          },
+          {
+            "path": "apps/web/src/routes/__root.tsx",
+            "start": 310,
+            "end": 316
+          },
+          {
+            "path": "docs/user/welcome-wizard.md",
+            "start": 3,
+            "end": 46
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "Readable explicit controls, model/effort fields, project display preferences, keyboard alternatives and reduced-motion paths exist.",
+        "implementationPaths": [
+          "app/district-workbench.js",
+          "app/district-conversation.js",
+          "app/district-screen-picker.js",
+          "app/district-ui.js",
+          "app/district/providers/index.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No equivalent four-tier client/environment/project/checkout settings, provider login checks, full appearance/font setup; human usability and physical microphone qualification remain separate.",
+      "ownerTaskIds": [
+        "SC-12",
+        "SC-15",
+        "SC-18",
+        "SC-19"
+      ],
+      "shotIds": [
+        "W01",
+        "P01"
+      ]
+    },
+    {
+      "id": "01-lifecycle-operations",
+      "name": "Updates, background hosting and safe storage lifecycle",
+      "t3": {
+        "status": "documented_at_pin",
+        "sources": [
+          {
+            "path": "docs/user/updating.md",
+            "start": 3,
+            "end": 28
+          },
+          {
+            "path": "docs/user/background-service.md",
+            "start": 43,
+            "end": 57
+          },
+          {
+            "path": "docs/user/project-settings.md",
+            "start": 145,
+            "end": 185
+          }
+        ]
+      },
+      "agentBus": {
+        "status": "partial",
+        "current": "App restart marks unconfirmed active District runs interrupted; owned workspace/checkpoint/preview lifecycle exists.",
+        "implementationPaths": [
+          "app/district/runtime.js",
+          "app/district/workspaces.js",
+          "app/district/checkpoints.js",
+          "app/district/preview.js",
+          "app/main.js"
+        ],
+        "qualification": "Source review only; this crew's changes are provisional until root freeze and qualification."
+      },
+      "remainingGap": "No coordinated client/host/provider updater, background service installer or full managed-worktree storage cleanup UI. T3 docs themselves exclude Windows background services.",
+      "ownerTaskIds": [
+        "SC-08",
+        "SC-09",
+        "SC-10",
+        "SC-16",
+        "SC-19"
+      ],
+      "shotIds": [
+        "W01",
+        "P01"
+      ]
+    }
+  ],
+  "showcaseCoverage": [
+    {
+      "id": "showcase-opening",
+      "feature": "Muted original industrial opening",
+      "ownerTaskIds": [
+        "SC-02",
+        "SC-03"
+      ],
+      "shotIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "paths": [
+        "app/district-3d/showcase-opening.js",
+        "app/district-3d/host-thrusters.js",
+        "app/district-3d/world-entry.js"
+      ],
+      "status": "source_module_and18offline_groups_reported;root_integration_and_hardware_qualification_pending",
+      "limit": "Clock controls acting only; actual assignment may arrive at any opening time."
+    },
+    {
+      "id": "showcase-attention",
+      "feature": "Project-scoped deduplicated attention",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-14"
+      ],
+      "shotIds": [
+        "W01",
+        "P01"
+      ],
+      "paths": [
+        "app/district-attention.js",
+        "app/district-workbench.js"
+      ],
+      "status": "source_and14offline_Node_VM_cases_reported;consumer_native_integration_pending",
+      "limit": "Pure projection; no automatic resume, assignment, timer or result."
+    },
+    {
+      "id": "showcase-live-test",
+      "feature": "Actual phase routing plus core T01 Test performance",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-11",
+        "SC-19"
+      ],
+      "shotIds": [
+        "T01A",
+        "T01B",
+        "T01C",
+        "T01D",
+        "T01E"
+      ],
+      "paths": [
+        "app/district/test-performance.js",
+        "app/district-3d/test-scene.js",
+        "app/map.js",
+        "app/district/showcase-routing.js",
+        "app/district/runtime.js"
+      ],
+      "status": "root_phase_routing_dynamic_checkPlan_handoff_source_present;native_pending",
+      "limit": "Fresh scoped reported phase may route Research/Edit; observed operation state routes build/test. Movement grants no work/result. checkPlan supplies expected total; only actual records supply completed states. Smoke6/source5/browser remain distinct."
+    },
+    {
+      "id": "showcase-displays",
+      "feature": "Actual monitor and normalized region assignment",
+      "ownerTaskIds": [
+        "SC-12"
+      ],
+      "shotIds": [
+        "R01",
+        "P01"
+      ],
+      "paths": [
+        "app/district/displays.js",
+        "app/district/regions.js",
+        "app/district-screen-picker.js"
+      ],
+      "status": "source_present;current_lane_review_pending",
+      "limit": "Logical DIP placement stays distinct from native pixels; selection/drawing does not operate the preview."
+    },
+    {
+      "id": "showcase-management",
+      "feature": "Same-world explicit management and multiple projects",
+      "ownerTaskIds": [
+        "SC-03",
+        "SC-07",
+        "SC-11",
+        "SC-14",
+        "SC-17"
+      ],
+      "shotIds": [
+        "P01"
+      ],
+      "paths": [
+        "app/district-scene.js",
+        "app/district-selection.js",
+        "app/district-world-state.js",
+        "app/district-3d/world-entry.js"
+      ],
+      "status": "partial_source;current_native_qualification_pending",
+      "limit": "No automatic overhead ending; map selection is not command dispatch."
+    }
+  ],
+  "materialGaps": [
+    {
+      "id": "G-01",
+      "title": "Owned starter scope is not arbitrary repository development",
+      "rows": [
+        "01-project-task-workspace",
+        "01-terminals-actions",
+        "01-source-control"
+      ],
+      "priority": "scope_boundary",
+      "detail": "Generated checklist/Rally files, four project tools and fixed static recipes omit existing repositories/worktrees/dependencies/general shell/SCM flow."
+    },
+    {
+      "id": "G-02",
+      "title": "No durable District thread orchestration parity",
+      "rows": [
+        "01-conversation-control",
+        "01-portable-continuity",
+        "01-task-organization"
+      ],
+      "priority": "scope_boundary",
+      "detail": "One-shot scoped runs do not imply resume/fork/steer queue, portable context or search/archive/snooze lifecycle."
+    },
+    {
+      "id": "G-03",
+      "title": "Provider readiness is not discovered account capacity",
+      "rows": [
+        "01-provider-scope",
+        "01-usage-availability"
+      ],
+      "priority": "truth_gate",
+      "detail": "Two District providers and explicit model/effort; authentication, quota and catalog remain unchecked. Legacy stats are separate."
+    },
+    {
+      "id": "G-04",
+      "title": "Permissions and delegated agent scope differ",
+      "rows": [
+        "01-permission-decisions",
+        "01-outside-agent-control"
+      ],
+      "priority": "security_scope",
+      "detail": "Fixed in-project capabilities are useful; no equivalent live provider approvals, project-scoped external-client grants or one-use secret flow."
+    },
+    {
+      "id": "G-05",
+      "title": "Host surfaces are narrower",
+      "rows": [
+        "01-surfaces",
+        "01-remote-environments",
+        "01-browser-surface",
+        "01-device-surface",
+        "01-context-artifacts"
+      ],
+      "priority": "scope_boundary",
+      "detail": "No full web/mobile, remote managed host/browser/device hub, PTY/editor/attachment surface. Preview and VM message transport are separate bounded features."
+    },
+    {
+      "id": "G-06",
+      "title": "Scheduling and platform lifecycle are separate",
+      "rows": [
+        "01-automation",
+        "01-lifecycle-operations"
+      ],
+      "priority": "later_scope",
+      "detail": "Legacy opt-in Steward cadence is not durable District automation; updater/background/service/worktree cleanup parity is absent."
+    },
+    {
+      "id": "G-07",
+      "title": "Showcase adapter and continuous handoff must be qualified",
+      "rows": [
+        "01-work-evidence",
+        "01-setup-settings"
+      ],
+      "priority": "current_integration_gate",
+      "detail": "Root source now normalizes run.steps/run.checks and dynamic checkPlan/kind/totals, routes actual scoped phases and pins latest/unresolved runs across seven projects. Frozen-candidate native handoff, phase travel, history suppression, preview/recovery and disposal remain gates."
+    }
+  ],
+  "independentReview": {
+    "ownerTaskId": "SC-10",
+    "plannedPath": "design/showcase/PRODUCT-GAPS.md",
+    "receivedFindings": "Specialist source review agrees: narrow starters, fresh sessions, fixed recipes, byte checkpoints, absent approval/delegation/PTY/editor/attachment/account discovery/scheduler parity. Legacy features must be inventoried separately.",
+    "currentCandidateGate": "SC-19/root native and provider qualification remain separate; this document never grants all parity.",
+    "sourceReviewReceipt": "evidence/showcase/lanes/10.json",
+    "securityEvidence": "evidence/showcase/security-review.json",
+    "finding": "Historical SC10-F01 (five-check project shown0/6) is source-fixed by root's published checkPlan and dynamic consumer; current native qualification remains pending."
+  },
+  "marketingCaveats": [
+    "Pinned T3 marketing names six harnesses but source registers nine driver families; registration does not establish uniform capabilities.",
+    "Pinned T3 permits shared/existing worktrees and projectless scratch; do not require every thread to have a branch.",
+    "No quota caps is a marketing claim, not proof of unlimited provider allowance.",
+    "Source presence and documented mobile/device features do not establish released-client or runtime parity."
+  ],
+  "prohibitedClaims": [
+    "All T3 features implemented",
+    "CLI installed means authenticated or quota ready",
+    "Walking or thruster light proves work",
+    "A recipe/source pass proves browser behavior or owner artistic acceptance",
+    "An old saved pass is a new completion",
+    "Legacy bus capabilities are absent app-wide because not in the District",
+    "A supplied starter was AI-generated from the prompt"
+  ],
+  "qualificationReceipts": [
+    {
+      "taskId": "SC-02",
+      "path": "evidence/showcase/lanes/02.json",
+      "status": "implemented",
+      "scope": "Reported18 focused source/GLB behavioral groups and in-memory browser build; no hardware shader/native run.",
+      "attribution": "Reported by the owning lane; SC-01 read the receipt and did not re-execute those tests."
+    },
+    {
+      "taskId": "SC-04",
+      "path": "evidence/showcase/lanes/04.json",
+      "status": "implemented",
+      "scope": "Reported final19/19 Codex adapter/local transport fixtures; historical stream replay only, no authenticated provider run.",
+      "attribution": "Reported by the owning lane; SC-01 read the receipt and did not re-execute those tests."
+    },
+    {
+      "taskId": "SC-05",
+      "path": "evidence/showcase/lanes/05.json",
+      "status": "implemented",
+      "scope": "Reported25 focused CLI/MCP tests and authoritative13-command catalog parity; no native/provider run.",
+      "attribution": "Reported by the owning lane; SC-01 read the receipt and did not re-execute those tests."
+    },
+    {
+      "taskId": "SC-06",
+      "path": "evidence/showcase/lanes/06.json",
+      "status": "implemented",
+      "scope": "Reported17 scoped MCP/local-process session fixtures and owned-PID stop tests; no paid model call.",
+      "attribution": "Reported by the owning lane; SC-01 read the receipt and did not re-execute those tests."
+    },
+    {
+      "taskId": "SC-07",
+      "path": "evidence/showcase/lanes/07.json",
+      "status": "implemented",
+      "scope": "Reported earlier19 workspace/selection cases plus separately added noisy-history1/1 regression after root pin fix; seven current/active states retained; native pending.",
+      "attribution": "Read owning-lane receipt; SC01 did not rerun these tests."
+    },
+    {
+      "taskId": "SC-08",
+      "path": "evidence/showcase/lanes/08.json",
+      "status": "implemented",
+      "scope": "Reported20 checkpoint/temp-filesystem/SQLite tests and stale-guard negative control; root comparison-guard/recovery UI integration pending.",
+      "attribution": "Reported by the owning lane; SC-01 read the receipt and did not re-execute those tests."
+    },
+    {
+      "taskId": "SC-10",
+      "path": "evidence/showcase/lanes/10.json",
+      "status": "reviewed",
+      "scope": "Reported8 bounded security negatives and reproduced5-check-to0/6 presentation mismatch; no new critical local authority defect reproduced.",
+      "attribution": "Reported by the owning lane; SC-01 read the receipt and did not re-execute those tests."
+    },
+    {
+      "taskId": "SC-14",
+      "path": "evidence/showcase/lanes/14.json",
+      "status": "implemented",
+      "scope": "Reported14 pure attention projection Node/VM tests; no native UI or durable acknowledgement claim.",
+      "attribution": "Reported by the owning lane; SC-01 read the receipt and did not re-execute those tests."
+    },
+    {
+      "taskId": "SC-18",
+      "path": "evidence/showcase/lanes/18.json",
+      "status": "implemented",
+      "scope": "Reported10 conversation tests, retained security case and in-memory editable-draft negative control; no microphone/native acceptance.",
+      "attribution": "Reported by the owning lane; SC-01 read the receipt and did not re-execute those tests."
+    },
+    {
+      "taskId": "SC-03",
+      "path": "evidence/showcase/lanes/03.json",
+      "status": "implemented",
+      "scope": "Reported12 focused workbench/real-temp recipe+HTTP/recording-renderer cases; one showcase handle, explicit follow, no active floating demo; native/provider pending.",
+      "attribution": "Read owning-lane receipt; SC01 did not rerun these tests."
+    }
+  ],
+  "revision": 2,
+  "rootSourceUpdates": [
+    {
+      "feature": "scopedPhaseRouting",
+      "path": "app/district/showcase-routing.js",
+      "symbols": [
+        "facilityFor",
+        "routeFor",
+        "sampleRoute"
+      ],
+      "authority": "Presentation only; eligible matching nonstale activity may locate a reported phase, observed run states provide fallback. No commands or result changes."
+    },
+    {
+      "feature": "dynamicCheckPlan",
+      "paths": [
+        "app/district/runtime.js",
+        "app/district/test-performance.js"
+      ],
+      "fields": [
+        "checkPlan",
+        "checks",
+        "steps",
+        "total",
+        "kind",
+        "candidateHash"
+      ],
+      "authority": "Expected plan is not executed progress; unknown totals stay unknown. Same-identity candidate enrichment does not replay."
+    },
+    {
+      "feature": "allSevenLatestActivePins",
+      "path": "app/district/runtime.js",
+      "symbol": "snapshot",
+      "authority": "Latest per project +all nonterminal/termination_unknown +recent100, deduplicated ordered. Does not mutate store or dispatch."
+    }
+  ],
+  "qualification": {
+    "generatedFrom": "evidence/showcase/qualification.json",
+    "sha256": "9df5398241121f30017d0d19847c4452a3c9fed4a38250ac3359fdcf6daa04b0",
+    "at": "2026-10-18T21:25:02.637Z",
+    "state": "incomplete",
+    "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+    "checks": [
+      {
+        "id": "experience",
+        "name": "Current production cinematic and real creation",
+        "state": "pending",
+        "required": true,
+        "detail": {
+          "receipt": "evidence/showcase/experience-04/validation.json",
+          "recordedState": "passed",
+          "currentCandidate": false,
+          "changedFiles": [
+            "app/district-3d/world-entry.js",
+            "app/district-attract-world.js",
+            "app/district-entry.css",
+            "app/district-entry.js",
+            "app/district-map-interaction.js",
+            "app/district-showcase.css",
+            "app/district-workbench.js",
+            "app/district/showcase-routing.js",
+            "app/district/test-performance.js",
+            "app/hub.js",
+            "app/index.html",
+            "app/main.js",
+            "app/preload.js",
+            "app/renderer.js",
+            "bin/__pycache__/bus-watch.cpython-311.pyc",
+            "bin/bus-hub.cjs",
+            "bin/bus-watch.py",
+            "evidence/showcase/gpu-probe.cjs",
+            "evidence/showcase/runtime-review.cjs",
+            "tests/bus-push.test.js",
+            "tests/bus-watch_test.py",
+            "tests/district-map-interaction.test.js",
+            "tests/district-test-performance.test.js",
+            "tests/showcase-workbench.test.js"
+          ],
+          "media": {
+            "state": "passed",
+            "path": "evidence/showcase/experience-04/agent-bus-experience.mp4",
+            "sha256": "d8a8d7adacd4762079285b574c3e17e827cc53b2b102ae2208c24472e5ffec7e"
+          },
+          "scope": "Actual production opening, scoped work, candidate output and captured camera continuation only. It does not substitute for seven-project, lifecycle, negative-case or artistic acceptance."
+        }
+      },
+      {
+        "id": "tests",
+        "name": "Current frozen-candidate full regression",
+        "state": "failed",
+        "required": true,
+        "detail": {
+          "command": "node --test --test-concurrency=2 tests/*.test.js",
+          "tap": "evidence/showcase/full-suite-current.tap",
+          "before": "evidence/showcase/regression-current-before.json",
+          "after": "evidence/showcase/regression-current-after.json",
+          "summary": {
+            "tests": 525,
+            "pass": 525,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 109754.5609,
+            "complete": true,
+            "passed": true
+          },
+          "currentCandidate": false,
+          "beforeDigest": "e224dd6c3f6063bc5b1fffd2d9870e4e0e4056bd504e4d1b95f4d5ca550e8359",
+          "afterDigest": "e224dd6c3f6063bc5b1fffd2d9870e4e0e4056bd504e4d1b95f4d5ca550e8359",
+          "scope": "Counts are parsed from the completed current log. Missing logs, incomplete summaries, failures, skips and changed source cannot pass."
+        }
+      },
+      {
+        "id": "multi",
+        "name": "Current seven-project native views and isolation",
+        "state": "pending",
+        "required": true,
+        "detail": {
+          "receipt": "evidence/showcase/native-candidate-02/validation.json",
+          "recordedState": "failed",
+          "currentCandidate": false,
+          "changedProductFiles": [
+            "app/assets/district-v2/attract-portal-reveal.mp4",
+            "app/district-3d/robot-crew.js",
+            "app/district-3d/showcase-opening.js",
+            "app/district-3d/test-scene.js",
+            "app/district-3d/world-entry.js",
+            "app/district-attract-world.js",
+            "app/district-entry.css",
+            "app/district-entry.js",
+            "app/district-map-interaction.js",
+            "app/district-showcase.css",
+            "app/district-workbench.js",
+            "app/district/recipes.js",
+            "app/district/showcase-routing.js",
+            "app/district/speech-recognizer.ps1",
+            "app/district/test-performance.js",
+            "app/hub.js",
+            "app/icon.ico",
+            "app/index.html",
+            "app/main.js",
+            "app/preload.js",
+            "app/renderer.js",
+            "package-lock.json"
+          ],
+          "scope": "Older seven-project/top-side/overview-split observations are historical after UI changes. No inferred carry-forward from a new one-project movie."
+        }
+      },
+      {
+        "id": "handoff",
+        "name": "Current early/mid/late handoff and native negative cases",
+        "state": "pending",
+        "required": true,
+        "detail": {
+          "receipt": "evidence/showcase/native-candidate-02/validation.json",
+          "currentCandidate": false,
+          "scope": "The current film covers only its recorded timing. Earlier commit timing, history, failure, unknown and cancellation cases require current acceptance."
+        }
+      },
+      {
+        "id": "lifecycle",
+        "name": "Current native visibility, context and disposal lifecycle",
+        "state": "pending",
+        "required": true,
+        "detail": {
+          "receipt": "evidence/showcase/production-candidate-06/validation.json",
+          "recordedState": "passed",
+          "currentCandidate": false,
+          "changedProductFiles": [
+            "app/district-3d/robot-crew.js",
+            "app/district-3d/showcase-opening.js",
+            "app/district-3d/test-scene.js",
+            "app/district-3d/world-entry.js",
+            "app/district-attract-world.js",
+            "app/district-entry.css",
+            "app/district-entry.js",
+            "app/district-map-interaction.js",
+            "app/district-showcase.css",
+            "app/district-workbench.js",
+            "app/district/showcase-routing.js",
+            "app/district/test-performance.js",
+            "app/hub.js",
+            "app/index.html",
+            "app/main.js",
+            "app/preload.js",
+            "app/renderer.js"
+          ],
+          "scope": "Clean capture shutdown is not the full hidden-view/context-loss/reduced-motion/disposal audit. Older lifecycle checks remain historical after visual/UI changes."
+        }
+      },
+      {
+        "id": "codex",
+        "name": "Current production live Codex narrow assignment",
+        "state": "pending",
+        "required": true,
+        "detail": {
+          "receipt": "evidence/showcase/experience-04/validation.json",
+          "currentCandidate": false,
+          "runId": null,
+          "scope": "Only the recorded explicit narrow edit/check/preview in this production candidate; no sustained quota or general provider capability claim."
+        }
+      },
+      {
+        "id": "claude-component",
+        "name": "Historical Claude backend component evidence",
+        "state": "historical_not_current",
+        "required": false,
+        "detail": {
+          "receipt": "evidence/showcase/live-provider-receipt.json",
+          "changedBackendFiles": [
+            "agent_bus_mcp.py",
+            "app/district/showcase-routing.js",
+            "app/district/test-performance.js"
+          ],
+          "currentUIQualified": false,
+          "scope": "Historical live provider evidence is applicable only to the listed unchanged backend hashes. It is not a requalification of the current complete UI, native handoff, authentication lifetime or quota."
+        }
+      },
+      {
+        "id": "bundle",
+        "name": "Current GPU bundle reproducibility",
+        "state": "pending",
+        "required": true,
+        "detail": {
+          "receipt": "evidence/showcase/bundle-reproducibility.json",
+          "expected": "9eacf63f09c79468e104092b935042fc1fc66e7d8a494be1ca561841ba241d48",
+          "recordedActual": "822373661dd9316b3a051652eeca6e0724d1e763f18d7371e2ebd098ba38b481",
+          "scope": "Requires the recorded rebuild to equal the current bundle bytes; old bundle evidence does not qualify new visual code."
+        }
+      },
+      {
+        "id": "models",
+        "name": "Approved original models preserved",
+        "state": "passed",
+        "required": true,
+        "detail": {
+          "expected": {
+            "app/assets/district-v2/district-host.glb": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037",
+            "app/assets/district-v2/district-world.glb": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc"
+          }
+        }
+      }
+    ],
+    "remaining": [
+      "Current production cinematic and real creation: pending",
+      "Current frozen-candidate full regression: failed",
+      "Current seven-project native views and isolation: pending",
+      "Current early/mid/late handoff and native negative cases: pending",
+      "Current native visibility, context and disposal lifecycle: pending",
+      "Current production live Codex narrow assignment: pending",
+      "Current GPU bundle reproducibility: pending",
+      "Owner artistic acceptance and physical microphone/human usability remain separate.",
+      "Current production live Codex assignment remains pending or failed as recorded.",
+      "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+    ],
+    "scope": "Capability rows are source inventory, not whole-product acceptance. Current acceptance comes only from the canonical qualification record."
+  }
+}

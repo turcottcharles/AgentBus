@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "reason": "Preserve owner-accepted four-facility world before additive ReviewArchive",
+  "files": [
+    {
+      "path": "design/district-3d/accepted-v1/district-world.py",
+      "bytes": 21387,
+      "sha256": "6912433b0a5a717fca883195c2719886eae068a7dae5ed495d25cd405d04605b",
+      "accepted_original_sha256": "6912433b0a5a717fca883195c2719886eae068a7dae5ed495d25cd405d04605b",
+      "preservation_status": "byte-exact-verified"
+    },
+    {
+      "path": "design/district-3d/accepted-v1/district-world.glb",
+      "bytes": 2759216,
+      "sha256": "12e7cde93555d6812238c772247bdd35c2dc0807edee7e866e7fdd3f8fdade23",
+      "accepted_original_sha256": "12e7cde93555d6812238c772247bdd35c2dc0807edee7e866e7fdd3f8fdade23",
+      "preservation_status": "byte-exact-verified"
+    },
+    {
+      "path": "design/district-3d/accepted-v1/district-world.blend",
+      "bytes": 491203,
+      "sha256": "37f278f9dc8721ded88a725263a9d055327ec10a3a76a40d5692e99a226587da",
+      "accepted_original_sha256": "c5bc568e912bf4f840b59400029460b60c16cde948a6af0e9d90bf38212e2c08",
+      "preservation_status": "scene-reconstructed-not-original-binary"
+    },
+    {
+      "path": "design/district-3d/accepted-v1/district-world.provenance.json",
+      "bytes": 1994,
+      "sha256": "d5dbef22b6a90d360575b0edcbb1140b0f9540874c18344369a2f54a12e6f396",
+      "preservation_status": "preserved-provenance-data"
+    },
+    {
+      "path": "design/district-3d/accepted-v1/district-world.reconstruction.json",
+      "bytes": 2034,
+      "sha256": "7befc19d210f9716e056098042c96bd4a47db117603b600b9316f78c22fc3eaa",
+      "preservation_status": "preserved-provenance-data"
+    }
+  ],
+  "original_records": [
+    {
+      "path": "design/blender/district-world.py",
+      "bytes": 21387,
+      "sha256": "6912433b0a5a717fca883195c2719886eae068a7dae5ed495d25cd405d04605b"
+    },
+    {
+      "path": "design/blender/district-world.blend",
+      "bytes": 491207,
+      "sha256": "c5bc568e912bf4f840b59400029460b60c16cde948a6af0e9d90bf38212e2c08"
+    },
+    {
+      "path": "app/assets/district-v2/district-world.glb",
+      "bytes": 2759216,
+      "sha256": "12e7cde93555d6812238c772247bdd35c2dc0807edee7e866e7fdd3f8fdade23"
+    }
+  ],
+  "notes": [
+    "Accepted generator and GLB restored byte-exact and SHA verified.",
+    "Editable v1 blend is a reconstruction from the exact generator; its exported GLB is byte-identical to the accepted runtime asset.",
+    "Original c5bc568e... blend container bytes were overwritten before the explicit snapshot instruction arrived; do not label the reconstructed blend original-byte provenance.",
+    "No rendering was performed during reconstruction."
+  ],
+  "current_additive_glb": {
+    "path": "app/assets/district-v2/district-world.glb",
+    "bytes": 2979624,
+    "sha256": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc"
+  }
+}

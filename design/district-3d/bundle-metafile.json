@@ -1,0 +1,456 @@
+{
+  "inputs": {
+    "node_modules/three/build/three.core.js": {
+      "bytes": 1458113,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/three/build/three.module.js": {
+      "bytes": 662772,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.core.js",
+          "kind": "import-statement",
+          "original": "./three.core.js"
+        },
+        {
+          "path": "node_modules/three/build/three.core.js",
+          "kind": "import-statement",
+          "original": "./three.core.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 37712,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/utils/SkeletonUtils.js": {
+      "bytes": 11535,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/loaders/GLTFLoader.js": {
+      "bytes": 117570,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+          "kind": "import-statement",
+          "original": "../utils/BufferGeometryUtils.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/utils/SkeletonUtils.js",
+          "kind": "import-statement",
+          "original": "../utils/SkeletonUtils.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/shaders/CopyShader.js": {
+      "bytes": 729,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/Pass.js": {
+      "bytes": 4218,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/ShaderPass.js": {
+      "bytes": 3228,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/MaskPass.js": {
+      "bytes": 4694,
+      "imports": [
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/EffectComposer.js": {
+      "bytes": 8501,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/CopyShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/CopyShader.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/ShaderPass.js",
+          "kind": "import-statement",
+          "original": "./ShaderPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/MaskPass.js",
+          "kind": "import-statement",
+          "original": "./MaskPass.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/RenderPass.js": {
+      "bytes": 4280,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/shaders/LuminosityHighPassShader.js": {
+      "bytes": 1291,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js": {
+      "bytes": 15397,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/CopyShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/CopyShader.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/LuminosityHighPassShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/LuminosityHighPassShader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/shaders/OutputShader.js": {
+      "bytes": 1876,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/postprocessing/OutputPass.js": {
+      "bytes": 4184,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+          "kind": "import-statement",
+          "original": "./Pass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/shaders/OutputShader.js",
+          "kind": "import-statement",
+          "original": "../shaders/OutputShader.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/three/examples/jsm/environments/RoomEnvironment.js": {
+      "bytes": 4960,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "app/district/showcase-routing.js": {
+      "bytes": 2109,
+      "imports": [],
+      "format": "cjs"
+    },
+    "app/district/test-performance.js": {
+      "bytes": 5675,
+      "imports": [
+        {
+          "path": "app/district/showcase-routing.js",
+          "kind": "require-call",
+          "original": "./showcase-routing"
+        }
+      ],
+      "format": "cjs"
+    },
+    "app/district-3d/host-rig.js": {
+      "bytes": 6696,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "app/district-3d/test-scene.js": {
+      "bytes": 3507,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "app/district-3d/host-rig.js",
+          "kind": "import-statement",
+          "original": "./host-rig.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "app/district-3d/host-thrusters.js": {
+      "bytes": 8715,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "app/district-3d/showcase-opening.js": {
+      "bytes": 8042,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "app/district-3d/host-thrusters.js",
+          "kind": "import-statement",
+          "original": "./host-thrusters.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "app/district-3d/robot-crew.js": {
+      "bytes": 5539,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
+    "app/district-3d/world-entry.js": {
+      "bytes": 57560,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+          "kind": "import-statement",
+          "original": "three/addons/loaders/GLTFLoader.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/EffectComposer.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/EffectComposer.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/RenderPass.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/RenderPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/UnrealBloomPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/postprocessing/OutputPass.js",
+          "kind": "import-statement",
+          "original": "three/addons/postprocessing/OutputPass.js"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/environments/RoomEnvironment.js",
+          "kind": "import-statement",
+          "original": "three/addons/environments/RoomEnvironment.js"
+        },
+        {
+          "path": "app/district/test-performance.js",
+          "kind": "import-statement",
+          "original": "../district/test-performance.js"
+        },
+        {
+          "path": "app/district/showcase-routing.js",
+          "kind": "import-statement",
+          "original": "../district/showcase-routing.js"
+        },
+        {
+          "path": "app/district-3d/test-scene.js",
+          "kind": "import-statement",
+          "original": "./test-scene.js"
+        },
+        {
+          "path": "app/district-3d/showcase-opening.js",
+          "kind": "import-statement",
+          "original": "./showcase-opening.js"
+        },
+        {
+          "path": "app/district-3d/robot-crew.js",
+          "kind": "import-statement",
+          "original": "./robot-crew.js"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "app/district-attract-world.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "app/district-3d/world-entry.js",
+      "inputs": {
+        "app/district/showcase-routing.js": {
+          "bytesInOutput": 1436
+        },
+        "app/district/test-performance.js": {
+          "bytesInOutput": 3056
+        },
+        "node_modules/three/build/three.core.js": {
+          "bytesInOutput": 239670
+        },
+        "node_modules/three/build/three.module.js": {
+          "bytesInOutput": 355020
+        },
+        "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
+          "bytesInOutput": 975
+        },
+        "node_modules/three/examples/jsm/utils/SkeletonUtils.js": {
+          "bytesInOutput": 438
+        },
+        "node_modules/three/examples/jsm/loaders/GLTFLoader.js": {
+          "bytesInOutput": 43636
+        },
+        "node_modules/three/examples/jsm/shaders/CopyShader.js": {
+          "bytesInOutput": 427
+        },
+        "node_modules/three/examples/jsm/postprocessing/Pass.js": {
+          "bytesInOutput": 617
+        },
+        "node_modules/three/examples/jsm/postprocessing/ShaderPass.js": {
+          "bytesInOutput": 811
+        },
+        "node_modules/three/examples/jsm/postprocessing/MaskPass.js": {
+          "bytesInOutput": 1096
+        },
+        "node_modules/three/examples/jsm/postprocessing/EffectComposer.js": {
+          "bytesInOutput": 2590
+        },
+        "node_modules/three/examples/jsm/postprocessing/RenderPass.js": {
+          "bytesInOutput": 992
+        },
+        "node_modules/three/examples/jsm/shaders/LuminosityHighPassShader.js": {
+          "bytesInOutput": 844
+        },
+        "node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js": {
+          "bytesInOutput": 8485
+        },
+        "node_modules/three/examples/jsm/shaders/OutputShader.js": {
+          "bytesInOutput": 1492
+        },
+        "node_modules/three/examples/jsm/postprocessing/OutputPass.js": {
+          "bytesInOutput": 1461
+        },
+        "node_modules/three/examples/jsm/environments/RoomEnvironment.js": {
+          "bytesInOutput": 1949
+        },
+        "app/district-3d/world-entry.js": {
+          "bytesInOutput": 32583
+        },
+        "app/district-3d/host-rig.js": {
+          "bytesInOutput": 4353
+        },
+        "app/district-3d/test-scene.js": {
+          "bytesInOutput": 2152
+        },
+        "app/district-3d/host-thrusters.js": {
+          "bytesInOutput": 5312
+        },
+        "app/district-3d/showcase-opening.js": {
+          "bytesInOutput": 4616
+        },
+        "app/district-3d/robot-crew.js": {
+          "bytesInOutput": 2688
+        }
+      },
+      "bytes": 717527
+    }
+  }
+}

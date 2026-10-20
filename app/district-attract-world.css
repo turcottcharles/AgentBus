@@ -1,0 +1,8 @@
+.daw-world{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .65s ease;background:#06101e;isolation:isolate}
+.daw-world.is-ready{opacity:1}
+.daw-world canvas{display:block;width:100%;height:100%;outline:none;pointer-events:none}
+/* The canvas owns the pictures. These finite composition veils protect the
+   invitation and conversation without compositing a counterfeit 3D backdrop. */
+.daw-world:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,8,19,.52),transparent 48%),linear-gradient(0deg,rgba(3,9,20,.82),transparent 24%,transparent 84%,rgba(3,9,20,.2));}
+.daw-world[data-view="management"]:after{background:linear-gradient(0deg,rgba(3,9,20,.18),transparent 12%,transparent 90%,rgba(3,9,20,.08))}
+@media(prefers-reduced-motion:reduce){.daw-world{transition:none}}

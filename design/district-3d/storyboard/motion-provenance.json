@@ -1,0 +1,3599 @@
+{
+  "at": "2026-10-18T02:32:31.784Z",
+  "purpose": "Moving line-art blockout of the approved edit. No product/provider/work session.",
+  "fps": 24,
+  "totalFrames": 576,
+  "seconds": 24,
+  "uniqueFrames": 576,
+  "bounds": {
+    "x": -1494,
+    "y": 10,
+    "width": 1452,
+    "height": 848
+  },
+  "gpu": {
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "encoder": "h264_nvenc",
+  "errors": [],
+  "scratch": "C:\\Users\\Admin\\AppData\\Local\\Temp\\agent-bus-flow-board-EnpOJJ",
+  "capturedCanonicalSha256": "98f53e7d19e703d4dabb6728834ec35ef649ea9da3dfcb6bbd382fe6fd31689a",
+  "deliveredCanonicalSha256": "ce5f1136e803d4b054ca0b7aa592370023ac731ae55d516238bf86751143753e",
+  "inputCanonicalSnapshot": "C:\\Users\\Admin\\AppData\\Local\\Temp\\agent-bus-flow-board-EnpOJJ\\canonical-at-capture.json",
+  "cameraPlan": {
+    "fps": 24,
+    "seconds": 24,
+    "frames": 576,
+    "video": "motion-blockout.mp4",
+    "ready": true,
+    "style": "GPU line-art moving blockout",
+    "scope": "Camera and subject blocking only; same approved edit and no product/provider work.",
+    "uniqueFrames": 576
+  },
+  "inputs": {
+    "design/district-3d/storyboard/flow-scene.js": "f25c6a339e8ab938e16c9258f3d4943cfaa833a72321b84daa14474889812abf",
+    "design/district-3d/storyboard/render-motion.cjs": "8e9cf3307d2df3ffd1078fdbfa1086b56774a03492f54162437bc3de2068ddea",
+    "app/assets/district-v2/district-world.glb": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc",
+    "app/assets/district-v2/district-host.glb": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037"
+  },
+  "movie": {
+    "file": "motion-blockout.mp4",
+    "bytes": 18159644,
+    "sha256": "489051716d1eedda5164675e14a6430323893b083586d923365fe6f1a5e3c418"
+  },
+  "shots": [
+    {
+      "id": "S01A",
+      "start": 0,
+      "end": 0.45,
+      "firstFrame": 0,
+      "lastFrame": 10,
+      "hashes": [
+        "6b61881f30c79b9594ea490956d41d55b23bc38935037df1a0abbd45b124fdfa",
+        "b8494eb7fca31e0d58b0dddeed93f1934e3c856bb0d343ebdc6db9bd3351e4f3",
+        "630fe8bd29dd14e86fd354c7fac97fd674f832676a84ebf46f9110f8738fa95f",
+        "7516300ab6df515c8c8894afd14d4b80798a9cfe699df35b7bb36fd706327a46",
+        "74f47aa2d026aa2ae4b8c971b1fb72f931538ecf33e28d9b9dc508eab059dace",
+        "a2d005475befe66294bf33afcf8f032f704c26115ce1574731009302ab951821",
+        "642255e237673b379b8847bdec7fa06064aa131683d40b855699b98c2bced34c",
+        "329c04ed769c3b551c8bf302715e168480706730c43862be4d88973898f06e54",
+        "d5f386e2801f42a4e070e5fabc6e9cfafd75128a80c7df84ece23e9cc2b45e78",
+        "36f4ad826cb3febede45423069ffa02c15ea022dba13990e42597763c3789ef8",
+        "5d383f1933ced0fb601c196e3c21d3e102e4f0eba48adb9a00f44d75713cce12"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 3,
+        "frame": {
+          "shot": "S01",
+          "phase": 0,
+          "progress": 0,
+          "seconds": 0
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 368,
+        "triangles": 182328,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.1,
+            5.1,
+            14.7
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          3.7412968516224763,
+          2.397272776787931,
+          13.3245654646001
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 265,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S01A",
+          "progress": 0,
+          "seconds": 0
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 13,
+        "frame": {
+          "shot": "S01",
+          "phase": 0,
+          "progress": 0.9259259259259259,
+          "seconds": 0.4166666666666667
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 368,
+        "triangles": 182328,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.078344256464969,
+            5.095078240105675,
+            14.64684499314129
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          3.7412968516224763,
+          2.4185794268032357,
+          13.3245654646001
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 265,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S01A",
+          "progress": 0.9259259259259259,
+          "seconds": 0.4166666666666667
+        }
+      },
+      "firstSceneHash": "cf0f96d7580193f683c0788d24144cd8f62e72c690c83ceea1067361eb7aa58d",
+      "lastSceneHash": "b85667ed60ed4bff8ef06bed1b4917a55c3d7976736291c934341a965a137e04",
+      "uniqueFrames": 11,
+      "cameraTravel": 0.05760772259568904,
+      "subjectTravel": 0.02130665001530474
+    },
+    {
+      "id": "S01B",
+      "start": 0.45,
+      "end": 1.2,
+      "firstFrame": 11,
+      "lastFrame": 28,
+      "hashes": [
+        "0980ef7a8d4aced53be0eaf27266b49d16c5dddba37e084122d7c125e2d57e73",
+        "252115fbaf3f5dd8ce9e1ee98dc0eba5577982b944cb87fff46ecb1dbb8894b8",
+        "be23c82910f55d3bdf311a9ce658708835af0dcdd73880e0f3117b0240de77f8",
+        "83df1143b73403c81c1ccb7afdca8de9adc621fec3a47ea67b231f963a3dba12",
+        "fc37b7f4681861d3bb3d789588659702a061a7040ff7df9521403d7820adf3b2",
+        "ba56b0b017ccdc6c2ccfaf6869de5a0838486287240ea9e07f7e6a6bd76ccf9c",
+        "14ecc11ae23841d64c57b91acee7bdf9cc95d2b1fd6fdbab1d07c117f0b3ed63",
+        "0fc039840acff7d1aac3021e46910c88637cabbb85c0684fc996eb634ac14341",
+        "748f77fb8a1baf50a1da8c7541cc8abafc47c63dcf2268bdbbc7b53e0f16bcf1",
+        "11bab524181900122b612df4a906217b794dcb07e968a08011754cd320a4c49c",
+        "d1d1b824ca19dde19c1d33dc2f03fd94f6426df77e8601fa45f770153c5b87b3",
+        "1f5315e315c07ee7c4c9c8ec0a4d7f2549009e0e60e1f95fb4493fc0c001cc22",
+        "ef0dbd52c269b2f370c9afa0ee98742bc20ae9f4ad792116f0e8fdcd6c6de3f9",
+        "8c2e6a498f135ece29faccd2863c4a5eba9b37c670e3d49aa804ef8c123744eb",
+        "4fff28602be823adff8aeb3a86cddc24d1068fddad5dca59fec8b292b4dd0482",
+        "465788b213fdbb7f71e6e8f6d4c1f32ce4c2b1351a080a56eee1910a2f34c372",
+        "b1b038637d140545b7bc321bc242dc78cd17d4ade3c8966df4ae910315e256ad",
+        "ed89e8acb1ab364ff9eab60da71a00c46208f49a9b450b7b69447d231088c1df"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 14,
+        "frame": {
+          "shot": "S01",
+          "phase": 1,
+          "progress": 0.011111111111111072,
+          "seconds": 0.4583333333333333
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 450,
+        "triangles": 200796,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            9.099926474622771,
+            5.442468751714678,
+            20.199852949245543
+          ],
+          "target": [
+            5,
+            3.6999999999999997,
+            12
+          ],
+          "fov": 44
+        },
+        "packetWorld": [
+          3.78612688861947,
+          2.531225211034053,
+          13.53851013721814
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S01B",
+          "progress": 0.011111111111111072,
+          "seconds": 0.4583333333333333
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 31,
+        "frame": {
+          "shot": "S01",
+          "phase": 1,
+          "progress": 0.9555555555555557,
+          "seconds": 1.1666666666666667
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 449,
+        "triangles": 200028,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            8.901150068587105,
+            5.35798877914952,
+            19.80230013717421
+          ],
+          "target": [
+            5,
+            3.7,
+            12
+          ],
+          "fov": 44
+        },
+        "packetWorld": [
+          3.78612688861947,
+          2.5419555114256682,
+          13.53851013721814
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S01B",
+          "progress": 0.9555555555555557,
+          "seconds": 1.1666666666666667
+        }
+      },
+      "firstSceneHash": "a2ee7fc0cb8b506fcec8324d24037dfde14ac41f76d85045b293b37dec711f09",
+      "lastSceneHash": "b06c8fa8907916151f2f697ee60bc80d2a93af3da5a7286e21419f3a73796968",
+      "uniqueFrames": 18,
+      "cameraTravel": 0.45243470661178253,
+      "subjectTravel": 0.010730300391615266
+    },
+    {
+      "id": "S01C",
+      "start": 1.2,
+      "end": 1.9,
+      "firstFrame": 29,
+      "lastFrame": 45,
+      "hashes": [
+        "fcf79e00a66f0268042a6bf14d2c9839d3c7a9a395f207dd8064c4beac6f024e",
+        "37bde31778435280b0f05a4dde15b6aea5b8a4e7bba97b2c2d27a4686fd39990",
+        "4bb449b6d446a072a4fa22eae76cd679ca9993d72d99f25caae8585f62521532",
+        "c6eb76e292ef89bf0e80fba696cce54dc9766045a76c146e55a52e1f79fd7bfa",
+        "832ecdb1683595db7b4102e0e193be4c7c4323f79539ea89b457421e3e64c228",
+        "c96fe0c4ec9dc6b160523a1df8a27f9a19100ebe1165a1415f06b5153b527d41",
+        "7a7f6d0a905b642660e72a021d765f0c20b6cdbe0eac179eb46dc854e51af704",
+        "f63c866e79a1bb2ac609e21075f73f28066054b83bc13ac6b6b4d15b125dcfef",
+        "4ddc4f9440afedb041f086e952cb0976fc3ffe8c063e66b1714e2c8c6279da03",
+        "394d78cd8e548f01a3d4a12af02905bfb768e056481c51251973c56633134b13",
+        "87e9050013d1d67c4fd52aa0d17529463490689863e054008000f9fe2e74fc61",
+        "e74ee1f5e1d6fc94c0c724069b12d0c7e8935c27f3358b64196270ce2d4de648",
+        "74cce07af4456c1b9adc65c0233123d12ba4bf21eea8afbbd6826430d360fbd4",
+        "b0daad1f686c984a3c57e275602d4caf377fb0ed8fea6b477b30f8aba2b1e30c",
+        "c86fbcc57769216fb962367c88f9c9dde3b584375d2e1e7e30f43e115367a78a",
+        "41f867e270dc47073e5b8d2cdc7863736661e77bcf7ba48bc6274f9dceb87d25",
+        "7c3f149df416ef9d2ced13abbe92d63bd8f0b851e328afe76bd3e81700e56bd0"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 32,
+        "frame": {
+          "shot": "S01",
+          "phase": 2,
+          "progress": 0.011904761904761862,
+          "seconds": 1.2083333333333333
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 391,
+        "triangles": 188932,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            4.824978910214879,
+            4.609991564085951,
+            16.347459929408274
+          ],
+          "target": [
+            3.8,
+            4.199999999999999,
+            14.4
+          ],
+          "fov": 38
+        },
+        "packetWorld": [
+          3.7693321445921835,
+          3.7261064785070506,
+          14.370802817555118
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S01C",
+          "progress": 0.011904761904761862,
+          "seconds": 1.2083333333333333
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 48,
+        "frame": {
+          "shot": "S01",
+          "phase": 2,
+          "progress": 0.9642857142857144,
+          "seconds": 1.875
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 388,
+        "triangles": 188368,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            4.775186771137026,
+            4.59007470845481,
+            16.25285486516035
+          ],
+          "target": [
+            3.8,
+            4.2,
+            14.4
+          ],
+          "fov": 38
+        },
+        "packetWorld": [
+          3.78682452254782,
+          3.954422056072209,
+          14.405987486357311
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S01C",
+          "progress": 0.9642857142857144,
+          "seconds": 1.875
+        }
+      },
+      "firstSceneHash": "be7d4d83b112421cc97ae66db37e9838572080b64a878a2aa56968c6be879056",
+      "lastSceneHash": "9d96b63b56ff5f38c288a796e61b36b5cfc134d91f1ec1a658713da5ad3ff9b0",
+      "uniqueFrames": 17,
+      "cameraTravel": 0.10874767323273397,
+      "subjectTravel": 0.23167206815707164
+    },
+    {
+      "id": "S01D",
+      "start": 1.9,
+      "end": 3,
+      "firstFrame": 46,
+      "lastFrame": 71,
+      "hashes": [
+        "755e3d1bba531f121ad415a5ee9d251bd35e02116c7a78f26ad3d0b91505515d",
+        "7abdbe0b0a0663cc80a27f3da1570b432d004d1c465200db440d342c97c865de",
+        "2b48d714ade214b35f15b13673a4159451eb1b8aeaf4d32845fc065ea9ba76b4",
+        "06777acb71e6cc256f4c7d099739280706274ffe2c926c2ae8b6c8ca33281b16",
+        "fd09e2ba4a4da23c398f4b40320f4436e9867bf4984d9e4468bc02ccf7d21ef0",
+        "908c758f093dc4c274c91897dc30d46941eaf352d833fa0e5474878d8e423739",
+        "c1346dcc47f7c2634d5aff84a1e5b1a6e8f232de42d4d25dffa321c19da2149b",
+        "7842d6369e643b2df861b81f9bf44814fcab4bfbb25349d1331125806eb60f3c",
+        "0dfc53861ffcb8a133da990aec08bdc52444ff985d5f21012f1278d7c25f1e3b",
+        "a2d24a7e1e0bb94f3b2f30b5c81720c1fdd3cbf22edeb115f6f1c691772c5f58",
+        "77084ec2bf01d4dc6fabee678dee8b6981541bfd7b782afc37bd485cc22d2dc2",
+        "54c545ddce5c8e4b54f28cad6bbbe7c7653e56f693f333934f15ae4758cd5b9f",
+        "1c61d3479fb45699c699d98e26e40b8576bf12bdc9fc7abbccf669ef1dfd7542",
+        "382b80e5e20262626265cde6f8d424ce573959431f976b26fe62f5455086b072",
+        "70df10e2af9be3426d5276fb1faa16f3bf2b9c52f86276839915ff0c59d8b446",
+        "5ca33f22590e4bf953f31098b29b069d3a116648ce66b2066aa1ff2f036f3104",
+        "dcf207f8a0d4f0ada18dd4040365105735b7d8e798c7ee2b6a1aef4a030525f9",
+        "f3cbcd1133f9f671a0da38591cd145f342ee151606c6e45ffc7362b453de84ab",
+        "7eeaf7cf72c2096bd382dc503b7bc1e2008ccb1ac906a96190bd266a4215c528",
+        "26c063cf531e039721b4462b9a14ed8d45fbcde3accdb2810ff4111eef8ca41c",
+        "9e3bfc64549c430fa81751bcefa73c4793f6e23ba5a0414bffc0399cb3cc3bb9",
+        "0a3ca652af16e6a352f1b9ecfd785d76397935f5461e7bdf28bc7832638d3543",
+        "1e7b5dbb1b2257f77526050e6f343eb18f93b4304a8bbdf7ff160fb3685755e7",
+        "f6e103ec39e0a3720cc581cab154e49842577b1e101fb59b13dd11c508b914b6",
+        "d6f97f38f10856b2141f6336003249d777363116fbeedaedebfa433536a07afc",
+        "95547b5420a817f05ea6a9ad5a981f95b6e202acb43be4f5320c369e60a0ff61"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 49,
+        "frame": {
+          "shot": "S01",
+          "phase": 3,
+          "progress": 0.015151515151515298,
+          "seconds": 1.9166666666666667
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 450,
+        "triangles": 200796,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            7.737176169407573,
+            5.669904555193812,
+            16.629413696190554
+          ],
+          "target": [
+            -2,
+            2.8,
+            -1
+          ],
+          "fov": 60
+        },
+        "packetWorld": [
+          5.622697190107893,
+          3.98101351092411,
+          9.374206384179717
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S01D",
+          "progress": 0.015151515151515298,
+          "seconds": 1.9166666666666667
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 74,
+        "frame": {
+          "shot": "S01",
+          "phase": 3,
+          "progress": 0.9621212121212123,
+          "seconds": 2.9583333333333335
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 443,
+        "triangles": 199896,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            7.264492962510783,
+            5.530587399476862,
+            15.773608311072154
+          ],
+          "target": [
+            -2,
+            2.8,
+            -1
+          ],
+          "fov": 60
+        },
+        "packetWorld": [
+          5.622697190107893,
+          3.9415200318830568,
+          9.374206384179717
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S01D",
+          "progress": 0.9621212121212123,
+          "seconds": 2.9583333333333335
+        }
+      },
+      "firstSceneHash": "ee64169fb636127e60c6fc4a8f5199ce35cacf4317ee9c529195ca7d6361d843",
+      "lastSceneHash": "fd62f60aacb22a44e50c2cbb016d10d59457ca00af72e70c98c7444705a85791",
+      "uniqueFrames": 26,
+      "cameraTravel": 0.9875431844516709,
+      "subjectTravel": 0.03949347904105327
+    },
+    {
+      "id": "S02A",
+      "start": 3,
+      "end": 3.55,
+      "firstFrame": 72,
+      "lastFrame": 85,
+      "hashes": [
+        "c8685430432eb62850abdea9eba78a148a188b72da681bb71dcdd19e3c974338",
+        "e154f91310d4fdd3c2605491205946978575c3a872decd114a18734fe1c25cc0",
+        "29e6817065e8cb497a4921e66bd6b7d6e640fbdf9d0b016b4668fb9fece84113",
+        "46f1e4aac4edbce0ab3a62f556b87412ff44b1989300ccc8a42c92d45af5328c",
+        "31f0b16b6601f727423a211f7f87041090a538d2d770ef09434689e6d2d64468",
+        "2acfb06276164f54782826bfbf7931d19e46afdab6b333965ebd1c8e48986081",
+        "36a43c0af776b6c5ff2b12f985cc46ee20c0bdbe3a44e4e1d9b3856153b71b1b",
+        "8bc8c09261787cde05e2d08fc9c78fb1f43e90ce1b8417e27150634fdbbbb3ca",
+        "57a4ee47e898710dda3770c548ebb35bc8a97c0cb7d5eb073fb69590946db486",
+        "217b8a39d835cabc962760823a7d324b8014992c5fbe58ffd496481901c5cf3a",
+        "a2bce424000e1ee796e8d83645ede08e0208b93963a2dcb9535e7109d9b75b85",
+        "9f661615cae894253762c4bcdeb88771ba84cabef502615711f08bd2ef079ea7",
+        "22fdea32cec2efc5161349e17680fc93c4711be396452c02c3f2dc7499b384e8",
+        "f090734330ef55b41b9548cee51975ffad21481a818d4db05bf1c760e82d58d6"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 75,
+        "frame": {
+          "shot": "S02",
+          "phase": 0,
+          "progress": 0,
+          "seconds": 3
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 349,
+        "triangles": 182360,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -7.515000000000001,
+            2.73,
+            -2.2825000000000006
+          ],
+          "target": [
+            -11,
+            1.5,
+            -7.1
+          ],
+          "fov": 48
+        },
+        "packetWorld": [
+          -11,
+          1.25,
+          -7.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S02A",
+          "progress": 0,
+          "seconds": 3
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 88,
+        "frame": {
+          "shot": "S02",
+          "phase": 0,
+          "progress": 0.9848484848484849,
+          "seconds": 3.5416666666666665
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 348,
+        "triangles": 182108,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -7.684884102735342,
+            2.670040904916938,
+            -2.5173397890753266
+          ],
+          "target": [
+            -11,
+            1.5,
+            -7.1
+          ],
+          "fov": 48
+        },
+        "packetWorld": [
+          -11,
+          0.9002386120154715,
+          -7.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S02A",
+          "progress": 0.9848484848484849,
+          "seconds": 3.5416666666666665
+        }
+      },
+      "firstSceneHash": "db551c41d158c1261a499dab28583d3262409bfc90247efc846f347c70974d42",
+      "lastSceneHash": "9172aed64e2fa5142cd526026fbb44c62cbd1189aa0fd0bd358c0c0ab5f96e03",
+      "uniqueFrames": 14,
+      "cameraTravel": 0.29598214131652506,
+      "subjectTravel": 0.3497613879845285
+    },
+    {
+      "id": "S02B",
+      "start": 3.55,
+      "end": 4.2,
+      "firstFrame": 86,
+      "lastFrame": 100,
+      "hashes": [
+        "db693df60fc1da5781cca64881705e7b1e64d2fd9bea2b16183baea3f7f51637",
+        "3e765e14d405916d060a7a398261e1480db212398bacc416aceb8602915b7379",
+        "6bb75c32df0155c13508f7ae4e8aa3cab9a4e2351162279a63bd9978113c7128",
+        "b2e366cfb0fdc887217d4c34ccad980c38f9069fca4b9f1b991a883b7a287a4f",
+        "402d94deb017084bf6fb1d96dbce741053ca07cce2c2efcef822b839e28c6dbd",
+        "8a2fd9ba6b5a982ac51c4a72524291ef45dc8850793ea410dca95143381438fa",
+        "20b6c7c5edcee40f0359842a7c283c498553495707810fc644c85de47d4995ca",
+        "318ba83c5e404ea54c2f3c876f24319da87a9206e3b549140c332b7c24b5096a",
+        "03fd38e7142c3afddada2925f8c03bb5f9e0ad5acbb80a3408bce1cf9d75d2b4",
+        "56074dcad7de76df07d0c98247afd38f142d7f185584ee6335d061ba8ce9089e",
+        "a3d35800c092f13d8def570a6517d6a545f972c3daabb591ac7b1ffbbd6bc1aa",
+        "52601ac70e06b487edc13a8f02f768c0a5d2fa8a525e0fde4b0963c3aaf3abb6",
+        "ca8e263716e3ea40474c309e10e938de2888e31392b3a12abc4b45cfabcd976f",
+        "a4bcfdb9e6d5f35bca78ecee4ae1fed1d33994ce1cad9527932d2ecee0dd6d48",
+        "009c52a130aba1a072fe3c986c33583e2267b37d397ba3ba24bc4731d1a8d99d"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 89,
+        "frame": {
+          "shot": "S02",
+          "phase": 1,
+          "progress": 0.05128205128205175,
+          "seconds": 3.5833333333333335
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 328,
+        "triangles": 174992,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -8.95076198182707,
+            2.4196952072691715,
+            -3.9236810718319597
+          ],
+          "target": [
+            -11,
+            1.6,
+            -7.1
+          ],
+          "fov": 34
+        },
+        "packetWorld": [
+          -11,
+          0.9,
+          -7.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S02B",
+          "progress": 0.05128205128205175,
+          "seconds": 3.5833333333333335
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 103,
+        "frame": {
+          "shot": "S02",
+          "phase": 1,
+          "progress": 0.9487179487179489,
+          "seconds": 4.166666666666667
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 327,
+        "triangles": 174872,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -9.04923801817293,
+            2.3803047927308283,
+            -4.076318928168042
+          ],
+          "target": [
+            -11,
+            1.6,
+            -7.1
+          ],
+          "fov": 34
+        },
+        "packetWorld": [
+          -11,
+          0.9,
+          -7.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 306,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S02B",
+          "progress": 0.9487179487179489,
+          "seconds": 4.166666666666667
+        }
+      },
+      "firstSceneHash": "a5b11e3ee3f0a6dc3bcd39a2545f28191a7fd62f6a3cfce167769325fcb23b0a",
+      "lastSceneHash": "1cecfb73263c2e7c11d5211a908df00187b1db84f83a323a8b50042c85814966",
+      "uniqueFrames": 15,
+      "cameraTravel": 0.18586944256323656,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S02C",
+      "start": 4.2,
+      "end": 5.4,
+      "firstFrame": 101,
+      "lastFrame": 129,
+      "hashes": [
+        "348e5d771c0ea1b8ac251f7f13ae680d1dbb21a74add8edf9cd86ed85ded3bad",
+        "d82c7c3a7020331d0c42fd2d1f3d450590db822c8b9b552e4b3576dc9e04ff4a",
+        "97f1379048125c592219b3ce6c6561c39e4f23cd0a024fa41538d9eae2382247",
+        "0ff325dd5e878915e08104fd9dfdecd0b4c4de713cda245962897c50684d8d0f",
+        "84047c04d53e779dc3fa8f8248375d4e4e0b547ffd5a80ec742a0cb592a8ff86",
+        "389ddb32ce392f03aaaa0d028b08e548bcd11ee9348f1fefeddb6293100d4a2c",
+        "4e24272214ce082fa5069e66cb99b810c29bca9f292cc005cbe5efda9be5c14d",
+        "19de74cdab52552bc8e42867d5db22b76db422a7b99734d1509743382d92d31a",
+        "a9f9bf63e2662fa7057e27b44351264e979cc80649dcd155540c813ccb604e33",
+        "dd9a529bac0fd538bd8f6b612c2b9b8de0e1836776d103bfb02e95df18c253d6",
+        "f9a78580a65e09783bae970775e1e6e05a412ae35d83d3534158a2e9bb0f361f",
+        "688ce2088e406e32d7ddc1ee3541305728cfd46c00819223633154dbf6a1b09f",
+        "32efee67481babf2bf0cc2e1536e33aca62d5043445e3c8b3288510936abb045",
+        "e88068e5d9cd4f22862f0d06ada4700cd878372e36101f0b166d1a2b99fd8ad3",
+        "9e07963dbe69f757929686a07645cd0b3db5af1061e9a1cd3d5a2c7763d13cfe",
+        "c20b4c1a5ad1545a47f87c3761da99943936a86f7c41ee2a2d10c86b91b5d2cf",
+        "7920afd00f9923460f56baf7c560783f6b15b9089f3b7f7464bf4ef7df893d08",
+        "a93e71658b4a37ec2970e7e9e00007bdf2c03273214b16860cc02b4366e44166",
+        "10c164c1b2a3924a841be540c4ae5282ab58920544de5831fa70c57c21be788d",
+        "9ac23b2f45a54168ddc143c2b4c6a14d6013448c0ff27626e6ddc3200a0dc1cd",
+        "054785c4b5704b5c353b078e962122e48dbc8ceed91873ed55cda5b66e1ff1e0",
+        "45dd8b4c66451e582b9e7672159797536e0c049a1c4911c106b46f9231b251e0",
+        "10a3fcb314a6a22530866845ec468d2e7712489391a2dddb53cc2eb846bc3bbe",
+        "d532b869f4b6dac44971458f078f97810728c7ebc8efc612d37ea8b2f6b33ff4",
+        "6869fba56c3c5584ed4d9761d22ad8eb2aa241b04111a842f3d15892bbebe130",
+        "24719817bba70f2c63f011ffed55be39f784fbda1c02b6f3d9ce9fd88db65884",
+        "05ff5177717eb1cd72b97b55ad61a06d154ce2d860fcf96bf6cbfabb47964747",
+        "5270a591b9538e0710025d2d1d056e0173cdb5fc8eef4a729a947185b91f0703",
+        "a6d3209928593dababa8a0f1839778c7c95f61c9fe2b3d4722dbef8924956d22"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 104,
+        "frame": {
+          "shot": "S02",
+          "phase": 2,
+          "progress": 0.0069444444444440485,
+          "seconds": 4.208333333333333
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 440,
+        "triangles": 191812,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -7.299337571802126,
+            2.5,
+            -9.259867514360426
+          ],
+          "target": [
+            -3.299337571802126,
+            1.8,
+            -5.759867514360425
+          ],
+          "fov": 58
+        },
+        "packetWorld": [
+          -3.3083137423346907,
+          1.7234728303450995,
+          -6.564748467210291
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 328,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S02C",
+          "progress": 0.0069444444444440485,
+          "seconds": 4.208333333333333
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 132,
+        "frame": {
+          "shot": "S02",
+          "phase": 2,
+          "progress": 0.9791666666666664,
+          "seconds": 5.375
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 414,
+        "triangles": 185356,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -2.7059063946759263,
+            2.5,
+            -8.341181278935185
+          ],
+          "target": [
+            1.2940936053240735,
+            1.8,
+            -4.841181278935185
+          ],
+          "fov": 58
+        },
+        "packetWorld": [
+          1.2851174347915093,
+          1.7173777350596109,
+          -5.64606223178505
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 328,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S02C",
+          "progress": 0.9791666666666664,
+          "seconds": 5.375
+        }
+      },
+      "firstSceneHash": "6ed9b71ec096cdc2de18310d55dc1f6c0182b5034990abcf69f4d2c6a36aa18f",
+      "lastSceneHash": "1208dd567c9fa6d7ca10d87d7b831f471970bac40e2af7f38ff62f20261bd258",
+      "uniqueFrames": 29,
+      "cameraTravel": 4.6843990413023935,
+      "subjectTravel": 4.6844030066104825
+    },
+    {
+      "id": "S02D",
+      "start": 5.4,
+      "end": 6,
+      "firstFrame": 130,
+      "lastFrame": 143,
+      "hashes": [
+        "4f123db1ad2aea70b1f4943a03d09efbbcfcf9f38468cc7c2084ede2187d9200",
+        "7c2cb1a41e8643e43a0bbfeebeebe52966d77411ce6e1d294332df94e7a3558d",
+        "cd09444be7c49045f86134da7b2b2bb0951ec9a2293e5cb77a55c86f0e4a8512",
+        "92d150d829df5b039c83315e09554df5fe4e8e438dcb9d54ffc9b855ad5ba685",
+        "1f746d0461e6e8607eac94d0a46ceac517164da7ae000e157a9a882151a6eeb2",
+        "99530bfba0aa5080b88c2e44d36217b7fbd3bb2a340b5e2a1cfd02293a83491e",
+        "45aae78d5ffebf196380d3da31f7fe9af5e8d7b28c464464289fd23ca758ec5b",
+        "a56759b6ff359573391308817f058c21ed3c160cea268edc9e097eec6558bd04",
+        "65ae7c96e47bb6016915330cd98603731548a7da465138d2206a82f05f785055",
+        "089dfabff6136e5d9ef30cdb97c6e6bcbae53516082f59f589169a61178c7edc",
+        "e9d5011b03a795f7732410dc81fb528ad293bf3298829747721b8884928dd3ef",
+        "76c69f7fdd1f08e9c434b91ae0b028a1846f2e692168dedf5ccd9e2066f48405",
+        "447b5b877c8949ea79f9f8a7c33a04d3505a1a63df4c24bfe48ecb4b5484dadd",
+        "5be4d00e0eb8fe0fe4fea5c7dba6c8bd4ce671787f56033934a90e6bb985fb05"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 133,
+        "frame": {
+          "shot": "S02",
+          "phase": 3,
+          "progress": 0.027777777777777696,
+          "seconds": 5.416666666666667
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 367,
+        "triangles": 182172,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.027829432441702,
+            2.4248864026063095,
+            0.8970569701646091
+          ],
+          "target": [
+            9,
+            1.4,
+            -3.1
+          ],
+          "fov": 46
+        },
+        "packetWorld": [
+          9,
+          1.2993184156378603,
+          -3.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 328,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S02D",
+          "progress": 0.027777777777777696,
+          "seconds": 5.416666666666667
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 146,
+        "frame": {
+          "shot": "S02",
+          "phase": 3,
+          "progress": 0.930555555555555,
+          "seconds": 5.958333333333333
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 365,
+        "triangles": 181188,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.170499319487311,
+            2.375689889831962,
+            0.7051905703446504
+          ],
+          "target": [
+            9,
+            1.4,
+            -3.1
+          ],
+          "fov": 46
+        },
+        "packetWorld": [
+          9,
+          1.0041393389917699,
+          -3.1
+        ],
+        "projectWorld": null,
+        "memory": {
+          "geometries": 328,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S02D",
+          "progress": 0.930555555555555,
+          "seconds": 5.958333333333333
+        }
+      },
+      "firstSceneHash": "e1276acff90bae0599e0844f0a013016d8d84173717cf928694051dacf73a31d",
+      "lastSceneHash": "6c8907feaecdbb6f2cdb816fa1813b1a87edb0ec796fd16e9198e841c45c38a1",
+      "uniqueFrames": 14,
+      "cameraTravel": 0.2441059379012228,
+      "subjectTravel": 0.29517907664609044
+    },
+    {
+      "id": "S03A",
+      "start": 6,
+      "end": 7.1,
+      "firstFrame": 144,
+      "lastFrame": 170,
+      "hashes": [
+        "6ca9df4b2170e7f110259983c5884426d5b5f6eef0e91ba531299f6b7f5954f8",
+        "4ab569423a38c85a66aa8bb815fe888ca645574653b5907b48bea8fadfe77efe",
+        "0b130f0397c810912d64cc43db1288519cb68664def2ef76ec93e300dbb8dfa8",
+        "5963025890283a70d9d8ece29819a80b728af7097bccd3b7e189c3540d33796c",
+        "2afbda2e84aba6c2ce18988d5fced90ecdddbc517fda2c78905a52f2870d2f3a",
+        "4329552bd2bb7f2ccd8597cc4dd91b0149175cc80c2a998bb45b4cd2109057eb",
+        "862514d6f53f26267e3e1f1f664563f01a2b1bd27a2667be88fbff22dcb628d6",
+        "18e0c830dd7808a780a40affba3ea4f228fd853ffcd876228de212f0b8b8a13b",
+        "841139bce2ab301b08f4780390d27b410298efc1268bde853a70a2887a99e0fb",
+        "d88f8d8e94c85b1264627b7ce56426003b131542199a05b025a6d9763ac9fd84",
+        "a41cdffceed0125695edb6e5d5aa81c45990271f28a30c5b8453e2aaf4860c24",
+        "2c1bca5fad892de53dad33f395211120d1856a76139f1229d422fad1f84f1afa",
+        "1c6d535bfb3155a93145775739c88afa311262488d5ae857916903638836154f",
+        "bb6e9c7da0a9ee87c28f612bffcdfe20168299f16f843ed35c604f2ccef92429",
+        "c9ecf9e8c69f060a8f3ace5eccde5dd7d22de206e66f6253854dd0ba0f9628cd",
+        "64aa3e84a6b473ec1162e3483792e8ea7f620d26c44ce177ad7d65161a823aae",
+        "8f2d79194838b31ab3597bd1a61953bba260e7b0a935cddeed1b2075c349ceac",
+        "4525c590edafa60679bf44d8932e47f2e69cdda3b774100a5aadba26fd2e4f86",
+        "73124ca5d2051d74485cc35ba7886da2bdaa1d6f0f6c4727822797eb09653984",
+        "95f04318e638cc0a62cf4d7b83681a2cd14c82f5a7eca40df76f3cca9b096a74",
+        "ede208da974869175e43c0e51c84cd9c399cf2c10a4cb6364b4a3ecd633b0f51",
+        "9eede7399668e53a77b8a0debb8426e2ce81650546df6f882057d2eaf7743259",
+        "356c05a91795ca71b05a199d643eefcc13d81b4f67dd7987221e7b924df1e863",
+        "31e99854461d51943b9f1057c50b1fcebc4e547dc6b7f12dadb9208240d2d6ff",
+        "114cf096390e297fa8bd4b1c8bc5f5b0a6d8b045bc4ff0cc9a81da2f79c9b1f5",
+        "a5294c5bf7139bb04107da625885507cb36379467b92188734e27b203dbd80d4",
+        "dc818aa456f803d667d7b5413ba432348fd32e279abb523badf6da754c298196"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 147,
+        "frame": {
+          "shot": "S03",
+          "phase": 0,
+          "progress": 0,
+          "seconds": 6
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 331,
+        "triangles": 119616,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            3.6999999999999993,
+            1.8,
+            2.836
+          ],
+          "target": [
+            9,
+            1.8,
+            -3.1
+          ],
+          "fov": 62
+        },
+        "packetWorld": [
+          9,
+          1.25,
+          -3.1
+        ],
+        "projectWorld": [
+          9,
+          0.9,
+          -3.1
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S03A",
+          "progress": 0,
+          "seconds": 6
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 173,
+        "frame": {
+          "shot": "S03",
+          "phase": 0,
+          "progress": 0.9848484848484849,
+          "seconds": 7.083333333333333
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 329,
+        "triangles": 119604,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            4.299590950830622,
+            1.8,
+            2.1644581350697045
+          ],
+          "target": [
+            9,
+            1.8,
+            -3.1
+          ],
+          "fov": 62
+        },
+        "packetWorld": [
+          9,
+          1.25,
+          -3.1
+        ],
+        "projectWorld": [
+          9,
+          0.9,
+          -3.1
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S03A",
+          "progress": 0.9848484848484849,
+          "seconds": 7.083333333333333
+        }
+      },
+      "firstSceneHash": "83336ae37a6e15ed5284a29add5ce8fa76659dd4283bf834513c6fd0bb0e91ec",
+      "lastSceneHash": "d170380fcf6748b35b5fb5e1ad90cc6d769a574f34f97aacae94f18b5383cf29",
+      "uniqueFrames": 27,
+      "cameraTravel": 0.9002653967980936,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S03B",
+      "start": 7.1,
+      "end": 7.8,
+      "firstFrame": 171,
+      "lastFrame": 187,
+      "hashes": [
+        "e2ff7062f74c3b4ec9c1c88fb34988ca5b7d832e2d3fb60c7ccb3abdfb917fc7",
+        "353eabd0cde8947897ef8ec14741e52d30bb40d10cd55df0030c0b0374c3b051",
+        "3305594e2bcdc7dcc94fe33f5dfb7ffdda68f0df3d323ea11ec1e305bcb66547",
+        "62faee31842d09c76c16a7e275014070304450f1c6e936f03e76c697b12462e3",
+        "e6bf0b32c5101cf05ebd1dc38e11299c5bc539797629fa548e91831b2f5ea922",
+        "c22b07f40e4bcb3c6a0be34b3be4fe99f4621b365497e7082b2f2596d15ddc6e",
+        "e49cf75e5bd7d47766f8a509d649f4f58ef019cb2a534f2e37e69a07e7915831",
+        "3383e419e93bcfe8ade02412924a6f0a9215c755d3b53c922d8cad55ffe874df",
+        "b5a22a315881156f614473f2e609b609df860f9664feffb97ae584668666854d",
+        "9937d1c746798157eca97861b38984addea83e70464089b9efce07a73652ea2e",
+        "433c65cefdbda198f56faebea2677ede3b092a2467a994d78b4df2e0ad9c8fd5",
+        "fa9ba3f8d1f45ed9714e6c2e178149adddb423a1417adbb16272125207118443",
+        "c9ef1d88722f7bdaac8f7940d35dbeb93645c7d3b1675ffaee4531a61ee404fa",
+        "2bc7d00add8e926de7a78f96375c6acc21cfbf7fe3c2f86b87ded63505857503",
+        "c2e42e591e02fa4b373a8094b4b475a70ccc5b5b5ba6d0bf4ed32cd416296a9d",
+        "abe4b2d452a5c19cebc3872f8e4ba9450716e8cbf8e7c4036968d166ba32107e",
+        "d6f59b7df482d3c9d70d13d0e9e21c327425e5858147ae51ed74e97d5d3d8a69"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 174,
+        "frame": {
+          "shot": "S03",
+          "phase": 1,
+          "progress": 0.03571428571428621,
+          "seconds": 7.125
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 292,
+        "triangles": 111692,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            8.18014941690962,
+            2.619850583090379,
+            -0.33300428206997085
+          ],
+          "target": [
+            9.000000000000002,
+            1.8,
+            -3.1000000000000005
+          ],
+          "fov": 42
+        },
+        "packetWorld": [
+          9,
+          1.25,
+          -3.1
+        ],
+        "projectWorld": [
+          9,
+          0.9,
+          -3.1
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S03B",
+          "progress": 0.03571428571428621,
+          "seconds": 7.125
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 190,
+        "frame": {
+          "shot": "S03",
+          "phase": 1,
+          "progress": 0.9880952380952388,
+          "seconds": 7.791666666666667
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 292,
+        "triangles": 111692,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            8.219983128171902,
+            2.5800168718280965,
+            -0.46744305758017474
+          ],
+          "target": [
+            9,
+            1.8,
+            -3.1
+          ],
+          "fov": 42
+        },
+        "packetWorld": [
+          9,
+          1.25,
+          -3.1
+        ],
+        "projectWorld": [
+          9,
+          0.9,
+          -3.1
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S03B",
+          "progress": 0.9880952380952388,
+          "seconds": 7.791666666666667
+        }
+      },
+      "firstSceneHash": "36162276288a1e38a9d40ba4954c78b6473d0c24c0d18c8b185d38e2d575e264",
+      "lastSceneHash": "bb6ccb6ca015102bdf5a1c211f5e908a5f24800729b1115a7f38b621e7a51a26",
+      "uniqueFrames": 17,
+      "cameraTravel": 0.1457643079307716,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S03C",
+      "start": 7.8,
+      "end": 9,
+      "firstFrame": 188,
+      "lastFrame": 215,
+      "hashes": [
+        "cef59ddf22e49f490f992bbcb831ecb42feaf28b79b3fcadd4baa7e0636cbfc7",
+        "251b87edf9e2a6cf46a9ea7c7a6a076a79633156333ca18e11f1fde0492fccc9",
+        "ce2e943b43f00665591d69e76b3423ff2ba9ed3b9e0ecc8cc8651ddff9ef1056",
+        "58e91464f0ccf9b836874d58169c98b36fcd7226d2680f4e2fc7fc794cffb226",
+        "588463d0df014ed7b13f42ef4e964b9d02185ed3af368e4c5b0aa1da17fd0def",
+        "ca037ef6e7e1c5a32a6b21555939488d6e65861b4f2bda78523c7addb9f6ce7d",
+        "abb0f1cd967364aa2cfe92060454e7209690eadf0c9502bbc529274a9bbccf1a",
+        "4ef6525aa44c5b951a6e3be6210b7ea22acc4fe8cb8bea190db8d336dda75f1b",
+        "bff6a427abf94da0abafad2b254adbe87b1f51e1f025df64a1e3151420cc5770",
+        "1c3a224c3d9b28f2679e578ae6dfb7acce61ef1969d994442a859815eb869fa6",
+        "e809738855fc84a6d2bc546eb6395be509cbcad6bd9309fe527f0f5239f5ff63",
+        "57f549b47563f6e59d9aa812e4821c6d9b3dcc4c2a74683cb4f561fec3b63e5c",
+        "6d7746323bc07f172342d62f6b6f2c987200664162d3a96d3faec7e1ce8a4c3f",
+        "9b7da4efb3dfbec79dd0f6729e1e1257acc79878a585c5c4989bbfeff19c985e",
+        "1c7aa370b7ee9195e28bede259b686e0bf5acdaac2dc6376443a332f496507b0",
+        "39c5cd577799ef2a1cb80d9149589c1246d87da1940c313b6e688cfcc7795fb8",
+        "6c82d8a216472e7292df66f32fdae43f5e80b3da530c645cc7d69b7b8bdfa5e2",
+        "f58757b9c037185d6cc4ab4cc3b8d01d6e189634395eb2bb31f101c789ded1e1",
+        "f913713c4ecde183aec0b6067bcbf3d5fb5be1150e856ceec67470e2d526169d",
+        "9d1f54c9fbaaa051f0c5e42d0e950d4f63a74a61773c56e0c1a54169ec20a823",
+        "b87325650fcee74de268c81698c790e618c858f1c39e2180bc3d210baed92502",
+        "8ee2e6922d75d8edc14fd30f0350a4daadaa7ffbd932bec09692dd7910cc28b2",
+        "2760305c03cd65867066da3acd8bd8ea34373672ffe27724c061440bee4ba4c0",
+        "40a9b289b6fc70e20e02b35d06878ea37aa5e966d942d2414d4e3d4b97721bd5",
+        "2bcb6e0a2b537c7fe7f3d82b353c78baecad46dbc8cebcaa2d8aff33f2dfbaa2",
+        "e222f48bcbbf5e0373bfe1b4d2eb8c8a20176d64e3a96363c23b85e9c7507be2",
+        "14184aa1d98a892d34ea8a15827d97f0c9772b8b120ddf2549da03a5806d7bd9",
+        "39803e0d8a7cbd182c4e1396d7b8c6c79a97e0a7f577c911edce1d863e99011a"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 191,
+        "frame": {
+          "shot": "S03",
+          "phase": 2,
+          "progress": 0.027777777777777676,
+          "seconds": 7.833333333333333
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 547,
+        "triangles": 206960,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -21.074659207818932,
+            3.339818244170096,
+            12.594568329903977
+          ],
+          "target": [
+            -18,
+            1.7,
+            8.7
+          ],
+          "fov": 52
+        },
+        "packetWorld": [
+          -18,
+          1.2,
+          8.7
+        ],
+        "projectWorld": [
+          -18,
+          0.85,
+          8.7
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S03C",
+          "progress": 0.027777777777777676,
+          "seconds": 7.833333333333333
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 218,
+        "frame": {
+          "shot": "S03",
+          "phase": 2,
+          "progress": 0.9652777777777782,
+          "seconds": 8.958333333333334
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 547,
+        "triangles": 206960,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -20.925529976048097,
+            3.2602826538923178,
+            12.405671302994255
+          ],
+          "target": [
+            -18,
+            1.7,
+            8.7
+          ],
+          "fov": 52
+        },
+        "packetWorld": [
+          -18,
+          1.2,
+          8.7
+        ],
+        "projectWorld": [
+          -18,
+          0.85,
+          8.7
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S03C",
+          "progress": 0.9652777777777782,
+          "seconds": 8.958333333333334
+        }
+      },
+      "firstSceneHash": "9e26a6c057dfb23f65de979cf1b564b08a3a221b2c9a139aa339a7871cd1e99e",
+      "lastSceneHash": "9775c48dfbdac4d77178bb9aee1d0c7c1f0100f82161d4081dbbeca574e36f5a",
+      "uniqueFrames": 28,
+      "cameraTravel": 0.25347095428219435,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S03D",
+      "start": 9,
+      "end": 11,
+      "firstFrame": 216,
+      "lastFrame": 263,
+      "hashes": [
+        "5fbf50b0b148c185ddbe2372d4368c6d5fa43aab5e33471808c11eaaa5cbfec0",
+        "e4da871ef54ab1edda2d6cba832001fecc2d5ae3ff2c147854fc257e1ee1a76e",
+        "568743763bcb697fac4ad5102112211fb62da4b574e380f9fd64a196867c099a",
+        "96c1b0aa53e9190a7c1375eff688ee54f462b44ad7e95ac5b768e68d5307ee57",
+        "74bfc3b639af1de3325a992a6d9aca5d178b495b74610208d8a7d62183dc37cb",
+        "e0c376724530cab32284e13228bc82270d4090fd9de4a86bd0a1eaad5d1f6fea",
+        "29945cf77a49e295d386891e52eb939e5e9b4653a37aa74aad0662098eb202cd",
+        "b9fbaec128a9bded919b72c91144ee650aeb96e79a3c8659706fa4017b38d3dc",
+        "8e58829cdb1b9a31296644b1893f08dc1c6f9352632f96655f07d5e2e42d4865",
+        "d7439a26702c948cb5232e37ce061ee1d01e37237a8dd42af9d65ebd25d82887",
+        "1c33243573597a8afd85fcc8147e69aa7db36a930f0522096a90e73321b55472",
+        "75a622ab9fad8b066bd93a7f50ce0ec469e5b62182b1f9e07c041e4299ea9d85",
+        "bab432ada592c8a82f97b20bfb035ddd6483472e5f8c0a6a0334faf24381a7af",
+        "690fdbf80c7c616d8767fce29a15adb18eee403fd122efe14174a1dd980b4736",
+        "781eafd61d7ea49d136f255fd5792f52cddda4217eff09d11697825bebacefa0",
+        "b499555ae0ee1f4e25b11913826babddc037a2dd9ed8258dadf23e4da25a7ae1",
+        "1099f083f5718b54d45af9ff7139bc4e99a20f53d2db5f9588e03aeaa53583cb",
+        "8c11e3f3d9f0d6cdd30851c2784d72f56b9d254f5d9bc96580f511a5a3352df5",
+        "9c4893c4c600d0e14c6b65fc75ca60fbbfa3714a2f59147d45060388773fca6f",
+        "9ded7d5d5d60da63eaefbc5a39d7f122d4606cc39cfba15746959e68eed86a0a",
+        "970534a063b4fae3039b9b1b92b93368ecf452b81a1c8109cc3de213738dd6e3",
+        "2fa9cd79c4591e56459acc82bc3c5c1d50e69c19e330940d54090641c2c529d9",
+        "49ac5f06a183e8468aee20c9b4c9210711aa2aa899067ce201464089f1341301",
+        "8814a98c63f8a67689f26194c4dcd1ecebc434ce048ee988f80f72cafe86b352",
+        "6a941e6d88ca8fca51d3995c52f687fcea00c4a95085efae534ff7f65c6e2ac8",
+        "8635ade314c6b74038c2f7f95383a35a75fff0ffb278d7bf0f2fc29956fb032f",
+        "8cd05909595ec70e35d809692ec9ea7fd48c9f729abb0cd88e283a8ebf78a2a2",
+        "8044569e291efddf6990c85b10531519c03f67cdf4b05c86d1e36776e0cf91b2",
+        "2d4fb6834d19d0d7c481e86142ce173e734d59a159000b693402fe238ee52cbd",
+        "ed2184dde3c357b27d0e92993f0d343fe2d94deaaeed4663a54226569510471a",
+        "f30d6528e26c5d9f0834e71cedf1113e71eb6ba01949b5a971b70ddc18315bc9",
+        "6bb43aa207bd186eda162239e9c3558f8ce05d7482992d8ce8e26f1a649a79d8",
+        "1f3b25896f692d98c9bd864a826a2389966a715cd002faa8fa35ebf758f73371",
+        "6c9b8acacf739f01e156957cdef894d196203ede860dcefb21255bbded94cce8",
+        "bd628aae5537976d3993c57028073255ad2d468e56a8646deec037c09a30cb71",
+        "badd8ca519d14022ab552c4b87ccbc3b5d74f0ff424fba7c35511845d2026b95",
+        "db49a6c6705b0c2a9e5eb4eae2920946fd263e154b84508a1af60f531b5fdd31",
+        "ee3d363285a2049e2e1f14863cc969ffa135ba29d526c7d9204401543165c345",
+        "27e1ad05cfe725572e8271b8a8953dcb48c62e9b429c023d3aa5847ba79711b4",
+        "3e2703ad903b239f41977d47a79cfb1c8391d07254885833275b80acb3c78a75",
+        "d8b8ca504740c0d713201faa2ce57540cdba9ff1ad7890ff48b9a37d8549c0b1",
+        "0b2c9f4d2c8880581fc0fe908df3eee56a57f69d6b3bcc2518dbc24a0c5fe6ef",
+        "ec6843c72e1e57ac48e2bdc132af11adbe5c6a1ded4a58909bb25ed745dd38ec",
+        "e6e2c67acae4dc0dbccadeda4ae14586791774ac45a780e2bdafc14838c4918e",
+        "bea65a2cbe39ef6d09f2eee51cb1c5926c304ac3c0b22ca7ecd322e16d4a27f7",
+        "4da317f5acc3a037c7272214d8d677b909fa695b393071e010136442c631bc35",
+        "924019aab9191649ed2eefe3f64cc363d15e8b0b0f476452d6293f74fae26a3a",
+        "8e014330c50319d7633c1f10b32007ef0217ff74d75df5dee8496b750e2bed2b"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 219,
+        "frame": {
+          "shot": "S03",
+          "phase": 3,
+          "progress": 0,
+          "seconds": 9
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 465,
+        "triangles": 195376,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -18.549,
+            2.52625,
+            11.7015
+          ],
+          "target": [
+            -17.1,
+            1.75,
+            8.7
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          -18,
+          1.2,
+          8.7
+        ],
+        "projectWorld": [
+          -18,
+          0.85,
+          8.7
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S03D",
+          "progress": 0,
+          "seconds": 9
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 266,
+        "frame": {
+          "shot": "S03",
+          "phase": 3,
+          "progress": 0.979166666666667,
+          "seconds": 10.958333333333334
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 463,
+        "triangles": 195364,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            -18.451125831886575,
+            2.473817409939236,
+            11.498760651765046
+          ],
+          "target": [
+            -17.1,
+            1.75,
+            8.7
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          -18,
+          1.2,
+          8.7
+        ],
+        "projectWorld": [
+          -18,
+          0.85,
+          8.7
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S03D",
+          "progress": 0.979166666666667,
+          "seconds": 10.958333333333334
+        }
+      },
+      "firstSceneHash": "5e57c75eb1aecb792a840c53390a4d1f6142ad9fd3a400aad14b32c01df7eb11",
+      "lastSceneHash": "ab65aa83c6ef16c245f172604e51833954c0bfa72a4350f92efe0288ed69a478",
+      "uniqueFrames": 48,
+      "cameraTravel": 0.2311531367018597,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S04A",
+      "start": 11,
+      "end": 11.8,
+      "firstFrame": 264,
+      "lastFrame": 283,
+      "hashes": [
+        "12e3cd6663ae3631d2ee9a53b71e90b26568aac1654bcda98f7346bd84598267",
+        "b1ca28bed18279065758eeb2e9737034dd1fd3d47c90a25802344c37890b644f",
+        "624dd4d598065a134d642c0e6ff3e23339ab98d01989332fc4409e9f4a806c7b",
+        "f364a8df972475890d3925aa805b8ae9244d735499dd7f769a80a42163a46d40",
+        "dac1fe5711ec95edd02e1674be6792d017ee19abdee4c97f5ced0488ce7b72f8",
+        "2d9a790adb887d708f39dca3cb0b5a29c00d3520349f3642b8de039955ec984a",
+        "d85566b07cd5923c2e38c1a24a2051ec2ddb1d023670635edcdc517a4bd135dc",
+        "325f04ed0af221607176a7fbd765a91d915df5163deca58e102fe53d03b9e2bc",
+        "1b1a79d9fe14394623000d116b33f90665d47e70b0e1cc0ee43f250623542b7f",
+        "ece309c22c795a162b42abb3f3b1b1030947229d6a5e056a26bf57e249f12199",
+        "d1e99c914bfaf82053c85b2b3d06208fc870f33d8513c1fabf4b02a56cd60d68",
+        "b1a270ef1a1678e1d6711439a37bfeb3fcd34f39056c77297c5282ef570cfdd7",
+        "1d8602a54a801b72d34f37208fdffebf98e13ca85a3e307eee42f2bb0ddb0bfe",
+        "e98e950f32d5fe77ad4342573385a4133d95163e7f8a0e17b65c888daf72f4c9",
+        "940de33dab8202d79f79305051e4bec2baa8c2ccd9d485541ca19343fa545377",
+        "467a5a436901a2a5d46a0bbe139bfdfe9227c5e436f3b4dc12d913b3514ef5cf",
+        "569c36294727d10bfaa55b06eb6eb1ca3361c5e2f70064c808fceee26f0a07ba",
+        "70081aefbcc05980bfc98ceea9fd70e0f98cf7cdaca48ad89d1057aa3686ea7a",
+        "9750183cc8787e526bdc3a3e8d8a36d505ac04d93559497f499c9f2a4c45eb2b",
+        "8f1915f3b75e57f67d2a1a595221e3b6c65b4bec76c739b290f97daf7038571d"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 267,
+        "frame": {
+          "shot": "S04",
+          "phase": 0,
+          "progress": 0,
+          "seconds": 11
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 474,
+        "triangles": 189312,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            20.5625,
+            2.8074999999999997,
+            7.7025
+          ],
+          "target": [
+            18,
+            2.5,
+            3.5
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          2.4499999999999997,
+          3.5
+        ],
+        "projectWorld": [
+          18,
+          2.05,
+          3.5
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S04A",
+          "progress": 0,
+          "seconds": 11
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 286,
+        "frame": {
+          "shot": "S04",
+          "phase": 0,
+          "progress": 0.9895833333333317,
+          "seconds": 11.791666666666666
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 457,
+        "triangles": 182688,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            20.437540407534,
+            2.79250484890408,
+            7.497566268355757
+          ],
+          "target": [
+            18,
+            2.5,
+            3.5
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          2.150096978081597,
+          3.5
+        ],
+        "projectWorld": [
+          18,
+          1.7500969780815971,
+          3.5
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S04A",
+          "progress": 0.9895833333333317,
+          "seconds": 11.791666666666666
+        }
+      },
+      "firstSceneHash": "251a89cc72244be87620c4f59040770ef8c9dd79f6b8e75501a2aec70b8588c9",
+      "lastSceneHash": "e1c16034561dc6978e0ef49728198d8ae73101c9901ab3cc68fee4944c917350",
+      "uniqueFrames": 20,
+      "cameraTravel": 0.24049446702843774,
+      "subjectTravel": 0.2999030219184027
+    },
+    {
+      "id": "S04B",
+      "start": 11.8,
+      "end": 12.5,
+      "firstFrame": 284,
+      "lastFrame": 299,
+      "hashes": [
+        "ef1c68c39df3e6620f4de7e7e6da1de13668bb910d8a803c4675aeb3cc4c4902",
+        "aaae52544aadcd58e73ea21705562c2554124c35b6c9134f5f9e491f54ddd7ce",
+        "dd18317c64d493659a45a72c66ffc010ebdff8ce6709ebeec5f42146fd0c8732",
+        "ac0221122f31425e304a642db2af366789709238ec2abbc4a0de0cfabdf67991",
+        "18e05a11b5296cdf892f09cc02e70c4840a97ecb9bc4b28024886448ed15a9f7",
+        "c95e1299800d2f8448f6f71048f773f8b21de7f737ae21c6bac6844b05c5dc97",
+        "7259a9d400a0e009836a4f7a323e7c6eb8a7a1c3188dd9079cb90c77aedf1a15",
+        "dceb9121915f6616816a677880532220eba5eb3be8fb961eda41906fb885d3be",
+        "378573af8cee0351024e1c11a16ba0f57dc48a5fde850477c773145f60512ba0",
+        "e866a28277fbef4a8f18b7f4ccdf7a648b221fff839bd202ad46cbfdf31b3847",
+        "c975717fe263cea910a7a4022cc51a33c5766f0c57a544a8d83e7cd212d60cff",
+        "c598a47368ea654c4c8b32926eeadf82265f6f5141dcb9b861c5b1379c0c6a57",
+        "10853406dbc9ae23823c3668d2c2a56b95766077a0605a160f87a4ab4f86d4bd",
+        "9c099e0561ad1c2fef1f5cc82f39107189cf5cff357089eb54e8a7ba3ec2093e",
+        "8a529cde7ea695e8ae73e90adbf090142150e130da06c561f6e2fb4d2510b307",
+        "6023d7dbf478fbb9cf63d2c0a19e3c454c39bf434233505711c59b508234b011"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 287,
+        "frame": {
+          "shot": "S04",
+          "phase": 1,
+          "progress": 0.0476190476190475,
+          "seconds": 11.833333333333334
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 405,
+        "triangles": 133396,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            24.056249109167474,
+            4.522203595724004,
+            7.161183241550588
+          ],
+          "target": [
+            21.72,
+            3.6,
+            4.62
+          ],
+          "fov": 42
+        },
+        "packetWorld": [
+          18,
+          2.15,
+          3.5
+        ],
+        "projectWorld": [
+          18,
+          1.75,
+          3.5
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S04B",
+          "progress": 0.0476190476190475,
+          "seconds": 11.833333333333334
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 302,
+        "frame": {
+          "shot": "S04",
+          "phase": 1,
+          "progress": 0.9404761904761912,
+          "seconds": 12.458333333333334
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 405,
+        "triangles": 133396,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            23.944163649983807,
+            4.477959335519922,
+            7.039265724543786
+          ],
+          "target": [
+            21.72,
+            3.6,
+            4.62
+          ],
+          "fov": 42
+        },
+        "packetWorld": [
+          18,
+          2.15,
+          3.5
+        ],
+        "projectWorld": [
+          18,
+          1.75,
+          3.5
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S04B",
+          "progress": 0.9404761904761912,
+          "seconds": 12.458333333333334
+        }
+      },
+      "firstSceneHash": "082dd73ab88c98f18515e0993b7dff7a1901dc01cd58b865fecdb0046a37505c",
+      "lastSceneHash": "1c0403ba8710866a627e81305eca8b5f4169be6726928f8e8e61dc3421acd159",
+      "uniqueFrames": 16,
+      "cameraTravel": 0.1714193270157243,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S04C",
+      "start": 12.5,
+      "end": 16.5,
+      "firstFrame": 300,
+      "lastFrame": 395,
+      "hashes": [
+        "85b713ed0647a5ba12e2787d2c44fb0c9ec7205c4d6f3a4d313b0d0bdb070887",
+        "ec287d1fc27b3eecb6f2e1edf2ebed5061b49ac6642f71991fa051029f099443",
+        "307955c151575fa0846787fe63476cdd25a12d4e06d96fd44242b37a0df0c09a",
+        "0bea16f00f13a5876fb0d7b059049200746f2449162d79c968e0d237aaf4b151",
+        "c90fe46fb33982b2d58939dd305c251b5f7e17b93827a4757cfdeb5fef1840d4",
+        "3ad1dd26f8eea93e30e083c4f00ff1dc2bf02d406f4d61d966908966394d1580",
+        "2e8458688267acff915cd1522a5379ce5ad4cf58f6b05a20590a6d10fd4d1e4d",
+        "30d3afc8d45933e21e870160e8ba7454266ac11ef97b29344ea2956a2d0b8bcc",
+        "0710c3547386cd51efc3aaa6016c8f11f8c9f0c976f2a812bd694c93be6f53b7",
+        "00a3c5cbb0a530f6d09ec4f29e16b6966d0784be4f89b7af905a05ab0d558e72",
+        "20d2cb5b1420de7f9a07ca4d9d251ed1d3ebab48c2818ed1bd85afe4f9254bbf",
+        "ae8be7c23ef034fe29958628616fc1b85b3d5838ddbae6a5fa14cae66d999f20",
+        "dea4fe22dbf504511cf07f8555b2ef856df85a432b40f701c5c77bd9f42471cb",
+        "0ab9a3e4e45b8347103eb57ccce2a9db00a08512e1d0bd44cb1a8c9f6429d8f1",
+        "43103c7136e27b32005c289e4a4c9c4d94d95715b7f98f32f206a6009d8a2d3c",
+        "10f54ae9ee03395c6a9b769f680d61b7f98c6717ac41080ca0e9bdd595f96df4",
+        "90dfaddc110e804305a8dd2709ba5163b4bb36c3e9080c2776bc2ec2f711f726",
+        "e28a97efb2c7c686c2d47c2330566c86edcf309b0f93351d27101ea5a41598de",
+        "137f0369d79fc081d12aa61559cc4c7fe692a0bc3483c882cbc7ae15cd32c2c1",
+        "1ac5fe0e509ddbaf0c413b3152890e4599d11f38270a799fa1b6608ffef55c6b",
+        "2b57ea31135f2331cfccb82d34a15b5f0c514a31f9b4d0c8a7ea8902aecb98f8",
+        "dd74fa715c5747056ae47d2788478b47ee526b295c8f3eccbeac4e2a80ef1c59",
+        "2d1ad0565cc61a0fce9f8bd4489c8dd693e399f0ef5c30f9d794a5b63bfe79fd",
+        "6d9b0cce4aa88dc2ba6f3b428982b2364f7667181c7574255c70c41e460063b7",
+        "e69e16956168d3f4b7dfbb77ffc335fa949cf82c155ba1eaee180d1aeede90bc",
+        "f703b491d10db2c67371c5f7c16f18414436990a469fd86a70c41d8daa8d5a09",
+        "d340421d301a2b2fe7d9fc670eb2fb3447d9693a9901f45859d51e93484c6855",
+        "b59f25f10e9bd92f101a4ccebb82dd3b73287dacdf7614996fc52b8535e4b249",
+        "3e4077eed4fd4d82cec0a874a940340b5df8217198a7f0989b13339cf94e6661",
+        "877506565ba64d3a4b341c610ba11c25d5ed460c306d6f7943a0ba7a3f688867",
+        "f6fecb260fb176e218826a7cb07e2c1c0c3b420cb0724b991137cc3b36b2ec3c",
+        "05f32e27c2eb205cc4cb8f9eaa967cfe75967a05cc3dbad62bcad4b4868a85c8",
+        "935eb13e041023faf0f7f2739805b3ad7ae2bbcd63160c42833fd181a02f45d2",
+        "d71bcbb64cfc6f27a536db8e098acaf49065e2616a1f7627c393d73d6464b0d6",
+        "6490cfea5badf618c9cbf8decbf0976da0e43223d67f96fe8e6bc04eb73e03d2",
+        "128ed868e1bddb5732f326fb4e540b6313d9d0c85f01fd4d0803718d28fc1b35",
+        "f95fef6f07c3a61b9aa129576b05c4751b7e9d294809ce407ca33ec61c1f93ac",
+        "86eb9ac5e2c89b5b3394b8a35a8bfd4647f00aff3f21c3f9c81ef8b96ae5f9ca",
+        "23be6b0646c4ef1fbda27df9aff6f0dd6a607be049e90cacf6c35ea5adb930c9",
+        "a34d35747dbbc31b34708122aaed3485e7c08c424c32bbc36e289358843a673a",
+        "d4946dcd96d8c3abc711bfda2f5f79c39a42bea6678dced556166dda4304d378",
+        "e012fc4ac2643c387c6c4803227f222cbad03dbb1ae89ccb8228fc8761891aff",
+        "7d2dd231730218fbd129efd46a62b06deef60f3ae5b877a90cbf90c4ddc0990f",
+        "d88d3aaad79e38e838959a8f5dc3390ca7b414ae8e93deb5ecb20f76c7808906",
+        "cdae88f0fb6b6c87905179d51630a1b083756029af1d52dcb488427b97a3a615",
+        "b58a00f72a89589409ab24709701a71e046359ffc2bd8bf4a16f4278aaecbba5",
+        "c55266678cbe5b4abeddda0d46d74768aa5ef8673e89f40c48e1b621208d9045",
+        "152e9f4304db738f606c54ce9586f97af94c4b2f0f41e441dde678d57558da28",
+        "f6b6c0411e7eeb805630ead08c49f612a0ac1732ceb79e3ab8608dafad924ff1",
+        "6981f2522510b883067747085098bf196afedfd2e12b7f9c38115b1a886ed5cb",
+        "e38b91b094cb9db97a896ef8871f38ade41536d5a5c59ab98fc87487182ecef1",
+        "fdc99d5e9b96edfd32578798fdb201a3c5f618c4983aaf56b17f18ea0f52272f",
+        "006c7ec4b3078eb876beda7d8ed40e0d53a078d46bf2fc9767720f4da08bb3aa",
+        "41dfa1a3f0a741e6dff8cec31492f1795771f21f63b3bac9fe8b3ce732000c1b",
+        "68c1a20979ee5c94ee5d03a1aae2c68844972039949c62f46fb027ea59278044",
+        "a559dc702d74659512954721328bee48fa186cf36b5cfda4e8639ac9badce86b",
+        "a0200c39b3cb608e3636e089f49042bebe682c403b5b062b9cf73f56747d97db",
+        "09e9e3bbdac34c718ffbd9d5ec08eb701aed5d5d8e5e485690b4e27c7987dec8",
+        "b7349e511bf16a5b3dfef90fa247d4c86bc95d827680f3d0f5b3baded3fb8e72",
+        "544056c9ee72fd0865f1312584a990020dcb23fe10ceff411a98af7bfe421433",
+        "e0df3ca449eeb9e19bee734b527d6ebb4f420fa6c6e2a6cacf27e8c4f2220a3c",
+        "5d70fbd952e73ad82f4666cd6069c4ce0f3186fba509174e52c903e16a168a1b",
+        "fbf43954628cc6c03c8be9503b5bb5bc2e751ef88adc993cddfa12bb4f738600",
+        "4692698b6968f2b6e4b3a23b12543c20741354321ffd705fe95d6ab831495780",
+        "de8ebbe18a3fa34507a349c59377cdd4ae2eedfc5d6b26d42095d25b17aa5db4",
+        "4e1ec2e1fa8d5c67df97ed04a9de259389bdfd84e15565a1c8db1504bebb0b85",
+        "31ccff68773317e2e8ed7147663dfc0279d9c4fdcc1a4ec0dc800005d3d38a15",
+        "b7d6f19236396bd2d585b464a11a745aba9910a2d8a68a2ca8b005349cb04733",
+        "221270d7a36e5b2f5c6b8cf8281b2b7c59fe813d0ae0eb1340eb45939d8e6686",
+        "e4a70be776dca01ff71e2d62b211045e65d5a95f61ef509101ebd5c647175bd3",
+        "53292e1eb3953c95b2214d6f0e4aabd358d77459fac28ddbf892f2d9771f3368",
+        "13048ff2e92bab7824dfbe27c689097e6be3d8d40cc7b25ba801ff0a23fee454",
+        "0d5883e84246d8f554ea3390c96b4cacca2a9fb8f15b12dafe424d4e8bc56332",
+        "74a9ed8359eb8ba563ad11c199872178240cd064d0d17ff339d67ef6fcde1ae1",
+        "cca5a982b91bf52e2d83603201985724507466b195c76bdee70291ffd65bf2f1",
+        "c61cb978957d9a9d9d77c437204738a41dc1ccb2bb3097983f1f548454cd55c2",
+        "1fe671e8b80b5fc319b64796b54e1624d0e1f004856322ff55fe51e4f66c869a",
+        "6911742389e8dd9469225786ec96a4030e83663cb7163853586724558697807c",
+        "c9a9284106d19ca13b3c66fba6c0955d4fb6c72d40120b257dafcf95cab28aee",
+        "e3c51a556d771c997475e0aa88f699651a7b5e0b935428b74478e0240a07d11e",
+        "1952b8f93e3879be37dfe02e8f34e919c63eb1f0fda93cf42c781b39ad7118fb",
+        "8b2e4cf2db594c06b3a342d58b74d4ff464a4ce19d26b4863393609e7d757484",
+        "86a96aae55d0ae3da1ca003f5d598e80fcd0b4fcccb9cc73a9951214253b947e",
+        "0c1ec6e27d5b4d05e67f2854a1ac7d0c2b41e2ea41414322e3d91066e98e5a71",
+        "0bd7cc1de8738f4f9786ea8eada4bdf2b9781e091600d701ddf751a1025029e0",
+        "7b06a62386643df16e6477f26085b636ba1b10ce7b069691a4e8b881b3855000",
+        "21cdb7953a787fd118b29d1ad38516887b6da8197fbe29c68fa2454aa222bf8e",
+        "3725d0d0cf1f78fc4a10dc7d11c2a6921ae90315b5066bc7d7f51ae85b7a87e6",
+        "4f1ba56962b62131814af3515360b246144f5642196cf2d9e9ea6b5386e344d7",
+        "0275c3df4e3fb6dd70267da609c587302959e185446b63c6d56e0551ed3004a4",
+        "9b0c6c0ae8aab40a5f522206e25563e40db35632d63044b7f763d753b0de2843",
+        "7db42c268ebaa9fe85777cc86d2bb11cdda2c2d45ce5fd0fd4275cb07dab71b3",
+        "805b0496567886e234a062616587ec7542f33180b618eec55240cb9e0cd81fc9",
+        "8018c8bb922b12399719a48ae28201e2bef63c666897b3c87b3ae5f17c60ec72",
+        "bd5e3dc8ee0f1db3fcf09916227ac3e693704b03d518e4c254228597003c8134",
+        "dfcc00ef51cc64edeb428f5f424bc52518a05cd122f67c722ba385f2561f1628"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 303,
+        "frame": {
+          "shot": "S04",
+          "phase": 2,
+          "progress": 0,
+          "seconds": 12.5
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 425,
+        "triangles": 138200,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            24,
+            2.7,
+            21
+          ],
+          "target": [
+            15.5,
+            3.8,
+            4.5
+          ],
+          "fov": 48
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S04C",
+          "progress": 0,
+          "seconds": 12.5
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 398,
+        "frame": {
+          "shot": "S04",
+          "phase": 2,
+          "progress": 0.989583333333333,
+          "seconds": 16.458333333333332
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 433,
+        "triangles": 139708,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            25.99935347945602,
+            6.198868589048033,
+            22.99935347945602
+          ],
+          "target": [
+            15.5,
+            3.400129304108796,
+            4.5
+          ],
+          "fov": 48
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S04C",
+          "progress": 0.989583333333333,
+          "seconds": 16.458333333333332
+        }
+      },
+      "firstSceneHash": "1c863aa867ae52f4154697b006fc82f274449b1aed73c2151bf2cbff331d7f58",
+      "lastSceneHash": "85d153dbf74d4ab7d9cc6167c601672407e4580ffa9e775e667d50caf6f4a4ae",
+      "uniqueFrames": 96,
+      "cameraTravel": 4.498545328776042,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S04D",
+      "start": 16.5,
+      "end": 19,
+      "firstFrame": 396,
+      "lastFrame": 455,
+      "hashes": [
+        "6449eb1f17188b2ed542674bc6b736497fe315ca651d71f311d92309458c2b33",
+        "63642dfc8830de86e2b0200b7d7782e324a1f016e37fa5f8335acc315cb9a7bc",
+        "cf55338a5645cffee976d03d7291edb356a5728ad44dc9f3a450d90d01724bdc",
+        "30d937ab81e1324fc219f19c175c95b6aad2817952834d708b9f8009a615086b",
+        "2a8cd760233223a50fea1ab06ddd71b76fc057a1f02469b7acb48f7cff0bba00",
+        "b68fe6a4e0957ac7c5d1512a36df25bbb32bdf0d49c259b42b6103fc812c01cd",
+        "0038685ef715961df844e26f4d5bb5463dc967c2e044aca2d5feac7143ea7a5c",
+        "88b46d8c5a0849edec59257038f3813cc3538007c0512b260620f4e375120f1f",
+        "25254c3c2720d5cfa915dfe5468e3a513499e49712c9d265072738b3a1aa4337",
+        "6ee36d27062caccf5110daa38542729145482160bf8a0b3ca4e687af0d73a1d2",
+        "2199399ece1d66f098646f80c935d127366eb187a010c8807c59ed1f04581c09",
+        "f80c7ef33f0e09a39be55751a4f2ad1f1ca8e0a621a04d38efae2b1a2f2b8fe6",
+        "d2ebea313a9ef47c82100a10823ce8738153f96c4afaa82559efd49bc148a856",
+        "296815ed5aab81b29d88c8e4b36f30a6b60bbec2940f94f4a3ef2045e8b43905",
+        "32654acd7836d6b8dfb289ad8099fceb1f375a9ee84042b1748b09e239427999",
+        "f23b3d55cca8610d01974b8b284ef92bc3f1fad14f66b79c642a0c9457bce561",
+        "179fb79c41879714f2cc53f1f32c57a70249cb5b6e8035c23f1c6acfb81800c5",
+        "5b7d260971c419c362c287b407fc15c40391065b56a8e7ba1d3f7eef1589303d",
+        "7f069ac3afddce89530dc4d62ff531a4d9c0c042fe12dcbf21f1264f17e85a33",
+        "d045999d6a37ac31bcac9e649947f446c2a7f6d4fb68b8f21cd4943e22dcf7cb",
+        "6acd73902cfcdef7828ac2bc67cb6e863615b8728f210e2ce73fde7b55104c06",
+        "2a7e77ba8c00963f20b2a742cdae8cffa8d39d8a2e676e660b8f7fd5f9669eb4",
+        "628c8bd5a74a3b242401a04134cd19cde4e2b9830434429de4e229fc0d5f8ff4",
+        "6dcaa000831727982dd14ac6d33fc201af257111661e6fa83d6fef11b14870c3",
+        "3190b1c9a1cff1e7b19f8d078cd9d8515253d7385ad99f33691a0ba6bc338f75",
+        "4d40c30a99da2ace3561e4d18e8fbe787ce9bd55ac6f44009ec3c30e4fab5b35",
+        "976c0c02adb26f0c632988192ce3efd91115447d32d2b5132a1b99eac262cdc5",
+        "fd8b04fae65a280261f01670950e1f2f95d0683e030fadbda0d34856b6df4a4f",
+        "ae29e85a7f3b82da43c1a81dfc63f2e6b9c572f66c828b7134c94e9e18aa98a4",
+        "5bb509b9d0729cdd7c3ff3d609c1882d75f65fc759c1baf7834f7cb1ddd1c750",
+        "820cb87d628936881b3210d4244a6bec76b752afec2c5330831cfd3fadba0714",
+        "1e53cbba4db16ef7ee2a32cf5872f9ce8166011d5cdc26ae9ec1754a952fa259",
+        "cac7df8817e85ae4a74ad7f628417c15bcdc2304fc9c88d24d0669379625d4ad",
+        "98c6403b78815b7dd6bd0699cb3582b92121e90bafb7f8f2faa40bb4419d210a",
+        "37ac3f5caa012f58b04684051204cda7ae67f252ee3bf3065b5e316e94a181b0",
+        "600cffe02239f7361c9e07a173e862241abe320b82127f8decd3885e701a8fa7",
+        "ebe5ba460cf4f49b90a0f48a4e6bf7520b97593e7efb59d75b58d4ea5cf3aaa5",
+        "bc22e38540ca00f0675c2f72cbb9b4fcf26f2b79783a6fd334e71e094fbf86fa",
+        "24dbfbf0bd3fb90b8f872a9350209aa8d68174ad5aa52c42293f07bebfb2a28f",
+        "74d03d6c02b77f0ea932782b4a8d5e61fbc4bb7d742001a25cce6e8a4de26413",
+        "4b57cc117e3418fbbdd5ee4b103cb8ab5e3209568327e6f49908bb38d11553f1",
+        "52f15e229475276b15a5c7174c97fbf07ba5aa2be87ea36907c40801a687682b",
+        "c5cce71f7451e34b7c560b015266a0d564776e493fea9059ba53d076da7c9bb6",
+        "27082309d0d7ac1df2643cdf266d2ab15f0117249c985cfc59b460277896a7f2",
+        "b992bdf45bf225158ea9617e59d7512565ae6df59a8d30186fd7d01958a5794f",
+        "00c31708d10d73e74cf1dba6c10d8a61d50c927917e362f39ffa99abf37f94df",
+        "a82a4b558b2327b5e7f2feb86806e000734e8b6f25be317ff0e25ac15abe539b",
+        "a8d7eb6d8e69f098c3bf63449d3233bea5793765a5b8dbe7d93101e745ee4cd1",
+        "957a2c1d472a25c455dd72b5ac2644e02e51bcff51e1a9e469db9ccb54ee0002",
+        "c1246a05fdb687d51f2b6a7a1c085be5b5a927ec0e750dda2ab14f38ef8cefe5",
+        "9ca56c1f2dd82b03cd4d8ea1c3a8902945000a6f88ae3353241c774b2e845eef",
+        "7a3a823bf3a481263a681799a971cca249ee15801124a235a7aef86abef1628f",
+        "39045c45e93b962744e2f8baece73e8601899fccfff4184e35b658a6c3d8596d",
+        "1a361136e9445214d28ca5790218a508cb16d393130793acfd0df4e0e20be679",
+        "f0acf968c2857eb957fc03eecd99716b8bbea4d43566902f99aee3a38d737216",
+        "912a7501bd5bb57d450cd1be781caf0609047af1dfbf02891cfeb62590dfb80a",
+        "b11ce272da735bb2d049683a427989f9d2d3164366bd6d527bd0857f411cf4a2",
+        "f2233c1d01fd3c75b432b0d4317e1065c14650eac8c668505e3f9d242946ed76",
+        "993a5007bfeab8669eef5cf4bcd714672b576443865a3c422b7d4dfae2d5387a",
+        "2a46898609b387350c658829ce1fc06207dfd8b49364de03b3bdcb0a84712b93"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 399,
+        "frame": {
+          "shot": "S04",
+          "phase": 3,
+          "progress": 0,
+          "seconds": 16.5
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 410,
+        "triangles": 181516,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            15.745000000000001,
+            2.6175,
+            18.0625
+          ],
+          "target": [
+            18,
+            1.9,
+            15.5
+          ],
+          "fov": 44
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S04D",
+          "progress": 0,
+          "seconds": 16.5
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 458,
+        "frame": {
+          "shot": "S04",
+          "phase": 3,
+          "progress": 0.9833333333333328,
+          "seconds": 18.958333333333332
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 410,
+        "triangles": 181516,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            15.854909351851852,
+            2.5825288425925925,
+            17.93760300925926
+          ],
+          "target": [
+            18,
+            1.9,
+            15.5
+          ],
+          "fov": 44
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S04D",
+          "progress": 0.9833333333333328,
+          "seconds": 18.958333333333332
+        }
+      },
+      "firstSceneHash": "62f6e4380dbe62afd41b67101b8dd45a259bb4febb96cce32192e9b876ed0064",
+      "lastSceneHash": "b48d85bf18ff5c9806d28770066e456230e9c18558c6656de548e4d5c7ab6de2",
+      "uniqueFrames": 60,
+      "cameraTravel": 0.17000678154414983,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S05A",
+      "start": 19,
+      "end": 19.8,
+      "firstFrame": 456,
+      "lastFrame": 475,
+      "hashes": [
+        "c62bf27eb42ee8e9d24f6a72b655fb5eab570f488fa4055a97a427d047577e67",
+        "d04c29b15f00625b6323e622f0b11af78e9019a3d7f0e36b6555da3b6a2dbd55",
+        "d94191a9862fc638e7c1ca58145edad1e8ebeb06c48e61bf522af42a0736dce0",
+        "45de26a9aeb7ffef5182420d70987120aed1ad9d9f04c280b5477b11c4b0600c",
+        "c4001844f1e9fa85fd427f9b385ef4d3b8ad79b8f119ef3b070b1f82acf6034f",
+        "6df1335620d5a6e3f6fd74a840fdcf1a846b04a72704d4425426d2cd2f774aa5",
+        "75e7658c29c4ee0b746f3555a2f48be92c2ee5bdaae3f7019f577e2af41e43f9",
+        "216b951b4e659324b9c0fbbfcb4f67e10eb9f0042a0e65160806f198264cf463",
+        "b248c9471a5eccf2ceaec55082833f8046d5c561ebb973b898beee92a00d03de",
+        "0ef4a199c12a020aac58326d88189f6454082c23d993de7e54b2ea6a726b9fc6",
+        "c157abd35dee95003ff2a0042d218772a9998ade17257063da65561112453cdf",
+        "4549efdcb6dfdfbf7370eb6c88e5623b358fdc77de38f1ade3ec69e210182f11",
+        "ae94321c4195805b76dcda4fcf16f7b925e41a9ca13322544f8dc45ea44d7331",
+        "2f6ede2b89dde34d156caf9593b5c44b855cd2080fa09f894b09b250e4870d37",
+        "65d2726f7e66762136d655a8d4dd01d8d791cfdd01b9d5615457e08112c73ff8",
+        "fdc36467d1cd35d8eec157cb9eb4de7a252b55b413230d2bc3099773f56e341b",
+        "9060a652ab17dadd0b2d9fcd895c20c731c05d8a6272f669c6ba454baff7ca2c",
+        "2a3d0b7f99efecfcc942e844b8ea6b90639cee907a27a16d6c8863df1612871a",
+        "09e448979729c4e097b45bafb542e6cb0b435e3216eb9bc30e44c249a622a8bc",
+        "b9a28f15127054a1c535292ce6b58184ea08e54003a370b86401870c3acbecbb"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 459,
+        "frame": {
+          "shot": "S05",
+          "phase": 0,
+          "progress": 0,
+          "seconds": 19
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 443,
+        "triangles": 198032,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            16.7875,
+            3.795,
+            17.125
+          ],
+          "target": [
+            5,
+            4,
+            12
+          ],
+          "fov": 50
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S05A",
+          "progress": 0,
+          "seconds": 19
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 478,
+        "frame": {
+          "shot": "S05",
+          "phase": 0,
+          "progress": 0.9895833333333339,
+          "seconds": 19.791666666666668
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 439,
+        "triangles": 197360,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            16.212685874656394,
+            3.80499676739728,
+            16.875080815067996
+          ],
+          "target": [
+            5,
+            4,
+            12
+          ],
+          "fov": 50
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S05A",
+          "progress": 0.9895833333333339,
+          "seconds": 19.791666666666668
+        }
+      },
+      "firstSceneHash": "3f76871b347193a474962f8b7d45571fa61aed6403273345ba195883ac3bcbe3",
+      "lastSceneHash": "9dabfae6cf3ea1a959f30085c68c9ce0be408e9474a44c1d66945d2e42b71f15",
+      "uniqueFrames": 20,
+      "cameraTravel": 0.6268738414146894,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S05B",
+      "start": 19.8,
+      "end": 20.8,
+      "firstFrame": 476,
+      "lastFrame": 499,
+      "hashes": [
+        "6a801dd08b08ed6397aff918b18d4f9b32e1d07383ddd1033043099933383bf1",
+        "81de9d784a9ad37e876f117886c228443606c46b79e4308d3ca80dca1f0ac710",
+        "72c8a3daa77946b1bde4a523e21516f1489e651a5acc1baac3e5a7d1feb87041",
+        "291ec7c8a9768aef31fd3e1badf0cdc7e798241e06165fd8d0de52cf80499aa1",
+        "9f1c8663064a12c490a16546e74821c781d0c6607306c6b380106cbcb2600fe9",
+        "b9d97121e0728faa5a13f2eb16157c015f0b8580fd69a67b7c1dc19633676f07",
+        "aaa25f51eb659ce502a6bbaeac46487a8f13cc05dd7ec90c72d7fabe6690b187",
+        "59a2ab00112eb9999224b6920e80a4094c6d379a97772b8fa9f01074616ca13e",
+        "6becf21a2c6cb4240ca4a7e8291f3195b73b8a42340a28ae08ff41846ef0544f",
+        "01363c73e04d14769e094b1eeca0089bd490c86771c0d167b345d97a2657c455",
+        "13d5efd8c9298ee83796f0c543e5f5afa1e6db8ee6c77444e9d80b48850849dd",
+        "71de6d18d6669795609e9ba81b74a096589acff58d212ac429facb5d7005fdbd",
+        "ec2dcbce7ef7cf387377a8f741fb3f42035a9c8773937892ef643188f5d327d9",
+        "8a34f01a6774599c2c4772a86e516806cd3ce18daae6199c8b1da5aaa1148a04",
+        "30c914ce12e4340e6ba73e3a3406f4b86c87256ca1c6226de273dc251cc8eb1f",
+        "8f6e556532482c442939fd4ad051f26764e10b1802e74d3a573dba6f1503f711",
+        "d040ad74392cd973621e7da0557639884fabf492bc968ac5edef4f67eff26ba0",
+        "e62673b0ec6243e232533b564c8142faf3d831874f6555ec842a655245a4e20f",
+        "7265cdb55218409822baee3b904d2eb4cb3887a2d407783b444ed51820712368",
+        "82c885d1dc447337f8b4341a8707a8f96d95a0be96c5adf700a16e2d5caa2ee2",
+        "a400786c577c1d6cbf9a7fd7b75e31b7ee28f7e0bf135d845e3505d10542cdc0",
+        "2f19747d35538010eb109caabda5d4604e664abc90716e208e7177b0cc147103",
+        "543c323b5a21f6a78a45b657b93b26eb850dce630de846c5e61a70d9ca274936",
+        "83ee802986e3a98b42f052d16cd8430376337d1bad569010fa5fbcc338e0c532"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 479,
+        "frame": {
+          "shot": "S05",
+          "phase": 1,
+          "progress": 0.03333333333333144,
+          "seconds": 19.833333333333332
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 407,
+        "triangles": 191408,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            5.029804444444443,
+            3.6975162962962966,
+            16.05712518518519
+          ],
+          "target": [
+            3.8,
+            3.8,
+            13.7
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S05B",
+          "progress": 0.03333333333333144,
+          "seconds": 19.833333333333332
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 502,
+        "frame": {
+          "shot": "S05",
+          "phase": 1,
+          "progress": 0.9916666666666671,
+          "seconds": 20.791666666666668
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 402,
+        "triangles": 190192,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            4.970012430555555,
+            3.7024989641203705,
+            15.94252382523148
+          ],
+          "target": [
+            3.8,
+            3.8,
+            13.7
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S05B",
+          "progress": 0.9916666666666671,
+          "seconds": 20.791666666666668
+        }
+      },
+      "firstSceneHash": "06cf03ed33959514935483e5bdde9c7827e73e6cdd3b4e701e78eb5cc85b3831",
+      "lastSceneHash": "4678d7b6ead73ea8eda200a3a6fa5498e1cc94ba19b212d19229c40a81582f45",
+      "uniqueFrames": 24,
+      "cameraTravel": 0.1293575803993482,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S05C",
+      "start": 20.8,
+      "end": 22.7,
+      "firstFrame": 500,
+      "lastFrame": 544,
+      "hashes": [
+        "d46dbb8fe54e6abc4cae95da83fc629ea185af73ab8cf6bcd31be72e3ac9e0b1",
+        "844987cc0786fc5118569a0a36584796193e3c84e557f818e816e5cd90947494",
+        "f31f8f8547c26eca616f350cbd21d4837366d63fe0d2e4146941e6482ba5c4e5",
+        "b8b7bbe4cb57afb752c2f2ef17c0206acdceec1e1488a0cecc0590d3da3537af",
+        "5757658d483df6eb1b18d6ed9800329775e54d59ed1bda456870248042ffcf6c",
+        "f6e4b8ada25d1395633443258ac1a6f02cbd23b7fa4505f1326371e60652deb5",
+        "0d5d7b37bd9499d65f236d3ab8dc9a832d77c8703ac41c54c3d0c5dac5cff283",
+        "94cb91a1ac6daf49534b5c827ece52648abcba60bde0367ee719cb5df909c4e9",
+        "0d91cb023985ace3592ce0ef343fd74f1ad41a9c450e5c5431e57fe622189e05",
+        "35b3b6b1716978ffc283d965271a3ff704d72e2214242e6ae517439448455665",
+        "7b9963e3677217f5dabc726d26e4f78d20907b4389cd337cd34fca8e58192c45",
+        "de34ac20e02af01a21a4c94a9461ee9e18359a6f696066cbf825ef026baa92fa",
+        "a10c84a4b1283156304f67ad3bc6266c652dc25235b1df56cb9a297f5a7f0b90",
+        "14349af50b38511c2e2c1e3bf9de8a505fc5362e11b34037db191484ea481283",
+        "25efa2e91774a05c4d6847b0b1957cb3ab7f2b4e27d7e02162a75a176f3e3daa",
+        "99f4391703b5acd59ba4f610bd93cafc14a125234be0763c02a1e1d2c80f2a1e",
+        "acd771872a2635c5b8a614415fa46989acc5d1c9724dcd45e152ef45966e0ec3",
+        "c3033cb3afc63d3d44be13642ed8db54abf1dedfadc1cf8846b5e1c623c1de3c",
+        "0f95689f2e932c37f84dedcdad59479163e66b55a8f5c498618474a6534fb4b0",
+        "1c391cfc4ccbd04a782cb70e9a132a59ba7862f19604f0799a34106b96136bca",
+        "20e4a9d59e635822a73f1bf24ae78a482e1e1c60bfd08d67ca3812933a0faa89",
+        "b37742c56b2318d7a5fcde8cf5fa05236e29436b80c407f8338ac1e2138456c2",
+        "6b6923199c1e05861a1729dc9ad166eb0fc62efb4371b6e4de1eb1113521bc50",
+        "1c0f3da87546087e21b45e10513caf5f2522e0a51f1c6a19a809e8e775c05399",
+        "6cd8b39e9bc3cb53c99d9a54ace6e72689e9eb97b9afe5f4aed572556eeb9f1e",
+        "5a54ef95989ec993b9285b5979a5155eedb8390c1f8d26dcb01ae2060ecdb26f",
+        "1ad36bc45d80aa965b5821f2346343b0c9c78e4e5d0265875f0281ae586afd58",
+        "2af974d940e438eae7a9e71f8f881148d3f3e8e3c5cfa65faa40de75330d36c2",
+        "7eaa9c38aa03a40596ee49500025555cd85d7f8c8c2b9ac5e544398db251a936",
+        "8e8c2ff7a09270f6727db219a333eaca8021eb96c9418327d52f3172bacaf088",
+        "68abe99cbd9c69283d847185766b4003a0f1e71aa84bf8af1b6bb2ff7b19e78b",
+        "13558d0074e5e086421f7a798539d097b94269fafe31641c181beaf02c55f502",
+        "5f58743e943c0f021367339d2e8c182cd5dd57a0bbde318849fb8d1e21f80d3f",
+        "55e6c20333fd56feef7688c67bdbfa8fcb378efed4625266f7256c69103a5f1f",
+        "0586bc69c7ba43fa6108dc62da902051e7de2c4cd9be404b811f2970fed969ef",
+        "699070d85d629cc1c37097a85367f4ae9602dbc1a9d76a495ecc8374055a61db",
+        "334cca9948dfcbebefff3bd866b4d7647ec4d66e15844761907e5d1e4fa3d561",
+        "83976584309e90f5e8c8ebffe17309196aa2b285a8a6d796e2348beae53de1c5",
+        "831e100bd5b19edafbed359ea74f9e79f1e5f88ef082a7f7058d7e9638989a42",
+        "16ccd5b80f406d89e9450a981fb99341fc2d4e5c4639d3b663b7b504d73c19f5",
+        "1780d8f4991582588069e79f0250427a16f3ad57f0ce5892bbfb1ec515a43f54",
+        "9a6bbbcabc2cf8b0b098a4836d8605f376a9d24cff78caedb7f5bb7f78ec5d29",
+        "cbdabb0c09ae1e9173fcc1f37c635482424d8b1dbb19bf062d6faa9e83487b0c",
+        "62a47d90a619c713869fe11c39d7c0d977557cc51514295a62dbed389e0715d4",
+        "a3c5213967268724791c67740909a7ef8c97227064ad84b9600246c778573acf"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 503,
+        "frame": {
+          "shot": "S05",
+          "phase": 2,
+          "progress": 0.017543859649121824,
+          "seconds": 20.833333333333332
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 424,
+        "triangles": 188048,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            3.1550821305340917,
+            5.1049908743851,
+            15.894826613316917
+          ],
+          "target": [
+            5,
+            4.9,
+            11.999999999999998
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S05C",
+          "progress": 0.017543859649121824,
+          "seconds": 20.833333333333332
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 547,
+        "frame": {
+          "shot": "S05",
+          "phase": 2,
+          "progress": 0.9824561403508781,
+          "seconds": 22.666666666666668
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 420,
+        "triangles": 186980,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            3.2449178694659087,
+            5.095009125614899,
+            15.705173386683082
+          ],
+          "target": [
+            5,
+            4.9,
+            12
+          ],
+          "fov": 40
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S05C",
+          "progress": 0.9824561403508781,
+          "seconds": 22.666666666666668
+        }
+      },
+      "firstSceneHash": "f83eb6f59ad1a6f8246b189e1acf92242d00cd44f16dc7b26a1d07ab3fbbda8d",
+      "lastSceneHash": "6aca3e05721ac34d75edf634df51d2200bdde00b50de868a5d1e1ee1e0bcfc85",
+      "uniqueFrames": 45,
+      "cameraTravel": 0.21009150784970299,
+      "subjectTravel": 0
+    },
+    {
+      "id": "S05D",
+      "start": 22.7,
+      "end": 24,
+      "firstFrame": 545,
+      "lastFrame": 575,
+      "hashes": [
+        "d4158cc7188b6eb83246ea7876a36cea7454dd53758ef59952ff81d4af54352e",
+        "9ac23a8bc04bb9df8f09b238018c435df3197dd1463debaa2055db4270b9ad5a",
+        "7587fd27b8c80bdb22f0c41f10a9116fb5ac164bae556ba73b5a0ffec14f2b13",
+        "84f47315a852fbc8ef3c8aaf95fe24101ee881d248bd508f9545f74f87ac3e77",
+        "f8f9df284baa72f46938552d7073fb922cd1fcfeb35780e3dd727d43f97469a5",
+        "da84b31a0ac0bdd99022bcf78a22e1aff42dd6099acde88e1f2eec05bcd4a087",
+        "0e614ab31fe003e01983b4ceca5b2608378832b24c74e07696093b05c8177aea",
+        "0fa0d6a7f4a10c11b481cb7c8d552ca1d8fc7b2557f984b730df7812e4275096",
+        "d50ac8e11399c20d33eb011deae26ef27653f49ab940d3749690882ab6def203",
+        "ed3b77acf9729c186aca59da3aced22311b179908cbcbb39f9c733debaee7291",
+        "619ec8155a2f90bff34c792b8af7781e7151bd9974f327b441e8448f09fe242d",
+        "1e17c9a18bd6fb2b3bae38ff8681e49f4a0e24e8915bbfe367358b1c1793bd62",
+        "7c3c188d1348764f443dc39c1a1d327f127861f5d66b83a9e5a2f655875c1f60",
+        "0df958cf8dc138d88c1e4239522ae443f867fee014edaa918ffd1171b09fc2fa",
+        "57051724fe85b6cdd0636397a119161c182ad7d385e63777b590724b24986c23",
+        "bac987770bb5b756375fdd24f3c46a48e379b50523e2cae94552b473da3c119a",
+        "c4ec96c3b614f1df9175abe9b591ebc659a3f339af9c0624d942784cfde04e2b",
+        "7438acbee2211580a334e62116610e8db360ab9cf5ad59079a58158c502efad0",
+        "b54b48fbb8f48762d8ee37bcead1fdf4adcda32339961e3d66dc15082685ea1f",
+        "3aba6d3c4c44ebde7ae029180bfc2ca19c01ec275530f8aae51f3ee83ccaa640",
+        "af45ffa924abc396f2659e5fa0cd25a85eaad850dba88cca633bcf45768ed3ab",
+        "95d07371f115d720d00d6b1d370bcac478c8a244708ca44d126bba31a3e4d778",
+        "5853e8783c060678716d9e17677f9e7059d9c20a5de8dd5ea4bda14c7ecf30de",
+        "958549cec7c923b91bda6f975ec36a75ec2ec31c651183e52eb8852e99c4d06b",
+        "59b230ca2fa16b94403f390cdd87769c15217daa61fc930303d3ea83e3300a81",
+        "1b25c693aabca4790e46de8c65e6ebf7530db65e9f4b8e35004ac0673f932e09",
+        "f87fbc8405b548124ca53ec048559649babd833b7759ec2fa884969d2e9e3f0a",
+        "c7c9e214971fb87917719c1fbc326c34c64a695d2feacba4759682c4632ccd26",
+        "d18f9142c5850c4c25b7b9e0e2b3afd2a30fa13824bb05adc1a9aeb606c92087",
+        "e2c449a601d64bfd93bd866803daa2b281af9536730e77c194f6b979a76c9885",
+        "2970198b30576065141c4aa1f81020fbe39823b6e925efec7c4adc46410863b0"
+      ],
+      "first": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 548,
+        "frame": {
+          "shot": "S05",
+          "phase": 3,
+          "progress": 0.006410256410256042,
+          "seconds": 22.708333333333332
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 389,
+        "triangles": 184260,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.121997299558321,
+            5.104999386263255,
+            14.75399337164315
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S05D",
+          "progress": 0.006410256410256042,
+          "seconds": 22.708333333333332
+        }
+      },
+      "last": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 578,
+        "frame": {
+          "shot": "S05",
+          "phase": 3,
+          "progress": 0.9679487179487171,
+          "seconds": 23.958333333333332
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 389,
+        "triangles": 184260,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.100066352054148,
+            5.100015080012306,
+            14.700162864132908
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": [
+          18,
+          1.25,
+          13.8
+        ],
+        "projectWorld": [
+          18,
+          0.85,
+          13.8
+        ],
+        "memory": {
+          "geometries": 370,
+          "textures": 2
+        },
+        "motion": {
+          "panel": "S05D",
+          "progress": 0.9679487179487171,
+          "seconds": 23.958333333333332
+        }
+      },
+      "firstSceneHash": "062207d419b4c7ab7a2358ba85248983457140f2fcd3ce5d50e0c776ef94a53e",
+      "lastSceneHash": "0f5889b3cf1c24456d61a191d7cefc3b6e81f517fb333a7f4e71d1abd36ea601",
+      "uniqueFrames": 31,
+      "cameraTravel": 0.05833980893047389,
+      "subjectTravel": 0
+    }
+  ]
+}

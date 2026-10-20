@@ -49,6 +49,22 @@ class Setup {
 
   claudeSettingsPath() { return path.join(process.env.CLAUDE_CONFIG_DIR || path.join(HOME, '.claude'), 'settings.json'); }
   codexConfigPath() { return path.join(process.env.CODEX_HOME || path.join(HOME, '.codex'), 'config.toml'); }
+  // Do not pin AGENT_BUS_NAME globally: other Codex Desktop threads already
+  // register distinct names on this bus. Do not embed hub URL/token; the MCP
+  // process discovers bus-connection.json or uses local SQLite.
+  codexMcpToml(py) {
+    const quote = (value) => `'${String(value).replace(/'/g, "\\'")}'`;
+    return `[mcp_servers.agent_bus]
+command = ${quote(py)}
+args = [${quote(this.script)}]
+cwd = ${quote(this.root)}
+startup_timeout_sec = 20
+tool_timeout_sec = 330
+`;
+  }
+  stripCodexAgentBus(toml) {
+    return toml.replace(/\n?\[mcp_servers\.agent_bus(\.[^\]]*)?\][\s\S]*?(?=\n\[|$)/g, '');
+  }
 
   async status() {
     const py = await this.findPython();
@@ -63,7 +79,7 @@ class Setup {
       { id: 'python', title: 'Python 3', ok: !!py, detail: py || 'Not found. Install Python 3 from python.org (the bus server uses only its standard library).' },
       { id: 'claudeMcp', title: 'Claude Code: agent-bus MCP server', ok: !!claudeMcp && (claudeMcp.args || []).some((a) => path.resolve(a) === path.resolve(this.script)),
         detail: !claudeExe ? 'Claude Code is not installed (optional)' : claudeMcp ? `Registered: ${claudeMcp.command} ${(claudeMcp.args || []).join(' ')}` : 'Not registered', na: !claudeExe, fix: !!claudeExe && !!py },
-      { id: 'codexMcp', title: 'Codex: agent_bus MCP server', ok: codexMcp && codexToml.includes(this.script.replace(/\\/g, '\\\\')) || codexMcp && codexToml.includes(this.script),
+      { id: 'codexMcp', title: 'Codex: agent_bus MCP server', ok: (codexMcp && (codexToml.includes(this.script.replace(/\\/g, '\\\\')) || codexToml.includes(this.script))),
         detail: !codexExe && !codexToml ? 'Codex is not installed (optional)' : codexMcp ? `In ${this.codexConfigPath()}` : 'Not configured', na: !codexExe && !codexToml, fix: !!py },
       { id: 'statusline', title: 'Claude Code: quota and context tracking (status line)', ok: sl.includes('claude_statusline.py'),
         detail: sl.includes('claude_statusline.py') ? 'Enabled' : sl ? `You already have a status line (${sl}); enabling replaces it (a backup is kept).` : 'Off: Claude 5-hour and 7-day quota, context and cost will not be tracked',
@@ -102,7 +118,7 @@ class Setup {
       const dir = this.binDir();
       fs.mkdirSync(dir, { recursive: true });
       if (process.platform === 'win32') {
-        fs.writeFileSync(path.join(dir, 'agent-bus.cmd'), `@"${py}" "${this.script}" %*
+        fs.writeFileSync(path.join(dir, 'agent-bus.cmd'), `@"${py}" "${this.script}" %*
 `);
         const cur = this.userPath();
         if (!cur.split(';').some((d) => d && path.resolve(d) === path.resolve(dir))) {
@@ -128,11 +144,9 @@ exec "${py}" "${this.script}" "$@"
       fs.mkdirSync(path.dirname(p), { recursive: true });
       let toml = fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : '';
       backup(p);
-      // Drop an older agent_bus block (up to the next table header), then append the current one.
-      toml = toml.replace(/\n?\[mcp_servers\.agent_bus(\.[^\]]*)?\][\s\S]*?(?=\n\[|$)/g, '');
-      toml = `${toml.trimEnd()}\n\n[mcp_servers.agent_bus]\ncommand = '${py}'\nargs = ['${this.script}']\n`;
+      toml = `${this.stripCodexAgentBus(toml).trimEnd()}\n\n${this.codexMcpToml(py)}`;
       fs.writeFileSync(p, toml);
-      return 'Added. Restart Codex Desktop (or start a new thread / CLI session) to load it.';
+      return 'Added. Restart Codex Desktop (or start a new thread) so it loads agent-bus. Each thread should bus_register a unique name.';
     }
     if (id === 'statusline') {
       const p = this.claudeSettingsPath();

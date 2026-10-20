@@ -3,7 +3,35 @@ const { contextBridge, ipcRenderer } = require('electron');
 const call = (ch) => (arg) => ipcRenderer.invoke(ch, arg);
 
 contextBridge.exposeInMainWorld('bus', {
+  districtSnapshot: call('district:snapshot'),
+  districtCommand: call('district:command'),
+  districtVoiceStatus: call('district:voice-status'),
+  districtVoiceStart: call('district:voice-start'),
+  districtVoiceStop: call('district:voice-stop'),
+  districtReadAsset: call('district:read-asset'),
+  onDistrictWindowVisibility: listener => {
+    if (typeof listener !== 'function') throw new TypeError('A visibility listener is required');
+    const callback = (_event, value) => { if (typeof value === 'boolean') listener(value); };
+    ipcRenderer.on('district:window-visibility', callback);
+    return () => ipcRenderer.removeListener('district:window-visibility', callback);
+  },
+  onDistrictVoice: listener => {
+    if (typeof listener !== 'function') throw new TypeError('A speech event listener is required');
+    const callback = (_event, value) => listener(value);
+    ipcRenderer.on('district:voice-event', callback);
+    return () => ipcRenderer.removeListener('district:voice-event', callback);
+  },
+  mapJobs: call('map:jobs'),
+  mapWorkers: call('map:workers'),
+  mapRun: call('map:run'),
+  mapCancel: call('map:cancel'),
   snapshot: call('bus:snapshot'),
+  onBusChange: listener => {
+    if (typeof listener !== 'function') throw new TypeError('A message listener is required');
+    const callback = () => listener();
+    ipcRenderer.on('bus:changed', callback);
+    return () => ipcRenderer.removeListener('bus:changed', callback);
+  },
   stats: call('bus:stats'),
   send: (to, body) => ipcRenderer.invoke('bus:send', { to, body }),
   forget: call('bus:forget'),

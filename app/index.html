@@ -2,16 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; frame-src http://127.0.0.1:*; object-src 'none'; base-uri 'self'">
   <title>Agent Bus</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="district-theme.css">
+  <link rel="stylesheet" href="district-scene.css">
+  <link rel="stylesheet" href="district-feedback.css">
+  <link rel="stylesheet" href="district-ui.css">
+  <link rel="stylesheet" href="district-entry.css">
+  <link rel="stylesheet" href="district-workbench.css">
+  <link rel="stylesheet" href="district-screen-picker.css">
+  <link rel="stylesheet" href="district-attract-demo.css">
+  <link rel="stylesheet" href="district-attract-world.css">
+  <link rel="stylesheet" href="district-conversation.css">
+  <link rel="stylesheet" href="district-showcase.css">
 </head>
-<body>
-  <header>
+<body class="mapView">
+  <button id="districtControlRoom" aria-expanded="false" aria-controls="districtLegacyControls">Control room</button>
+  <header id="districtLegacyControls">
     <div class="brand"><span class="logo">◆</span> Agent Bus</div>
     <div class="stats" id="stats"></div>
     <div id="quota" class="quota" title="Quota left on each account, as last reported by any session"></div>
     <div class="actions">
+      <button id="btnDistrictV2" aria-pressed="true">District</button>
+      <button id="btnMap" aria-pressed="false">Bus smoke lab</button>
+      <button id="btnClassic" aria-pressed="false">Messages</button>
       <button id="btnSteward" title="Steward: usage trends and proposals for improving Agent Bus">Steward <span id="stewardBadge" class="mini"></span></button>
       <button id="btnKeyring" title="Keyring: keys, passwords and tokens shared with your agents">Keyring <span id="keyringBadge" class="mini"></span></button>
       <button id="btnVms" title="Agents in virtual machines">VMs <span id="vmBadge" class="mini"></span></button>
@@ -21,7 +37,50 @@
     </div>
   </header>
 
-  <main>
+  <section id="districtV2" aria-label="Agent Bus development district"></section>
+  <section id="district" aria-label="Agent Bus smoke laboratory" hidden>
+    <div class="districtHead">
+      <div><span class="districtEyebrow">AGENT BUS / FIRST DISTRICT</span><h1>Make work visible.</h1></div>
+      <div class="districtGuide">Drag a worker onto <strong>Test</strong> to assign the smoke suite.<br><span>Claude / Codex use your signed-in CLI. Smoke runner uses no model quota.</span></div>
+      <div class="mapTools"><button id="watchTest" aria-pressed="false">Watch Test lab</button><button id="mapZoomOut" aria-label="Zoom out">−</button><button id="mapReset">Fit map</button><button id="mapZoomIn" aria-label="Zoom in">+</button></div>
+    </div>
+    <div class="districtBody">
+      <div class="districtStage">
+        <div id="mapViewport" tabindex="0" aria-label="Isometric district. Drag empty ground to pan; use zoom buttons.">
+          <div id="mapWorld">
+            <img src="assets/district.png" alt="Isometric cyberpunk district with research, build, test and review workshops" draggable="false">
+            <button class="station stationResearch" data-building="research"><span>Research <small>Coming next</small></span></button>
+            <button class="station stationBuild" data-building="build"><span>Build <small>Coming next</small></span></button>
+            <button class="station stationReview" data-building="review"><span>Review <small>Coming next</small></span></button>
+            <button class="station stationTest" id="testBuilding" data-building="test" aria-label="Test building. Drop a worker or click to run smoke tests."><span>Test <small id="testStatus">Ready for a worker</small><progress id="testProgress" max="6" value="0" hidden></progress></span></button>
+            <div id="mapWorkers"></div>
+          </div>
+          <div class="mapLegend"><i></i> Live workers &amp; test state <span>•</span> Drag ground to pan</div>
+          <div id="testScene" hidden>
+            <div id="testSceneWorld"></div>
+            <div class="testSceneCaption"><span>VERIFICATION DISTRICT</span><h2 id="testSceneTitle">Ready for an assignment</h2><p id="testSceneDetail">Your helper is ready. Assign a worker to Test.</p><small id="testSceneScope"></small></div>
+          </div>
+        </div>
+        <div class="workerDock"><div class="dockTitle">YOUR WORKERS <span id="workerCount"></span></div><div id="workerRoster" role="group" aria-label="Available workers"></div></div>
+      </div>
+      <aside id="jobPanel" aria-label="Test building details">
+        <div class="jobHeading"><span class="districtEyebrow">TEST FACILITY</span><span id="jobState" class="jobState">READY</span></div>
+        <h2>Smoke test</h2>
+        <p class="jobIntro">Real checks. A disposable bus. An inspectable result.</p>
+        <div id="selectedWorker"></div>
+        <button id="runSmoke" class="mapPrimary">Assign to Test →</button>
+        <button id="cancelSmoke" hidden>Cancel test</button>
+        <div id="mapNotice" role="status" aria-live="polite"></div>
+        <div id="agentActivity" role="status" aria-live="polite" hidden></div>
+        <ol id="jobSteps"></ol>
+        <p id="jobSummary">Checks cover syntax, messaging, files, HTTP authentication, and approval guards.</p>
+        <details id="jobEvidence"><summary>Execution evidence &amp; output</summary><dl id="jobProvenance"></dl><h4>Observed test output</h4><pre id="jobOutput">Run a smoke test to collect evidence.</pre><h4>Agent activity &amp; summary (reported)</h4><pre id="agentOutput">No agent session output for this run.</pre></details>
+        <div class="jobHistory"><h3>Recent runs</h3><div id="jobHistory"></div></div>
+        <p class="executorNote">Claude and Codex start dedicated sessions on assignment using your CLI login and model quota. Their scoped tool runs the real suite; agent commentary is labeled separately. This district tests Agent Bus itself.</p>
+      </aside>
+    </div>
+  </section>
+  <main id="classicMain" hidden>
     <aside id="agentsPane">
       <div class="paneHead">
         <span class="paneTitle">Sessions</span>
@@ -238,5 +297,21 @@ reply with bus_send. bus_list shows who is online. Use bus_send_file / bus_get_f
 
   <div id="toast"></div>
   <script src="renderer.js"></script>
+  <script src="map.js"></script>
+  <script src="district-world-state.js"></script>
+  <script src="district-scene.js"></script>
+  <script src="district-feedback.js"></script>
+  <script src="district-selection.js"></script>
+  <script src="district/regions.js"></script>
+  <script src="district-screen-picker.js"></script>
+  <script src="district-ui.js"></script>
+  <script src="district-attract-demo.js"></script>
+  <script src="district-attract-world.js"></script>
+  <script src="district-continuation.js"></script>
+  <script src="district-conversation.js"></script>
+  <script src="district-attention.js"></script>
+  <script src="district-map-interaction.js"></script>
+  <script src="district-workbench.js"></script>
+  <script src="district-entry.js"></script>
 </body>
 </html>

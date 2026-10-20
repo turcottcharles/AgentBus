@@ -698,6 +698,15 @@ $('secretOk').addEventListener('click', async () => {
   } catch (e) { $('secretErr').textContent = errText(e); }
 });
 
+let busRefreshRunning=false,busRefreshAgain=false;
+async function receiveBusChange(){
+  if(busRefreshRunning){busRefreshAgain=true;return;}
+  busRefreshRunning=true;
+  try{do{busRefreshAgain=false;await refresh();}while(busRefreshAgain);}finally{busRefreshRunning=false;}
+}
+const unsubscribeBus=window.bus.onBusChange?.(receiveBusChange);
+window.addEventListener('beforeunload',()=>unsubscribeBus?.(),{once:true});
+window.addEventListener('focus',receiveBusChange);
 refresh(true);
 keyringBadge();
 setInterval(keyringBadge, 15000);
@@ -705,5 +714,4 @@ refreshStats();
 stewardBadge();
 setInterval(stewardBadge, 15000);
 window.bus.setupStatus().then((items) => { const n = items.filter((i) => !i.ok && !i.na).length; $('setupBadge').textContent = n ? String(n) : ''; }).catch(() => {});
-setInterval(refresh, 2000);
 setInterval(refreshStats, 5000);

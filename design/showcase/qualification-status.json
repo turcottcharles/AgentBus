@@ -1,0 +1,687 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-18T21:25:02.637Z",
+  "source": {
+    "path": "evidence/showcase/qualification.json",
+    "sha256": "9df5398241121f30017d0d19847c4452a3c9fed4a38250ac3359fdcf6daa04b0",
+    "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855"
+  },
+  "state": "incomplete",
+  "metrics": {
+    "required": 8,
+    "passed": 1,
+    "pending": 6,
+    "failed": 1
+  },
+  "integration": {
+    "owner": "/root",
+    "status": "current_candidate_acceptance_pending",
+    "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+    "runtimeSourceHash": "8d46194df8d75422e568c68ade0182b812d0d6087d70661da46d84cadc4b453b",
+    "qualification": "evidence/showcase/qualification.json",
+    "qualificationSha256": "9df5398241121f30017d0d19847c4452a3c9fed4a38250ac3359fdcf6daa04b0",
+    "gates": [
+      {
+        "id": "experience",
+        "title": "Current production cinematic and real creation",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Actual production opening, scoped work, candidate output and captured camera continuation only. It does not substitute for seven-project, lifecycle, negative-case or artistic acceptance.",
+        "receipt": "evidence/showcase/experience-04/validation.json"
+      },
+      {
+        "id": "tests",
+        "title": "Current frozen-candidate full regression",
+        "state": "failed",
+        "status": "current acceptance failed",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Counts are parsed from the completed current log. Missing logs, incomplete summaries, failures, skips and changed source cannot pass.",
+        "receipt": "evidence/showcase/full-suite-current.tap"
+      },
+      {
+        "id": "multi",
+        "title": "Current seven-project native views and isolation",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Older seven-project/top-side/overview-split observations are historical after UI changes. No inferred carry-forward from a new one-project movie.",
+        "receipt": "evidence/showcase/native-candidate-02/validation.json"
+      },
+      {
+        "id": "handoff",
+        "title": "Current early/mid/late handoff and native negative cases",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "The current film covers only its recorded timing. Earlier commit timing, history, failure, unknown and cancellation cases require current acceptance.",
+        "receipt": "evidence/showcase/native-candidate-02/validation.json"
+      },
+      {
+        "id": "lifecycle",
+        "title": "Current native visibility, context and disposal lifecycle",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Clean capture shutdown is not the full hidden-view/context-loss/reduced-motion/disposal audit. Older lifecycle checks remain historical after visual/UI changes.",
+        "receipt": "evidence/showcase/production-candidate-06/validation.json"
+      },
+      {
+        "id": "codex",
+        "title": "Current production live Codex narrow assignment",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Only the recorded explicit narrow edit/check/preview in this production candidate; no sustained quota or general provider capability claim.",
+        "receipt": "evidence/showcase/experience-04/validation.json"
+      },
+      {
+        "id": "claude-component",
+        "title": "Historical Claude backend component evidence",
+        "state": "historical_not_current",
+        "status": "historical; current evidence pending",
+        "required": false,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Historical live provider evidence is applicable only to the listed unchanged backend hashes. It is not a requalification of the current complete UI, native handoff, authentication lifetime or quota.",
+        "receipt": "evidence/showcase/live-provider-receipt.json"
+      },
+      {
+        "id": "bundle",
+        "title": "Current GPU bundle reproducibility",
+        "state": "pending",
+        "status": "current acceptance pending",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "Requires the recorded rebuild to equal the current bundle bytes; old bundle evidence does not qualify new visual code.",
+        "receipt": "evidence/showcase/bundle-reproducibility.json"
+      },
+      {
+        "id": "models",
+        "title": "Approved original models preserved",
+        "state": "passed",
+        "status": "passed within the recorded scope",
+        "required": true,
+        "evidence": "evidence/showcase/qualification.json",
+        "scope": "",
+        "receipt": null
+      }
+    ],
+    "evidence": [
+      "evidence/showcase/qualification.json"
+    ],
+    "historicalEvidence": [
+      "evidence/showcase/native-candidate-02/validation.json",
+      "evidence/showcase/production-candidate-06/validation.json",
+      "evidence/showcase/live-provider-receipt.json"
+    ],
+    "previousQualification": "evidence/showcase/qualification-history/a686779c9676b9369c8dc290a309d31e19e895312280335155d1e53d010b867a.json",
+    "remaining": [
+      "Current production cinematic and real creation: pending",
+      "Current frozen-candidate full regression: failed",
+      "Current seven-project native views and isolation: pending",
+      "Current early/mid/late handoff and native negative cases: pending",
+      "Current native visibility, context and disposal lifecycle: pending",
+      "Current production live Codex narrow assignment: pending",
+      "Current GPU bundle reproducibility: pending",
+      "Owner artistic acceptance and physical microphone/human usability remain separate.",
+      "Current production live Codex assignment remains pending or failed as recorded.",
+      "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+    ],
+    "shots": {
+      "M01": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "M02": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "M03": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "M04": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "W01": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "W02": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "I01": "current acceptance pending: Current-candidate acceptance is not recorded for this shot. No historical pass is inherited.",
+      "T01A": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "T01B": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "T01C": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "T01D": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "T01E": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "R01": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical.",
+      "P01": "current acceptance pending: Current-candidate production experience pending; prior footage and native checks are historical."
+    }
+  },
+  "tasks": [
+    {
+      "id": "SC-01",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-02",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-03",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-04",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Only the recorded explicit narrow edit/check/preview in this production candidate; no sustained quota or general provider capability claim.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-05",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-06",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-07",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Older seven-project/top-side/overview-split observations are historical after UI changes. No inferred carry-forward from a new one-project movie.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-08",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-09",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-10",
+      "implementationState": "reviewed",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-11",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-12",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-13",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "historical_not_current",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Historical live provider evidence is applicable only to the listed unchanged backend hashes. It is not a requalification of the current complete UI, native handoff, authentication lifetime or quota.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": false
+      }
+    },
+    {
+      "id": "SC-14",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-15",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-16",
+      "implementationState": "reviewed",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Clean capture shutdown is not the full hidden-view/context-loss/reduced-motion/disposal audit. Older lifecycle checks remain historical after visual/UI changes.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-17",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Older seven-project/top-side/overview-split observations are historical after UI changes. No inferred carry-forward from a new one-project movie.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-18",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "Lane implementation receipts and focused tests are separate from current whole-product native acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    },
+    {
+      "id": "SC-19",
+      "implementationState": "implemented",
+      "currentQualification": {
+        "state": "pending",
+        "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+        "receipt": "evidence/showcase/qualification.json",
+        "scope": "The current film covers only its recorded timing. Earlier commit timing, history, failure, unknown and cancellation cases require current acceptance.",
+        "wholeCandidateState": "incomplete",
+        "currentUIQualified": null
+      }
+    }
+  ],
+  "shots": [
+    {
+      "id": "M01",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "M02",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "M03",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "M04",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "W01",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "W02",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "I01",
+      "state": "pending",
+      "summary": "Current-candidate acceptance is not recorded for this shot. No historical pass is inherited.",
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "T01A",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "T01B",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "T01C",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "T01D",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "T01E",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "R01",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    },
+    {
+      "id": "P01",
+      "state": "pending",
+      "evidence": [
+        "evidence/showcase/experience-04/validation.json"
+      ],
+      "candidate": "d30cdb3a8a12d883a99654af376ed37850d9e505045884c438be68b55e579855",
+      "summary": "Current-candidate production experience pending; prior footage and native checks are historical.",
+      "remaining": [
+        "Current production cinematic and real creation: pending",
+        "Current frozen-candidate full regression: failed",
+        "Current seven-project native views and isolation: pending",
+        "Current early/mid/late handoff and native negative cases: pending",
+        "Current native visibility, context and disposal lifecycle: pending",
+        "Current production live Codex narrow assignment: pending",
+        "Current GPU bundle reproducibility: pending",
+        "Owner artistic acceptance and physical microphone/human usability remain separate.",
+        "Current production live Codex assignment remains pending or failed as recorded.",
+        "Claude complete current-UI operation has not been requalified; only unchanged backend component evidence may carry forward."
+      ],
+      "receipt": "evidence/showcase/qualification.json"
+    }
+  ],
+  "limits": {
+    "releaseReady": false,
+    "T3Parity": false,
+    "ownerArtisticAcceptance": "Owner review remains separate from measured behavior.",
+    "physicalMicrophoneQualified": false,
+    "performance": "Only explicitly recorded bounded hardware observations; no sustained frame-rate claim.",
+    "providerScope": "Current production Codex and historical backend-only provider evidence are separate.",
+    "workspaces": "Bounded owned starter apps; general import and durable conversation capabilities remain separate."
+  }
+}

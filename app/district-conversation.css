@@ -1,0 +1,46 @@
+.dc-conversation {
+  width: min(780px, 100%);
+  margin-inline: auto;
+  padding: 8px 12px 7px;
+  border: 1px solid #75b5cb80;
+  border-top-color: var(--dv-teal, #64e4ed);
+  border-radius: 12px;
+  background: linear-gradient(120deg, #111e32eb, #0b1427e0);
+  box-shadow: 0 12px 40px #02071280, inset 0 1px #d7f7ff12;
+  color: var(--dv-text, #edf6ff);
+  font: 14px/1.4 var(--dv-font, 'Segoe UI Variable', 'Segoe UI', sans-serif);
+  pointer-events: auto;
+  color-scheme: dark;
+  backdrop-filter: blur(12px);
+}
+.dc-conversation *, .dc-conversation *::before, .dc-conversation *::after { box-sizing: border-box; }
+.dc-next { width: min(780px, 100%); margin: 5px auto 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; color: #d1deec; font: 12px/1.4 var(--dv-font, 'Segoe UI', sans-serif); }
+.dc-next[hidden], .dc-next [hidden] { display: none !important; }
+.dc-next-title { flex: 1 1 180px; }
+.dc-next-count { min-height: 44px; border: 1px solid #608a9c; border-radius: 7px; color: #edf6ff; background: #111e32; font: inherit; padding: 6px; }
+.dc-next-note { flex-basis: 100%; margin: 0; color: #c2d1e2; }
+.dc-next :focus-visible { outline: 3px solid #8debf3; outline-offset: 2px; }
+.dc-conversation [hidden] { display: none !important; }
+.dc-sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+.dc-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; align-items: center; }
+.dc-label { display: block; grid-column: 1; grid-row: 1; min-width: 0; }
+.dc-draft { display: block; width: 100%; height: 48px; min-height: 48px; max-height: 110px; resize: none; border: 1px solid #708aa480; border-radius: 7px; padding: 11px 12px; background: #0610209c; color: #f2f8ff; font: 15px/1.5 var(--dv-font, 'Segoe UI Variable', 'Segoe UI', sans-serif); scrollbar-width: thin; }
+.dc-draft::placeholder { color: #b7cadc; opacity: 1; }
+.dc-draft:disabled { opacity: .65; }
+.dc-controls { display: contents; }
+.dc-hint { grid-column: 1 / -1; grid-row: 2; color: #c2d1e2; font-size: 11px; line-height: 16px; padding-left: 2px; overflow-wrap: anywhere; }
+.dc-hint kbd { font: 10px var(--dv-mono, 'Cascadia Code', monospace); color: #d8f5f7; border: 1px solid #648195; padding: 0 4px; border-radius: 3px; background: #172a3b; }
+.dc-speech-controls { grid-column: 2; grid-row: 1; display: flex; align-items: center; justify-content: flex-end; gap: 7px; }
+.dc-speak, .dc-cancel { min-height: 44px; min-width: 58px; border: 1px solid #608a9c; border-radius: 7px; padding: 6px 11px; background: #183244; color: #e4f9fc; font: 600 12px/1.4 var(--dv-font, 'Segoe UI', sans-serif); cursor: pointer; }
+.dc-speak:hover:not(:disabled), .dc-cancel:hover:not(:disabled) { background: #294b5b; border-color: #96e2e9; }
+.dc-speak:disabled { opacity: .5; cursor: not-allowed; }
+.dc-cancel { background: transparent; color: #c0d0e3; border-color: #536b81; }
+.dc-listening-light { width: 8px; height: 8px; border-radius: 50%; background: var(--dv-rose, #ff8b9c); box-shadow: 0 0 0 4px #ff8b9c18; }
+.dc-conversation[data-listening='true'] { border-top-color: var(--dv-rose, #ff8b9c); }
+.dc-conversation[data-listening='true'] .dc-speak { border-color: #ff8b9c; color: #ffd4dc; background: #3a2133; }
+.dc-status { margin: 5px 2px 0; color: #d1deec; font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; white-space: pre-wrap; max-height: min(25vh, 140px); overflow-y: auto; scrollbar-width: thin; }
+.dc-conversation :where(button, textarea, .dc-status):focus-visible { outline: 3px solid var(--dv-focus, #8debf3); outline-offset: 2px; }
+@media (max-width: 600px) { .dc-conversation { padding: 7px 9px 6px; } .dc-form { column-gap: 7px; } .dc-draft { font-size: 14px; padding-inline: 9px; } .dc-speak, .dc-cancel { padding-inline: 8px; } .dc-cancel { min-width: 44px; padding-inline: 6px; } }
+@media (prefers-reduced-transparency: reduce) { .dc-conversation { background: #101c2f; backdrop-filter: none; } }
+@media (prefers-reduced-motion: reduce) { .dc-conversation, .dc-conversation * { scroll-behavior: auto; } }
+@media (forced-colors: active) { .dc-conversation { color: CanvasText; background: Canvas; border-color: CanvasText; } .dc-draft, .dc-speak, .dc-cancel { color: ButtonText; background: Canvas; border-color: ButtonText; } .dc-listening-light { background: Highlight; } }

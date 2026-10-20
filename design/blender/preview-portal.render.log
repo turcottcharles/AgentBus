@@ -1,0 +1,157 @@
+00:00.812  cycles           | CUEW initialization succeeded
+00:00.812  cycles           | Found precompiled kernels
+00:00.844  cycles           | Device has compute preemption or is not used for display.
+00:00.844  cycles           | Added device "NVIDIA GeForce RTX 3070 Ti Laptop GPU" with id "CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00".
+00:00.844  cycles           | Device with id "CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00" supports OpenImageDenoise.
+00:01.203  cycles           | Overriding number of TBB threads to 4.
+00:01.203  cycles           | Mapped host memory limit set to 64,135,712,768 bytes. (59.73G)
+00:01.500  cycles           | Using AVX2 CPU kernels.
+00:01.515  cycles           | Total time spent synchronizing data: 0.0030804
+00:01.515  cycles           | Adaptive sampling: automatic min samples = 43
+00:01.515  cycles           | Effective scene passes:
+00:01.515  cycles           | - type: combined, name: "Combined", mode: NOISY, is_written: True
+00:01.515  cycles           | - type: adaptive_aux_buffer, name: "", mode: NOISY, is_written: True
+00:01.515  cycles           | - type: sample_count, name: "", mode: NOISY, is_written: True
+00:01.515  cycles           | Requested features:
+00:01.515  cycles           | Use BSDF True
+00:01.515  cycles           | Use Emission True
+00:01.515  cycles           | Use Volume False
+00:01.515  cycles           | Use Bump False
+00:01.515  cycles           | Use Voronoi False
+00:01.515  cycles           | Use Shader Raytrace False
+00:01.515  cycles           | Use MNEE False
+00:01.515  cycles           | Use Transparent False
+00:01.515  cycles           | Use Denoising False
+00:01.515  cycles           | Use Path Tracing True
+00:01.515  cycles           | Use Hair False
+00:01.515  cycles           | Use Pointclouds False
+00:01.515  cycles           | Use Object Motion False
+00:01.515  cycles           | Use Baking False
+00:01.515  cycles           | Use Subsurface False
+00:01.515  cycles           | Use Volume False
+00:01.515  cycles           | Use Shadow Catcher False
+00:01.515  cycles           | Use Portal Node False
+00:01.515  cycles           | Testing for pre-compiled kernel D:\Blender\5.2\scripts\addons_core\cycles\lib/kernel_sm_86.cubin.zst.
+00:01.515  cycles           | Using precompiled kernel.
+00:01.594  cycles           | Local memory reserved 406,847,488 bytes. (388.00M)
+00:01.625  cycles           | Total 18 shaders.
+00:01.625  cycles           | Shader manager updated 18 shaders in 0.0006197 seconds.
+00:01.625  cycles           | Total 60 objects.
+00:01.625  cycles           | Total 0 particle systems.
+00:01.625  cycles           | Total 60 meshes.
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.625  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.640  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.656  cycles           | Using OPTIX layout.
+00:01.656  cycles           | Using fast to trace OptiX BVH
+00:01.672  cycles           | Total 10 lookup tables.
+00:01.672  cycles           | Total 5 lights.
+00:01.672  cycles           | Background MIS has been disabled.
+00:01.672  cycles           | Number of lights sent to the device: 4
+00:01.672  cycles           | Use light tree with 2604 emitters and 4415 nodes.
+00:01.672  cycles           | Total 11 lookup tables.
+00:01.672  cycles           | System memory statistics after full device sync:
+                            |   Usage: 1,234,744 (1.18M)
+                            |   Peak: 23,426,592 (22.34M)
+00:01.672  cycles           | Adaptive sampling: automatic min samples = 43
+00:01.719  cycles           | Rendered 1 samples in 0.0208985 seconds (0.0208985 seconds per sample), occupancy: 0.0620304
+00:01.719  cycles           | Adaptive sampling: automatic min samples = 43
+00:02.219  cycles           | Rendered 47 samples in 0.500619 seconds (0.0106515 seconds per sample), occupancy: 0.381593
+00:02.219  cycles           | Adaptive sampling: automatic min samples = 43
+00:02.312  cycles           | Rendered 16 samples in 0.0901155 seconds (0.00563222 seconds per sample), occupancy: 0.171377
+00:02.312  cycles           | Adaptive sampling: automatic min samples = 43
+00:02.390  cycles           | Rendered 16 samples in 0.0798785 seconds (0.00499241 seconds per sample), occupancy: 0.149941
+00:02.390  cycles           | Adaptive sampling: automatic min samples = 43
+00:02.469  cycles           | Rendered 16 samples in 0.0694099 seconds (0.00433812 seconds per sample), occupancy: 0.126174
+00:02.500  cycles           | Adaptive sampling: automatic min samples = 43
+00:02.500  cycles           | Rendering in main loop is done in 0.808911 seconds.
+00:02.500  cycles           | Full path tracing report:
+                            | 
+                            | Path tracing on: NVIDIA GeForce RTX 3070 Ti Laptop GPU (OptiX) [CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00_OptiX]
+                            |                      Hardware Ray-Tracing: Off
+                            | 
+                            | Render Scheduler Summary
+                            | 
+                            | Mode: Headless
+                            | Resolution: 1024x1024
+                            | 
+                            | Adaptive sampling:
+                            |   Use: True
+                            |   Step: 16
+                            |   Min Samples: 43
+                            |   Threshold: 0.200000
+                            | 
+                            | Denoiser:
+                            |   Use: False
+                            | 
+                            | Time (in seconds):
+                            |                                        Wall              Average
+                            |           Path Tracing             0.763840             0.007957
+                            |        Adaptive Filter             0.005508             0.000058
+                            |         Display Update             0.000004             0.000004
+                            | 
+                            |   Total: 0.769352
+                            | 
+                            | Rendered 96 samples in 0.807778 seconds
+                            | 
+00:02.500  cycles           | Total render time: 1.29804
+00:02.500  cycles           | Render time (without synchronization): 0.810006
+00:02.922  render           | Saved: 'D:\ASM\agent-bus\app\assets\district-v2\preview-portal.png'
+DISTRICT_GPU_ONLY={"backend": "OPTIX", "devices": ["NVIDIA GeForce RTX 3070 Ti Laptop GPU"]}
+Info: Saved as "preview-portal.blend"
+DISTRICT_RENDER_COMPLETE={"png": "D:\\ASM\\agent-bus\\app\\assets\\district-v2\\preview-portal.png", "blend": "D:\\ASM\\agent-bus\\design\\blender\\preview-portal.blend", "backend": "OPTIX", "cpu_enabled": false}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

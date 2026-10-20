@@ -1,0 +1,342 @@
+{
+  "version": 1,
+  "title": "Agent Bus · Night Shift District",
+  "purpose": "One coherent illustrated city-building interface for real software work. Preserve the approved dimensional district; UI controls are readable instruments around it. Decorative activity never grants execution, authority or success.",
+  "ownership": {
+    "theme": "app/district-theme.css",
+    "direction": "design/district-art-direction.json",
+    "newAssets": "app/assets/district-v2/*",
+    "plate": "Existing approved plate retained without modification",
+    "scene": "app/district-scene.js and CSS owned by scene lane",
+    "hud": "app/district-ui.js and CSS owned by HUD lane"
+  },
+  "reference": {
+    "path": "app/assets/district.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "42920755069644cd52825078a53e9a022754ded314a4f28eea3ae38db416f07b",
+    "inspected": true,
+    "modified": false,
+    "description": "Hand-painted elevated isometric night district, ink contours, slate industrial buildings, warm windows, cyan Research observatory, amber Build workshop, violet Test/Review facilities, central communications tower and lower-right landing pad.",
+    "invariants": [
+      "Keep the original plate intact and uncropped in world coordinates.",
+      "Use matching elevated three-quarter objects and physical ground contact.",
+      "Keep the center plaza, building doors and landing pad legible.",
+      "Overlay real controls and activity rather than re-rendering the scene as a generic dashboard."
+    ]
+  },
+  "visualStandard": {
+    "camera": "Fixed approved 1536×1024 world; pan/zoom affects scene and anchors together. Do not independently scale hit areas or worker paths.",
+    "materials": "Dark slate painted metal, subtle bevels and restrained edge highlights. HUD uses near-opaque blue-black hardware to preserve text contrast over detailed artwork.",
+    "colorBudget": "Dark ink and slate dominate. Teal, violet and amber identify selected facilities/actions. Use one active accent per control group; reserve green and rose for actual outcomes/errors with words.",
+    "light": "Follow plate: cool cyan/violet ambient light and warm amber practical windows. One subtle grounding shadow per worker; no repeating pulses, bloom clouds, scanlines or full-screen blur.",
+    "composition": "Compact left instruction dock and right facility inspector over a large visible map. Show deeper logs, manifests and diff on request; preview is a clearly identified window/portal, not replacement district art.",
+    "silhouette": "Worker sprites remain simple enough to identify after camera fit; text labels are separate DOM elements, never painted into art.",
+    "typography": {
+      "body": "Segoe UI Variable Text / Segoe UI / system-ui",
+      "display": "Segoe UI Variable Display / Segoe UI / system-ui",
+      "code": "Cascadia Code / Cascadia Mono / Consolas",
+      "basePx": 14,
+      "minimumLabelPx": 12,
+      "titlePx": 24,
+      "lineHeight": 1.5,
+      "rule": "Avoid long all-caps labels, tiny evidence text and stylized sci-fi fonts. IDs/commands may use monospace; user actions use familiar words."
+    },
+    "motion": {
+      "default": "Short event-driven movement/highlight only; no continuous productivity animation.",
+      "fastMs": 120,
+      "controlMs": 180,
+      "travelMs": 520,
+      "reducedMotion": "All shared duration tokens become 0ms; new state still updates immediately.",
+      "truth": "Travel represents a reported/observed phase location. It does not claim task progress or dispatch another command."
+    }
+  },
+  "palette": {
+    "ink": "#0b1021",
+    "panel": "#11192d",
+    "raised": "#1b263d",
+    "text": "#edf6ff",
+    "muted": "#a7b6ce",
+    "subtle": "#879ab7",
+    "line": "#435670",
+    "teal": "#64e4ed",
+    "violet": "#c99bff",
+    "amber": "#ffbe63",
+    "green": "#83ddb3",
+    "rose": "#ff8b9c",
+    "focus": "#a0f5ff",
+    "phases": {
+      "research": "teal",
+      "edit": "amber",
+      "build": "amber",
+      "test": "violet",
+      "review": "#e0a3fa",
+      "preview": "teal",
+      "idle": "muted"
+    },
+    "evidenceBasis": {
+      "reported": {
+        "color": "violet",
+        "label": "Agent-reported"
+      },
+      "observed": {
+        "color": "teal",
+        "label": "Observed"
+      },
+      "inferred": {
+        "color": "muted",
+        "label": "Inferred"
+      },
+      "stale": {
+        "color": "amber",
+        "label": "Last seen / activity unknown"
+      }
+    },
+    "results": {
+      "passed": {
+        "color": "green",
+        "requires": "Observed qualifying result and exact candidate identity"
+      },
+      "failed": {
+        "color": "rose",
+        "requires": "Observed failure or recorded diagnostic"
+      },
+      "unknown": {
+        "color": "muted",
+        "requires": "No invented availability, progress or result"
+      }
+    },
+    "rule": "Facility phase color is a locator, not a verdict. Every basis, state and result has visible text; color alone never carries meaning."
+  },
+  "sharedCss": {
+    "path": "app/district-theme.css",
+    "prefix": "--dv-",
+    "scope": "#districtV2 or .dv-theme",
+    "canonicalTokens": [
+      "--dv-ink",
+      "--dv-panel",
+      "--dv-panel-translucent",
+      "--dv-text",
+      "--dv-muted",
+      "--dv-teal",
+      "--dv-violet",
+      "--dv-amber",
+      "--dv-green",
+      "--dv-rose",
+      "--dv-line",
+      "--dv-focus",
+      "--dv-font-body",
+      "--dv-font-mono",
+      "--dv-worker-height"
+    ],
+    "hudAliases": [
+      "--dv-font",
+      "--dv-mono",
+      "--dv-bg",
+      "--dv-surface",
+      "--dv-surface-raised",
+      "--dv-border",
+      "--dv-accent",
+      "--dv-text-muted",
+      "--dv-purple",
+      "--dv-orange",
+      "--dv-error"
+    ],
+    "optionalPrimitives": {
+      ".dv-material": "Dimensional dark panel material only; feature owner supplies layout.",
+      ".dv-signal": "Small text badge. data-basis reported/observed/inferred and data-freshness stale control accent, not wording.",
+      ".dv-sr-only": "Screen-reader-only explanatory text.",
+      ".dv-tabular": "Stable numerical alignment.",
+      ".dv-phase-*": "Sets --dv-phase for research/edit/build/test/review/preview."
+    },
+    "controls": {
+      "desktopHeightPx": 40,
+      "recommendedHitTargetPx": 44,
+      "focusRing": "3px #a0f5ff, offset 3px",
+      "panelRadiusPx": 18
+    },
+    "performance": "No image filters on the background, continuous keyframes, backdrop-filter or JS drawing. Static sprite may use one drop-shadow."
+  },
+  "sceneAnchors": {
+    "unit": "Native plate pixels; scene lane owns final hit geometry/occlusion.",
+    "source": "Final preview base coordinate coordinated with scene lane; other entrance coordinates remain scene-owned.",
+    "research": {
+      "x": 410,
+      "y": 334
+    },
+    "build": {
+      "x": 499,
+      "y": 653
+    },
+    "test": {
+      "x": 1174,
+      "y": 363
+    },
+    "review": {
+      "x": 1187,
+      "y": 667
+    },
+    "idle": {
+      "x": 810,
+      "y": 470
+    },
+    "preview": {
+      "x": 1210,
+      "y": 846
+    },
+    "previewMeaning": "Anchor identifies an actual candidate-bound browser portal. Landing-pad artwork itself does not prove a preview is running.",
+    "pathRule": "Roads and visual links express location/relation only. An executable dependency must be explicitly defined by the runtime; scene update never dispatches work.",
+    "layers": {
+      "art": 0,
+      "workers": 20,
+      "facilityControls": 30,
+      "hud": 60,
+      "overlay": 80,
+      "modal": 100
+    },
+    "occlusion": "Workers feet meet a pavement anchor. Labels sit clear of building signs and may move to a side rail at fit scale. Scene owns y ordering; HUD owns its independent overlay layer."
+  },
+  "assets": [
+    {
+      "id": "worker-engineer",
+      "path": "app/assets/district-v2/worker-engineer.png",
+      "urlFromApp": "assets/district-v2/worker-engineer.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 921758,
+      "sha256": "5c1e47f23b5412b5428dd38f97961963619bd52ef65a3b4c6828026f2a813c54",
+      "mediaType": "image/png",
+      "pixelFormat": "32-bit ARGB",
+      "hasAlpha": true,
+      "alphaInspection": {
+        "cornerAlpha": 1,
+        "centerAlpha": 252,
+        "visibleThreshold": 128,
+        "samplingStepPx": 3,
+        "boundsApprox": {
+          "left": 357,
+          "top": 54,
+          "right": 891,
+          "bottom": 1209
+        },
+        "note": "Background is near-transparent, not an opaque black matte. Bounds are approximate samples, not a raster edit."
+      },
+      "anchor": {
+        "kind": "feet",
+        "x": 627,
+        "y": 1209,
+        "normalizedX": 0.5,
+        "normalizedY": 0.964
+      },
+      "display": {
+        "canvasWidthPx": 72,
+        "canvasHeightPx": 72,
+        "approxVisibleHeightPx": 66,
+        "positionTransform": "translate(-50%, -96.4%)",
+        "cssHeightToken": "--dv-worker-height",
+        "fit": "contain",
+        "pixelated": false,
+        "shadow": "var(--dv-shadow-sprite)"
+      },
+      "identity": "A neutral maintenance engineer, not a provider logo. Provider/worker/run identity must remain visible as separate DOM text; the same sprite may represent multiple actual workers only when each has a distinct label.",
+      "purpose": "Replace flat generic tokens with one coherent dimensional worker. This is a static location marker, not proof of labor or completion.",
+      "creation": {
+        "mode": "built-in image_gen",
+        "transparentBackground": true,
+        "source": "Generated from written art direction after viewing the approved plate; original plate was not edited.",
+        "originalOutputPath": "C:/Users/Admin/.codex/generated_images/01a14bf4-3a3c-7461-9b75-0ed5b63ea9c7/exec-93daf009-b7f9-4f4a-ab31-288d4606dfc6.png",
+        "prompt": "Use case: stylized-concept\nAsset type: one transparent PNG worker sprite for an illustrated isometric cyberpunk desktop game map.\nPrimary request: a single small friendly adult maintenance engineer, full body, standing calmly and facing toward the lower-right of the picture, shown from the same elevated three-quarter isometric camera used for city-building games (camera about 30 degrees down). The silhouette must read clearly at only 48 pixels high. Broad sturdy boots with both feet on one implied ground plane, compact violet utility coat, slate-grey backpack, simple gloves, a smooth dark helmet with one slim pale-cyan visor. One tiny amber light on backpack; no other props. Arms relaxed with one hand holding a small closed rectangular diagnostic tablet at the hip. Proportions grounded and charming, head approximately one fourth of full height; no exaggerated anime face.\nStyle/medium: polished hand-painted city-building game concept illustration, precise dark ink contour, chunky dimensional shapes, soft cel shading, restrained architectural game detail, gently worn painted metal and fabric. Match an illustrated night district of slate stone and steel buildings with cyan neon, violet shadows and warm amber windows.\nComposition/framing: isolated SINGLE character centered in a square canvas, large enough to occupy roughly 78 percent of height, whole helmet and both feet visible, generous clear transparent margin, feet aligned near bottom center. Three-quarter view, show top plane of helmet and shoulders. No sprite sheet, no alternate poses, no extra objects, no environment, no base or platform.\nLighting/mood: warm amber rim from lower-left and soft cool cyan rim from upper-right, calm capable friendly character. Keep interior fabric readable rather than near black.\nColor palette: dark ink #0b1021 outlines, desaturated violet coat #615685, slate #45576d hardware, pale teal #64e4ed visor, tiny amber #ffbe63 accents.\nConstraints: real transparent background alpha, crisp clean silhouette, no text, no labels, no logos, no weapons, no brands, no pedestal, no cast shadow on background, no outline glow outside silhouette. Deliver production-quality cutout, not a UI mockup."
+      }
+    },
+    {
+      "id": "preview-portal",
+      "path": "app/assets/district-v2/preview-portal.png",
+      "urlFromApp": "assets/district-v2/preview-portal.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1026627,
+      "sha256": "9a0977ac5b4cea1f19ac6af5d9b83f203def29e9deb52f49eae8539fc3f885bf",
+      "hasAlpha": true,
+      "anchor": {
+        "kind": "ground/base-center",
+        "world": [
+          0,
+          0,
+          0.1
+        ],
+        "normalized_x": 0.4999997019767761,
+        "normalized_y": 0.6790191233158112,
+        "note": "Normalized image coordinates measured from upper left. Align this point to landing-pad base center."
+      },
+      "display": {
+        "canvasWidthPx": 235,
+        "canvasHeightPx": 235,
+        "visibleWidthApproxPx": 180,
+        "visibleHeightApproxPx": 170,
+        "worldBaseCenter": {
+          "x": 1210,
+          "y": 846
+        },
+        "positionTransform": "translate(-50%, -67.9019%)",
+        "role": "Static Preview facility locator; actual candidate stays in the bound browser UI."
+      },
+      "creation": {
+        "mode": "Blender Cycles GPU",
+        "source": "design/blender/create-preview-portal.py",
+        "editable": "design/blender/preview-portal.blend",
+        "provenance": "design/blender/preview-portal.provenance.json",
+        "engine": "CYCLES",
+        "backend": "OPTIX",
+        "cpuFallback": false
+      },
+      "purpose": "An original dimensional facility locator on the existing landing pad, never a screenshot or acceptance verdict."
+    }
+  ],
+  "accessibility": {
+    "equivalence": "All map actions also appear in keyboard-operated controls/task list. Dragging is optional.",
+    "labels": "Use plain action names: Create project, Ask agent, Check build, Preview, Save checkpoint and Restore. Explain provider/model detail progressively.",
+    "motion": "Honor prefers-reduced-motion and retain immediate state text. No flashing or looping productivity cues.",
+    "focus": "Visible focus rings and preserved focus/scroll are part of the visual standard.",
+    "contrast": "Measured semantic text/accent contrast against the primary panel is at least 6.11:1; maps/art are illustrative and do not replace text evidence.",
+    "testingBoundary": "Theme token calculations and asset metadata are verified. Full assembled UI, fit-scale sprite readability and assistive technology/human usability still require root's integrated browser review."
+  },
+  "verification": {
+    "themeTokenDefinitions": 101,
+    "undefinedTokenReferences": 0,
+    "contrastAgainstPanel": {
+      "text": 16.01,
+      "muted": 8.52,
+      "subtle": 6.11,
+      "teal": 11.54,
+      "violet": 8.01,
+      "amber": 10.66,
+      "green": 10.79,
+      "rose": 7.85
+    },
+    "contrastMethod": "WCAG relative luminance, sRGB linearization, (lighter+0.05)/(darker+0.05), computed by Node built-ins against #11192d. This is not a complete accessibility audit.",
+    "originalPlatePreserved": true,
+    "assetCopiedWithoutRasterEdits": true,
+    "runtimeQualified": false,
+    "reviewChecklist": [
+      "At native and fit camera scales, worker feet align with their anchor and label remains readable.",
+      "The map occupies most of the scene; opaque text panels do not cover every building.",
+      "Reported/Observed/Unknown words remain visible alongside colors.",
+      "Failed checks, stale telemetry and unavailable quota retain explicit text.",
+      "A preview panel names project/run/candidate and stale state.",
+      "Keyboard focus is visible and reduced-motion avoids travel animation.",
+      "Original smoke Test view remains unchanged."
+    ],
+    "gpuPortalRendered": true
+  },
+  "limitations": [
+    "The generated worker is one static pose, not an animated walk cycle.",
+    "Image generation and source/style inspection do not prove runtime correctness, visual user acceptance or provider completion.",
+    "No source plate edits, provider calls, dependency installs, commits or external publication were performed by this lane.",
+    "The Blender portal is static art; opening it must reveal the real candidate-bound preview and stale-state labels."
+  ],
+  "factions": {
+    "ledger": "design/district-factions.json",
+    "count": 6,
+    "rule": "Original engineering culture names, material trims and small text badges; no provider bindings, bonuses or invented execution."
+  }
+}

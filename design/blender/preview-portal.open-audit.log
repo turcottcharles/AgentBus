@@ -1,0 +1,5 @@
+00:01.204  blend            | Read blend: "D:\ASM\agent-bus\design\blender\preview-portal.blend"
+DISTRICT_BLEND_AUDIT={"objects": 60, "meshes": 54, "materials": 10, "cameras": 1, "engine": "CYCLES", "device": "GPU", "samples": 96, "gpu_only": true, "role": "Preview locator; never a rendered candidate screenshot or execution verdict."}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

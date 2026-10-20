@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "blender": "5.2.2 LTS",
+  "build_hash": "d13f752e3b9c",
+  "engine": "CYCLES",
+  "device": "GPU",
+  "backend": "OPTIX",
+  "devices": [
+    {
+      "name": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+      "id": "CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00_OptiX",
+      "type": "OPTIX"
+    }
+  ],
+  "cpu_devices_enabled": [],
+  "denoising": false,
+  "compositing": false,
+  "resolution": [
+    1024,
+    1024
+  ],
+  "samples": 96,
+  "transparent": true,
+  "camera": {
+    "type": "ORTHO",
+    "location": [
+      6,
+      -8,
+      6.800000190734863
+    ],
+    "target": [
+      0,
+      0,
+      1.0399999618530273
+    ],
+    "scale": 4.55
+  },
+  "anchor": {
+    "kind": "ground/base-center",
+    "world": [
+      0,
+      0,
+      0.1
+    ],
+    "normalized_x": 0.4999997019767761,
+    "normalized_y": 0.6790191233158112,
+    "note": "Normalized image coordinates measured from upper left. Align this point to landing-pad base center."
+  },
+  "files": {
+    "design/blender/create-preview-portal.py": {
+      "bytes": 11570,
+      "sha256": "b077736a15693cd235c1ece5f9a79c2714564219e708ef7778ebac7e21d10a05"
+    },
+    "design/blender/preview-portal.blend": {
+      "bytes": 134946,
+      "sha256": "8967e89a3a2ded421383c2e870102b605a53216909a0f62c3d7bd4d0d633b17d"
+    },
+    "app/assets/district-v2/preview-portal.png": {
+      "bytes": 1026627,
+      "sha256": "9a0977ac5b4cea1f19ac6af5d9b83f203def29e9deb52f49eae8539fc3f885bf"
+    }
+  },
+  "scope": "This is a static 3D facility locator. It does not show or validate an actual software preview.",
+  "alphaInspection": {
+    "cornerAlpha": 0,
+    "threshold": 128,
+    "samplingStepPx": 2,
+    "boundsApprox": {
+      "left": 120,
+      "top": 150,
+      "right": 904,
+      "bottom": 890
+    }
+  },
+  "display": {
+    "canvasWidthPx": 235,
+    "canvasHeightPx": 235,
+    "visibleWidthApproxPx": 180,
+    "visibleHeightApproxPx": 170,
+    "worldBaseCenter": {
+      "x": 1210,
+      "y": 846
+    },
+    "positionTransform": "translate(-50%, -67.9019%)",
+    "role": "Static Preview facility locator; actual candidate stays in the bound browser UI."
+  },
+  "renderEvidence": {
+    "log": "design/blender/preview-portal.render.log",
+    "pathTracingLine": 122,
+    "pathTracing": "NVIDIA GeForce RTX 3070 Ti Laptop GPU (OptiX)",
+    "samplesLine": 147,
+    "totalRenderSeconds": 1.29804,
+    "localMemoryReservedBytes": 406847488,
+    "execution": "Owned hidden background Blender process; no CPU device enabled; denoising/compositor disabled."
+  }
+}

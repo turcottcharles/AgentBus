@@ -1,0 +1,7 @@
+{
+  "mailbox": "editor-agent-bus",
+  "threadId": "01a14ba6-220d-7df3-9e4c-ec3296a8ced5",
+  "chatTitle": "Editor agent-bus",
+  "skipSenders": ["editor-agent-bus", "hub-47801-probe"],
+  "idleMs": 8000
+}

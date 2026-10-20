@@ -1,0 +1,20 @@
+Owner direction: preserve the accepted low, close cinematic composition. Its
+background is the actual management area and its usual activity, viewed from
+that camera. Management uses a 3/4 overhead isometric camera over the same place.
+
+Single renderer/GLB/materials: DistrictAttractWorld mount({container,view}) with
+view cinematic (default) or management. setView(name), projectPoint([x,y,z]) in
+container CSS pixels, getLayout() {hub,facilities}, setWorkers(records) extend the
+existing read-only presentation API. Management uses a fixed camera; outer scene
+CSS transforms retain pan/zoom and all DOM hits/labels track projected anchors.
+
+Worker semantics: DistrictWorldState.workerState(worker,activities,runs) and
+project(snapshot,projectId) are pure and used in both entry and management.
+setWorkers receives {id,facility,phase,basis,state,stale,label,terminal}. No command
+capability is passed. Unlinked or other-project activity must not become linked
+actual work. First-use cinematic demonstrations remain explicitly labelled.
+
+Persistent facility anchors: research[-11,0,-17],build[9,0,-15],test[-18,0,-1],
+review[-10,0,12],preview[18,0,3]. No foreground replacement or unsolicited redesign.
+Management contexts mount only for visible panes and dispose when offscreen or
+hidden. Hardware GPU only; approved illustration is the unavailable-GPU fallback.

@@ -6,10 +6,17 @@
   "main": "app/main.js",
   "private": true,
   "scripts": {
+    "smoke": "node app/smoke-worker.js",
+    "test": "node --test tests/*.test.js",
     "start": "electron .",
+    "build:world": "node design/district-3d/build-world.cjs",
+    "district": "node bin/district.cjs",
+    "district:mcp": "node bin/district-mcp.cjs",
     "install-shortcuts": "powershell -NoProfile -ExecutionPolicy Bypass -File install-shortcuts.ps1"
   },
   "devDependencies": {
-    "electron": "44.5.0"
+    "electron": "44.5.0",
+    "esbuild": "0.25.12",
+    "three": "0.186.1"
   }
 }

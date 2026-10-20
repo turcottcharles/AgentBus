@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "title": "Illustrative portal assembly reveal",
+  "asset": {
+    "path": "app/assets/district-v2/attract-portal-reveal.mp4",
+    "bytes": 2062620,
+    "sha256": "79759c08093c526c4a1b76c853e24ee98a41400c62b46c8e68db4199e149b15f"
+  },
+  "media": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "24/1",
+    "duration": "6.000000",
+    "nb_frames": "144",
+    "audio": false,
+    "durationSeconds": 6,
+    "deliveryFrames": 144,
+    "deliveryFps": 24
+  },
+  "role": "Actual GPU-rendered 3D assembly vignette for the attract make beat. Illustrative facility animation; never live app output, agent progress, test evidence or a verified candidate.",
+  "animation": {
+    "source": {
+      "path": "design/blender/attract-portal-reveal.py",
+      "bytes": 5606,
+      "sha256": "fb352e13445fa63f8677afa7a4ce9133e848cf95df8599e14d1ffa68ed5ee9a3"
+    },
+    "editableBlend": {
+      "path": "design/blender/attract-portal-reveal.blend",
+      "bytes": 136222,
+      "sha256": "d21b58484528f219250a4ca8d6d770007180a591eaeb434627536d02a0ff23be"
+    },
+    "baseBlend": {
+      "path": "design/blender/preview-portal.blend",
+      "bytes": 134946,
+      "sha256": "8967e89a3a2ded421383c2e870102b605a53216909a0f62c3d7bd4d0d633b17d"
+    },
+    "baseSourceUnchangedSha256": "8967e89a3a2ded421383c2e870102b605a53216909a0f62c3d7bd4d0d633b17d",
+    "actions": [
+      "Left/right tower panels hinge upward",
+      "Roof cap rises and settles",
+      "Aperture expands and cyan/violet core powers up",
+      "Camera makes a real three-dimensional orbit and push"
+    ],
+    "sourceFrames": 120,
+    "sourceFps": 20,
+    "deliveryRetime": "120 unique GPU-rendered frames at 20fps delivered as 144 H264 frames at 24fps. NVENC reports24 duplicate frames. No optical-flow or CPU-rendered 3D frames.",
+    "timeline": "Frames1–120 contain the complete unfolding/power-up reveal. Existing camera keyframes after120 remain editable but are outside the delivered source range.",
+    "background": "Physical slate stage and original warm/cyan/violet lights; no poster-pan animation."
+  },
+  "gpu": {
+    "blender": "D:/Blender/blender.exe",
+    "version": "5.2.2 LTS",
+    "engine": "CYCLES",
+    "backend": "OPTIX",
+    "device": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "samples": 16,
+    "cpuDevicesEnabled": false,
+    "denoiser": "OPTIX",
+    "denoisingGpu": true,
+    "compositing": false,
+    "proof": {
+      "trace": {
+        "line": 116,
+        "text": "| Path tracing on: NVIDIA GeForce RTX 3070 Ti Laptop GPU (OptiX) [CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00_OptiX]"
+      },
+      "denoise": {
+        "line": 119,
+        "text": "| Denoising on: NVIDIA GeForce RTX 3070 Ti Laptop GPU (OptiX) [CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00_OptiX]"
+      },
+      "finalFrame": {
+        "line": 17166,
+        "text": "02:04.125  render           | Saved: 'D:\\ASM\\agent-bus\\design\\blender\\attract-portal-reveal-frames\\frame-0120.png'"
+      }
+    },
+    "renderLog": {
+      "path": "design/blender/attract-portal-reveal.render.log",
+      "bytes": 1177945,
+      "sha256": "427a0e7a5522b9852e908642a23d25658d20bd328e5e8f9ed72cf46d69c6dfab"
+    },
+    "initialObservation": {
+      "utilizationPercent": 33,
+      "memoryUsedMiB": 2404,
+      "memoryTotalMiB": 8192
+    }
+  },
+  "encoding": {
+    "encoder": "h264_nvenc",
+    "pixelFormat": "yuv420p",
+    "fastStart": true,
+    "log": {
+      "path": "design/blender/attract-portal-reveal.encode.log",
+      "bytes": 1389,
+      "sha256": "a564c19a39ddf5d22e614266cead25a5d1eaf35fc05df6ac193895357ba48783"
+    },
+    "command": {
+      "executable": "C:/Users/Admin/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1.1-full_build/bin/ffmpeg.exe",
+      "args": [
+        "-framerate",
+        "20",
+        "-start_number",
+        "1",
+        "-i",
+        "design/blender/attract-portal-reveal-frames/frame-%04d.png",
+        "-frames:v",
+        "144",
+        "-r",
+        "24",
+        "-c:v",
+        "h264_nvenc",
+        "-preset",
+        "p4",
+        "-cq",
+        "19",
+        "-b:v",
+        "0",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        "-an",
+        "app/assets/district-v2/attract-portal-reveal.mp4"
+      ]
+    }
+  },
+  "verification": {
+    "all120SourcePngsPresentAndHashed": true,
+    "sourceFrameManifest": {
+      "path": "design/blender/attract-portal-reveal.frames.json",
+      "bytes": 9363,
+      "sha256": "f520d1cf6952cb52de454e56f5ed851165f0c8a573f6bf6c211098b4cb5da771"
+    },
+    "videoProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "24/1",
+          "duration": "6.000000",
+          "nb_frames": "144"
+        }
+      ]
+    },
+    "visualSamplesInspected": [
+      1,
+      96
+    ],
+    "correctedFraming": "An initial too-tight camera draft was stopped by owned PID. The final wider camera retains full model/assembly in frame.",
+    "frameDecode": "All144 encoded frames decoded successfully using CUDA hardware decoding; root/UI18 still owns actual playback/layout acceptance.",
+    "wallInterval": {
+      "observedStart": "2026-10-17T17:33:21.2385174-07:00",
+      "videoAndSourceReady": "2026-10-17T17:38:28.1860140-07:00",
+      "approximatelySeconds": 307,
+      "budgetSeconds": 300,
+      "met": false,
+      "note": "About7seconds over the requested five-minute wall budget; includes one framing correction and editable source finalization. No under-budget claim."
+    },
+    "intermediates": {
+      "path": "design/blender/attract-portal-reveal-frames",
+      "files": 133,
+      "bytes": 123114273,
+      "retained": true,
+      "reason": "Optional cleanup of these owned intermediates was rejected by automatic tool policy; no deletion occurred. Exclude intermediates from the final asset bundle."
+    }
+  },
+  "limitations": [
+    "Muted six-second vignette only; root/UI18 owns its transition into actual Rally UI and global attract-loop seam.",
+    "Delivery has24 encoded duplicate frames from20→24fps retiming; it is not144 unique rendered 3D frames.",
+    "This is an original small facility model reveal, not a complete animated city trailer.",
+    "The existing approved plate and prior portal asset are retained; no new imagegen calls or CPU render fallback were used."
+  ]
+}

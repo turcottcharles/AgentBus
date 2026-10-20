@@ -1,0 +1,21 @@
+#districtV2 { position: relative; isolation: isolate; display: flex; flex: 1 1 auto; min-height: 0; min-width: 0; overflow: hidden; }
+#districtV2[hidden] { display: none !important; }
+#districtV2 > .dv-app, #districtV2 > .dw-app { flex: 1 1 auto; min-width: 0; min-height: 0; }
+.districtV2View > header { color: #edf6ff; background: #0c1622; border-bottom-color: #2f4658; }
+.districtV2View > header .brand { color: #e9f2f4; font-size: 14px; }
+.districtV2View > header .logo { color: #84ddd0; text-shadow: none; }
+.districtV2View > header button { color: #c1d3df; border-color: #405c6b; background: #142532; box-shadow: none; }
+.districtV2View > header button[aria-pressed='true'] { color: #cbf6ee; background: #1d3b3d; border-color: #69b9ad; }
+#districtControlRoom { display: none; }
+.districtV2View > #districtControlRoom { display: block; position: fixed; z-index: 101; top: 10px; right: 14px; min-height: 36px; padding: 6px 11px; color: #c1d4df; border: 1px solid #587487; border-radius: 7px; background: #122633f5; font-size: 12px; }
+.districtV2View > #districtControlRoom:focus-visible { outline: 3px solid var(--dv-focus, #a0f5ff); outline-offset: 3px; }
+.districtV2View:not(.districtControlsOpen) > header { display: none; }
+.districtV2View.districtControlsOpen > header { position: absolute; z-index: 100; inset: 0 0 auto; min-height: 58px; max-height: min(42dvh, 360px); overflow: auto; padding-right: 150px; box-shadow: 0 8px 30px #0009; }
+.districtV2View .dw-header { padding-right: 148px; }
+.districtV2View:has(.dw-app[data-entry='true']) > #districtControlRoom,
+.districtV2View:has(.dw-app[data-entry='true']) > header { display: none; }
+@media (max-width: 650px) { .districtV2View > #districtControlRoom { top: 7px; right: 8px; min-height: 44px; padding-inline: 8px; } .districtV2View .dw-header { padding-right: 124px; } .districtV2View.districtControlsOpen > header { padding-right: 126px; max-height: 50dvh; } }
+@media (forced-colors: active) { .districtV2View > #districtControlRoom, .districtV2View > header { color: CanvasText; background: Canvas; border-color: ButtonText; } }
+/* Once the build area is interactive, existing message tools stay reachable. */
+.districtV2View:has(.dmi-layer[data-ready='true']) > #districtControlRoom {display:block;}
+.districtV2View.districtControlsOpen:has(.dmi-layer[data-ready='true']) > header {display:flex;}

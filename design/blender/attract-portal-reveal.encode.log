@@ -1,0 +1,19 @@
+Input #0, image2, from 'D:\ASM\agent-bus\design\blender\attract-portal-reveal-frames\frame-%04d.png':
+  Duration: 00:00:06.65, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/bt709/iec61966-2-1), 1280x720 [SAR 2834:2834 DAR 16:9], 20 fps, 20 tbr, 20 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (h264_nvenc))
+Press [q] to stop, [?] for help
+Output #0, mp4, to 'D:\ASM\agent-bus\app\assets\district-v2\attract-portal-reveal.mp4':
+  Metadata:
+    encoder         : Lavf62.12.101
+  Stream #0:0: Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 24 fps, 12288 tbn
+    Metadata:
+      encoder         : Lavc62.28.101 h264_nvenc
+    Side data:
+      EXIF metadata: (54 bytes)
+      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=  118 fps=114 q=13.0 size=    1536KiB time=00:00:04.79 bitrate=2626.1kbits/s dup=22 drop=0 speed=4.64x elapsed=0:00:01.03    
+[mp4 @ 0000025b258d8c00] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000025b25845580] video:2012KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.127622%
+frame=  144 fps=134 q=15.0 Lsize=    2014KiB time=00:00:05.87 bitrate=2808.7kbits/s dup=24 drop=0 speed=5.46x elapsed=0:00:01.07    

@@ -1,0 +1,264 @@
+{
+  "version": 1,
+  "auditedAt": "2026-10-17T23:38:57.172Z",
+  "status": "PASS within the stated art/source audit scope",
+  "intent": "An original district that welcomes cooperative creation. Art identity adds a sense of place; the actual software process and evidence remain authoritative.",
+  "scope": {
+    "noNewArtGenerated": true,
+    "noUiImplementationChanged": true,
+    "noProviderCalls": true,
+    "readOnlyBlenderReopen": true,
+    "rootOwnsFinalIntegratedTests": true
+  },
+  "approvedPlate": {
+    "path": "app/assets/district.png",
+    "bytes": 3494080,
+    "sha256": "42920755069644cd52825078a53e9a022754ded314a4f28eea3ae38db416f07b",
+    "width": 1536,
+    "height": 1024,
+    "expectedSha256": "42920755069644cd52825078a53e9a022754ded314a4f28eea3ae38db416f07b",
+    "unchanged": true,
+    "source": "Existing approved AI-generated concept plate",
+    "editable3DSourceClaimed": false
+  },
+  "originalAssets": [
+    {
+      "path": "app/assets/district-v2/worker-engineer.png",
+      "bytes": 921758,
+      "sha256": "5c1e47f23b5412b5428dd38f97961963619bd52ef65a3b4c6828026f2a813c54",
+      "creation": "Built-in imagegen; exact written prompt retained in design/district-art-direction.json",
+      "franchiseReferenceInputs": false,
+      "rasterEditedDuringAudit": false
+    },
+    {
+      "path": "app/assets/district-v2/preview-portal.png",
+      "bytes": 1026627,
+      "sha256": "9a0977ac5b4cea1f19ac6af5d9b83f203def29e9deb52f49eae8539fc3f885bf",
+      "creation": "Original scripted Blender geometry and GPU render",
+      "franchiseReferenceInputs": false,
+      "rasterEditedDuringAudit": false
+    }
+  ],
+  "editableBlender": {
+    "executable": "D:/Blender/blender.exe",
+    "version": "5.2.2 LTS",
+    "buildHash": "d13f752e3b9c",
+    "files": [
+      {
+        "path": "design/blender/preview-portal.blend",
+        "bytes": 134946,
+        "sha256": "8967e89a3a2ded421383c2e870102b605a53216909a0f62c3d7bd4d0d633b17d"
+      },
+      {
+        "path": "design/blender/create-preview-portal.py",
+        "bytes": 11570,
+        "sha256": "b077736a15693cd235c1ece5f9a79c2714564219e708ef7778ebac7e21d10a05"
+      }
+    ],
+    "provenance": {
+      "path": "design/blender/preview-portal.provenance.json",
+      "bytes": 2530,
+      "sha256": "81356b5d86d5c3c526e8365f7c0de135436c79f193bd9e0d052f919344d41eef"
+    },
+    "reopened": {
+      "objects": 60,
+      "meshes": 54,
+      "materials": 10,
+      "cameras": 1,
+      "engine": "CYCLES",
+      "device": "GPU",
+      "samples": 96,
+      "gpu_only": true,
+      "role": "Preview locator; never a rendered candidate screenshot or execution verdict."
+    },
+    "reopenLog": {
+      "path": "design/blender/preview-portal.open-audit.log",
+      "bytes": 416,
+      "sha256": "d8c4fc1dce9395903db46b60ceca277a54e06f5049a2b614c0980539b9a53e59"
+    },
+    "mode": "Hidden background, factory startup, auto-execution disabled; load and inspect only, no rendering/saving.",
+    "note": "The .blend is editable; use the source script for guarded GPU regeneration because device preferences are not a portable .blend setting."
+  },
+  "gpuRender": {
+    "engine": "CYCLES",
+    "backend": "OPTIX",
+    "device": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "resolution": [
+      1024,
+      1024
+    ],
+    "maxSamples": 96,
+    "cpuDevicesEnabled": [],
+    "denoising": false,
+    "compositing": false,
+    "log": {
+      "path": "design/blender/preview-portal.render.log",
+      "bytes": 10049,
+      "sha256": "2ace2da8a778b624d006d0ad80d36c6adb9535f2a8f181caaca456288df5d087"
+    },
+    "pathTracingEvidence": {
+      "line": 122,
+      "text": "| Path tracing on: NVIDIA GeForce RTX 3070 Ti Laptop GPU (OptiX) [CUDA_NVIDIA GeForce RTX 3070 Ti Laptop GPU_0000:01:00_OptiX]"
+    },
+    "renderCompleteEvidence": {
+      "line": 154,
+      "text": "DISTRICT_RENDER_COMPLETE={\"png\": \"D:\\\\ASM\\\\agent-bus\\\\app\\\\assets\\\\district-v2\\\\preview-portal.png\", \"blend\": \"D:\\\\ASM\\\\agent-bus\\\\design\\\\blender\\\\preview-portal.blend\", \"backend\": \"OPTIX\", \"cpu_enabled\": false}"
+    },
+    "sourceGuard": {
+      "path": "design/blender/create-preview-portal.py",
+      "deviceSelectionLines": [
+        21,
+        41
+      ],
+      "gpuSettingLines": [
+        46,
+        49
+      ],
+      "renderGuardLines": [
+        221,
+        224
+      ]
+    },
+    "timing": {
+      "singleObservedRenderSeconds": 1.29804,
+      "notPerformanceBenchmark": true
+    },
+    "memory": {
+      "reportedLocalReservationBytes": 406847488,
+      "notPeakVramMeasurement": true
+    },
+    "resultPng": {
+      "path": "app/assets/district-v2/preview-portal.png",
+      "bytes": 1026627,
+      "sha256": "9a0977ac5b4cea1f19ac6af5d9b83f203def29e9deb52f49eae8539fc3f885bf"
+    }
+  },
+  "factionDocumentation": {
+    "ledger": {
+      "path": "design/district-factions.json",
+      "bytes": 17998,
+      "sha256": "776e258f67876730561a289bc9577d227387dd780d3932bb1bc49ba13defc28e"
+    },
+    "count": 6,
+    "cultures": [
+      {
+        "id": "aster-measure",
+        "name": "Aster Measure",
+        "specialty": "Check work against evidence",
+        "visibleFacilityBadge": true,
+        "futureMechanicsImplemented": false
+      },
+      {
+        "id": "copper-patch",
+        "name": "Copper Patch",
+        "specialty": "Make and build useful changes",
+        "visibleFacilityBadge": true,
+        "futureMechanicsImplemented": false
+      },
+      {
+        "id": "farline-relay",
+        "name": "Farline Relay",
+        "specialty": "Connect people, sessions and files",
+        "visibleFacilityBadge": false,
+        "futureMechanicsImplemented": false
+      },
+      {
+        "id": "open-lantern",
+        "name": "Open Lantern",
+        "specialty": "Read, explain and research",
+        "visibleFacilityBadge": true,
+        "futureMechanicsImplemented": false
+      },
+      {
+        "id": "harbor-reset",
+        "name": "Harbor Reset",
+        "specialty": "Save, compare and recover work",
+        "visibleFacilityBadge": true,
+        "futureMechanicsImplemented": false
+      },
+      {
+        "id": "prism-yard",
+        "name": "Prism Yard",
+        "specialty": "See and refine the built result",
+        "visibleFacilityBadge": true,
+        "futureMechanicsImplemented": false
+      }
+    ],
+    "visibleFacilityBadges": 5,
+    "ledgerOnly": [
+      "farline-relay"
+    ],
+    "capabilityBoundary": "Each record separates baseline/source-present/GPU-qualified behavior from future ideas. Identity never changes provider, permission, quota, command dispatch or result.",
+    "cooperativeFraming": "The ledger explicitly uses helpful working cultures, not enemies or demographic stereotypes. The current welcome UI invites useful personal creation with an agent beside the user.",
+    "sourceEvidence": [
+      "app/district-scene.js:13-19",
+      "app/district-scene.js:147-152",
+      "app/district-workbench.js:141-158"
+    ]
+  },
+  "sourceTextScan": {
+    "scope": "All app JavaScript, HTML and CSS, including source strings for visible labels; design/research material excluded.",
+    "filesScanned": 52,
+    "sourceManifestHash": "2974e146f701f6286f1fd8c95e3ce3caf6fba51804480fee32a92c1b36f4e669",
+    "terms": [
+      "halo",
+      "starcraft",
+      "warcraft",
+      "fallout",
+      "master chief",
+      "covenant",
+      "spartan",
+      "forerunner",
+      "cortana",
+      "unsc",
+      "bungie",
+      "blizzard",
+      "terran",
+      "zerg",
+      "protoss",
+      "night city",
+      "arasaka",
+      "militech",
+      "cyberpunk 2077",
+      "destiny",
+      "mass effect",
+      "star wars",
+      "star trek"
+    ],
+    "matchCount": 0,
+    "matches": [],
+    "meaning": "No targeted franchise terms found in the current application sources. Combined with inspected plate/worker/portal art and original written generation/model source, no recognizable franchise content was identified. This is a scoped originality audit, not a worldwide name/trademark uniqueness assertion."
+  },
+  "actualConsumption": {
+    "plate": [
+      "app/district-scene.js:70",
+      "app/district-workbench.js:149"
+    ],
+    "worker": [
+      "app/district-scene.js:329"
+    ],
+    "portal": [
+      "app/district-scene.js:155-167"
+    ],
+    "portalMeaning": "Static locator only. Actual preview/candidate identity and evidence belong to the bound browser UI."
+  },
+  "designFiles": [
+    {
+      "path": "design/district-art-direction.json",
+      "bytes": 16437,
+      "sha256": "3b6373f0e858c3184079d93c5b95690db4786d8f80433c83e0afdef79b769860"
+    },
+    {
+      "path": "app/district-theme.css",
+      "bytes": 6989,
+      "sha256": "98debb688b67767ddf3cb3cbcae1702cdbf02f30f72b3a3263feda6114ca9df9"
+    }
+  ],
+  "limitations": [
+    "Five facility culture badges are source-wired; Farline Relay is documented only, not a new executable faction mechanic.",
+    "The worker is one static PNG pose; only the Preview portal has an editable 3D scene in this delivery.",
+    "Original plate bytes are preserved; no editable 3D source for the full district is asserted.",
+    "The source scan is bounded to the stated terms and current source snapshot. Later source changes need a fresh scan if relevant.",
+    "Art/source validation does not certify final assembled layout, user visual acceptance or provider/runtime correctness; root owns those integrated tests."
+  ]
+}

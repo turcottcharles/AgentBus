@@ -1,0 +1,862 @@
+{
+  "at": "2026-10-18T02:47:57.393Z",
+  "purpose": "Source-informed original host performance audition, not film-frame reproduction or real project activity",
+  "fps": 24,
+  "totalFrames": 240,
+  "seconds": 10,
+  "uniqueFrames": 240,
+  "cues": [
+    {
+      "id": "ACT01",
+      "start": 0,
+      "end": 0.75,
+      "label": "ATTEND",
+      "action": "Resting attention. The sensor stays folded."
+    },
+    {
+      "id": "ACT02",
+      "start": 0.75,
+      "end": 1.35,
+      "label": "NOTICE",
+      "action": "Optics shift first; a brow registers the event."
+    },
+    {
+      "id": "ACT03",
+      "start": 1.35,
+      "end": 2.2,
+      "label": "UNCERTAIN",
+      "action": "A checking glance, asymmetric brow and small head tilt motivate investigation."
+    },
+    {
+      "id": "ACT04",
+      "start": 2.2,
+      "end": 3.4,
+      "label": "DEPLOY",
+      "action": "The mast rises and the six-petal mini dish opens."
+    },
+    {
+      "id": "ACT05",
+      "start": 3.4,
+      "end": 5.8,
+      "label": "SEARCH",
+      "action": "The dish looks left and right while the face holds its question."
+    },
+    {
+      "id": "ACT06",
+      "start": 5.8,
+      "end": 6.4,
+      "label": "LOCK",
+      "action": "The dish stops searching and holds a direction; optics settle."
+    },
+    {
+      "id": "ACT07",
+      "start": 6.4,
+      "end": 8.2,
+      "label": "COMMIT",
+      "action": "Eyes and head lead; the body follows the resolved direction."
+    },
+    {
+      "id": "ACT08",
+      "start": 8.2,
+      "end": 10,
+      "label": "FOLLOW",
+      "action": "The host moves toward the selected direction with the dish still aimed."
+    }
+  ],
+  "bounds": {
+    "x": -1494,
+    "y": 10,
+    "width": 1452,
+    "height": 848
+  },
+  "gpu": {
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "faceRig": {
+    "counts": {
+      "brow": 2,
+      "pupil": 2,
+      "iris": 2,
+      "catchlight": 2
+    },
+    "trianglesBefore": 4672,
+    "trianglesAfter": 4672,
+    "verticesEdited": 0,
+    "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+  },
+  "sensor": {
+    "originalAttachment": true,
+    "petals": 6,
+    "triangles": 768
+  },
+  "errors": [],
+  "scratch": "C:\\Users\\Admin\\AppData\\Local\\Temp\\agent-bus-flow-board-0uVJyn",
+  "capturedCanonicalSha256": "ce5f1136e803d4b054ca0b7aa592370023ac731ae55d516238bf86751143753e",
+  "inputs": {
+    "design/district-3d/storyboard/performance-scene.js": "94cc860aaa13b9db714569caed3e1a47cbaf1890c6767615cc22041969eeeb37",
+    "design/district-3d/storyboard/performance-controls.js": "a41b9921b1ad0ed65d6dce2935945bd9dcfa1623028b7c96b8c939dd73ba1a66",
+    "design/district-3d/storyboard/render-performance.cjs": "a0d54719deeaf4d49272076b3c3f5c4f0570e84eecff2e2e1deacfa540271394",
+    "app/assets/district-v2/district-host.glb": "2475a8cd30aafed864d539c2760fbe23e1a15fbcbc23fc639a62403ce2434037",
+    "app/assets/district-v2/district-world.glb": "4675bede993c09bcd98d63b9184cbfcd5510ba3299a5358c7d28c4fecee92cdc"
+  },
+  "movie": {
+    "file": "host-performance-study.mp4",
+    "bytes": 6517613,
+    "sha256": "ab87431fa8a4b04f29a5503b50111af9f96ac64e6c31137a956c1f50bdc46082"
+  },
+  "samples": [
+    {
+      "name": "neutral",
+      "index": 0,
+      "seconds": 0,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 3,
+        "frame": {
+          "performance": true,
+          "seconds": 0
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 325,
+        "triangles": 170792,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "faceRig": {
+          "counts": {
+            "brow": 2,
+            "pupil": 2,
+            "iris": 2,
+            "catchlight": 2
+          },
+          "trianglesBefore": 4672,
+          "trianglesAfter": 4672,
+          "verticesEdited": 0,
+          "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+        },
+        "sensor": {
+          "originalAttachment": true,
+          "petals": 6,
+          "triangles": 768
+        },
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.1,
+            5.1,
+            14.7
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": null,
+        "projectWorld": null,
+        "memory": {
+          "geometries": 279,
+          "textures": 2
+        },
+        "performance": {
+          "seconds": 0,
+          "notice": 0,
+          "question": 0,
+          "deploy": 0,
+          "open": 0,
+          "locked": false,
+          "resolve": 0,
+          "headYaw": 0,
+          "bodyYaw": 0.45,
+          "travel": [
+            0,
+            0,
+            0
+          ],
+          "opticalAim": 0,
+          "sensorWorldYaw": 0.45
+        }
+      }
+    },
+    {
+      "name": "notice",
+      "index": 24,
+      "seconds": 1,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 27,
+        "frame": {
+          "performance": true,
+          "seconds": 1
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 325,
+        "triangles": 170792,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "faceRig": {
+          "counts": {
+            "brow": 2,
+            "pupil": 2,
+            "iris": 2,
+            "catchlight": 2
+          },
+          "trianglesBefore": 4672,
+          "trianglesAfter": 4672,
+          "verticesEdited": 0,
+          "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+        },
+        "sensor": {
+          "originalAttachment": true,
+          "petals": 6,
+          "triangles": 768
+        },
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.1,
+            5.1,
+            14.7
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": null,
+        "projectWorld": null,
+        "memory": {
+          "geometries": 279,
+          "textures": 2
+        },
+        "performance": {
+          "seconds": 1,
+          "notice": 0.9259259259259258,
+          "question": 0,
+          "deploy": 0,
+          "open": 0,
+          "locked": false,
+          "resolve": 0,
+          "headYaw": 0,
+          "bodyYaw": 0.45,
+          "travel": [
+            0,
+            0,
+            0
+          ],
+          "opticalAim": 0.025925925925925925,
+          "sensorWorldYaw": 0.45
+        }
+      }
+    },
+    {
+      "name": "uncertain",
+      "index": 44,
+      "seconds": 1.8333333333333333,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 47,
+        "frame": {
+          "performance": true,
+          "seconds": 1.8333333333333333
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 325,
+        "triangles": 170792,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "faceRig": {
+          "counts": {
+            "brow": 2,
+            "pupil": 2,
+            "iris": 2,
+            "catchlight": 2
+          },
+          "trianglesBefore": 4672,
+          "trianglesAfter": 4672,
+          "verticesEdited": 0,
+          "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+        },
+        "sensor": {
+          "originalAttachment": true,
+          "petals": 6,
+          "triangles": 768
+        },
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            6.1,
+            5.1,
+            14.7
+          ],
+          "target": [
+            5,
+            4.85,
+            12
+          ],
+          "fov": 36
+        },
+        "packetWorld": null,
+        "projectWorld": null,
+        "memory": {
+          "geometries": 279,
+          "textures": 2
+        },
+        "performance": {
+          "seconds": 1.8333333333333333,
+          "notice": 1,
+          "question": 1,
+          "deploy": 0,
+          "open": 0,
+          "locked": false,
+          "resolve": 0,
+          "headYaw": 0,
+          "bodyYaw": 0.45,
+          "travel": [
+            0,
+            0,
+            0
+          ],
+          "opticalAim": 0.021518518518518527,
+          "sensorWorldYaw": 0.45
+        }
+      }
+    },
+    {
+      "name": "deploy",
+      "index": 76,
+      "seconds": 3.1666666666666665,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 79,
+        "frame": {
+          "performance": true,
+          "seconds": 3.1666666666666665
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 374,
+        "triangles": 184500,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "faceRig": {
+          "counts": {
+            "brow": 2,
+            "pupil": 2,
+            "iris": 2,
+            "catchlight": 2
+          },
+          "trianglesBefore": 4672,
+          "trianglesAfter": 4672,
+          "verticesEdited": 0,
+          "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+        },
+        "sensor": {
+          "originalAttachment": true,
+          "petals": 6,
+          "triangles": 768
+        },
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            7.966055703833039,
+            6.47498841335066,
+            18.923178698148455
+          ],
+          "target": [
+            5,
+            5.2919605614341405,
+            12
+          ],
+          "fov": 41.524236933168496
+        },
+        "packetWorld": null,
+        "projectWorld": null,
+        "memory": {
+          "geometries": 279,
+          "textures": 2
+        },
+        "performance": {
+          "seconds": 3.1666666666666665,
+          "notice": 1,
+          "question": 1,
+          "deploy": 1,
+          "open": 0.70592896036683,
+          "locked": false,
+          "resolve": 0,
+          "headYaw": 0,
+          "bodyYaw": 0.45,
+          "travel": [
+            0,
+            0,
+            0
+          ],
+          "opticalAim": 0.028,
+          "sensorWorldYaw": 0.45
+        }
+      }
+    },
+    {
+      "name": "search",
+      "index": 108,
+      "seconds": 4.5,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 111,
+        "frame": {
+          "performance": true,
+          "seconds": 4.5
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 375,
+        "triangles": 184500,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "faceRig": {
+          "counts": {
+            "brow": 2,
+            "pupil": 2,
+            "iris": 2,
+            "catchlight": 2
+          },
+          "trianglesBefore": 4672,
+          "trianglesAfter": 4672,
+          "verticesEdited": 0,
+          "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+        },
+        "sensor": {
+          "originalAttachment": true,
+          "petals": 6,
+          "triangles": 768
+        },
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            8,
+            6.5,
+            19
+          ],
+          "target": [
+            5,
+            5.3,
+            12
+          ],
+          "fov": 42
+        },
+        "packetWorld": null,
+        "projectWorld": null,
+        "memory": {
+          "geometries": 279,
+          "textures": 2
+        },
+        "performance": {
+          "seconds": 4.5,
+          "notice": 1,
+          "question": 1,
+          "deploy": 1,
+          "open": 1,
+          "locked": false,
+          "resolve": 0,
+          "headYaw": 0,
+          "bodyYaw": 0.45,
+          "travel": [
+            0,
+            0,
+            0
+          ],
+          "opticalAim": 0.03443027541241297,
+          "sensorWorldYaw": 0.5804000000000004
+        }
+      }
+    },
+    {
+      "name": "lock",
+      "index": 148,
+      "seconds": 6.166666666666667,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 151,
+        "frame": {
+          "performance": true,
+          "seconds": 6.166666666666667
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 375,
+        "triangles": 184500,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "faceRig": {
+          "counts": {
+            "brow": 2,
+            "pupil": 2,
+            "iris": 2,
+            "catchlight": 2
+          },
+          "trianglesBefore": 4672,
+          "trianglesAfter": 4672,
+          "verticesEdited": 0,
+          "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+        },
+        "sensor": {
+          "originalAttachment": true,
+          "petals": 6,
+          "triangles": 768
+        },
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            8,
+            6.5,
+            19
+          ],
+          "target": [
+            5,
+            5.3,
+            12
+          ],
+          "fov": 42
+        },
+        "packetWorld": null,
+        "projectWorld": null,
+        "memory": {
+          "geometries": 279,
+          "textures": 2
+        },
+        "performance": {
+          "seconds": 6.166666666666667,
+          "notice": 1,
+          "question": 0.7407407407407399,
+          "deploy": 1,
+          "open": 1,
+          "locked": true,
+          "resolve": 0.6639231824417013,
+          "headYaw": 0,
+          "bodyYaw": 0.45,
+          "travel": [
+            0,
+            0,
+            0
+          ],
+          "opticalAim": 0.028,
+          "sensorWorldYaw": 1.1
+        }
+      }
+    },
+    {
+      "name": "turn",
+      "index": 184,
+      "seconds": 7.666666666666667,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 187,
+        "frame": {
+          "performance": true,
+          "seconds": 7.666666666666667
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 373,
+        "triangles": 183748,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "faceRig": {
+          "counts": {
+            "brow": 2,
+            "pupil": 2,
+            "iris": 2,
+            "catchlight": 2
+          },
+          "trianglesBefore": 4672,
+          "trianglesAfter": 4672,
+          "verticesEdited": 0,
+          "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+        },
+        "sensor": {
+          "originalAttachment": true,
+          "petals": 6,
+          "triangles": 768
+        },
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            8,
+            6.5,
+            19
+          ],
+          "target": [
+            5,
+            5.3,
+            12
+          ],
+          "fov": 42
+        },
+        "packetWorld": null,
+        "projectWorld": null,
+        "memory": {
+          "geometries": 279,
+          "textures": 2
+        },
+        "performance": {
+          "seconds": 7.666666666666667,
+          "notice": 1,
+          "question": 0,
+          "deploy": 1,
+          "open": 1,
+          "locked": true,
+          "resolve": 1,
+          "headYaw": 0.12259945130315483,
+          "bodyYaw": 0.9774005486968453,
+          "travel": [
+            0,
+            0,
+            0
+          ],
+          "opticalAim": 0.028,
+          "sensorWorldYaw": 1.1
+        }
+      }
+    },
+    {
+      "name": "follow",
+      "index": 228,
+      "seconds": 9.5,
+      "diagnostic": {
+        "ready": true,
+        "demonstration": true,
+        "deterministic": true,
+        "style": "line-art",
+        "timers": 0,
+        "frames": 231,
+        "frame": {
+          "performance": true,
+          "seconds": 9.5
+        },
+        "gpu": {
+          "vendor": "Google Inc. (NVIDIA)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 Ti Laptop GPU (0x000024A0) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "assets": {
+          "world": {
+            "loaded": true,
+            "triangles": 58636
+          },
+          "host": {
+            "loaded": true,
+            "triangles": 34092
+          }
+        },
+        "error": null,
+        "drawCalls": 378,
+        "triangles": 184636,
+        "width": 1440,
+        "height": 647,
+        "dpr": 1.5,
+        "faceRig": {
+          "counts": {
+            "brow": 2,
+            "pupil": 2,
+            "iris": 2,
+            "catchlight": 2
+          },
+          "trianglesBefore": 4672,
+          "trianglesAfter": 4672,
+          "verticesEdited": 0,
+          "method": "Connected-component index partition, original position/normal attributes retained; neutral pivot/mesh translations cancel."
+        },
+        "sensor": {
+          "originalAttachment": true,
+          "petals": 6,
+          "triangles": 768
+        },
+        "backbufferWidth": 2160,
+        "backbufferHeight": 970,
+        "camera": {
+          "type": "perspective",
+          "position": [
+            9.590847925442999,
+            6.5,
+            19.809690854336218
+          ],
+          "target": [
+            6.590847925442999,
+            5.3,
+            12.80969085433622
+          ],
+          "fov": 42
+        },
+        "packetWorld": null,
+        "projectWorld": null,
+        "memory": {
+          "geometries": 279,
+          "textures": 2
+        },
+        "performance": {
+          "seconds": 9.5,
+          "notice": 1,
+          "question": 0,
+          "deploy": 1,
+          "open": 1,
+          "locked": true,
+          "resolve": 1,
+          "headYaw": 0,
+          "bodyYaw": 1.1,
+          "travel": [
+            1.5908479254429988,
+            0,
+            0.8096908543362193
+          ],
+          "opticalAim": 0.028,
+          "sensorWorldYaw": 1.1
+        }
+      }
+    }
+  ]
+}
